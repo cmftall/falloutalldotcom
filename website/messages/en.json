@@ -1,0 +1,160 @@
+{
+  "navigation": {
+    "home": "Home",
+    "selectedProjects": "Selected Projects",
+    "expertise": "Expertise",
+    "education": "Education",
+    "certifications": "Certifications",
+    "contact": "Contact"
+  },
+  "hero": {
+    "headline": "I architect data ecosystems that transform enterprises.",
+    "subheadline": "Senior Data Architect at Sopra Steria • 8+ years leading enterprise transformations",
+    "primaryCta": "View My Work",
+    "secondaryCta": "Get In Touch",
+    "credential": "Data Architect • Paris, France et Montreal Canada",
+    "scrollToExplore": "Scroll to explore"
+  },
+  "about": {
+    "title": "About",
+    "description": "I transform enterprise data landscapes through innovative, scalable solutions.",
+    "highlights": [
+      "Leading Data Center of Excellence at Sopra Steria",
+      "8+ years across Banking, Telecom, and Technology sectors",
+      "Reduced data errors by 30% through innovative frameworks",
+      "Led teams of up to 7 engineers delivering measurable impact"
+    ],
+    "quote": "The best data architecture is invisible — it empowers decisions without complexity."
+  },
+  "expertise": {
+    "title": "Expertise",
+    "subtitle": "Core competencies across the modern data stack",
+    "categories": {
+      "cloudPlatforms": "Cloud Platforms",
+      "dataEngineering": "Data Engineering",
+      "machineLearning": "Machine Learning",
+      "databases": "Databases",
+      "visualization": "Visualization",
+      "devops": "DevOps"
+    },
+    "summary": {
+      "yearsExperience": "Years Experience",
+      "technologiesMastered": "Technologies Mastered",
+      "enterpriseProjects": "Enterprise Projects"
+    }
+  },
+  "work": {
+    "title": "Selected Work",
+    "subtitle": "Enterprise transformations that deliver measurable impact",
+    "projects": {
+      "sopraSteria": {
+        "company": "Sopra Steria",
+        "role": "Data Architect",
+        "description": "Leading a team within the Data Center of Excellence across 8+ client sectors including Banking, Insurance, and Telecom.",
+        "impact": "Multi-cloud architecture • TB+ data processing • Cross-industry compliance",
+        "duration": "2025 - Present"
+      },
+      "bnc": {
+        "company": "Banque Nationale du Canada",
+        "role": "Lead Data Engineer",
+        "description": "Led team of 7 engineers building robust analytical pipelines with innovative PySpark QA frameworks.",
+        "impact": "30% error reduction • 25% efficiency improvement • 40% faster testing",
+        "duration": "2021 - 2025"
+      },
+      "onepoint": {
+        "company": "Onepoint",
+        "role": "Consultant Expert Data",
+        "description": "Delivered technical, organizational, and governance audits for enterprise data platforms across Canada and France. Designed modern, scalable architectures for Fortune 500 companies.",
+        "impact": "Fortune 500 clients • DataOps automation • Security compliance • Performance optimization",
+        "duration": "2024 - 2025"
+      },
+      "orangeMigration": {
+        "company": "Orange Côte d'Ivoire",
+        "role": "Lead Data Engineer",
+        "description": "Led zero-downtime migration of data workflows to new Hadoop cluster. Developed productivity tools and orchestrated complex data pipelines.",
+        "impact": "Zero-downtime migration • 20% productivity improvement • Spark2 upgrade • Oozie orchestration",
+        "duration": "2020 - 2021"
+      },
+      "orange": {
+        "company": "Orange Sénégal",
+        "role": "Senior Data Engineer & Data Scientist",
+        "description": "Developed ML models for customer experience management and QoE prediction.",
+        "impact": "15% customer satisfaction improvement • 30% processing time reduction",
+        "duration": "2019 - 2020"
+      }
+    }
+  },
+  "education": {
+    "title": "Education Background",
+    "subtitle": "Academic foundation in mathematical sciences and big data technologies",
+    "continuousLearning": {
+      "title": "Continuous Learning",
+      "description": "My educational background in mathematical sciences provides a strong foundation for data architecture. I continuously stay updated with the latest technologies and methodologies through professional certifications, industry conferences, and hands-on project experience."
+    },
+    "degrees": {
+      "aims": {
+        "degree": "Master Coopératif en Sciences Mathématiques - spécialisation Big Data",
+        "institution": "African Institute for Mathematical Sciences (AIMS)",
+        "location": "Sénégal",
+        "duration": "2016-2018",
+        "description": "Cooperative Master program specializing in Big Data technologies, statistical analysis, and machine learning. Completed industry projects focusing on data architecture, analytics, and real-world applications of mathematical sciences in data engineering."
+      },
+      "ucadMasters": {
+        "degree": "Master in Applied Mathematics",
+        "institution": "Université Cheikh Anta Diop",
+        "location": "Dakar, Sénégal",
+        "duration": "2014-2016",
+        "description": "Advanced studies in applied mathematics with focus on mathematical modeling, statistical analysis, and computational methods. Specialized in optimization theory, numerical analysis, and mathematical applications in data science."
+      },
+      "ucadBachelors": {
+        "degree": "Bachelor in Mathematics",
+        "institution": "Université Cheikh Anta Diop",
+        "location": "Dakar, Sénégal",
+        "duration": "2009-2013",
+        "description": "Foundation in mathematical sciences, statistics, and analytical thinking. Focused on mathematical modeling, calculus, linear algebra, and probability theory that provides a strong analytical foundation for data science and engineering."
+      }
+    }
+  },
+  "certifications": {
+    "title": "Certifications & Credentials",
+    "subtitle": "Professional certifications that validate my technical expertise and commitment to continuous learning."
+  },
+  "contact": {
+    "title": "Let's Connect",
+    "subtitle": "Ready to transform your data architecture?",
+    "description": "I'm always interested in discussing new opportunities, innovative projects, and how data can drive your business forward.",
+    "cta": "Start a Conversation",
+    "email": "cmftall@gmail.com",
+    "phone": "+33 7 67 07 01 79",
+    "location": "Paris, France & Montreal, Canada",
+    "form": {
+      "nameLabel": "Name",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "your.email@example.com",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Tell me about your project...",
+      "submitButton": "Send Message"
+    },
+    "quickLinks": {
+      "title": "Quick Links",
+      "linkedinProfile": "LinkedIn Profile",
+      "githubPortfolio": "GitHub Portfolio"
+    }
+  },
+  "footer": {
+    "description": "Senior Data Architect passionate about transforming enterprises through innovative data solutions.",
+    "rights": "All rights reserved.",
+    "builtWith": "Built with Next.js, TypeScript, and Tailwind CSS",
+    "quickLinks": "Quick Links",
+    "contact": "Contact"
+  },
+  "common": {
+    "technologies": "Technologies",
+    "duration": "Duration",
+    "impact": "Impact",
+    "learnMore": "Learn More",
+    "viewProject": "View Project",
+    "viewDetails": "View Details"
+  }
+}

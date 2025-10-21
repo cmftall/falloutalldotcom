@@ -1,0 +1,160 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "selectedProjects": "Projets Sélectionnés",
+    "expertise": "Expertise",
+    "education": "Formation",
+    "certifications": "Certifications",
+    "contact": "Contact"
+  },
+  "hero": {
+    "headline": "J'architecte des écosystèmes de données qui transforment les entreprises.",
+    "subheadline": "Architecte de Données Senior chez Sopra Steria • 8+ années à diriger des transformations d'entreprise",
+    "primaryCta": "Voir Mon Travail",
+    "secondaryCta": "Me Contacter",
+    "credential": "Architecte de Données • Paris, France et Montréal, Canada",
+    "scrollToExplore": "Faire défiler pour explorer"
+  },
+  "about": {
+    "title": "À Propos",
+    "description": "Je transforme les paysages de données d'entreprise grâce à des solutions innovantes et évolutives.",
+    "highlights": [
+      "Dirige le Centre d'Excellence des Données chez Sopra Steria",
+      "8+ années dans les secteurs Bancaire, Télécom et Technologie",
+      "Réduction de 30% des erreurs de données grâce à des frameworks innovants",
+      "Dirigé des équipes de jusqu'à 7 ingénieurs avec un impact mesurable"
+    ],
+    "quote": "La meilleure architecture de données est invisible — elle permet les décisions sans complexité."
+  },
+  "expertise": {
+    "title": "Expertise",
+    "subtitle": "Compétences clés dans la stack moderne de données",
+    "categories": {
+      "cloudPlatforms": "Plateformes Cloud",
+      "dataEngineering": "Ingénierie des Données",
+      "machineLearning": "Machine Learning",
+      "databases": "Bases de Données",
+      "visualization": "Visualisation",
+      "devops": "DevOps"
+    },
+    "summary": {
+      "yearsExperience": "Années d'Expérience",
+      "technologiesMastered": "Technologies Maîtrisées",
+      "enterpriseProjects": "Projets d'Entreprise"
+    }
+  },
+  "work": {
+    "title": "Travail Sélectionné",
+    "subtitle": "Transformations d'entreprise qui apportent un impact mesurable",
+    "projects": {
+      "sopraSteria": {
+        "company": "Sopra Steria",
+        "role": "Architecte de Données",
+        "description": "Dirige une équipe au sein du Centre d'Excellence des Données dans 8+ secteurs clients incluant la Banque, l'Assurance et les Télécoms.",
+        "impact": "Architecture multi-cloud • Traitement de TB+ de données • Conformité multi-secteurs",
+        "duration": "2025 - Présent"
+      },
+      "bnc": {
+        "company": "Banque Nationale du Canada",
+        "role": "Lead Data Engineer",
+        "description": "Dirigé une équipe de 7 ingénieurs construisant des pipelines analytiques robustes avec des frameworks QA PySpark innovants.",
+        "impact": "30% de réduction d'erreurs • 25% d'amélioration d'efficacité • 40% de tests plus rapides",
+        "duration": "2021 - 2025"
+      },
+      "onepoint": {
+        "company": "Onepoint",
+        "role": "Consultant Expert Data",
+        "description": "Réalisé des audits techniques, organisationnels et de gouvernance pour des plateformes de données d'entreprise au Canada et en France. Conçu des architectures modernes et évolutives pour des entreprises Fortune 500.",
+        "impact": "Clients Fortune 500 • Automatisation DataOps • Conformité sécurité • Optimisation des performances",
+        "duration": "2024 - 2025"
+      },
+      "orangeMigration": {
+        "company": "Orange Côte d'Ivoire",
+        "role": "Lead Data Engineer",
+        "description": "Dirigé la migration sans interruption des workflows de données vers un nouveau cluster Hadoop. Développé des outils de productivité et orchestré des pipelines de données complexes.",
+        "impact": "Migration sans interruption • 20% d'amélioration de la productivité • Mise à niveau Spark2 • Orchestration Oozie",
+        "duration": "2020 - 2021"
+      },
+      "orange": {
+        "company": "Orange Sénégal",
+        "role": "Senior Data Engineer & Data Scientist",
+        "description": "Développé des modèles ML pour la gestion de l'expérience client et la prédiction de la QoE.",
+        "impact": "15% d'amélioration de la satisfaction client • 30% de réduction du temps de traitement",
+        "duration": "2019 - 2020"
+      }
+    }
+  },
+  "education": {
+    "title": "Formation Académique",
+    "subtitle": "Fondation académique en sciences mathématiques et technologies big data",
+    "continuousLearning": {
+      "title": "Apprentissage Continu",
+      "description": "Mon parcours éducatif en sciences mathématiques fournit une base solide pour l'architecture de données. Je reste continuellement à jour avec les dernières technologies et méthodologies grâce aux certifications professionnelles, conférences industrielles et expérience pratique sur projets."
+    },
+    "degrees": {
+      "aims": {
+        "degree": "Master Coopératif en Sciences Mathématiques - spécialisation Big Data",
+        "institution": "Institut Africain des Sciences Mathématiques (AIMS)",
+        "location": "Sénégal",
+        "duration": "2016-2018",
+        "description": "Programme de Master coopératif spécialisé dans les technologies Big Data, l'analyse statistique et le machine learning. Projets industriels complétés axés sur l'architecture de données, l'analytique et les applications réelles des sciences mathématiques en ingénierie des données."
+      },
+      "ucadMasters": {
+        "degree": "Master en Mathématiques Appliquées",
+        "institution": "Université Cheikh Anta Diop",
+        "location": "Dakar, Sénégal",
+        "duration": "2014-2016",
+        "description": "Études avancées en mathématiques appliquées avec focus sur la modélisation mathématique, l'analyse statistique et les méthodes computationnelles. Spécialisé en théorie d'optimisation, analyse numérique et applications mathématiques en science des données."
+      },
+      "ucadBachelors": {
+        "degree": "Licence en Mathématiques",
+        "institution": "Université Cheikh Anta Diop",
+        "location": "Dakar, Sénégal",
+        "duration": "2009-2013",
+        "description": "Fondation en sciences mathématiques, statistiques et pensée analytique. Axé sur la modélisation mathématique, le calcul, l'algèbre linéaire et la théorie des probabilités qui fournit une base analytique solide pour la science des données et l'ingénierie."
+      }
+    }
+  },
+  "certifications": {
+    "title": "Certifications & Titres",
+    "subtitle": "Certifications professionnelles qui valident mon expertise technique et mon engagement dans l'apprentissage continu."
+  },
+  "contact": {
+    "title": "Restons en Contact",
+    "subtitle": "Prêt à transformer votre architecture de données ?",
+    "description": "Je suis toujours intéressé par de nouvelles opportunités, des projets innovants et comment les données peuvent faire avancer votre entreprise.",
+    "cta": "Commencer une Conversation",
+    "email": "cmftall@gmail.com",
+    "phone": "+33 7 67 07 01 79",
+    "location": "Paris, France et Montréal, Canada",
+    "form": {
+      "nameLabel": "Nom",
+      "namePlaceholder": "Votre nom",
+      "emailLabel": "Email",
+      "emailPlaceholder": "votre.email@exemple.com",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Parlez-moi de votre projet...",
+      "submitButton": "Envoyer le Message"
+    },
+    "quickLinks": {
+      "title": "Liens Rapides",
+      "linkedinProfile": "Profil LinkedIn",
+      "githubPortfolio": "Portfolio GitHub"
+    }
+  },
+  "footer": {
+    "description": "Architecte de Données Senior passionné par la transformation des entreprises grâce à des solutions de données innovantes.",
+    "rights": "Tous droits réservés.",
+    "builtWith": "Construit avec Next.js, TypeScript et Tailwind CSS",
+    "quickLinks": "Liens Rapides",
+    "contact": "Contact"
+  },
+  "common": {
+    "technologies": "Technologies",
+    "duration": "Durée",
+    "impact": "Impact",
+    "learnMore": "En Savoir Plus",
+    "viewProject": "Voir le Projet",
+    "viewDetails": "Voir les Détails"
+  }
+}
