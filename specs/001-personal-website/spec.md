@@ -157,6 +157,33 @@ A potential client discovers Fallou through search engines when looking for data
 - Q: Social Proof Strategy → A: No testimonials available, focus on project achievements and technical credibility
 - Q: Content Priority Strategy → A: Focus on detailed project case studies and technical achievements over blog content
 
+## Learnings & Experience *(from development process)*
+
+### Content Management Insights
+- **Real vs. Placeholder Content**: Users prefer authentic, real-world content over placeholder text. The transition from generic placeholders to actual CV-based content significantly improved the website's credibility and professional appeal.
+- **Content Iteration Process**: Content updates require careful coordination across multiple files (constants, translations, JSON data). Changes should be made systematically to maintain consistency.
+- **Role Clarity Matters**: Precise role descriptions (e.g., "leading a team within the Data Center of Excellence" vs. "leading the Data Center of Excellence") are crucial for professional accuracy and credibility.
+
+### Technical Development Learnings
+- **Production Readiness Assessment**: A "brutally honest" approach to production readiness assessment helps identify critical issues early. Key areas to evaluate include ESLint configuration, error handling, security headers, performance monitoring, and accessibility.
+- **Git Repository Management**: Clean git history and proper branch management are essential for professional development. Submodule issues can create significant deployment problems and should be avoided.
+- **Dependency Management**: Missing dependencies (like `next-themes`) can cause build failures in production even when local development works. All dependencies should be explicitly declared and tested.
+
+### Deployment Experience
+- **Static Export Challenges**: Next.js static export with Vercel requires specific configuration. The `routes-manifest.json` error is common when Vercel tries to use server-side features with static exports.
+- **Framework Detection Issues**: Vercel's automatic framework detection can cause problems with static sites. Explicitly setting `"framework": null` in vercel.json helps avoid server-side processing.
+- **Domain Strategy**: Not having a custom domain initially is perfectly acceptable. Vercel provides free domains that work immediately, and custom domains can be added later.
+
+### User Experience Insights
+- **Development vs. Production**: Users expect immediate feedback when development servers don't work. Quick resolution of development environment issues builds trust and confidence.
+- **CI/CD Value**: Automated deployment pipelines provide peace of mind and professional workflow. Users appreciate the transparency of automated builds and deployments.
+- **Documentation Importance**: Comprehensive deployment guides and troubleshooting documentation reduce user anxiety and enable self-service problem resolution.
+
+### Professional Development Process
+- **Iterative Improvement**: The development process benefits from multiple rounds of assessment and improvement. Each iteration builds on previous learnings and refines the solution.
+- **User-Centric Approach**: Prioritizing user requests (like "don't change content and structure") while fixing technical issues demonstrates respect for user preferences and builds collaborative relationships.
+- **Transparency in Communication**: Clear, honest communication about issues and solutions helps users understand the development process and builds confidence in the final product.
+
 ## Assumptions
 
 - Fallou TALL is the primary content owner and will provide profile photo and any additional content
@@ -167,3 +194,6 @@ A potential client discovers Fallou through search engines when looking for data
 - Contact information provided (email, phone) is current and actively monitored
 - Blog content will be managed through static markdown files in `/content` directory structure, processed at build time
 - Professional headshot/avatar will be provided or a placeholder will be used initially
+- Users may not have custom domains initially and will use platform-provided domains
+- Development environment issues should be resolved before production deployment
+- All dependencies must be explicitly declared to prevent production build failures
