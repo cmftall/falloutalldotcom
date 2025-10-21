@@ -46,7 +46,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./website/out
-          cname: falloutall.com # Replace with your custom domain
+          # No custom domain - will use GitHub Pages default URL
 
       # Netlify Deployment
       - name: Deploy to Netlify

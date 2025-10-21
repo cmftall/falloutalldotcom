@@ -19,8 +19,8 @@
 
 ## ✅ Verification
 
-- **Live URL**: `https://falloutalldotcom.vercel.app`
-- **Sitemap**: `https://falloutalldotcom.vercel.app/sitemap.xml`
+- **Live URL**: `https://falloutalldotcom-xxxxx.vercel.app` (Vercel assigns unique URL)
+- **Sitemap**: `https://falloutalldotcom-xxxxx.vercel.app/sitemap.xml`
 - **Build Size**: 154 kB (verified ✅)
 
 ## 🔧 Troubleshooting

@@ -69,7 +69,7 @@ GOOGLE_VERIFICATION_CODE=your_verification_code
 
 1. **Click "Deploy"**
 2. **Wait for build** (2-3 minutes)
-3. **Get your live URL**: `https://falloutalldotcom.vercel.app`
+3. **Get your live URL**: `https://falloutalldotcom-xxxxx.vercel.app` (Vercel will assign a unique URL)
 
 ---
 
@@ -99,17 +99,17 @@ vercel --prod
 
 ---
 
-## 🌐 Custom Domain Setup (Optional)
+## 🌐 Custom Domain Setup (Optional - Skip if you don't have a domain)
 
-### **Step 1: Add Domain in Vercel**
+**Note**: You can skip this section if you don't have a custom domain. Vercel will provide a free domain like `https://falloutalldotcom-xxxxx.vercel.app`
+
+### **If you get a domain later:**
 
 1. **Go to Project Settings → Domains**
-2. **Add your domain**: `falloutall.com`
+2. **Add your domain**: `yourdomain.com`
 3. **Configure DNS** as instructed
 
-### **Step 2: DNS Configuration**
-
-Add these DNS records:
+### **DNS Configuration (when you have a domain):**
 
 ```
 Type: A
@@ -127,9 +127,9 @@ Value: cname.vercel-dns.com
 
 ### **Check These URLs:**
 
-✅ **Homepage**: `https://your-project.vercel.app`  
-✅ **Sitemap**: `https://your-project.vercel.app/sitemap.xml`  
-✅ **404 Page**: `https://your-project.vercel.app/nonexistent`  
+✅ **Homepage**: `https://falloutalldotcom-xxxxx.vercel.app` (your assigned URL)  
+✅ **Sitemap**: `https://falloutalldotcom-xxxxx.vercel.app/sitemap.xml`  
+✅ **404 Page**: `https://falloutalldotcom-xxxxx.vercel.app/nonexistent`  
 ✅ **Performance**: Run Lighthouse audit  
 
 ### **Expected Results:**
@@ -178,7 +178,7 @@ Once set up, Vercel will automatically:
 ## 🎉 Success!
 
 Your website will be live at:
-**`https://falloutalldotcom.vercel.app`**
+**`https://falloutalldotcom-xxxxx.vercel.app`** (Vercel will assign a unique URL)
 
 ### **Next Steps:**
 
