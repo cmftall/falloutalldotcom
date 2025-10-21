@@ -64,6 +64,8 @@ const nextConfig: NextConfig = {
 if (process.env.NODE_ENV === 'production') {
   nextConfig.output = 'export'
   nextConfig.trailingSlash = true
+  nextConfig.distDir = 'out'
+  nextConfig.assetPrefix = ''
 }
 
 export default nextConfig
