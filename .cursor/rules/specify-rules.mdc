@@ -1,0 +1,29 @@
+# falloutalldotcom Development Guidelines
+
+Auto-generated from all feature plans. Last updated: 2025-10-19
+
+## Active Technologies
+- TypeScript 5.0+, JavaScript ES2022+ + Next.js 14+, React 18+, Tailwind CSS 3.4+, Framer Motion 10+ (001-personal-website)
+- TypeScript 5.0+, JavaScript ES2022+ + Next.js 15+, React 18+, Tailwind CSS 3.4+, Framer Motion 10+ (001-personal-website)
+- Static files (markdown for blog posts in `/content` directory, JSON for project data) (001-personal-website)
+
+## Project Structure
+```
+backend/
+frontend/
+tests/
+```
+
+## Commands
+npm test && npm run lint
+
+## Code Style
+TypeScript 5.0+, JavaScript ES2022+: Follow standard conventions
+
+## Recent Changes
+- 001-personal-website: Added TypeScript 5.0+, JavaScript ES2022+ + Next.js 15+, React 18+, Tailwind CSS 3.4+, Framer Motion 10+
+- 001-personal-website: Added TypeScript 5.0+, JavaScript ES2022+ + Next.js 15+, React 18+, Tailwind CSS 3.4+, Framer Motion 10+
+- 001-personal-website: Added TypeScript 5.0+, JavaScript ES2022+ + Next.js 14+, React 18+, Tailwind CSS 3.4+, Framer Motion 10+
+
+<!-- MANUAL ADDITIONS START -->
+<!-- MANUAL ADDITIONS END -->
