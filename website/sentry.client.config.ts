@@ -31,7 +31,7 @@ Sentry.init({
   release: process.env.VERCEL_GIT_COMMIT_SHA || 'development',
   
   // Filter out non-errors
-  beforeSend(event, hint) {
+  beforeSend(event: any, hint: any) {
     // Filter out non-errors in production
     if (process.env.NODE_ENV === 'production' && event.level !== 'error') {
       return null
