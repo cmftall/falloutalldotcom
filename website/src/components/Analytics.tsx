@@ -3,8 +3,12 @@
 import { useEffect } from 'react'
 import { initGoogleAnalytics, initPlausible, trackWebVitals } from '@/lib/analytics'
 import { initErrorTracking } from '@/lib/error-monitoring'
+import { useWebVitals } from '@/lib/performance'
 
 export function Analytics() {
+  // Initialize performance monitoring
+  useWebVitals()
+
   useEffect(() => {
     // Initialize error tracking in all environments
     initErrorTracking()
@@ -25,7 +29,7 @@ export function Analytics() {
     }
 
     // Track Core Web Vitals
-    if ('web-vitals' in window) {
+    if (typeof window !== 'undefined' && 'web-vitals' in window) {
       import('web-vitals').then(({ onCLS, onINP, onFCP, onLCP, onTTFB }) => {
         onCLS(trackWebVitals)
         onINP(trackWebVitals)

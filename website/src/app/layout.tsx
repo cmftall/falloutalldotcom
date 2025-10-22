@@ -2,15 +2,8 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/lib/theme-provider'
-import { Header } from '@/components/layout/Header'
-import { ErrorBoundary } from '@/components/ErrorBoundary'
 import { Analytics } from '@/components/Analytics'
-import dynamic from 'next/dynamic'
-
-// Lazy load Footer
-const Footer = dynamic(() => import('@/components/layout/Footer').then(mod => ({ default: mod.Footer })), {
-  loading: () => <div className="animate-pulse bg-muted h-16"></div>
-})
+import { ErrorBoundary } from '@/components/ErrorBoundary'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -77,85 +70,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: 'Fallou TALL',
-    jobTitle: 'Senior Data Architect & Lead Data Engineer',
-    description: 'Senior Data Architect with 8+ years of experience leading enterprise transformations. I design cloud-native solutions that process petabytes of data and deliver measurable business impact.',
-    url: 'https://falloutall.com',
-    image: 'https://falloutall.com/og-image.svg',
-    sameAs: [
-      'https://www.linkedin.com/in/cmftall',
-      'https://www.github.com/cmftall'
-    ],
-    address: [
-      {
-        '@type': 'PostalAddress',
-        addressLocality: 'Paris',
-        addressCountry: 'France'
-      },
-      {
-        '@type': 'PostalAddress',
-        addressLocality: 'Montreal',
-        addressCountry: 'Canada'
-      }
-    ],
-    email: 'cmftall@gmail.com',
-    telephone: '+33 7 67 07 01 79',
-    worksFor: {
-      '@type': 'Organization',
-      name: 'Sopra Steria',
-      url: 'https://www.soprasteria.fr'
-    },
-    knowsAbout: [
-      'Data Architecture',
-      'Cloud Platforms',
-      'Machine Learning',
-      'DataOps',
-      'Azure Data Factory',
-      'AWS Glue',
-      'Databricks',
-      'Python',
-      'Apache Spark',
-      'SQL',
-      'Terraform',
-      'Kubernetes',
-      'Apache Kafka',
-      'Snowflake',
-      'Enterprise Data'
-    ],
-    alumniOf: [
-      {
-        '@type': 'EducationalOrganization',
-        name: 'African Institute for Mathematical Sciences (AIMS)',
-        location: 'Sénégal'
-      },
-      {
-        '@type': 'EducationalOrganization',
-        name: 'Université Cheikh Anta Diop',
-        location: 'Dakar, Sénégal'
-      }
-    ],
-    hasOccupation: {
-      '@type': 'Occupation',
-      name: 'Data Architect',
-      description: 'Designing and implementing enterprise data architectures for large organizations',
-      occupationLocation: {
-        '@type': 'City',
-        name: 'Paris, France'
-      }
-    }
-  }
-
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
@@ -164,14 +80,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ErrorBoundary>
-            <div className="min-h-screen bg-background">
-              <Header />
-              <main className="flex-1">
-                {children}
-              </main>
-              <Footer />
-            </div>
             <Analytics />
+            {children}
           </ErrorBoundary>
         </ThemeProvider>
       </body>

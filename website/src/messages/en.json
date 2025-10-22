@@ -1,0 +1,161 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "work": "Work",
+    "expertise": "Expertise",
+    "education": "Education",
+    "certifications": "Certifications",
+    "contact": "Contact"
+  },
+  "hero": {
+    "headline": "I architect data ecosystems that transform enterprises.",
+    "subheadline": "Senior Data Architect at Sopra Steria • 8+ years leading enterprise transformations",
+    "primaryCta": "View My Work",
+    "secondaryCta": "Get In Touch",
+    "credential": "Data Architect • Paris, France et Montreal Canada"
+  },
+  "expertise": {
+    "title": "Expertise",
+    "subtitle": "Core competencies across the modern data stack",
+        "categories": {
+          "cloudPlatforms": {
+            "name": "Cloud Platforms",
+            "skills": "Azure, AWS, Databricks, Snowflake, Apache Spark"
+          },
+          "dataEngineering": {
+            "name": "Data Engineering",
+            "skills": "Python, Scala, SQL, Apache Airflow, Terraform"
+          },
+          "machineLearning": {
+            "name": "Machine Learning",
+            "skills": "Scikit-Learn, TensorFlow, Pandas, NumPy, MLflow"
+          },
+          "databases": {
+            "name": "Databases",
+            "skills": "PostgreSQL, Oracle, Cassandra, MongoDB, Delta Lake"
+          },
+          "visualization": {
+            "name": "Visualization",
+            "skills": "Tableau, Power BI, Jupyter, Streamlit, Plotly"
+          },
+          "devops": {
+            "name": "DevOps",
+            "skills": "GitHub Actions, Azure DevOps, Docker, Kubernetes, DataOps"
+          }
+        }
+  },
+  "education": {
+    "title": "Education Background",
+    "subtitle": "Academic foundation in mathematical sciences and big data technologies",
+    "continuousLearning": {
+      "title": "Continuous Learning",
+      "description": "My educational background in mathematical sciences provides a strong foundation for data architecture. I continuously stay updated with the latest technologies and methodologies through professional certifications, industry conferences, and hands-on project experience."
+    },
+    "degrees": {
+      "aims-masters-bigdata": {
+        "degree": "Cooperative Master in Mathematical Sciences - Big Data specialization",
+        "institution": "African Institute for Mathematical Sciences (AIMS)",
+        "location": "Senegal",
+        "duration": "2016-2018",
+        "year": "2018",
+        "description": "Cooperative master's program specialized in Big Data technologies, statistical analysis and machine learning. Industrial projects focused on data architecture, analytics and real-world applications of mathematical sciences in data engineering."
+      },
+      "ucad-masters-applied": {
+        "degree": "Master in Applied Mathematics",
+        "institution": "Cheikh Anta Diop University",
+        "location": "Dakar, Senegal",
+        "duration": "2014-2016",
+        "year": "2016",
+        "description": "Advanced studies in applied mathematics with focus on mathematical modeling, statistical analysis and computational methods. Specialization in optimization theory, numerical analysis and mathematical applications in data science."
+      },
+      "ucad-bachelors": {
+        "degree": "Bachelor in Mathematics",
+        "institution": "Cheikh Anta Diop University",
+        "location": "Dakar, Senegal",
+        "duration": "2009-2013",
+        "year": "2013",
+        "description": "Foundation in mathematical sciences, statistics and analytical thinking. Focus on mathematical modeling, calculus, linear algebra and probability theory which provides a solid analytical base for data science and engineering."
+      }
+    }
+  },
+  "certifications": {
+    "title": "Certifications & Credentials",
+    "subtitle": "Professional certifications that validate my technical expertise and commitment to continuous learning.",
+    "viewDetails": "View Details"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's discuss how I can help transform your data landscape",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "languages": "Languages",
+    "quickLinks": "Quick Links",
+    "linkedinProfile": "LinkedIn Profile",
+    "githubPortfolio": "GitHub Portfolio",
+    "message": "Message",
+    "messagePlaceholder": "Tell me about your project...",
+    "sendMessage": "Send Message"
+  },
+  "footer": {
+    "copyright": "© 2025 Fallou TALL. All rights reserved.",
+    "builtWith": "Built with Next.js and Tailwind CSS"
+  },
+  "work": {
+    "title": "Selected Projects",
+    "subtitle": "Enterprise transformations that deliver measurable impact",
+    "projects": {
+      "sopra-steria": {
+        "company": "Sopra Steria",
+        "role": "Data Architect",
+        "description": "Leading a team within the Data Center of Excellence across 8+ client sectors including Banking, Insurance, and Telecom.",
+        "impact": "Multi-cloud architecture • TB+ data processing • Cross-industry compliance"
+      },
+      "bnc": {
+        "company": "Banque Nationale du Canada",
+        "role": "Lead Data Engineer",
+        "description": "Led team of 7 engineers building robust analytical pipelines with innovative PySpark QA frameworks.",
+        "impact": "30% error reduction • 25% efficiency improvement • 40% faster testing"
+      },
+      "onepoint": {
+        "company": "Onepoint",
+        "role": "Consultant Expert Data",
+        "description": "Delivered technical, organizational, and governance audits for enterprise data platforms across Canada and France. Designed modern, scalable architectures for Fortune 500 companies.",
+        "impact": "Fortune 500 clients • DataOps automation • Security compliance • Performance optimization"
+      },
+      "orange-ivory": {
+        "company": "Orange Côte d'Ivoire",
+        "role": "Lead Data Engineer",
+        "description": "Led zero-downtime migration of data workflows to new Hadoop cluster. Developed productivity tools and orchestrated complex data pipelines.",
+        "impact": "Zero-downtime migration • 20% productivity improvement • Spark2 upgrade • Oozie orchestration"
+      },
+      "orange-senegal": {
+        "company": "Orange Sénégal",
+        "role": "Senior Data Engineer & Data Scientist",
+        "description": "Developed ML models for customer experience management and QoE prediction.",
+        "impact": "15% customer satisfaction improvement • 30% processing time reduction"
+      }
+    }
+  },
+  "stats": {
+    "yearsExperience": "Years Experience",
+    "technologiesMastered": "Technologies Mastered",
+    "enterpriseProjects": "Enterprise Projects"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "close": "Close",
+    "open": "Open",
+    "readMore": "Read More",
+    "viewProject": "View Project",
+    "learnMore": "Learn More",
+    "pageNotFound": "Page Not Found",
+    "pageNotFoundDescription": "Sorry, the page you're looking for doesn't exist or has been moved.",
+    "goHome": "Go Home",
+    "goBack": "Go Back",
+    "tryThesePages": "Or try one of these pages:"
+  }
+}
