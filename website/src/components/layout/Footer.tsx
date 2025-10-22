@@ -7,7 +7,7 @@ import { useI18n } from '@/components/providers/I18nProvider'
 import { SITE_CONFIG, CONTACT_INFO } from '@/lib/constants'
 
 export function Footer() {
-  const currentYear = new Date().getFullYear()
+  // const currentYear = new Date().getFullYear()
   const { t } = useI18n()
 
   return (

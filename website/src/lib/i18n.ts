@@ -40,7 +40,7 @@ export async function loadMessages(locale: Locale) {
 }
 
 // Translation hook for client components
-export function useTranslations(namespace?: string) {
+export function useTranslations() {
   if (typeof window === 'undefined') {
     return () => ''
   }
@@ -50,18 +50,17 @@ export function useTranslations(namespace?: string) {
 }
 
 // Server-side translation function
-export function getTranslation(messages: any, key: string, namespace?: string): string {
-  const fullKey = namespace ? `${namespace}.${key}` : key
-  const keys = fullKey.split('.')
+export function getTranslation(messages: any, key: string): string {
+  const keys = key.split('.')
   
   let result = messages
   for (const k of keys) {
     if (result && typeof result === 'object' && k in result) {
       result = result[k]
     } else {
-      return fullKey // Return key if translation not found
+      return key // Return key if translation not found
     }
   }
   
-  return typeof result === 'string' ? result : fullKey
+  return typeof result === 'string' ? result : key
 }
