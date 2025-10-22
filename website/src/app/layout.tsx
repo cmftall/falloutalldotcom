@@ -80,8 +80,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ErrorBoundary>
-            <Analytics />
             {children}
+            <Analytics />
           </ErrorBoundary>
         </ThemeProvider>
       </body>

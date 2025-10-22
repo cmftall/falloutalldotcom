@@ -35,14 +35,11 @@ export function Header() {
             <span className="font-bold text-lg text-slate-900 dark:text-white">{SITE_CONFIG.name}</span>
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation - Hidden on mobile */}
           <nav className="hidden md:flex items-center space-x-8">
             {[
               { href: '#home', key: 'home' },
               { href: '#work', key: 'work' },
-              { href: '#expertise', key: 'expertise' },
-              { href: '#education', key: 'education' },
-              { href: '#certifications', key: 'certifications' },
               { href: '#contact', key: 'contact' }
             ].map((item) => (
               <button
@@ -55,11 +52,11 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Desktop Actions */}
+          {/* Desktop Actions - Hidden on mobile */}
           <div className="hidden md:flex items-center space-x-4">
             <LanguageSelector />
             <ThemeToggle />
-            <Button 
+            <Button
               onClick={() => scrollToSection('#contact')}
               className="bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-gray-100 px-6 py-2 rounded-lg font-medium transition-colors duration-200"
             >
@@ -67,8 +64,8 @@ export function Header() {
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center space-x-2">
+          {/* Mobile Actions - Only visible on mobile */}
+          <div className="flex md:hidden items-center space-x-2">
             <LanguageSelector size="sm" />
             <ThemeToggle />
             <Button
@@ -86,28 +83,25 @@ export function Header() {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - Only visible on mobile when menu is open */}
         {isMenuOpen && (
           <div className="md:hidden border-t border-slate-200 dark:border-slate-700 bg-white/95 dark:bg-slate-900/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-slate-900/60">
             <nav className="flex flex-col space-y-2 py-4">
-            {[
-              { href: '#home', key: 'home' },
-              { href: '#work', key: 'work' },
-              { href: '#expertise', key: 'expertise' },
-              { href: '#education', key: 'education' },
-              { href: '#certifications', key: 'certifications' },
-              { href: '#contact', key: 'contact' }
-            ].map((item) => (
-              <button
-                key={item.href}
-                onClick={() => scrollToSection(item.href)}
-                className="px-4 py-2 text-sm font-medium text-slate-600 dark:text-gray-300 hover:text-slate-900 dark:hover:text-white transition-colors text-left"
-              >
-                {t(`navigation.${item.key}`)}
-              </button>
+              {[
+                { href: '#home', key: 'home' },
+                { href: '#work', key: 'work' },
+                { href: '#contact', key: 'contact' }
+              ].map((item) => (
+                <button
+                  key={item.href}
+                  onClick={() => scrollToSection(item.href)}
+                  className="px-4 py-2 text-sm font-medium text-slate-600 dark:text-gray-300 hover:text-slate-900 dark:hover:text-white transition-colors text-left"
+                >
+                  {t(`navigation.${item.key}`)}
+                </button>
               ))}
               <div className="px-4 pt-4 border-t border-slate-200 dark:border-slate-700">
-                <Button 
+                <Button
                   onClick={() => scrollToSection('#contact')}
                   className="w-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-gray-100"
                 >
