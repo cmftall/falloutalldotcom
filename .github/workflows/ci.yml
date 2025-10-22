@@ -139,7 +139,7 @@ jobs:
   deploy:
     name: Deploy to Production
     runs-on: ubuntu-latest
-    needs: [test, build, security]
+    needs: [test, security, build, lighthouse]
     if: github.ref == 'refs/heads/main'
     
     steps:
@@ -152,11 +152,32 @@ jobs:
         name: static-site
         path: website/out/
         
+    - name: Check Vercel secrets
+      id: check-secrets
+      run: |
+        if [ -z "${{ secrets.VERCEL_TOKEN }}" ]; then
+          echo "VERCEL_TOKEN not set, skipping deployment"
+          echo "skip=true" >> $GITHUB_OUTPUT
+        else
+          echo "VERCEL_TOKEN found, proceeding with deployment"
+          echo "skip=false" >> $GITHUB_OUTPUT
+        fi
+        
     - name: Deploy to Vercel
+      if: steps.check-secrets.outputs.skip == 'false'
       uses: amondnet/vercel-action@v25
       with:
         vercel-token: ${{ secrets.VERCEL_TOKEN }}
-        vercel-org-id: ${{ secrets.ORG_ID }}
-        vercel-project-id: ${{ secrets.PROJECT_ID }}
+        vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+        vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
         working-directory: ./website/out
         vercel-args: '--prod'
+        
+    - name: Skip deployment notice
+      if: steps.check-secrets.outputs.skip == 'true'
+      run: |
+        echo "⚠️  Deployment skipped: Vercel secrets not configured"
+        echo "To enable deployment, add the following secrets to your repository:"
+        echo "- VERCEL_TOKEN"
+        echo "- VERCEL_ORG_ID" 
+        echo "- VERCEL_PROJECT_ID"
