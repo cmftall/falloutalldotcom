@@ -1,9 +1,14 @@
+'use client'
+
 import Link from 'next/link'
 import { Github, Linkedin, Mail } from 'lucide-react'
-import { SITE_CONFIG, CONTACT_INFO, NAV_ITEMS } from '@/lib/constants'
+import { LanguageSelector } from '@/components/ui/LanguageSelector'
+import { useI18n } from '@/components/providers/I18nProvider'
+import { SITE_CONFIG, CONTACT_INFO } from '@/lib/constants'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
+  const { t } = useI18n()
 
   return (
     <footer className="border-t bg-background">
@@ -22,25 +27,32 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div className="space-y-4">
-            <h3 className="font-semibold">Quick Links</h3>
+                 {/* Quick Links */}
+                 <div className="space-y-4">
+                   <h3 className="font-semibold">{t('contact.quickLinks')}</h3>
             <nav className="flex flex-col space-y-2">
-              {NAV_ITEMS.map((item) => (
-                <Link 
-                  key={item.href} 
-                  href={item.href} 
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  {item.label}
-                </Link>
+              {[
+                { href: '#home', key: 'home', label: 'Home' },
+                { href: '#work', key: 'about', label: 'About' },
+                { href: '#expertise', key: 'expertise', label: 'Expertise' },
+                { href: '#education', key: 'education', label: 'Education' },
+                { href: '#certifications', key: 'certifications', label: 'Certifications' },
+                { href: '#contact', key: 'contact', label: 'Contact' }
+              ].map((item) => (
+                       <Link
+                         key={item.href}
+                         href={item.href}
+                         className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                       >
+                         {t(`navigation.${item.key}`)}
+                       </Link>
               ))}
             </nav>
           </div>
 
-          {/* Contact */}
-          <div className="space-y-4">
-            <h3 className="font-semibold">Contact</h3>
+                 {/* Contact */}
+                 <div className="space-y-4">
+                   <h3 className="font-semibold">{t('contact.title')}</h3>
             <div className="space-y-2">
               <p className="text-sm text-muted-foreground">{CONTACT_INFO.location}</p>
               <p className="text-sm text-muted-foreground">{CONTACT_INFO.email}</p>
@@ -77,12 +89,15 @@ export function Footer() {
         </div>
 
                <div className="border-t mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-                 <p className="text-sm text-muted-foreground">
-                   © {currentYear} {SITE_CONFIG.name}. All rights reserved.
-                 </p>
-                 <p className="text-sm text-muted-foreground mt-2 md:mt-0">
-                   Crafted with data, code, and curiosity.
-                 </p>
+                        <p className="text-sm text-muted-foreground">
+                          {t('footer.copyright')}
+                        </p>
+                        <div className="flex items-center gap-4 mt-2 md:mt-0">
+                          <LanguageSelector size="sm" variant="ghost" />
+                          <p className="text-sm text-muted-foreground">
+                            {t('footer.builtWith')}
+                          </p>
+                        </div>
                </div>
       </div>
     </footer>

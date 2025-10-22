@@ -4,8 +4,11 @@ import { motion } from 'framer-motion'
 import { Card, CardContent } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { Mail, MapPin, Phone, Send } from 'lucide-react'
+import { useI18n } from '@/components/providers/I18nProvider'
 
 export function Contact() {
+  const { t } = useI18n()
+  
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     const form = e.target as HTMLFormElement
@@ -32,12 +35,12 @@ export function Contact() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Let's Work Together
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Ready to transform your data architecture? Let's discuss how I can help your organization achieve its data goals.
-            </p>
+                   <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+                     {t('contact.title')}
+                   </h2>
+                   <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                     {t('contact.subtitle')}
+                   </p>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -51,7 +54,31 @@ export function Contact() {
             >
               <div>
                 <h3 className="text-2xl font-bold text-foreground mb-6">
-                  Get In Touch
+                  {t('contact.quickLinks')}
+                </h3>
+                <div className="space-y-4">
+                  <a
+                    href="https://www.linkedin.com/in/cmftall"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-primary hover:text-primary/80 font-medium transition-colors"
+                  >
+                    {t('contact.linkedinProfile')}
+                  </a>
+                  <a
+                    href="https://www.github.com/cmftall"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-primary hover:text-primary/80 font-medium transition-colors"
+                  >
+                    {t('contact.githubPortfolio')}
+                  </a>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold text-foreground mb-6">
+                  {t('contact.title')}
                 </h3>
                 <div className="space-y-6">
                   <div className="flex items-center space-x-4">
@@ -59,7 +86,7 @@ export function Contact() {
                       <Mail className="h-5 w-5" />
                     </div>
                     <div>
-                      <p className="font-medium text-foreground">Email</p>
+                      <p className="font-medium text-foreground">{t('contact.email')}</p>
                       <p className="text-muted-foreground">cmftall@gmail.com</p>
                     </div>
                   </div>
@@ -69,7 +96,7 @@ export function Contact() {
                       <MapPin className="h-5 w-5" />
                     </div>
                     <div>
-                      <p className="font-medium text-foreground">Location</p>
+                      <p className="font-medium text-foreground">{t('contact.location')}</p>
                       <p className="text-muted-foreground">Paris, France & Montreal, Canada</p>
                     </div>
                   </div>
@@ -79,37 +106,12 @@ export function Contact() {
                       <Phone className="h-5 w-5" />
                     </div>
                     <div>
-                      <p className="font-medium text-foreground">Phone</p>
+                      <p className="font-medium text-foreground">{t('contact.phone')}</p>
                       <p className="text-muted-foreground">+33 7 67 07 01 79</p>
                     </div>
                   </div>
                 </div>
               </div>
-
-              {/* Quick Links */}
-              <Card className="bg-card border-0 shadow-lg">
-                <CardContent className="p-6">
-                  <h4 className="font-bold text-card-foreground mb-4">Quick Links</h4>
-                  <div className="space-y-3">
-                    <a 
-                      href="https://www.linkedin.com/in/cmftall" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="block text-primary hover:text-primary/80 transition-colors"
-                    >
-                      LinkedIn Profile
-                    </a>
-                    <a 
-                      href="https://www.github.com/cmftall" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="block text-primary hover:text-primary/80 transition-colors"
-                    >
-                      GitHub Portfolio
-                    </a>
-                  </div>
-                </CardContent>
-              </Card>
             </motion.div>
 
             {/* Contact Form */}
@@ -122,7 +124,7 @@ export function Contact() {
               <Card className="bg-card border-0 shadow-lg">
                 <CardContent className="p-8">
                   <h3 className="text-2xl font-bold text-card-foreground mb-6">
-                    Send a Message
+                    {t('contact.message')}
                   </h3>
                   
                   <form onSubmit={handleSubmit} className="space-y-6">
@@ -164,7 +166,7 @@ export function Contact() {
                         required
                         rows={5}
                         className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-background text-foreground transition-colors resize-none"
-                        placeholder="Tell me about your project..."
+                        placeholder={t('contact.messagePlaceholder')}
                       />
                     </div>
                     
@@ -176,7 +178,7 @@ export function Contact() {
                         type="submit"
                         className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 text-lg font-medium rounded-lg transition-colors duration-200"
                       >
-                        Send Message
+                        {t('contact.sendMessage')}
                         <Send className="ml-2 h-5 w-5" />
                       </Button>
                     </motion.div>

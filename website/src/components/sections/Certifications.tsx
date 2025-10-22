@@ -2,10 +2,12 @@
 
 import { motion } from 'framer-motion'
 import { Card, CardContent } from '@/components/ui/Card'
-import { CERTIFICATIONS_CONTENT } from '@/lib/constants'
+import { useI18n } from '@/components/providers/I18nProvider'
 import { ExternalLink, Award, Building } from 'lucide-react'
 
 export function Certifications() {
+  const { t } = useI18n()
+  
   return (
     <section id="certifications" className="py-24 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -18,17 +20,60 @@ export function Certifications() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              {CERTIFICATIONS_CONTENT.title}
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              {CERTIFICATIONS_CONTENT.subtitle}
-            </p>
+           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+             {t('certifications.title')}
+           </h2>
+           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+             {t('certifications.subtitle')}
+           </p>
           </motion.div>
 
           {/* Certifications Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {CERTIFICATIONS_CONTENT.certifications.map((cert, index) => (
+            {[
+              {
+                id: 'azure-data-engineer',
+                name: 'Azure Data Engineer Associate',
+                issuer: 'Microsoft',
+                url: 'https://learn.microsoft.com/en-us/certifications/azure-data-engineer/'
+              },
+              {
+                id: 'gcp-data-engineer',
+                name: 'Google Cloud Professional Data Engineer',
+                issuer: 'Google',
+                url: 'https://cloud.google.com/certification/data-engineer'
+              },
+              {
+                id: 'databricks-developer',
+                name: 'Databricks Certified Associate Developer for Apache Spark',
+                issuer: 'Databricks',
+                url: 'https://www.databricks.com/learn/certification/apache-spark-developer-associate'
+              },
+              {
+                id: 'deep-learning',
+                name: 'Deep Learning Specialization',
+                issuer: 'deeplearning.ai',
+                url: 'https://www.coursera.org/specializations/deep-learning'
+              },
+              {
+                id: 'databricks-developer-essentials',
+                name: 'Databricks Developer Essentials',
+                issuer: 'Databricks',
+                url: 'https://www.databricks.com/learn/certification/developer-essentials'
+              },
+              {
+                id: 'databricks-developer-foundations',
+                name: 'Databricks Developer Foundations',
+                issuer: 'Databricks',
+                url: 'https://www.databricks.com/learn/certification/developer-foundations'
+              },
+              {
+                id: 'deeplearning-ai-data-engineering',
+                name: 'DeepLearning.AI Data Engineering Professional Certificate',
+                issuer: 'DeepLearning.AI',
+                url: 'https://www.coursera.org/professional-certificates/data-engineering'
+              }
+            ].map((cert, index) => (
               <motion.div
                 key={cert.id}
                 initial={{ opacity: 0, y: 30 }}
@@ -63,7 +108,7 @@ export function Certifications() {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
-                        <span>View Details</span>
+                             <span>{t('certifications.viewDetails')}</span>
                         <ExternalLink className="h-4 w-4" />
                       </motion.a>
                     )}

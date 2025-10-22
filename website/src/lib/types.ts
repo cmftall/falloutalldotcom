@@ -1,69 +1,16 @@
-// Core types for the personal website
+// Re-export types from locale.ts for convenience
+export type { LanguageSource, LanguagePreference } from './locale'
 
-export interface Project {
-  id: string
-  company: string
-  role: string
-  description: string
-  impact: string[]
-  technologies: string[]
-  duration: string
-  imageUrl?: string
-  featured: boolean
-}
+// Define Locale type locally
+export type Locale = 'en' | 'fr'
 
-export interface Service {
-  id: string
-  title: string
-  description: string
-  icon: string
-  order: number
-}
+// Import for internal use
+import type { LanguageSource } from './locale'
 
-export interface BlogPost {
-  slug: string
-  title: string
-  date: string
-  excerpt: string
-  tags: string[]
-  content: string
-  published: boolean
-  featured: boolean
-}
-
-export interface Skill {
-  name: string
-  icon: string
-  proficiency: 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert'
-  yearsExperience: number
-}
-
-export interface SkillCategory {
-  id: string
-  name: string
-  skills: Skill[]
-  order: number
-}
-
-export interface Certification {
-  id: string
-  name: string
-  issuer: string
-  issueDate: string
-  expiryDate?: string
-  credentialId?: string
-  url?: string
-  current: boolean
-}
-
-export interface Education {
-  id: string
-  degree: string
-  institution: string
-  location: string
-  graduationDate: string
-  gpa?: number
-  description?: string
+// Navigation types
+export interface NavItem {
+  label: string
+  href: string
 }
 
 export interface ContactInfo {
@@ -72,41 +19,76 @@ export interface ContactInfo {
   location: string
   languages: string[]
   linkedin: string
-  github?: string
-  twitter?: string
+  github: string
 }
 
-// Navigation types
-export interface NavItem {
-  label: string
-  href: string
-  external?: boolean
+// Additional types for internationalization
+export type ContentNamespace = 
+  | 'navigation'
+  | 'hero'
+  | 'about'
+  | 'expertise'
+  | 'education'
+  | 'certifications'
+  | 'contact'
+  | 'footer'
+  | 'common'
+
+export interface TranslationKey {
+  namespace: ContentNamespace
+  key: string
 }
 
-// Theme types
-export type Theme = 'light' | 'dark' | 'system'
+export interface TranslationOptions {
+  fallback?: string
+  variables?: Record<string, string | number>
+}
 
-// Animation types
-export interface AnimationVariants {
-  hidden: {
-    opacity: number
-    y?: number
-    x?: number
-    scale?: number
+// Language selector component props
+export interface LanguageSelectorProps {
+  currentLocale: string
+  availableLocales: string[]
+  onLanguageChange: (locale: string) => void
+  disabled?: boolean
+  className?: string
+}
+
+// Translation hook return type
+export interface UseTranslationReturn {
+  locale: string
+  t: (key: string, namespace?: ContentNamespace, options?: TranslationOptions) => string
+  changeLanguage: (locale: string) => Promise<void>
+  isLoading: boolean
+  error: string | null
+}
+
+// Language detection result
+export interface LanguageDetectionResult {
+  detectedLocale: string
+  source: LanguageSource
+  confidence: 'high' | 'medium' | 'low'
+}
+
+// Error types
+export class TranslationError extends Error {
+  constructor(
+    message: string,
+    public key: string,
+    public namespace: ContentNamespace,
+    public locale: string
+  ) {
+    super(message)
+    this.name = 'TranslationError'
   }
-  visible: {
-    opacity: number
-    y?: number
-    x?: number
-    scale?: number
-    transition?: {
-      duration?: number
-      delay?: number
-      ease?: string
-    }
-  }
 }
 
-// Utility types
-export type Optional<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>
-export type RequiredFields<T, K extends keyof T> = T & Required<Pick<T, K>>
+export class LanguageDetectionError extends Error {
+  constructor(
+    message: string,
+    public detectedLanguage: string,
+    public supportedLanguages: string[]
+  ) {
+    super(message)
+    this.name = 'LanguageDetectionError'
+  }
+}

@@ -2,10 +2,12 @@
 
 import { motion } from 'framer-motion'
 import { Card, CardContent } from '@/components/ui/Card'
-import { FEATURED_WORK_CONTENT } from '@/lib/constants'
 import { Calendar } from 'lucide-react'
+import { useI18n } from '@/components/providers/I18nProvider'
 
 export function FeaturedWork() {
+  const { t } = useI18n()
+
   return (
     <section id="work" className="py-24 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -19,16 +21,42 @@ export function FeaturedWork() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Selected Projects
+              {t('work.title')}
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Enterprise transformations that deliver measurable impact
+              {t('work.subtitle')}
             </p>
           </motion.div>
 
           {/* Projects Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {FEATURED_WORK_CONTENT.projects.map((project, index) => (
+            {[
+              {
+                id: 'sopra-steria',
+                duration: '2025 - Present',
+                technologies: ['Azure', 'AWS', 'Databricks', 'Python', 'Terraform', 'Snowflake']
+              },
+              {
+                id: 'bnc',
+                duration: '2021 - 2025',
+                technologies: ['Azure', 'AWS', 'Databricks', 'Python', 'Snowflake', 'Spark', 'SQL']
+              },
+              {
+                id: 'onepoint',
+                duration: '2024 - 2025',
+                technologies: ['Azure', 'AWS', 'Databricks', 'Python', 'Snowflake', 'Spark', 'SQL', 'GitHub Actions']
+              },
+              {
+                id: 'orange-ivory',
+                duration: '2020 - 2021',
+                technologies: ['Hadoop', 'Scala', 'Spark', 'Flume', 'Pig', 'Sqoop', 'Oozie']
+              },
+              {
+                id: 'orange-senegal',
+                duration: '2019 - 2020',
+                technologies: ['Hadoop', 'Scala', 'Spark', 'Python', 'Scikit-Learn', 'Tableau']
+              }
+            ].map((project, index) => (
               <motion.div
                 key={project.id}
                 initial={{ opacity: 0, y: 30 }}
@@ -43,10 +71,10 @@ export function FeaturedWork() {
                     <div className="flex items-start justify-between mb-4">
                       <div>
                         <h3 className="text-xl font-bold text-card-foreground mb-1 group-hover:text-primary transition-colors">
-                          {project.company}
+                          {t(`work.projects.${project.id}.company`)}
                         </h3>
                         <p className="text-muted-foreground font-medium">
-                          {project.role}
+                          {t(`work.projects.${project.id}.role`)}
                         </p>
                       </div>
                       <div className="flex items-center space-x-2 text-sm text-muted-foreground">
@@ -57,13 +85,13 @@ export function FeaturedWork() {
 
                     {/* Description */}
                     <p className="text-card-foreground leading-relaxed mb-4">
-                      {project.description}
+                      {t(`work.projects.${project.id}.description`)}
                     </p>
 
                     {/* Impact */}
                     <div className="bg-gradient-to-r from-muted to-muted/50 rounded-lg p-4 mb-6">
                       <p className="text-sm font-medium text-card-foreground">
-                        {project.impact}
+                        {t(`work.projects.${project.id}.impact`)}
                       </p>
                     </div>
                   </div>

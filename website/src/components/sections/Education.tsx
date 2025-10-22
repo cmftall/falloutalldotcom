@@ -2,10 +2,12 @@
 
 import { motion } from 'framer-motion'
 import { Card, CardContent } from '@/components/ui/Card'
-import { EDUCATION_CONTENT } from '@/lib/constants'
+import { useI18n } from '@/components/providers/I18nProvider'
 import { GraduationCap, MapPin, Calendar } from 'lucide-react'
 
 export function Education() {
+  const { t } = useI18n()
+  
   return (
     <section id="education" className="py-24 bg-background">
       <div className="container mx-auto px-4">
@@ -18,19 +20,23 @@ export function Education() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              {EDUCATION_CONTENT.title}
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Academic foundation in mathematical sciences and big data technologies.
-            </p>
+           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+             {t('education.title')}
+           </h2>
+           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+             {t('education.subtitle')}
+           </p>
           </motion.div>
 
           {/* Education Timeline */}
           <div className="space-y-8">
-            {EDUCATION_CONTENT.education.map((edu, index) => (
+            {[
+              'aims-masters-bigdata',
+              'ucad-masters-applied',
+              'ucad-bachelors'
+            ].map((eduId, index) => (
               <motion.div
-                key={edu.id}
+                key={eduId}
                 initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
@@ -47,27 +53,27 @@ export function Education() {
                           </div>
                           <div>
                             <h3 className="text-2xl font-bold text-card-foreground mb-2 group-hover:text-primary transition-colors">
-                              {edu.degree}
+                              {t(`education.degrees.${eduId}.degree`)}
                             </h3>
                             <div className="space-y-2">
                               <div className="flex items-center space-x-2 text-muted-foreground">
                                 <MapPin className="h-4 w-4" />
-                                <span className="font-medium">{edu.institution}</span>
+                                <span className="font-medium">{t(`education.degrees.${eduId}.institution`)}</span>
                               </div>
                               <div className="flex items-center space-x-2 text-muted-foreground">
                                 <Calendar className="h-4 w-4" />
-                                <span>{edu.location} • {edu.duration}</span>
+                                <span>{t(`education.degrees.${eduId}.location`)} • {t(`education.degrees.${eduId}.duration`)}</span>
                               </div>
                             </div>
                           </div>
                         </div>
                         <p className="text-muted-foreground leading-relaxed">
-                          {edu.description}
+                          {t(`education.degrees.${eduId}.description`)}
                         </p>
                       </div>
                       <div className="flex-shrink-0">
                         <span className="inline-flex items-center rounded-full bg-gradient-to-r from-blue-500 to-purple-600 px-4 py-2 text-sm font-semibold text-white">
-                          {edu.year}
+                          {t(`education.degrees.${eduId}.year`)}
                         </span>
                       </div>
                     </div>
@@ -87,11 +93,9 @@ export function Education() {
           >
             <Card className="bg-gradient-to-r from-primary to-primary/80 border-0 text-primary-foreground">
               <CardContent className="p-8 text-center">
-                <h3 className="text-2xl font-bold mb-4">Continuous Learning</h3>
+                <h3 className="text-2xl font-bold mb-4">{t('education.continuousLearning.title')}</h3>
                 <p className="text-primary-foreground/80 leading-relaxed max-w-2xl mx-auto">
-                  My educational background in mathematical sciences provides a strong foundation for data architecture. 
-                  I continuously stay updated with the latest technologies and methodologies through professional 
-                  certifications, industry conferences, and hands-on project experience.
+                  {t('education.continuousLearning.description')}
                 </p>
               </CardContent>
             </Card>

@@ -1,5 +1,7 @@
-// Error monitoring utilities for production
+// Error monitoring utilities for production with Sentry integration
 'use client'
+
+import * as Sentry from '@sentry/nextjs'
 
 interface ErrorInfo {
   message: string
@@ -10,7 +12,7 @@ interface ErrorInfo {
   url: string
 }
 
-// Simple error logging service (replace with Sentry, LogRocket, etc. in production)
+// Enhanced error logging service with Sentry
 export function logError(error: Error, errorInfo?: any) {
   if (process.env.NODE_ENV !== 'production') {
     console.error('Error caught:', error, errorInfo)
@@ -26,14 +28,16 @@ export function logError(error: Error, errorInfo?: any) {
     url: window.location.href,
   }
 
-  // Send to your error monitoring service
-  // Example: Sentry.captureException(error, { extra: errorData })
+  // Send to Sentry
+  Sentry.captureException(error, {
+    extra: errorData as Record<string, any>,
+    tags: {
+      component: errorInfo?.componentName || 'unknown',
+    },
+  })
   
-  // For now, log to console in production (replace with actual service)
+  // Also log to console for debugging
   console.error('Production Error:', errorData)
-  
-  // You could also send to a custom endpoint
-  // fetch('/api/errors', { method: 'POST', body: JSON.stringify(errorData) })
 }
 
 // Track unhandled promise rejections
@@ -58,4 +62,35 @@ export function trackUncaughtErrors() {
 export function initErrorTracking() {
   trackUnhandledRejections()
   trackUncaughtErrors()
+}
+
+// Additional Sentry utilities
+export function logInfo(message: string, context?: Record<string, any>) {
+  console.info('Info:', message, context)
+  Sentry.addBreadcrumb({
+    message,
+    level: 'info',
+    data: context,
+  })
+}
+
+export function logWarning(message: string, context?: Record<string, any>) {
+  console.warn('Warning:', message, context)
+  Sentry.addBreadcrumb({
+    message,
+    level: 'warning',
+    data: context,
+  })
+}
+
+export function setUserContext(user: { id?: string; email?: string; username?: string }) {
+  Sentry.setUser(user)
+}
+
+export function setTag(key: string, value: string) {
+  Sentry.setTag(key, value)
+}
+
+export function setContext(key: string, context: Record<string, any>) {
+  Sentry.setContext(key, context)
 }

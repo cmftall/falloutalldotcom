@@ -1,0 +1,161 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "about": "À propos",
+    "work": "Travail",
+    "expertise": "Expertise",
+    "education": "Formation",
+    "certifications": "Certifications",
+    "contact": "Contact"
+  },
+  "hero": {
+    "headline": "J'architecte des écosystèmes de données qui transforment les entreprises.",
+    "subheadline": "Architecte de données senior chez Sopra Steria • 8+ ans à diriger des transformations d'entreprise",
+    "primaryCta": "Voir mon travail",
+    "secondaryCta": "Me contacter",
+    "credential": "Architecte de données • Paris, France et Montréal Canada"
+  },
+  "expertise": {
+    "title": "Expertise",
+    "subtitle": "Compétences clés à travers la stack de données moderne",
+        "categories": {
+          "cloudPlatforms": {
+            "name": "Plateformes Cloud",
+            "skills": "Azure, AWS, Databricks, Snowflake, Apache Spark"
+          },
+          "dataEngineering": {
+            "name": "Ingénierie des Données",
+            "skills": "Python, Scala, SQL, Apache Airflow, Terraform"
+          },
+          "machineLearning": {
+            "name": "Apprentissage Automatique",
+            "skills": "Scikit-Learn, TensorFlow, Pandas, NumPy, MLflow"
+          },
+          "databases": {
+            "name": "Bases de Données",
+            "skills": "PostgreSQL, Oracle, Cassandra, MongoDB, Delta Lake"
+          },
+          "visualization": {
+            "name": "Visualisation",
+            "skills": "Tableau, Power BI, Jupyter, Streamlit, Plotly"
+          },
+          "devops": {
+            "name": "DevOps",
+            "skills": "GitHub Actions, Azure DevOps, Docker, Kubernetes, DataOps"
+          }
+        }
+  },
+  "education": {
+    "title": "Formation Académique",
+    "subtitle": "Fondation académique en sciences mathématiques et technologies de big data",
+    "continuousLearning": {
+      "title": "Apprentissage Continu",
+      "description": "Mon parcours éducatif en sciences mathématiques fournit une base solide pour l'architecture de données. Je me tiens constamment à jour avec les dernières technologies et méthodologies grâce aux certifications professionnelles, conférences industrielles et expérience pratique sur projets."
+    },
+    "degrees": {
+      "aims-masters-bigdata": {
+        "degree": "Master Coopératif en Sciences Mathématiques - spécialisation Big Data",
+        "institution": "African Institute for Mathematical Sciences (AIMS)",
+        "location": "Sénégal",
+        "duration": "2016-2018",
+        "year": "2018",
+        "description": "Programme de master coopératif spécialisé dans les technologies Big Data, l'analyse statistique et l'apprentissage automatique. Projets industriels axés sur l'architecture de données, l'analytique et les applications réelles des sciences mathématiques en ingénierie des données."
+      },
+      "ucad-masters-applied": {
+        "degree": "Master en Mathématiques Appliquées",
+        "institution": "Université Cheikh Anta Diop",
+        "location": "Dakar, Sénégal",
+        "duration": "2014-2016",
+        "year": "2016",
+        "description": "Études avancées en mathématiques appliquées avec focus sur la modélisation mathématique, l'analyse statistique et les méthodes computationnelles. Spécialisation en théorie de l'optimisation, analyse numérique et applications mathématiques en science des données."
+      },
+      "ucad-bachelors": {
+        "degree": "Licence en Mathématiques",
+        "institution": "Université Cheikh Anta Diop",
+        "location": "Dakar, Sénégal",
+        "duration": "2009-2013",
+        "year": "2013",
+        "description": "Fondation en sciences mathématiques, statistiques et pensée analytique. Focus sur la modélisation mathématique, le calcul, l'algèbre linéaire et la théorie des probabilités qui fournit une base analytique solide pour la science des données et l'ingénierie."
+      }
+    }
+  },
+  "certifications": {
+    "title": "Certifications et Titres",
+    "subtitle": "Certifications professionnelles qui valident mon expertise technique et mon engagement envers l'apprentissage continu.",
+    "viewDetails": "Voir les détails"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Discutons de comment je peux aider à transformer votre paysage de données",
+    "email": "Email",
+    "phone": "Téléphone",
+    "location": "Localisation",
+    "languages": "Langues",
+    "quickLinks": "Liens Rapides",
+    "linkedinProfile": "Profil LinkedIn",
+    "githubPortfolio": "Portfolio GitHub",
+    "message": "Message",
+    "messagePlaceholder": "Parlez-moi de votre projet...",
+    "sendMessage": "Envoyer le Message"
+  },
+  "footer": {
+    "copyright": "© 2025 Fallou TALL. Tous droits réservés.",
+    "builtWith": "Construit avec Next.js et Tailwind CSS"
+  },
+  "work": {
+    "title": "Projets Sélectionnés",
+    "subtitle": "Transformations d'entreprise qui apportent un impact mesurable",
+    "projects": {
+      "sopra-steria": {
+        "company": "Sopra Steria",
+        "role": "Architecte de Données",
+        "description": "Dirige une équipe au sein du Centre d'Excellence des Données à travers 8+ secteurs clients incluant la Banque, l'Assurance et les Télécoms.",
+        "impact": "Architecture multi-cloud • Traitement de données TB+ • Conformité inter-sectorielle"
+      },
+      "bnc": {
+        "company": "Banque Nationale du Canada",
+        "role": "Ingénieur Principal de Données",
+        "description": "Dirigé une équipe de 7 ingénieurs construisant des pipelines analytiques robustes avec des frameworks QA PySpark innovants.",
+        "impact": "30% de réduction d'erreurs • 25% d'amélioration d'efficacité • 40% de tests plus rapides"
+      },
+      "onepoint": {
+        "company": "Onepoint",
+        "role": "Consultant Expert Data",
+        "description": "Livré des audits techniques, organisationnels et de gouvernance pour des plateformes de données d'entreprise au Canada et en France. Conçu des architectures modernes et évolutives pour des entreprises Fortune 500.",
+        "impact": "Clients Fortune 500 • Automatisation DataOps • Conformité sécurité • Optimisation des performances"
+      },
+      "orange-ivory": {
+        "company": "Orange Côte d'Ivoire",
+        "role": "Ingénieur Principal de Données",
+        "description": "Dirigé la migration sans interruption des flux de données vers un nouveau cluster Hadoop. Développé des outils de productivité et orchestré des pipelines de données complexes.",
+        "impact": "Migration sans interruption • 20% d'amélioration de productivité • Mise à niveau Spark2 • Orchestration Oozie"
+      },
+      "orange-senegal": {
+        "company": "Orange Sénégal",
+        "role": "Ingénieur Senior de Données & Data Scientist",
+        "description": "Développé des modèles ML pour la gestion de l'expérience client et la prédiction de QoE.",
+        "impact": "15% d'amélioration de satisfaction client • 30% de réduction du temps de traitement"
+      }
+    }
+  },
+  "stats": {
+    "yearsExperience": "Années d'Expérience",
+    "technologiesMastered": "Technologies Maîtrisées",
+    "enterpriseProjects": "Projets d'Entreprise"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "retry": "Réessayer",
+    "close": "Fermer",
+    "open": "Ouvrir",
+    "readMore": "Lire la suite",
+    "viewProject": "Voir le projet",
+    "learnMore": "En savoir plus",
+    "pageNotFound": "Page non trouvée",
+    "pageNotFoundDescription": "Désolé, la page que vous recherchez n'existe pas ou a été déplacée.",
+    "goHome": "Retour à l'accueil",
+    "goBack": "Retour",
+    "tryThesePages": "Ou essayez une de ces pages :"
+  }
+}

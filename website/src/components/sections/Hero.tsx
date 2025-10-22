@@ -2,10 +2,12 @@
 
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
-import { HERO_CONTENT } from '@/lib/constants'
+import { useI18n } from '@/components/providers/I18nProvider'
 import { ArrowRight, ChevronDown } from 'lucide-react'
 
 export function Hero() {
+  const { t } = useI18n()
+  
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-muted/30">
       {/* Premium Background Pattern */}
@@ -39,17 +41,17 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 container mx-auto px-4 text-center">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           {/* Credential Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center px-4 py-2 rounded-full bg-card/80 backdrop-blur-sm border border-border mb-8"
+            className="inline-flex items-center px-4 py-2 rounded-full mb-8 bg-muted/50 backdrop-blur-sm"
           >
-            <div className="w-2 h-2 bg-green-500 rounded-full mr-3 animate-pulse"></div>
+            <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
             <span className="text-sm font-medium text-muted-foreground">
-              {HERO_CONTENT.credential}
+              {t('hero.credential')}
             </span>
           </motion.div>
 
@@ -58,13 +60,9 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight"
+            className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-foreground"
           >
-            <span className="block">I architect</span>
-            <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">
-              data ecosystems
-            </span>
-            <span className="block">that transform enterprises.</span>
+            {t('hero.headline')}
           </motion.h1>
 
           {/* Subheadline */}
@@ -72,28 +70,39 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed"
           >
-            {HERO_CONTENT.subheadline}
+            {t('hero.subheadline')}
           </motion.p>
 
-          {/* Contact CTA */}
+          {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex justify-center"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
           >
             <Button
               size="lg"
-              className="group bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+              className="group"
+              onClick={() => {
+                const workSection = document.getElementById('work')
+                workSection?.scrollIntoView({ behavior: 'smooth' })
+              }}
+            >
+              {t('hero.primaryCta')}
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="group"
               onClick={() => {
                 const contactSection = document.getElementById('contact')
                 contactSection?.scrollIntoView({ behavior: 'smooth' })
               }}
             >
-              Get In Touch
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+              {t('hero.secondaryCta')}
             </Button>
           </motion.div>
 
@@ -101,20 +110,19 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1 }}
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+            transition={{ duration: 1, delay: 0.8 }}
           >
             <motion.button
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="flex flex-col items-center text-muted-foreground hover:text-foreground transition-colors duration-300 cursor-pointer group"
-                   onClick={() => {
-                     const expertiseSection = document.getElementById('expertise')
-                     expertiseSection?.scrollIntoView({ behavior: 'smooth' })
-                   }}
-                   aria-label="Scroll to Expertise section"
+              className="flex flex-col items-center text-muted-foreground hover:text-foreground transition-colors duration-300 cursor-pointer group mx-auto"
+              onClick={() => {
+                const expertiseSection = document.getElementById('expertise')
+                expertiseSection?.scrollIntoView({ behavior: 'smooth' })
+              }}
+              aria-label="Scroll to explore"
             >
-              <span className="text-sm mb-2 group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors">Scroll to explore</span>
+              <span className="text-sm mb-2 group-hover:text-foreground transition-colors">Scroll to explore</span>
               <ChevronDown className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
             </motion.button>
           </motion.div>
