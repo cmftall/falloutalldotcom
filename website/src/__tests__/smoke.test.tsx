@@ -21,8 +21,9 @@ jest.mock('framer-motion', () => ({
 jest.mock('next-themes', () => ({
   useTheme: () => ({
     theme: 'light',
-    setTheme: jest.fn(),
+    setTheme: () => {},
   }),
+  ThemeProvider: ({ children }: { children: React.ReactNode }) => <>{children}</>,
 }))
 
 // Mock i18n provider
