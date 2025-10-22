@@ -8,7 +8,7 @@ interface I18nContextType {
   locale: Locale
   messages: any
   setLocale: (locale: Locale) => void
-  t: (key: string) => string
+  t: (key: string) => any
 }
 
 const I18nContext = createContext<I18nContextType | undefined>(undefined)

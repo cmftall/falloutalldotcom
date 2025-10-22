@@ -50,7 +50,7 @@ export function useTranslations() {
 }
 
 // Server-side translation function
-export function getTranslation(messages: any, key: string): string {
+export function getTranslation(messages: any, key: string): any {
   const keys = key.split('.')
   
   let result = messages
@@ -62,5 +62,5 @@ export function getTranslation(messages: any, key: string): string {
     }
   }
   
-  return typeof result === 'string' ? result : key
+  return result // Return the actual result (string, object, array, etc.)
 }

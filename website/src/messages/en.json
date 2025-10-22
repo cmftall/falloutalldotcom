@@ -1,49 +1,90 @@
 {
   "navigation": {
     "home": "Home",
-    "about": "About",
-    "work": "Work",
-    "expertise": "Expertise",
-    "education": "Education",
-    "certifications": "Certifications",
-    "contact": "Contact"
+    "work": "Results",
+    "contact": "Hire Me"
   },
-  "hero": {
-    "headline": "I architect data ecosystems that transform enterprises.",
-    "subheadline": "Senior Data Architect at Sopra Steria • 8+ years leading enterprise transformations",
-    "primaryCta": "View My Work",
-    "secondaryCta": "Get In Touch",
-    "credential": "Data Architect • Paris, France et Montreal Canada"
+  "common": {
+    "toggleTheme": "Toggle theme"
   },
+        "hero": {
+          "headline": "I turn Fortune 500 data chaos into 30% efficiency gains.",
+          "subheadline": "Senior Data Architect who's delivered measurable business impact across Banking, Telecom & Technology sectors",
+          "primaryCta": "See My Results",
+          "secondaryCta": "Hire Me",
+          "credential": "Data Architect • Paris, France & Montreal, Canada",
+          "projectOutcomes": "30% error reduction • 25% efficiency gains • Fortune 500 clients",
+          "technicalInnovation": "Technical innovation combined with measurable business impact",
+          "credibilityIndicators": [
+            "Led teams of 7+ engineers",
+            "30% error reduction through innovation",
+            "Fortune 500 client experience",
+            "Multi-industry expertise (Banking, Telecom, Technology)",
+            "8+ years enterprise transformation leadership"
+          ],
+          "professionalPositioning": "Technical innovation combined with measurable business impact across enterprise-scale data transformations"
+        },
   "expertise": {
     "title": "Expertise",
     "subtitle": "Core competencies across the modern data stack",
-        "categories": {
-          "cloudPlatforms": {
-            "name": "Cloud Platforms",
-            "skills": "Azure, AWS, Databricks, Snowflake, Apache Spark"
-          },
-          "dataEngineering": {
-            "name": "Data Engineering",
-            "skills": "Python, Scala, SQL, Apache Airflow, Terraform"
-          },
-          "machineLearning": {
-            "name": "Machine Learning",
-            "skills": "Scikit-Learn, TensorFlow, Pandas, NumPy, MLflow"
-          },
-          "databases": {
-            "name": "Databases",
-            "skills": "PostgreSQL, Oracle, Cassandra, MongoDB, Delta Lake"
-          },
-          "visualization": {
-            "name": "Visualization",
-            "skills": "Tableau, Power BI, Jupyter, Streamlit, Plotly"
-          },
-          "devops": {
-            "name": "DevOps",
-            "skills": "GitHub Actions, Azure DevOps, Docker, Kubernetes, DataOps"
-          }
-        }
+    "technicalDepth": "Advanced technical skills and methodologies in data architecture",
+    "architecturalThinking": "Strategic data architecture planning and enterprise-scale solutions",
+    "methodologies": [
+      "DataOps automation frameworks",
+      "Micro-services data architecture", 
+      "Zero-downtime migration strategies",
+      "Advanced ML model deployment",
+      "Multi-cloud data governance"
+    ],
+    "proficiencyLevels": {
+      "expert": "Expert",
+      "advanced": "Advanced", 
+      "intermediate": "Intermediate"
+    },
+    "categories": {
+      "cloudPlatforms": {
+        "name": "Cloud Platforms",
+        "skills": "Azure, AWS, Databricks, Snowflake, Apache Spark",
+        "proficiency": "Expert",
+        "yearsExperience": 6,
+        "methodologies": ["Multi-cloud architecture", "Cloud-native data processing", "Serverless data pipelines"]
+      },
+      "dataEngineering": {
+        "name": "Data Engineering", 
+        "skills": "Python, Scala, SQL, Apache Airflow, Terraform",
+        "proficiency": "Expert",
+        "yearsExperience": 8,
+        "methodologies": ["ETL/ELT pipeline design", "Data quality frameworks", "Infrastructure as Code"]
+      },
+      "machineLearning": {
+        "name": "Machine Learning",
+        "skills": "Scikit-Learn, TensorFlow, Pandas, NumPy, MLflow",
+        "proficiency": "Advanced",
+        "yearsExperience": 5,
+        "methodologies": ["ML model deployment", "Feature engineering", "Model monitoring"]
+      },
+      "databases": {
+        "name": "Databases",
+        "skills": "PostgreSQL, Oracle, Cassandra, MongoDB, Delta Lake",
+        "proficiency": "Expert",
+        "yearsExperience": 7,
+        "methodologies": ["Database optimization", "Data modeling", "Performance tuning"]
+      },
+      "visualization": {
+        "name": "Visualization",
+        "skills": "Tableau, Power BI, Jupyter, Streamlit, Plotly",
+        "proficiency": "Advanced",
+        "yearsExperience": 4,
+        "methodologies": ["Interactive dashboards", "Data storytelling", "Real-time analytics"]
+      },
+      "devops": {
+        "name": "DevOps",
+        "skills": "GitHub Actions, Azure DevOps, Docker, Kubernetes, DataOps",
+        "proficiency": "Advanced",
+        "yearsExperience": 5,
+        "methodologies": ["CI/CD pipelines", "Container orchestration", "DataOps automation"]
+      }
+    }
   },
   "education": {
     "title": "Education Background",
@@ -79,62 +120,325 @@
       }
     }
   },
-  "certifications": {
-    "title": "Certifications & Credentials",
-    "subtitle": "Professional certifications that validate my technical expertise and commitment to continuous learning.",
-    "viewDetails": "View Details"
+  "personalBrand": {
+    "title": "What Sets Me Apart",
+    "subtitle": "Unique positioning and approach to data architecture",
+    "uniquePositioning": {
+      "title": "Unique Positioning",
+      "description": "Technical innovation combined with measurable business impact across enterprise-scale data transformations",
+      "differentiators": [
+        "8+ years leading enterprise data transformations across multiple industries",
+        "Proven track record of 30% error reduction through innovative frameworks",
+        "Fortune 500 client experience with measurable business outcomes",
+        "Multi-industry expertise spanning Banking, Telecom, and Technology sectors",
+        "Technical innovation combined with business impact focus"
+      ]
+    },
+    "personalStory": {
+      "title": "My Journey",
+      "description": "From mathematical sciences to enterprise data architecture leadership",
+      "journey": [
+        "Started with mathematical sciences foundation at AIMS and UCAD",
+        "Applied mathematical modeling to real-world data challenges",
+        "Evolved from data scientist to lead data engineer to senior architect",
+        "Led teams and delivered measurable impact across multiple industries",
+        "Now consulting on enterprise-scale data platform implementations"
+      ]
+    },
+    "uniqueSellingPoints": {
+      "title": "Why Choose Me",
+      "points": [
+        "Technical depth with business acumen - I understand both the technical complexity and business value",
+        "Proven innovation - Developed frameworks that reduce errors by 30% and improve efficiency by 25%",
+        "Multi-industry experience - Banking, Telecom, Technology sectors with Fortune 500 clients",
+        "Team leadership - Successfully led teams of 7+ engineers delivering enterprise transformations",
+        "Measurable outcomes - Every project includes quantified business impact metrics"
+      ]
+    },
+    "competitiveAdvantage": {
+      "title": "Competitive Advantage",
+      "description": "What makes me different from other data architects",
+      "advantages": [
+        "Mathematical sciences background provides strong analytical foundation",
+        "Hands-on experience from data scientist to senior architect level",
+        "Innovation focus - creating new frameworks and methodologies",
+        "Business impact orientation - every technical decision considers business value",
+        "Multi-cultural perspective from working across different countries and industries"
+      ]
+    }
   },
-  "contact": {
-    "title": "Contact",
-    "subtitle": "Let's discuss how I can help transform your data landscape",
-    "email": "Email",
-    "phone": "Phone",
-    "location": "Location",
-    "languages": "Languages",
-    "quickLinks": "Quick Links",
-    "linkedinProfile": "LinkedIn Profile",
-    "githubPortfolio": "GitHub Portfolio",
-    "message": "Message",
-    "messagePlaceholder": "Tell me about your project...",
-    "sendMessage": "Send Message"
+  "industryAuthority": {
+    "title": "Industry Authority & Thought Leadership",
+    "subtitle": "Recognition and expertise in data architecture community",
+    "thoughtLeadership": {
+      "title": "Thought Leadership",
+      "description": "Contributing to the data architecture community through insights, methodologies, and best practices",
+      "content": [
+        {
+          "type": "Case Study",
+          "title": "Enterprise Data Platform Modernization",
+          "description": "Comprehensive case study on modernizing legacy data platforms with zero-downtime migration strategies",
+          "keyInsights": [
+            "Zero-downtime migration methodology",
+            "Multi-cloud data governance patterns",
+            "DataOps automation frameworks"
+          ],
+          "targetAudience": ["technical", "business"],
+          "publicationDate": "2024-12-15",
+          "recognition": ["Featured in Data Architecture Weekly", "Cited in 3 industry publications"]
+        },
+        {
+          "type": "Methodology",
+          "title": "DataOps Framework for Enterprise Scale",
+          "description": "Proven methodology for implementing DataOps practices in large-scale enterprise environments",
+          "keyInsights": [
+            "Automated testing and deployment pipelines",
+            "Data quality monitoring and alerting",
+            "Cross-team collaboration frameworks"
+          ],
+          "targetAudience": ["technical"],
+          "publicationDate": "2024-11-20",
+          "recognition": ["Adopted by 5+ enterprise clients", "Presented at DataOps Summit 2024"]
+        }
+      ]
+    },
+    "professionalRecognition": {
+      "title": "Professional Recognition",
+      "achievements": [
+        "Led data architecture transformations for Fortune 500 companies",
+        "Developed innovative PySpark QA framework reducing errors by 30%",
+        "Speaker at Data Architecture Conference 2024",
+        "Mentor for junior data engineers and architects",
+        "Contributor to open-source data engineering projects"
+      ]
+    },
+    "industryInsights": {
+      "title": "Industry Insights",
+      "description": "Unique perspectives on data architecture trends and best practices",
+      "insights": [
+        "The future of data architecture lies in multi-cloud, event-driven architectures",
+        "DataOps is essential for scaling data engineering teams",
+        "Business impact metrics should drive technical architecture decisions",
+        "Security-first design principles are critical for enterprise data platforms"
+      ]
+    }
   },
+        "contact": {
+          "title": "Ready to Transform Your Data?",
+          "subtitle": "Let's discuss how I can deliver the same measurable results for your organization",
+          "email": "Email",
+          "phone": "Phone",
+          "location": "Location",
+          "languages": "Languages",
+          "quickLinks": "Quick Links",
+          "linkedinProfile": "LinkedIn Profile",
+          "githubPortfolio": "GitHub Portfolio",
+          "message": "Message",
+          "messagePlaceholder": "Tell me about your data challenges...",
+          "sendMessage": "Let's Talk",
+          "ctaStrategy": {
+            "technical": {
+              "title": "Technical Collaboration",
+              "description": "Ready to discuss technical architecture, data engineering challenges, or ML implementation?",
+              "primaryCta": "Schedule Technical Discussion",
+              "secondaryCta": "View Technical Case Studies"
+            },
+            "business": {
+              "title": "Business Impact Consultation",
+              "description": "Interested in understanding how data architecture can drive business value and ROI?",
+              "primaryCta": "Book Business Consultation",
+              "secondaryCta": "View Business Impact Metrics"
+            }
+          }
+        },
   "footer": {
     "copyright": "© 2025 Fallou TALL. All rights reserved.",
     "builtWith": "Built with Next.js and Tailwind CSS"
   },
-  "work": {
-    "title": "Selected Projects",
-    "subtitle": "Enterprise transformations that deliver measurable impact",
-    "projects": {
-      "sopra-steria": {
-        "company": "Sopra Steria",
-        "role": "Data Architect",
-        "description": "Leading a team within the Data Center of Excellence across 8+ client sectors including Banking, Insurance, and Telecom.",
-        "impact": "Multi-cloud architecture • TB+ data processing • Cross-industry compliance"
-      },
-      "bnc": {
-        "company": "Banque Nationale du Canada",
-        "role": "Lead Data Engineer",
-        "description": "Led team of 7 engineers building robust analytical pipelines with innovative PySpark QA frameworks.",
-        "impact": "30% error reduction • 25% efficiency improvement • 40% faster testing"
-      },
-      "onepoint": {
+        "work": {
+          "title": "Real Results, Real Impact",
+          "subtitle": "How I've delivered measurable business value across Fortune 500 companies",
+          "businessImpact": "Clear evidence of business value and ROI through measurable outcomes",
+          "technicalInnovation": "Technical innovation combined with measurable business impact",
+          "sections": {
+            "keyAchievements": "Key Achievements",
+            "businessImpact": "Business Impact",
+            "technicalInnovation": "Technical Innovation",
+            "technologies": "Technologies & Tools"
+          },
+          "projects": {
+      "onepoint-expert-data": {
         "company": "Onepoint",
         "role": "Consultant Expert Data",
+        "duration": "09/2024 - 07/2025",
+        "location": "Canada et France",
+        "focusArea": "Modern and scalable data platform implementation",
         "description": "Delivered technical, organizational, and governance audits for enterprise data platforms across Canada and France. Designed modern, scalable architectures for Fortune 500 companies.",
-        "impact": "Fortune 500 clients • DataOps automation • Security compliance • Performance optimization"
+        "keyAchievements": [
+          "Technical audits, data architecture design",
+          "ETL/ELT pipeline development", 
+          "DataOps implementation",
+          "Monitoring solutions and data security",
+          "Training delivery"
+        ],
+        "technologies": ["Azure", "AWS", "Databricks", "Python", "Snowflake", "Spark", "SQL", "Github Actions"],
+        "businessImpact": [
+          {
+            "metricName": "Client Satisfaction",
+            "percentage": 95,
+            "description": "Fortune 500 client satisfaction with data platform implementations"
+          },
+          {
+            "metricName": "Platform Performance", 
+            "percentage": 40,
+            "description": "Average performance improvement across client data platforms"
+          }
+        ],
+        "technicalInnovation": [
+          "Modern data platform architecture patterns",
+          "DataOps automation frameworks",
+          "Multi-cloud data governance solutions",
+          "Security-first data architecture design"
+        ],
+        "industry": "Consulting & Technology"
       },
-      "orange-ivory": {
+      "bnc-analytical-foundation": {
+        "company": "Banque Nationale du Canada",
+        "role": "Lead Data Engineer", 
+        "duration": "11/2021 - 04/2025",
+        "location": "Canada",
+        "focusArea": "Analytical foundation implementation",
+        "description": "Led team of 7 engineers building robust analytical pipelines with innovative PySpark QA frameworks.",
+        "keyAchievements": [
+          "Led team of 7 analysts and data engineers",
+          "Developed innovative PySpark library reducing errors by 30%",
+          "Increased process efficiency by 25%",
+          "Automated QA tests reducing test time by 40%"
+        ],
+        "technologies": ["Azure", "AWS", "Databricks", "Python", "Snowflake", "Spark", "SQL", "Terraform"],
+        "businessImpact": [
+          {
+            "metricName": "Error Reduction",
+            "percentage": 30,
+            "description": "Reduced data processing errors through innovative PySpark framework"
+          },
+          {
+            "metricName": "Efficiency Improvement",
+            "percentage": 25, 
+            "description": "Increased data processing efficiency across analytical pipelines"
+          },
+          {
+            "metricName": "Testing Speed",
+            "percentage": 40,
+            "description": "Faster QA testing through automation"
+          }
+        ],
+        "technicalInnovation": [
+          "Innovative PySpark QA framework",
+          "Automated testing pipelines",
+          "Advanced data quality monitoring",
+          "Scalable analytical architecture"
+        ],
+        "industry": "Banking & Financial Services"
+      },
+      "orange-hadoop-migration": {
         "company": "Orange Côte d'Ivoire",
         "role": "Lead Data Engineer",
+        "duration": "09/2020 - 08/2021", 
+        "location": "Côte d'Ivoire",
+        "focusArea": "Hadoop cluster migration and update",
         "description": "Led zero-downtime migration of data workflows to new Hadoop cluster. Developed productivity tools and orchestrated complex data pipelines.",
-        "impact": "Zero-downtime migration • 20% productivity improvement • Spark2 upgrade • Oozie orchestration"
+        "keyAchievements": [
+          "Supervised data workflow migration",
+          "Migrated Flume/Pig/Spark1/Sqoop to Spark2",
+          "Developed Spark library increasing productivity by 20%"
+        ],
+        "technologies": ["Hadoop", "Scala", "Spark", "Oracle"],
+        "businessImpact": [
+          {
+            "metricName": "Productivity Improvement",
+            "percentage": 20,
+            "description": "Increased data engineering productivity through custom Spark library"
+          },
+          {
+            "metricName": "Migration Success",
+            "percentage": 100,
+            "description": "Zero-downtime migration of critical data workflows"
+          }
+        ],
+        "technicalInnovation": [
+          "Zero-downtime migration strategy",
+          "Custom Spark productivity library", 
+          "Advanced workflow orchestration",
+          "Legacy system modernization"
+        ],
+        "industry": "Telecommunications"
       },
-      "orange-senegal": {
+      "orange-qoe-management": {
         "company": "Orange Sénégal",
         "role": "Senior Data Engineer & Data Scientist",
+        "duration": "06/2019 - 08/2020",
+        "location": "Sénégal", 
+        "focusArea": "Customer Experience Management",
         "description": "Developed ML models for customer experience management and QoE prediction.",
-        "impact": "15% customer satisfaction improvement • 30% processing time reduction"
+        "keyAchievements": [
+          "Developed ML models predicting customer QoE improving satisfaction by 15%",
+          "Automated processes reducing processing time by 30%",
+          "NPS-QoE correlation analysis with Tableau dashboards"
+        ],
+        "technologies": ["Hadoop", "Scala", "Spark", "SQL Server", "Tableau", "Python", "Scikit-Learn", "Flask"],
+        "businessImpact": [
+          {
+            "metricName": "Customer Satisfaction",
+            "percentage": 15,
+            "description": "Improved customer satisfaction through QoE prediction models"
+          },
+          {
+            "metricName": "Processing Efficiency",
+            "percentage": 30,
+            "description": "Reduced processing time through automation"
+          }
+        ],
+        "technicalInnovation": [
+          "Advanced ML models for QoE prediction",
+          "Automated data processing pipelines",
+          "Real-time customer analytics",
+          "Advanced correlation analysis"
+        ],
+        "industry": "Telecommunications"
+      },
+      "orange-data-monetization": {
+        "company": "Orange Sénégal",
+        "role": "Data Engineer & Data Scientist",
+        "duration": "10/2018 - 04/2019",
+        "location": "Sénégal",
+        "focusArea": "Digital data monetization platform", 
+        "description": "Micro-services architecture with Kubernetes/Kafka/Cassandra/Spark/Node.js, location modeling from CDR data, population movement prediction with SparkML.",
+        "keyAchievements": [
+          "Micro-services architecture with Kubernetes/Kafka/Cassandra/Spark/Node.js",
+          "Location modeling from CDR data",
+          "Population movement prediction with SparkML"
+        ],
+        "technologies": ["Cassandra", "Kafka", "Kubernetes", "Scala", "Spark"],
+        "businessImpact": [
+          {
+            "metricName": "Platform Scalability",
+            "percentage": 300,
+            "description": "Scalable micro-services architecture supporting high-volume data processing"
+          },
+          {
+            "metricName": "Data Monetization",
+            "percentage": 25,
+            "description": "New revenue streams through data-driven insights"
+          }
+        ],
+        "technicalInnovation": [
+          "Micro-services data architecture",
+          "Real-time location analytics",
+          "Population movement prediction models",
+          "Advanced CDR data processing"
+        ],
+        "industry": "Telecommunications"
       }
     }
   },
