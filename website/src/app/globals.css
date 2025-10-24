@@ -14,18 +14,18 @@
     --primary: 222 47% 11%; /* True Navy (less blue, more gray) */
     --primary-foreground: 0 0% 100%;
     --secondary: 40 20% 96%; /* Light Beige */
-    --secondary-foreground: 217 91% 15%;
+    --secondary-foreground: 222 47% 11%; /* True Navy */
     --muted: 40 20% 96%;
     --muted-foreground: 220 9% 46%; /* Medium Gray */
     --accent: 43 74% 53%; /* Warm Gold #D4AF37 */
-    --accent-foreground: 217 91% 15%;
+    --accent-foreground: 222 47% 11%; /* True Navy */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
     --border: 40 15% 90%; /* Soft Border */
     --input: 40 15% 90%;
     --ring: 43 74% 53%; /* Gold Ring */
     --chart-1: 43 74% 53%; /* Gold */
-    --chart-2: 217 91% 15%; /* Navy */
+    --chart-2: 222 47% 11%; /* True Navy */
     --chart-3: 160 60% 45%; /* Teal accent */
     --chart-4: 20 90% 55%; /* Coral accent */
     --chart-5: 280 65% 60%; /* Purple accent */
@@ -33,20 +33,20 @@
 
   .dark {
     /* Dark Mode - Navy dominant with Gold accents */
-    --background: 217 91% 15%; /* Deep Navy */
+    --background: 222 47% 11%; /* True Navy */
     --foreground: 40 20% 98%;
     --card: 220 26% 18%; /* Slightly lighter navy */
     --card-foreground: 40 20% 98%;
     --popover: 220 26% 18%;
     --popover-foreground: 40 20% 98%;
     --primary: 43 74% 53%; /* Gold as primary in dark */
-    --primary-foreground: 217 91% 15%;
+    --primary-foreground: 222 47% 11%; /* True Navy */
     --secondary: 220 26% 25%;
     --secondary-foreground: 40 20% 98%;
     --muted: 220 26% 25%;
     --muted-foreground: 220 9% 65%;
     --accent: 43 74% 53%; /* Gold */
-    --accent-foreground: 217 91% 15%;
+    --accent-foreground: 222 47% 11%; /* True Navy */
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 40 20% 98%;
     --border: 220 26% 25%;
@@ -113,22 +113,22 @@
 
 /* Mobile-responsive typography */
 @media (max-width: 768px) {
-  .sophisticated-headline {
-    @apply text-sophisticated-3xl;
+  .premium-headline {
+    @apply text-3xl md:text-4xl;
   }
   
-  .sophisticated-subheadline {
-    @apply text-sophisticated-lg;
+  .premium-subheadline {
+    @apply text-lg md:text-xl;
   }
 }
 
 @media (max-width: 480px) {
-  .sophisticated-headline {
-    @apply text-sophisticated-2xl;
+  .premium-headline {
+    @apply text-2xl;
   }
   
-  .sophisticated-subheadline {
-    @apply text-sophisticated-base;
+  .premium-subheadline {
+    @apply text-base;
   }
 }
 
@@ -177,7 +177,7 @@
 
 /* Tech tag styling */
 .tech-tag {
-  @apply inline-flex items-center px-2 py-1 rounded-sophisticated-sm text-sophisticated-xs font-medium bg-secondary text-secondary-foreground;
+  @apply inline-flex items-center px-2 py-1 rounded-sm text-xs font-medium bg-secondary text-secondary-foreground;
 }
 
 /* Case study border accent */
