@@ -1,37 +1,37 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+import { Building2 } from 'lucide-react'
 import { useI18n } from '@/components/providers/I18nProvider'
 
 export function WorkedWith() {
   const { t } = useI18n()
 
-  // Company logos - replace with actual logo files in /public/logos/
+  // Company data - text-based premium design (no logos needed)
   const companies = [
     {
       name: 'National Bank of Canada',
-      logo: '/logos/bnc.png', // User needs to add actual logo
+      short: 'BNC',
       industry: 'Banking',
-      alt: 'National Bank of Canada logo'
+      location: 'Montreal'
     },
     {
       name: 'Orange',
-      logo: '/logos/orange.png', // User needs to add actual logo
+      short: 'ORANGE',
       industry: 'Telecommunications',
-      alt: 'Orange logo'
+      location: 'Paris'
     },
     {
       name: 'Onepoint',
-      logo: '/logos/onepoint.png', // User needs to add actual logo
+      short: 'ONEPOINT',
       industry: 'Consulting',
-      alt: 'Onepoint logo'
+      location: 'Paris'
     },
     {
       name: 'Sopra Steria',
-      logo: '/logos/sopra-steria.png', // User needs to add actual logo
+      short: 'SOPRA STERIA',
       industry: 'Technology',
-      alt: 'Sopra Steria logo'
+      location: 'Paris'
     }
   ]
 
@@ -59,44 +59,57 @@ export function WorkedWith() {
             </p>
           </motion.div>
 
-          {/* Logos Grid - Premium B&W Style */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-12 items-center"
-          >
-            {companies.map((company, index) => (
-              <motion.div
-                key={company.name}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="flex flex-col items-center justify-center group cursor-pointer"
-              >
-                       <div className="relative w-full h-20 flex items-center justify-center p-4">
-                         {/* Premium Logo with Gold Accent on Hover */}
-                         <div className="relative w-full h-full bg-background border border-border rounded-lg flex items-center justify-center group-hover:border-accent transition-all duration-300 group-hover:shadow-lg overflow-hidden">
-                           {/* Gold corner accent */}
-                           <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                           <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                           
-                           <Image
-                             src={company.logo}
-                             alt={company.alt}
-                             fill
-                             className="object-contain grayscale hover:grayscale-0 transition-all duration-500 p-4"
-                           />
+                 {/* Companies Grid - Premium Text-Based Design */}
+                 <motion.div
+                   initial={{ opacity: 0, y: 30 }}
+                   whileInView={{ opacity: 1, y: 0 }}
+                   transition={{ duration: 0.8, delay: 0.2 }}
+                   viewport={{ once: true }}
+                   className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+                 >
+                   {companies.map((company, index) => (
+                     <motion.div
+                       key={company.name}
+                       initial={{ opacity: 0, y: 20 }}
+                       whileInView={{ opacity: 1, y: 0 }}
+                       transition={{ duration: 0.5, delay: index * 0.1 }}
+                       viewport={{ once: true }}
+                       className="group"
+                     >
+                       <div className="relative bg-card border border-border rounded-lg p-6 hover:border-accent transition-all duration-300 hover:shadow-lg overflow-hidden h-full">
+                         {/* Gold corner accents on hover */}
+                         <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                         <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                         <div className="relative z-10">
+                           {/* Company Icon */}
+                           <div className="flex items-center justify-center mb-4">
+                             <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-accent/10 transition-colors">
+                               <Building2 className="h-6 w-6 text-primary group-hover:text-accent transition-colors" />
+                             </div>
+                           </div>
+
+                           {/* Company Short Name */}
+                           <h3 className="font-mono text-lg font-bold text-center text-primary mb-2 tracking-tight">
+                             {company.short}
+                           </h3>
+
+                           {/* Industry Tag */}
+                           <div className="text-center mb-2">
+                             <span className="inline-block text-xs font-medium text-accent px-3 py-1 bg-accent/10 rounded-full">
+                               {company.industry}
+                             </span>
+                           </div>
+
+                           {/* Location */}
+                           <p className="text-xs text-center text-muted-foreground">
+                             {company.location}
+                           </p>
                          </div>
                        </div>
-                <span className="text-xs text-accent font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-2">
-                  {company.industry}
-                </span>
-              </motion.div>
-            ))}
-          </motion.div>
+                     </motion.div>
+                   ))}
+                 </motion.div>
 
           {/* Premium Industry Pills */}
           <motion.div
