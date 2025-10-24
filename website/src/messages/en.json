@@ -8,24 +8,23 @@
   "common": {
     "toggleTheme": "Toggle theme"
   },
-        "hero": {
-          "headline": "I deliver €130K+ ROI through pragmatic data architecture",
-          "subheadline": "Data Architect | 8+ years delivering proven results across National Bank of Canada, Orange, and Sopra Steria",
-          "primaryCta": "View Case Studies",
-          "secondaryCta": "Book Discovery Call",
-          "credential": "Data Architect • Paris & Montreal",
-          "projectOutcomes": "30% error reduction • €130K+ annual savings • 100+ pipelines built",
-          "technicalInnovation": "Sustainable solutions that teams successfully maintain and extend, delivering measurable business outcomes",
-          "credibilityIndicators": [
-            "Led teams of 7+ engineers",
-            "€130K+ annual savings through data quality innovation",
-            "100+ production pipelines built and maintained",
-            "Multi-industry expertise (Banking, Telecom, Technology)",
-            "8+ years enterprise transformation leadership"
-          ],
-          "professionalPositioning": "I focus on business value - delivering ROI through proven architecture that prioritizes what matters: reducing costs, improving quality, and building high-performing teams",
-          "savingsCalculation": "€130K+ calculated: 30% error reduction (2 FTE saved @ €65K/year) + 25% efficiency gain (3hrs/day @ €300/hr) = €130K+ annually"
-        },
+         "hero": {
+           "headline": "I fix broken data systems that cost companies millions",
+           "subheadline": "8 years fixing data problems at National Bank of Canada, Orange, Onepoint. Last client saved €130K+ annually.",
+           "primaryCta": "See My Work",
+           "secondaryCta": "Talk to Me",
+           "credential": "Data Architect • Paris & Montreal",
+           "projectOutcomes": "€130K+ saved at National Bank • Zero downtime for 14M+ Orange customers • 75% client retention",
+           "technicalInnovation": "I build solutions that work. No fancy tech for tech's sake. Just reliable systems that save money and time.",
+           "credibilityIndicators": [
+             "Saved National Bank €130K+/year fixing data quality issues",
+             "Zero downtime migration for 14M+ Orange customers",
+             "3 out of 4 consulting clients extended their contracts",
+             "Led teams of 7+ engineers at Canada's 6th largest bank"
+           ],
+           "professionalPositioning": "I don't do buzzwords or fancy presentations. I fix what's broken, make it reliable, and move on. If your data systems are costing you money, I can probably help.",
+           "savingsCalculation": "Real example: National Bank saved €130K+/year when I reduced their data errors by 30% and sped up processing by 25%"
+         },
   "expertise": {
     "title": "Expertise",
     "subtitle": "Core competencies organized by proficiency and depth of experience",
@@ -117,14 +116,14 @@
     }
   },
         "contact": {
-          "title": "Ready to Deliver Measurable ROI?",
-          "subtitle": "Let's discuss how I can help reduce your costs and improve data quality",
-          "value": "I help enterprises reduce costs and improve data quality through proven frameworks that scale with your team.",
-          "service1": "Architecture audits & advisory",
-          "service2": "Data quality framework training",
-          "service3": "Short-term consulting projects",
-          "primaryCta": "Book Discovery Call",
-          "rates": "Rates: €700-1800/day",
+          "title": "Let's Talk",
+          "subtitle": "If your data systems are broken and costing you money, I can probably help",
+          "value": "I'm based in Paris and Montreal. I do short-term projects (2-6 months) for companies with data problems.",
+          "service1": "Fix broken data systems",
+          "service2": "Zero-downtime migrations",
+          "service3": "Data quality frameworks",
+          "primaryCta": "Email Me",
+          "rates": "€700-1800/day depending on project",
           "email": "Email",
           "location": "Location"
          },
@@ -133,48 +132,105 @@
     "builtWith": "Built with Next.js and Tailwind CSS"
   },
         "work": {
-          "title": "Featured Work",
-          "subtitle": "How I've delivered proven business value across large enterprise companies",
-          "businessImpactStatement": "Clear evidence of business value and ROI through measurable outcomes and sustainable technical innovation.",
+          "title": "Real Projects, Real Results",
+          "subtitle": "3 companies, 3 big problems, 3 successful outcomes",
+          "businessImpactStatement": "No fluff. These are actual projects with real numbers from real companies.",
           "projects": {
             "bnc-analytical-foundation": {
-              "company": "Banque Nationale du Canada",
+              "company": "National Bank of Canada",
               "role": "Lead Data Engineer",
-              "duration": "11/2021 - 04/2025",
-              "location": "Canada",
-              "focusArea": "Analytical foundation implementation",
-              "description": "Led team of 7 engineers building robust analytical pipelines for enterprise banking. Created innovative PySpark QA framework that became the standard for data quality across the analytics platform.",
+              "duration": "2021 - 2025",
+              "location": "Montreal, Canada",
+              "focusArea": "Fixed broken data systems costing €130K+/year",
+              "description": "Led team of 7 engineers to fix failing data systems at Canada's 6th largest bank. Built quality framework that reduced errors by 30% and saved €130K+ annually.",
               "keyAchievements": [
-                "Led team of 7 analysts and data engineers delivering critical analytical infrastructure",
-                "Developed PySpark library achieving 30% error reduction in production pipelines",
-                "Increased data processing efficiency by 25% through optimized pipeline architecture",
-                "Automated QA tests reducing testing time by 40% while improving coverage"
+                "Reduced data errors by 30%, saving €65K in labor costs annually",
+                "Increased processing speed by 25%, freeing 3 hours/day per engineer (€65K+ annual value)",
+                "Cut testing time by 40%, speeding up releases from days to hours",
+                "Team adopted my framework as the company standard"
               ],
-              "technologies": ["Azure", "AWS", "Databricks", "Python", "Snowflake", "Spark", "SQL", "Terraform"],
+              "technologies": ["Azure", "Python", "Databricks"],
               "businessImpact": [
                 {
-                  "metricName": "Error Reduction",
+                  "metricName": "Cost Savings",
                   "percentage": 30,
-                  "description": "30% reduction in data processing errors in production pipelines through innovative PySpark QA framework (€65K annual labor savings)"
+                  "description": "€130K+ annual savings: 30% fewer errors (€65K) + 25% faster processing (€65K)"
                 },
                 {
-                  "metricName": "Efficiency Improvement",
-                  "percentage": 25,
-                  "description": "25% increase in data processing efficiency across analytical pipelines, freeing 3 hours/day of engineering time (€65K+ annual value)"
-                },
-                {
-                  "metricName": "Testing Speed",
+                  "metricName": "Speed",
                   "percentage": 40,
-                  "description": "40% faster QA testing through automation, reducing release cycles from days to hours"
+                  "description": "Releases 40% faster - from days to hours"
                 }
               ],
               "technicalInnovation": [
-                "Industry-leading PySpark QA framework",
-                "Automated testing pipelines with 95% coverage",
-                "Advanced data quality monitoring and alerting",
-                "Scalable analytical architecture handling billions of records"
+                "Quality framework now used company-wide",
+                "Automated testing reducing manual work by 40%"
               ],
-              "industry": "Banking & Financial Services"
+              "industry": "Banking"
+            },
+            "orange-zero-downtime": {
+              "company": "Orange Côte d'Ivoire",
+              "role": "Lead Data Engineer",
+              "duration": "2020 - 2021",
+              "location": "Abidjan, Côte d'Ivoire",
+              "focusArea": "Zero-downtime migration for Africa's largest telecom",
+              "description": "Migrated 50+ critical data systems with zero downtime for Orange's 14M+ customers. Modernized outdated systems while keeping everything running 24/7.",
+              "keyAchievements": [
+                "Migrated 50+ critical workflows with zero downtime - business kept running",
+                "20% productivity boost for engineering team through better tools",
+                "Modernized 5-year-old legacy systems without disrupting operations",
+                "Completed ahead of schedule with zero incidents"
+              ],
+              "technologies": ["Hadoop", "Spark", "Python"],
+              "businessImpact": [
+                {
+                  "metricName": "Zero Downtime",
+                  "percentage": 100,
+                  "description": "100% uptime during migration - 14M+ customers unaffected"
+                },
+                {
+                  "metricName": "Team Productivity",
+                  "percentage": 20,
+                  "description": "20% productivity increase through modernized tools"
+                }
+              ],
+              "technicalInnovation": [
+                "Zero-downtime migration strategy for 50+ systems",
+                "Custom tools increasing team productivity by 20%"
+              ],
+              "industry": "Telecommunications"
+            },
+            "onepoint-consulting": {
+              "company": "Onepoint",
+              "role": "Expert Data Architect",
+              "duration": "2022 - 2025",
+              "location": "Paris, France & Montreal, Canada",
+              "focusArea": "Enterprise data consulting across 4 major clients",
+              "description": "Delivered data audits and architecture design for 4 enterprise clients across banking, telecom, and tech. 3 out of 4 clients extended contracts based on results.",
+              "keyAchievements": [
+                "Improved client system performance by 40% through better architecture",
+                "3 out of 4 clients renewed contracts - 75% retention rate",
+                "Delivered audits identifying €100K+ savings opportunities",
+                "Trained client teams on sustainable data practices"
+              ],
+              "technologies": ["Azure", "AWS", "Databricks", "Snowflake"],
+              "businessImpact": [
+                {
+                  "metricName": "Performance",
+                  "percentage": 40,
+                  "description": "40% faster data processing across client systems"
+                },
+                {
+                  "metricName": "Client Retention",
+                  "percentage": 75,
+                  "description": "3 of 4 clients extended engagements based on delivered value"
+                }
+              ],
+              "technicalInnovation": [
+                "Multi-cloud architecture patterns",
+                "Security-first data design frameworks"
+              ],
+              "industry": "Consulting"
             }
           }
         },
