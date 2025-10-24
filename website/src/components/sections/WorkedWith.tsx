@@ -55,7 +55,7 @@ export function WorkedWith() {
               <div className="h-px w-12 bg-accent" />
             </div>
             <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-              Delivering €130K+ savings and measurable ROI across enterprise organizations
+              Proven results across enterprise organizations
             </p>
           </motion.div>
 

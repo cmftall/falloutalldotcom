@@ -158,8 +158,7 @@ export function Hero() {
                     </span>
                     <TrendingUp className="h-6 w-6 text-accent opacity-70 group-hover:opacity-100 transition-opacity" />
                   </div>
-                  <p className="text-sm text-muted-foreground mt-1">Annual Savings</p>
-                  <p className="text-xs text-muted-foreground opacity-70">Achieved through data quality</p>
+                  <p className="text-sm font-medium text-muted-foreground mt-2">Annual Savings</p>
                 </div>
 
                 {/* Error Reduction */}
@@ -170,8 +169,7 @@ export function Hero() {
                     </span>
                     <Target className="h-6 w-6 text-accent opacity-70 group-hover:opacity-100 transition-opacity" />
                   </div>
-                  <p className="text-sm text-muted-foreground mt-1">Error Reduction</p>
-                  <p className="text-xs text-muted-foreground opacity-70">Through PySpark frameworks</p>
+                  <p className="text-sm font-medium text-muted-foreground mt-2">Error Reduction</p>
                 </div>
 
                 {/* Pipelines */}
@@ -182,8 +180,7 @@ export function Hero() {
                     </span>
                     <Zap className="h-6 w-6 text-accent opacity-70 group-hover:opacity-100 transition-opacity" />
                   </div>
-                  <p className="text-sm text-muted-foreground mt-1">Pipelines Built</p>
-                  <p className="text-xs text-muted-foreground opacity-70">Production-grade systems</p>
+                  <p className="text-sm font-medium text-muted-foreground mt-2">Pipelines Built</p>
                 </div>
               </motion.div>
 
@@ -212,19 +209,6 @@ export function Hero() {
                   {t('hero.secondaryCta')}
                   <span className="ml-2 font-mono text-sm">€700-1800/day</span>
                 </Button>
-              </motion.div>
-
-              {/* Social Proof Tags */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 1.2 }}
-                className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground"
-              >
-                <span className="font-medium text-primary">Trusted by:</span>
-                <span className="px-3 py-1 bg-secondary/50 rounded-full">National Bank of Canada</span>
-                <span className="px-3 py-1 bg-secondary/50 rounded-full">Orange</span>
-                <span className="px-3 py-1 bg-secondary/50 rounded-full">Sopra Steria</span>
               </motion.div>
             </div>
           </div>
