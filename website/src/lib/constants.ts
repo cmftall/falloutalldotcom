@@ -8,18 +8,15 @@ export const SITE_CONFIG = {
   ogImage: '/og-image.jpg',
   links: {
     linkedin: 'https://www.linkedin.com/in/cmftall',
-    github: 'https://www.github.com/cmftall',
     email: 'cmftall@gmail.com',
   },
 }
 
 export const CONTACT_INFO: ContactInfo = {
   email: 'cmftall@gmail.com',
-  phone: '+33 7 67 07 01 79',
   location: 'Paris, France & Montreal, Canada',
   languages: ['French', 'English', 'Wolof'],
   linkedin: 'https://www.linkedin.com/in/cmftall',
-  github: 'https://www.github.com/cmftall',
 }
 
 export const NAV_ITEMS: NavItem[] = [
@@ -33,7 +30,7 @@ export const NAV_ITEMS: NavItem[] = [
 
 export const HERO_CONTENT = {
   headline: 'I architect data ecosystems that transform enterprises.',
-  subheadline: 'Senior Data Architect at Sopra Steria • 8+ years leading enterprise transformations',
+  subheadline: 'Senior Data Architect • 8+ years leading enterprise transformations',
   primaryCta: 'View My Work',
   secondaryCta: 'Get In Touch',
   credential: 'Data Architect • Paris, France et Montreal Canada',
@@ -43,9 +40,9 @@ export const ABOUT_CONTENT = {
   title: 'About',
   description: 'I transform enterprise data landscapes through innovative, scalable solutions.',
   highlights: [
-    'Leading Data Center of Excellence at Sopra Steria',
+    'Senior Data Architect with enterprise consulting experience',
     '8+ years across Banking, Telecom, and Technology sectors',
-    'Reduced data errors by 30% through innovative frameworks',
+    'Achieved up to 30% reduction in data errors through innovative frameworks',
     'Led teams of up to 7 engineers delivering measurable impact',
   ],
   quote: 'The best data architecture is invisible — it empowers decisions without complexity.',
@@ -123,50 +120,29 @@ export const EDUCATION_CONTENT = {
 }
 
 export const CERTIFICATIONS_CONTENT = {
-  title: 'Certifications & Credentials',
-  subtitle: 'Professional certifications that validate my technical expertise and commitment to continuous learning.',
+  title: 'Professional Certifications',
+  subtitle: 'Industry-recognized certifications with verifiable credentials that validate technical expertise.',
   certifications: [
     {
       id: 'azure-data-engineer',
       name: 'Azure Data Engineer Associate',
       issuer: 'Microsoft',
-      url: 'https://learn.microsoft.com/en-us/certifications/azure-data-engineer/'
+      url: 'https://learn.microsoft.com/en-us/certifications/azure-data-engineer/',
+      note: 'Professional certification with verifiable credentials'
     },
     {
       id: 'gcp-data-engineer',
       name: 'Google Cloud Professional Data Engineer',
       issuer: 'Google',
-      url: 'https://cloud.google.com/certification/data-engineer'
+      url: 'https://cloud.google.com/certification/data-engineer',
+      note: 'Professional certification with verifiable credentials'
     },
     {
       id: 'databricks-developer',
       name: 'Databricks Certified Associate Developer for Apache Spark',
       issuer: 'Databricks',
-      url: 'https://www.databricks.com/learn/certification/apache-spark-developer-associate'
-    },
-    {
-      id: 'deep-learning',
-      name: 'Deep Learning Specialization',
-      issuer: 'deeplearning.ai',
-      url: 'https://www.coursera.org/specializations/deep-learning'
-    },
-    {
-      id: 'databricks-developer-essentials',
-      name: 'Databricks Developer Essentials',
-      issuer: 'Databricks',
-      url: 'https://www.databricks.com/learn/certification/developer-essentials'
-    },
-    {
-      id: 'databricks-developer-foundations',
-      name: 'Databricks Developer Foundations',
-      issuer: 'Databricks',
-      url: 'https://www.databricks.com/learn/certification/developer-foundations'
-    },
-    {
-      id: 'deeplearning-ai-data-engineering',
-      name: 'DeepLearning.AI Data Engineering Professional Certificate',
-      issuer: 'DeepLearning.AI',
-      url: 'https://www.coursera.org/professional-certificates/data-engineering'
+      url: 'https://www.databricks.com/learn/certification/apache-spark-developer-associate',
+      note: 'Professional certification with verifiable credentials'
     }
   ]
 }
@@ -187,8 +163,8 @@ export const PROFESSIONAL_PROFILE = {
   unique_positioning: 'Technical innovation combined with measurable business impact across enterprise-scale data transformations',
   credibility_indicators: [
     'Led teams of 7+ engineers',
-    '30% error reduction through innovation',
-    'Fortune 500 client experience',
+    'Achieved up to 30% error reduction through innovation',
+    'Large enterprise client experience',
     'Multi-industry expertise (Banking, Telecom, Technology)',
     '8+ years enterprise transformation leadership'
   ]
@@ -197,14 +173,43 @@ export const PROFESSIONAL_PROFILE = {
 // Enhanced Project Portfolio with Business Impact
 export const PROJECT_PORTFOLIO = [
   {
+    id: 'sopra-steria-data-architect',
+    company: 'Sopra Steria',
+    role: 'Data Architect Transverse - DCOE',
+    duration: '11/2025 - Present',
+    location: 'France',
+    focus_area: 'Transverse data architecture and center of excellence leadership',
+    key_achievements: [
+      'Leading data architecture center of excellence',
+      'Cross-functional data platform strategy',
+      'Enterprise data governance frameworks',
+      'Technical leadership across multiple projects'
+    ],
+    technologies: ['Azure', 'AWS', 'Databricks', 'Python', 'Snowflake', 'Spark', 'SQL', 'Terraform'],
+    business_impact: [
+      {
+        metric_name: 'Architecture Standardization',
+        percentage: 100,
+        description: 'Establishing enterprise-wide data architecture standards and best practices'
+      }
+    ],
+    technical_innovation: [
+      'Center of Excellence frameworks',
+      'Enterprise data architecture patterns',
+      'Cross-functional governance models',
+      'Technical leadership methodologies'
+    ],
+    industry: 'Technology & Consulting'
+  },
+  {
     id: 'onepoint-expert-data',
     company: 'Onepoint',
     role: 'Consultant Expert Data',
-    duration: '09/2024 - 07/2025',
+    duration: '09/2024 - 10/2025 (Part-time 09/2024-04/2025 alongside BNC, then full contract until 10/2025)',
     location: 'Canada et France',
     focus_area: 'Modern and scalable data platform implementation',
     key_achievements: [
-      'Technical audits, data architecture design',
+      'Technical audits and data architecture design',
       'ETL/ELT pipeline development',
       'DataOps implementation',
       'Monitoring solutions and data security',
@@ -215,12 +220,12 @@ export const PROJECT_PORTFOLIO = [
       {
         metric_name: 'Client Satisfaction',
         percentage: 95,
-        description: 'Fortune 500 client satisfaction with data platform implementations'
+        description: 'Achieved high client satisfaction with data platform implementations'
       },
       {
         metric_name: 'Platform Performance',
         percentage: 40,
-        description: 'Average performance improvement across client data platforms'
+        description: 'Achieved up to 40% performance improvement across client data platforms'
       }
     ],
     technical_innovation: [
@@ -240,26 +245,26 @@ export const PROJECT_PORTFOLIO = [
     focus_area: 'Analytical foundation implementation',
     key_achievements: [
       'Led team of 7 analysts and data engineers',
-      'Developed innovative PySpark library reducing errors by 30%',
-      'Increased process efficiency by 25%',
-      'Automated QA tests reducing test time by 40%'
+      'Developed innovative PySpark library achieving up to 30% error reduction',
+      'Increased process efficiency by up to 25%',
+      'Automated QA tests reducing test time by up to 40%'
     ],
     technologies: ['Azure', 'AWS', 'Databricks', 'Python', 'Snowflake', 'Spark', 'SQL', 'Terraform'],
     business_impact: [
       {
         metric_name: 'Error Reduction',
         percentage: 30,
-        description: 'Reduced data processing errors through innovative PySpark framework'
+        description: 'Achieved up to 30% reduction in data processing errors through innovative PySpark framework'
       },
       {
         metric_name: 'Efficiency Improvement',
         percentage: 25,
-        description: 'Increased data processing efficiency across analytical pipelines'
+        description: 'Achieved up to 25% increase in data processing efficiency across analytical pipelines'
       },
       {
         metric_name: 'Testing Speed',
         percentage: 40,
-        description: 'Faster QA testing through automation'
+        description: 'Achieved up to 40% faster QA testing through automation'
       }
     ],
     technical_innovation: [
@@ -280,19 +285,19 @@ export const PROJECT_PORTFOLIO = [
     key_achievements: [
       'Supervised data workflow migration',
       'Migrated Flume/Pig/Spark1/Sqoop to Spark2',
-      'Developed Spark library increasing productivity by 20%'
+      'Developed Spark library achieving up to 20% productivity increase'
     ],
     technologies: ['Hadoop', 'Scala', 'Spark', 'Oracle'],
     business_impact: [
       {
         metric_name: 'Productivity Improvement',
         percentage: 20,
-        description: 'Increased data engineering productivity through custom Spark library'
+        description: 'Achieved up to 20% increase in data engineering productivity through custom Spark library'
       },
       {
         metric_name: 'Migration Success',
         percentage: 100,
-        description: 'Zero-downtime migration of critical data workflows'
+        description: 'Successfully completed zero-downtime migration of critical data workflows'
       }
     ],
     technical_innovation: [
@@ -311,8 +316,8 @@ export const PROJECT_PORTFOLIO = [
     location: 'Sénégal',
     focus_area: 'Customer Experience Management',
     key_achievements: [
-      'Developed ML models predicting customer QoE improving satisfaction by 15%',
-      'Automated processes reducing processing time by 30%',
+      'Developed ML models predicting customer QoE achieving up to 15% satisfaction improvement',
+      'Automated processes reducing processing time by up to 30%',
       'NPS-QoE correlation analysis with Tableau dashboards'
     ],
     technologies: ['Hadoop', 'Scala', 'Spark', 'SQL Server', 'Tableau', 'Python', 'Scikit-Learn', 'Flask'],
@@ -320,12 +325,12 @@ export const PROJECT_PORTFOLIO = [
       {
         metric_name: 'Customer Satisfaction',
         percentage: 15,
-        description: 'Improved customer satisfaction through QoE prediction models'
+        description: 'Achieved up to 15% improvement in customer satisfaction through QoE prediction models'
       },
       {
         metric_name: 'Processing Efficiency',
         percentage: 30,
-        description: 'Reduced processing time through automation'
+        description: 'Achieved up to 30% reduction in processing time through automation'
       }
     ],
     technical_innovation: [
@@ -353,12 +358,12 @@ export const PROJECT_PORTFOLIO = [
       {
         metric_name: 'Platform Scalability',
         percentage: 300,
-        description: 'Scalable micro-services architecture supporting high-volume data processing'
+        description: 'Achieved 3x scalability with micro-services architecture supporting high-volume data processing'
       },
       {
         metric_name: 'Data Monetization',
         percentage: 25,
-        description: 'New revenue streams through data-driven insights'
+        description: 'Enabled new revenue streams through data-driven insights'
       }
     ],
     technical_innovation: [
@@ -377,7 +382,7 @@ export const PROJECT_PORTFOLIO = [
     location: 'Sénégal',
     focus_area: 'HR Chatbot development',
     key_achievements: [
-      'Developed HR chatbot reducing employee response time by 50%',
+      'Developed HR chatbot achieving up to 50% reduction in employee response time',
       'Deployed on GCP with 99.9% availability'
     ],
     technologies: ['Beautiful Soup', 'GCP', 'Messenger API', 'Python', 'Rasa-Core', 'Rasa-NLU', 'Spacy', 'TensorFlow'],
@@ -385,12 +390,12 @@ export const PROJECT_PORTFOLIO = [
       {
         metric_name: 'Response Time',
         percentage: 50,
-        description: 'Reduced employee response time through automated HR chatbot'
+        description: 'Achieved up to 50% reduction in employee response time through automated HR chatbot'
       },
       {
         metric_name: 'Availability',
         percentage: 99.9,
-        description: 'High availability deployment on Google Cloud Platform'
+        description: 'Achieved high availability deployment on Google Cloud Platform'
       }
     ],
     technical_innovation: [
@@ -409,20 +414,20 @@ export const PROJECT_PORTFOLIO = [
     location: 'Sénégal',
     focus_area: 'Supercomputer energy consumption optimization',
     key_achievements: [
-      'Developed eco-energetic task scheduling algorithms reducing energy consumption by 2%',
-      'Created user/application classification models improving resource efficiency by 5%'
+      'Developed eco-energetic task scheduling algorithms achieving up to 2% energy reduction',
+      'Created user/application classification models achieving up to 5% resource efficiency improvement'
     ],
     technologies: ['Anaconda', 'MySQL', 'Python', 'Scikit-Learn'],
     business_impact: [
       {
         metric_name: 'Energy Savings',
         percentage: 2,
-        description: 'Reduced supercomputer energy consumption through optimized scheduling'
+        description: 'Achieved up to 2% reduction in supercomputer energy consumption through optimized scheduling'
       },
       {
         metric_name: 'Resource Efficiency',
         percentage: 5,
-        description: 'Improved resource efficiency through intelligent classification'
+        description: 'Achieved up to 5% improvement in resource efficiency through intelligent classification'
       }
     ],
     technical_innovation: [

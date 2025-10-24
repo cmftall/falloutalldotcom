@@ -15,11 +15,11 @@ export interface NavItem {
 
 export interface ContactInfo {
   email: string
-  phone: string
   location: string
   languages: string[]
   linkedin: string
-  github: string
+  phone?: string // Optional: Available after initial contact
+  github?: string // Removed from public display
 }
 
 // Additional types for internationalization

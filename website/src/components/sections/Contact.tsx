@@ -1,192 +1,111 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Card, CardContent } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
-import { Mail, MapPin, Phone, Send } from 'lucide-react'
+import { Mail, MapPin, Linkedin, CheckCircle, TrendingUp } from 'lucide-react'
 import { useI18n } from '@/components/providers/I18nProvider'
 
 export function Contact() {
   const { t } = useI18n()
-  
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    const form = e.target as HTMLFormElement
-    const formData = new FormData(form)
-    const name = formData.get('name') as string
-    const email = formData.get('email') as string
-    const message = formData.get('message') as string
-    
-    const subject = `Contact from ${name}`
-    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-    
-    window.open(`mailto:cmftall@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`)
-  }
 
   return (
-    <section id="contact" className="py-24 bg-muted/30">
+    <section id="contact" className="py-24 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          {/* Section Header */}
+          {/* Section Header - Consulting Focused */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
-                   <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                     {t('contact.title')}
-                   </h2>
-                   <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                     {t('contact.subtitle')}
-                   </p>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              {t('contact.title')}
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-8">
+              {t('contact.subtitle')}
+            </p>
+            
+            {/* Value Proposition */}
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-8">
+              <p className="text-lg text-foreground font-medium mb-6">
+                {t('contact.value')}
+              </p>
+              
+              {/* Services List */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <div className="flex items-start space-x-2">
+                  <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-sm text-foreground">{t('contact.service1')}</span>
+                </div>
+                <div className="flex items-start space-x-2">
+                  <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-sm text-foreground">{t('contact.service2')}</span>
+                </div>
+                <div className="flex items-start space-x-2">
+                  <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-sm text-foreground">{t('contact.service3')}</span>
+                </div>
+              </div>
+            </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Information */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="space-y-8"
+          {/* Primary CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <Button
+              variant="default"
+              size="lg"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-6 text-lg font-semibold shadow-xl"
+              onClick={() => window.open('mailto:cmftall@gmail.com?subject=Consulting Inquiry', '_blank')}
             >
-              <div>
-                <h3 className="text-2xl font-bold text-foreground mb-6">
-                  {t('contact.quickLinks')}
-                </h3>
-                <div className="space-y-4">
-                  <a
-                    href="https://www.linkedin.com/in/cmftall"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block text-primary hover:text-primary/80 font-medium transition-colors"
-                  >
-                    {t('contact.linkedinProfile')}
-                  </a>
-                  <a
-                    href="https://www.github.com/cmftall"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block text-primary hover:text-primary/80 font-medium transition-colors"
-                  >
-                    {t('contact.githubPortfolio')}
-                  </a>
-                </div>
-              </div>
+              <Mail className="mr-2 h-6 w-6" />
+              {t('contact.primaryCta')}
+            </Button>
+          </motion.div>
 
-              <div>
-                <h3 className="text-2xl font-bold text-foreground mb-6">
-                  {t('contact.title')}
-                </h3>
-                <div className="space-y-6">
-                  <div className="flex items-center space-x-4">
-                    <div className="p-3 rounded-xl bg-blue-500 text-white">
-                      <Mail className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-foreground">{t('contact.email')}</p>
-                      <p className="text-muted-foreground">cmftall@gmail.com</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center space-x-4">
-                    <div className="p-3 rounded-xl bg-green-500 text-white">
-                      <MapPin className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-foreground">{t('contact.location')}</p>
-                      <p className="text-muted-foreground">Paris, France & Montreal, Canada</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center space-x-4">
-                    <div className="p-3 rounded-xl bg-purple-500 text-white">
-                      <Phone className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-foreground">{t('contact.phone')}</p>
-                      <p className="text-muted-foreground">+33 7 67 07 01 79</p>
-                    </div>
-                  </div>
-                </div>
+          {/* Contact Details - Simplified */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="bg-muted/50 rounded-lg p-6 text-center"
+          >
+            <div className="flex flex-wrap justify-center items-center gap-6 text-sm text-muted-foreground">
+              <div className="flex items-center space-x-2">
+                <TrendingUp className="h-4 w-4" />
+                <span>{t('contact.rates')}</span>
               </div>
-            </motion.div>
-
-            {/* Contact Form */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <Card className="bg-card border-0 shadow-lg">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold text-card-foreground mb-6">
-                    {t('contact.message')}
-                  </h3>
-                  
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-muted-foreground mb-2">
-                        Name
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        required
-                        className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-background text-foreground transition-colors"
-                        placeholder="Your name"
-                      />
-                    </div>
-                    
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-muted-foreground mb-2">
-                        Email
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        required
-                        className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-background text-foreground transition-colors"
-                        placeholder="your.email@example.com"
-                      />
-                    </div>
-                    
-                    <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-muted-foreground mb-2">
-                        Message
-                      </label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        required
-                        rows={5}
-                        className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-background text-foreground transition-colors resize-none"
-                        placeholder={t('contact.messagePlaceholder')}
-                      />
-                    </div>
-                    
-                    <motion.div
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <Button
-                        type="submit"
-                        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 text-lg font-medium rounded-lg transition-colors duration-200"
-                      >
-                        {t('contact.sendMessage')}
-                        <Send className="ml-2 h-5 w-5" />
-                      </Button>
-                    </motion.div>
-                  </form>
-                </CardContent>
-              </Card>
-            </motion.div>
-          </div>
+              <div className="flex items-center space-x-2">
+                <MapPin className="h-4 w-4" />
+                <span>Paris & Montreal</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Mail className="h-4 w-4" />
+                <a href="mailto:cmftall@gmail.com" className="hover:text-primary transition-colors">
+                  cmftall@gmail.com
+                </a>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Linkedin className="h-4 w-4" />
+                <a 
+                  href="https://www.linkedin.com/in/cmftall" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors"
+                >
+                  LinkedIn
+                </a>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

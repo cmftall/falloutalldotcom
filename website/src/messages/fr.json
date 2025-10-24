@@ -8,73 +8,109 @@
     "toggleTheme": "Basculer le thème"
   },
   "hero": {
-    "headline": "Je transforme le chaos des données Fortune 500 en gains d'efficacité de 30%.",
-    "subheadline": "Architecte de données senior qui a livré un impact business mesurable dans les secteurs Banque, Télécom & Technologie",
-    "primaryCta": "Voir mes résultats",
-    "secondaryCta": "M'embaucher",
-    "credential": "Architecte de données • Paris, France et Montréal, Canada"
+    "headline": "Je livre un ROI mesurable grâce à une architecture de données pragmatique",
+    "subheadline": "Architecte de Données axé sur la valeur business | 8+ ans à réduire les erreurs, réduire les coûts et construire des équipes dans la Banque, les Télécoms & la Tech",
+    "primaryCta": "Voir mes études de cas",
+    "secondaryCta": "Prendre rendez-vous",
+    "credential": "Architecte de données • Paris, France et Montréal, Canada",
+    "projectOutcomes": "Jusqu'à 30% de réduction d'erreurs • €130K+ d'économies annuelles • 100+ pipelines construits",
+    "technicalInnovation": "Des solutions pragmatiques que les équipes peuvent réellement supporter, livrant des résultats business mesurables",
+    "credibilityIndicators": [
+      "Direction d'équipes de 7+ ingénieurs",
+      "€130K+ d'économies annuelles grâce à l'innovation en qualité des données",
+      "100+ pipelines de production construits et maintenus",
+      "Expertise multi-industrie (Banque, Télécom, Technologie)",
+      "8+ ans de leadership en transformation d'entreprise"
+    ],
+    "professionalPositioning": "Je me concentre sur la valeur business - livrer du ROI grâce à une architecture pragmatique qui priorise ce qui compte : réduire les coûts, améliorer la qualité et construire des équipes durables"
   },
   "expertise": {
     "title": "Expertise",
-    "subtitle": "Compétences clés à travers la stack de données moderne",
+    "subtitle": "Compétences clés organisées par niveau de maîtrise et profondeur d'expérience",
+    "tierDescription": {
+      "core": "Domaines d'expertise approfondie acquise à travers 6-8+ ans de pratique professionnelle",
+      "advanced": "Maîtrise solide avec 4-5 ans d'expérience pratique",
+      "working": "Connaissance pratique et développement continu"
+    },
+    "technicalDepth": "Compétences techniques avancées et méthodologies en architecture de données",
+    "architecturalThinking": "Planification stratégique d'architecture de données et solutions à échelle d'entreprise",
+    "methodologies": [
+      "Frameworks d'automatisation DataOps",
+      "Architecture de données micro-services",
+      "Stratégies de migration sans interruption",
+      "Déploiement avancé de modèles ML",
+      "Gouvernance de données multi-cloud"
+    ],
+    "tiers": {
+      "core": {
+        "title": "Expertise Principale",
+        "description": "Expertise approfondie prouvée par une pratique professionnelle extensive",
         "categories": {
-          "cloudPlatforms": {
-            "name": "Plateformes Cloud",
-            "skills": "Azure, AWS, Databricks, Snowflake, Apache Spark"
-          },
           "dataEngineering": {
             "name": "Ingénierie des Données",
-            "skills": "Python, Scala, SQL, Apache Airflow, Terraform"
-          },
-          "machineLearning": {
-            "name": "Apprentissage Automatique",
-            "skills": "Scikit-Learn, TensorFlow, Pandas, NumPy, MLflow"
+            "skills": "Python, Scala, SQL, Apache Airflow, Terraform",
+            "proficiency": "Expert",
+            "yearsExperience": 8,
+            "methodologies": ["Conception de pipelines ETL/ELT", "Cadres de qualité de données", "Infrastructure as Code"]
           },
           "databases": {
             "name": "Bases de Données",
-            "skills": "PostgreSQL, Oracle, Cassandra, MongoDB, Delta Lake"
+            "skills": "PostgreSQL, Oracle, Cassandra, MongoDB, Delta Lake",
+            "proficiency": "Expert",
+            "yearsExperience": 7,
+            "methodologies": ["Optimisation de bases de données", "Modélisation de données", "Optimisation de performance"]
           },
-          "visualization": {
-            "name": "Visualisation",
-            "skills": "Tableau, Power BI, Jupyter, Streamlit, Plotly"
-          },
-          "devops": {
-            "name": "DevOps",
-            "skills": "GitHub Actions, Azure DevOps, Docker, Kubernetes, DataOps"
+          "cloudPlatforms": {
+            "name": "Architecture de Données Cloud",
+            "skills": "Azure, AWS, Databricks, Snowflake, Apache Spark",
+            "proficiency": "Expert",
+            "yearsExperience": 6,
+            "methodologies": ["Architecture multi-cloud", "Traitement de données cloud-native", "Pipelines de données serverless"]
           }
         }
+      },
+      "advanced": {
+        "title": "Compétences Avancées",
+        "description": "Maîtrise solide avec expérience de livraison prouvée",
+        "categories": {
+          "machineLearning": {
+            "name": "Apprentissage Automatique",
+            "skills": "Scikit-Learn, TensorFlow, Pandas, NumPy, MLflow",
+            "proficiency": "Avancé",
+            "yearsExperience": 5,
+            "methodologies": ["Déploiement de modèles ML", "Feature engineering", "Monitoring de modèles"]
+          },
+          "devops": {
+            "name": "DevOps & DataOps",
+            "skills": "GitHub Actions, Azure DevOps, Docker, Kubernetes, DataOps",
+            "proficiency": "Avancé",
+            "yearsExperience": 5,
+            "methodologies": ["Pipelines CI/CD", "Orchestration de conteneurs", "Automatisation DataOps"]
+          },
+          "visualization": {
+            "name": "Visualisation de Données",
+            "skills": "Tableau, Power BI, Jupyter, Streamlit, Plotly",
+            "proficiency": "Avancé",
+            "yearsExperience": 4,
+            "methodologies": ["Tableaux de bord interactifs", "Data storytelling", "Analytique en temps réel"]
+          }
+        }
+      }
+    }
   },
   "education": {
-    "title": "Formation Académique",
-    "subtitle": "Fondation académique en sciences mathématiques et technologies de big data",
-    "continuousLearning": {
-      "title": "Apprentissage Continu",
-      "description": "Mon parcours éducatif en sciences mathématiques fournit une base solide pour l'architecture de données. Je me tiens constamment à jour avec les dernières technologies et méthodologies grâce aux certifications professionnelles, conférences industrielles et expérience pratique sur projets."
-    },
+    "title": "Formation",
+    "subtitle": "Fondation en sciences mathématiques avec spécialisation Big Data",
     "degrees": {
       "aims-masters-bigdata": {
-        "degree": "Master Coopératif en Sciences Mathématiques - spécialisation Big Data",
-        "institution": "African Institute for Mathematical Sciences (AIMS)",
-        "location": "Sénégal",
-        "duration": "2016-2018",
-        "year": "2018",
-        "description": "Programme de master coopératif spécialisé dans les technologies Big Data, l'analyse statistique et l'apprentissage automatique. Projets industriels axés sur l'architecture de données, l'analytique et les applications réelles des sciences mathématiques en ingénierie des données."
+        "degree": "Master en Sciences Mathématiques - Big Data",
+        "institution": "AIMS",
+        "year": "2018"
       },
       "ucad-masters-applied": {
         "degree": "Master en Mathématiques Appliquées",
         "institution": "Université Cheikh Anta Diop",
-        "location": "Dakar, Sénégal",
-        "duration": "2014-2016",
-        "year": "2016",
-        "description": "Études avancées en mathématiques appliquées avec focus sur la modélisation mathématique, l'analyse statistique et les méthodes computationnelles. Spécialisation en théorie de l'optimisation, analyse numérique et applications mathématiques en science des données."
-      },
-      "ucad-bachelors": {
-        "degree": "Licence en Mathématiques",
-        "institution": "Université Cheikh Anta Diop",
-        "location": "Dakar, Sénégal",
-        "duration": "2009-2013",
-        "year": "2013",
-        "description": "Fondation en sciences mathématiques, statistiques et pensée analytique. Focus sur la modélisation mathématique, le calcul, l'algèbre linéaire et la théorie des probabilités qui fournit une base analytique solide pour la science des données et l'ingénierie."
+        "year": "2016"
       }
     }
   },
@@ -84,18 +120,16 @@
     "viewDetails": "Voir les détails"
   },
   "contact": {
-    "title": "Prêt à Transformer Vos Données ?",
-    "subtitle": "Discutons de comment je peux livrer les mêmes résultats mesurables pour votre organisation",
+    "title": "Prêt à Livrer un ROI Mesurable ?",
+    "subtitle": "Discutons de comment je peux vous aider à réduire vos coûts et améliorer la qualité des données",
+    "value": "J'aide les entreprises à réduire les coûts et améliorer la qualité des données grâce à une architecture pragmatique que les équipes peuvent réellement supporter.",
+    "service1": "Audits et conseil en architecture",
+    "service2": "Formation framework qualité des données",
+    "service3": "Projets de conseil court-terme",
+    "primaryCta": "Prendre Rendez-vous",
+    "rates": "€700-1800/jour",
     "email": "Email",
-    "phone": "Téléphone",
-    "location": "Localisation",
-    "languages": "Langues",
-    "quickLinks": "Liens Rapides",
-    "linkedinProfile": "Profil LinkedIn",
-    "githubPortfolio": "Portfolio GitHub",
-    "message": "Message",
-    "messagePlaceholder": "Parlez-moi de vos défis de données...",
-    "sendMessage": "Parlons-en"
+    "location": "Localisation"
   },
   "footer": {
     "copyright": "© 2025 Fallou TALL. Tous droits réservés.",
@@ -103,7 +137,7 @@
   },
   "work": {
     "title": "Résultats Réels, Impact Réel",
-    "subtitle": "Comment j'ai livré une valeur business mesurable chez des entreprises Fortune 500",
+    "subtitle": "Comment j'ai livré une valeur business mesurable chez de grandes entreprises",
     "businessImpact": "Preuve claire de valeur business et ROI à travers des résultats mesurables",
     "technicalInnovation": "Innovation technique combinée à un impact business mesurable",
     "sections": {
@@ -113,13 +147,43 @@
       "technologies": "Technologies & Outils"
     },
     "projects": {
+      "sopra-steria-data-architect": {
+        "company": "Sopra Steria",
+        "role": "Architecte de Données Transverse - DCOE",
+        "duration": "11/2025 - Présent",
+        "location": "France",
+        "focusArea": "Architecture de données transverse et direction du centre d'excellence",
+        "description": "Direction du centre d'excellence en architecture de données, pilotage de la stratégie de plateforme de données transfonctionnelle, cadres de gouvernance de données d'entreprise et leadership technique sur plusieurs projets.",
+        "keyAchievements": [
+          "Direction du centre d'excellence en architecture de données",
+          "Stratégie de plateforme de données transfonctionnelle",
+          "Cadres de gouvernance de données d'entreprise",
+          "Leadership technique sur plusieurs projets"
+        ],
+        "technologies": ["Azure", "AWS", "Databricks", "Python", "Snowflake", "Spark", "SQL", "Terraform"],
+        "businessImpact": [
+          {
+            "metricName": "Standardisation Architecture",
+            "percentage": 100,
+            "description": "Établissement de standards et meilleures pratiques d'architecture de données à l'échelle de l'entreprise"
+          }
+        ],
+        "technicalInnovation": [
+          "Frameworks de Centre d'Excellence",
+          "Patterns d'architecture de données d'entreprise",
+          "Modèles de gouvernance transfonctionnelle",
+          "Méthodologies de leadership technique"
+        ],
+        "industry": "Technologie & Conseil"
+      },
       "onepoint-expert-data": {
         "company": "Onepoint",
         "role": "Consultant Expert Data",
-        "duration": "09/2024 - 07/2025",
+        "duration": "09/2024 - 10/2025",
         "location": "Canada et France",
+        "durationNote": "Temps partiel 09/2024-04/2025 en parallèle de BNC, puis contrat complet jusqu'à 10/2025",
         "focusArea": "Implémentation de plateforme de données moderne et évolutive",
-        "description": "Livré des audits techniques, organisationnels et de gouvernance pour des plateformes de données d'entreprise au Canada et en France. Conçu des architectures modernes et évolutives pour des entreprises Fortune 500.",
+        "description": "Livraison d'audits techniques, organisationnels et de gouvernance pour des plateformes de données d'entreprise au Canada et en France. Conception d'architectures modernes et évolutives pour de grandes entreprises.",
         "keyAchievements": [
           "Audits techniques, conception d'architecture de données",
           "Développement de pipelines ETL/ELT",
@@ -132,12 +196,12 @@
           {
             "metricName": "Satisfaction Client",
             "percentage": 95,
-            "description": "Satisfaction des clients Fortune 500 avec les implémentations de plateformes de données"
+            "description": "Haute satisfaction client avec les implémentations de plateformes de données"
           },
           {
             "metricName": "Performance Plateforme",
             "percentage": 40,
-            "description": "Amélioration moyenne des performances sur les plateformes de données clients"
+            "description": "Amélioration jusqu'à 40% des performances sur les plateformes de données clients"
           }
         ],
         "technicalInnovation": [
@@ -154,29 +218,29 @@
         "duration": "11/2021 - 04/2025",
         "location": "Canada",
         "focusArea": "Implémentation de fondation analytique",
-        "description": "Dirigé une équipe de 7 ingénieurs construisant des pipelines analytiques robustes avec des frameworks QA PySpark innovants.",
+        "description": "Direction d'une équipe de 7 ingénieurs construisant des pipelines analytiques robustes avec des frameworks QA PySpark innovants.",
         "keyAchievements": [
           "Dirigé une équipe de 7 analystes et ingénieurs de données",
-          "Développé une bibliothèque PySpark innovante réduisant les erreurs de 30%",
-          "Augmenté l'efficacité des processus de 25%",
-          "Automatisé les tests QA réduisant le temps de test de 40%"
+          "Développé une bibliothèque PySpark innovante atteignant jusqu'à 30% de réduction d'erreurs",
+          "Augmenté l'efficacité des processus jusqu'à 25%",
+          "Automatisé les tests QA réduisant le temps de test jusqu'à 40%"
         ],
         "technologies": ["Azure", "AWS", "Databricks", "Python", "Snowflake", "Spark", "SQL", "Terraform"],
         "businessImpact": [
           {
             "metricName": "Réduction d'Erreurs",
             "percentage": 30,
-            "description": "Réduction des erreurs de traitement de données grâce au framework PySpark innovant"
+            "description": "Atteint jusqu'à 30% de réduction des erreurs de traitement de données grâce au framework PySpark innovant"
           },
           {
             "metricName": "Amélioration Efficacité",
             "percentage": 25,
-            "description": "Augmentation de l'efficacité de traitement de données à travers les pipelines analytiques"
+            "description": "Atteint jusqu'à 25% d'augmentation de l'efficacité de traitement de données à travers les pipelines analytiques"
           },
           {
             "metricName": "Vitesse Tests",
             "percentage": 40,
-            "description": "Tests QA plus rapides grâce à l'automatisation"
+            "description": "Atteint jusqu'à 40% de tests QA plus rapides grâce à l'automatisation"
           }
         ],
         "technicalInnovation": [
@@ -197,19 +261,19 @@
         "keyAchievements": [
           "Supervisé la migration des flux de données",
           "Migré Flume/Pig/Spark1/Sqoop vers Spark2",
-          "Développé une bibliothèque Spark augmentant la productivité de 20%"
+          "Développé une bibliothèque Spark atteignant jusqu'à 20% d'augmentation de productivité"
         ],
         "technologies": ["Hadoop", "Scala", "Spark", "Oracle"],
         "businessImpact": [
           {
             "metricName": "Amélioration Productivité",
             "percentage": 20,
-            "description": "Augmentation de la productivité d'ingénierie de données grâce à la bibliothèque Spark personnalisée"
+            "description": "Atteint jusqu'à 20% d'augmentation de la productivité d'ingénierie de données grâce à la bibliothèque Spark personnalisée"
           },
           {
             "metricName": "Succès Migration",
             "percentage": 100,
-            "description": "Migration sans interruption des flux de données critiques"
+            "description": "Migration complète sans interruption des flux de données critiques"
           }
         ],
         "technicalInnovation": [
@@ -228,8 +292,8 @@
         "focusArea": "Gestion de l'Expérience Client",
         "description": "Développé des modèles ML pour la gestion de l'expérience client et la prédiction de QoE.",
         "keyAchievements": [
-          "Développé des modèles ML prédisant la QoE client améliorant la satisfaction de 15%",
-          "Automatisé les processus réduisant le temps de traitement de 30%",
+          "Développé des modèles ML prédisant la QoE client atteignant jusqu'à 15% d'amélioration de satisfaction",
+          "Automatisé les processus réduisant le temps de traitement jusqu'à 30%",
           "Analyse de corrélation NPS-QoE avec tableaux de bord Tableau"
         ],
         "technologies": ["Hadoop", "Scala", "Spark", "SQL Server", "Tableau", "Python", "Scikit-Learn", "Flask"],
@@ -237,12 +301,12 @@
           {
             "metricName": "Satisfaction Client",
             "percentage": 15,
-            "description": "Amélioration de la satisfaction client grâce aux modèles de prédiction QoE"
+            "description": "Atteint jusqu'à 15% d'amélioration de la satisfaction client grâce aux modèles de prédiction QoE"
           },
           {
             "metricName": "Efficacité Traitement",
             "percentage": 30,
-            "description": "Réduction du temps de traitement grâce à l'automatisation"
+            "description": "Atteint jusqu'à 30% de réduction du temps de traitement grâce à l'automatisation"
           }
         ],
         "technicalInnovation": [
@@ -270,12 +334,12 @@
           {
             "metricName": "Évolutivité Plateforme",
             "percentage": 300,
-            "description": "Architecture micro-services évolutive supportant le traitement de données haute volumétrie"
+            "description": "Atteint 3x d'évolutivité avec architecture micro-services supportant le traitement de données haute volumétrie"
           },
           {
             "metricName": "Monétisation Données",
             "percentage": 25,
-            "description": "Nouveaux flux de revenus grâce aux insights basés sur les données"
+            "description": "Permis de nouveaux flux de revenus grâce aux insights basés sur les données"
           }
         ],
         "technicalInnovation": [
@@ -307,108 +371,5 @@
     "goHome": "Retour à l'accueil",
     "goBack": "Retour",
     "tryThesePages": "Ou essayez une de ces pages :"
-  },
-  "industryAuthority": {
-    "title": "Autorité Industrielle & Leadership d'Opinion",
-    "subtitle": "Reconnaissance et expertise dans la communauté d'architecture de données",
-    "thoughtLeadership": {
-      "title": "Leadership d'Opinion",
-      "description": "Contribuer à la communauté d'architecture de données à travers des insights, méthodologies et bonnes pratiques",
-      "content": [
-        {
-          "type": "Étude de Cas",
-          "title": "Modernisation de Plateforme de Données d'Entreprise",
-          "description": "Étude de cas complète sur la modernisation des plateformes de données legacy avec des stratégies de migration sans interruption",
-          "keyInsights": [
-            "Méthodologie de migration sans interruption",
-            "Patterns de gouvernance de données multi-cloud",
-            "Frameworks d'automatisation DataOps"
-          ],
-          "targetAudience": ["technique", "business"],
-          "publicationDate": "15/12/2024",
-          "recognition": ["Mis en avant dans Data Architecture Weekly", "Cité dans 3 publications industrielles"]
-        },
-        {
-          "type": "Méthodologie",
-          "title": "Framework DataOps pour l'Échelle Entreprise",
-          "description": "Méthodologie éprouvée pour implémenter les pratiques DataOps dans des environnements d'entreprise à grande échelle",
-          "keyInsights": [
-            "Pipelines de test et déploiement automatisés",
-            "Monitoring et alerting de qualité des données",
-            "Frameworks de collaboration inter-équipes"
-          ],
-          "targetAudience": ["technique"],
-          "publicationDate": "20/11/2024",
-          "recognition": ["Adopté par 5+ clients d'entreprise", "Présenté au DataOps Summit 2024"]
-        }
-      ]
-    },
-    "professionalRecognition": {
-      "title": "Reconnaissance Professionnelle",
-      "achievements": [
-        "Dirigé des transformations d'architecture de données pour des entreprises Fortune 500",
-        "Développé un framework PySpark innovant réduisant les erreurs de 30%",
-        "Conférencier à la Data Architecture Conference 2024",
-        "Mentor pour des ingénieurs et architectes de données juniors",
-        "Contributeur aux projets open-source d'ingénierie de données"
-      ]
-    },
-    "industryInsights": {
-      "title": "Insights Industriels",
-      "description": "Perspectives uniques sur les tendances d'architecture de données et bonnes pratiques",
-      "insights": [
-        "L'avenir de l'architecture de données réside dans les architectures multi-cloud et event-driven",
-        "DataOps est essentiel pour faire évoluer les équipes d'ingénierie de données",
-        "Les métriques d'impact business doivent guider les décisions d'architecture technique",
-        "Les principes de design security-first sont critiques pour les plateformes de données d'entreprise"
-      ]
-    }
-  },
-  "personalBrand": {
-    "title": "Ce qui me Distingue",
-    "subtitle": "Positionnement unique et approche de l'architecture de données",
-    "uniquePositioning": {
-      "title": "Positionnement Unique",
-      "description": "Innovation technique combinée à un impact business mesurable à travers les transformations de données d'entreprise",
-      "differentiators": [
-        "8+ ans à diriger des transformations de données d'entreprise dans plusieurs industries",
-        "Historique prouvé de réduction d'erreurs de 30% grâce à des frameworks innovants",
-        "Expérience client Fortune 500 avec des résultats business mesurables",
-        "Expertise multi-industries couvrant les secteurs Banque, Télécom et Technologie",
-        "Innovation technique combinée à un focus sur l'impact business"
-      ]
-    },
-    "personalStory": {
-      "title": "Mon Parcours",
-      "description": "Des sciences mathématiques au leadership en architecture de données d'entreprise",
-      "journey": [
-        "Commencé avec une fondation en sciences mathématiques à AIMS et UCAD",
-        "Appliqué la modélisation mathématique aux défis de données du monde réel",
-        "Évolué de data scientist à lead data engineer puis architecte senior",
-        "Dirigé des équipes et livré un impact mesurable dans plusieurs industries",
-        "Maintenant consultant sur des implémentations de plateformes de données d'entreprise"
-      ]
-    },
-    "uniqueSellingPoints": {
-      "title": "Pourquoi Me Choisir",
-      "points": [
-        "Profondeur technique avec acuité business - Je comprends à la fois la complexité technique et la valeur business",
-        "Innovation prouvée - Développé des frameworks qui réduisent les erreurs de 30% et améliorent l'efficacité de 25%",
-        "Expérience multi-industries - Secteurs Banque, Télécom, Technologie avec clients Fortune 500",
-        "Leadership d'équipe - Dirigé avec succès des équipes de 7+ ingénieurs livrant des transformations d'entreprise",
-        "Résultats mesurables - Chaque projet inclut des métriques d'impact business quantifiées"
-      ]
-    },
-    "competitiveAdvantage": {
-      "title": "Avantage Concurrentiel",
-      "description": "Ce qui me différencie des autres architectes de données",
-      "advantages": [
-        "Fondation en sciences mathématiques fournit une base analytique solide",
-        "Expérience pratique du data scientist au niveau architecte senior",
-        "Focus innovation - créer de nouveaux frameworks et méthodologies",
-        "Orientation impact business - chaque décision technique considère la valeur business",
-        "Perspective multi-culturelle de travailler dans différents pays et industries"
-      ]
-    }
   }
 }

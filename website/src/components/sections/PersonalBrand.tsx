@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Card, CardContent } from '@/components/ui/Card'
+import { Badge } from '@/components/ui/Badge'
 import { useI18n } from '@/components/providers/I18nProvider'
 import { 
   Star, 
@@ -62,18 +63,12 @@ export function PersonalBrand() {
                   
                   {/* Differentiators */}
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {(() => {
-                      const differentiators = t('personalBrand.uniquePositioning.differentiators')
-                      if (Array.isArray(differentiators)) {
-                        return differentiators.map((differentiator: string, index: number) => (
-                          <div key={index} className="flex items-center space-x-3 bg-white/10 rounded-lg p-4 backdrop-blur-sm">
-                            <CheckCircle className="w-5 h-5 text-green-300 flex-shrink-0" />
-                            <span className="text-white font-medium">{differentiator}</span>
-                          </div>
-                        ))
-                      }
-                      return null
-                    })()}
+                    {t('personalBrand.uniquePositioning.differentiators', { returnObjects: true }).map((differentiator: string, index: number) => (
+                      <div key={index} className="flex items-center space-x-3 bg-white/10 rounded-lg p-4 backdrop-blur-sm">
+                        <CheckCircle className="w-5 h-5 text-green-300 flex-shrink-0" />
+                        <span className="text-white font-medium">{differentiator}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </CardContent>
@@ -99,27 +94,21 @@ export function PersonalBrand() {
                 </p>
                 
                 <div className="space-y-4">
-                  {(() => {
-                    const journey = t('personalBrand.personalStory.journey')
-                    if (Array.isArray(journey)) {
-                      return journey.map((step: string, index: number) => (
-                        <motion.div
-                          key={index}
-                          initial={{ opacity: 0, x: -20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.5, delay: index * 0.1 }}
-                          viewport={{ once: true }}
-                          className="flex items-start space-x-4"
-                        >
-                          <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
-                            <span className="text-white font-bold text-sm">{index + 1}</span>
-                          </div>
-                          <p className="text-foreground font-medium">{step}</p>
-                        </motion.div>
-                      ))
-                    }
-                    return null
-                  })()}
+                  {t('personalBrand.personalStory.journey', { returnObjects: true }).map((step: string, index: number) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      className="flex items-start space-x-4"
+                    >
+                      <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
+                        <span className="text-white font-bold text-sm">{index + 1}</span>
+                      </div>
+                      <p className="text-foreground font-medium">{step}</p>
+                    </motion.div>
+                  ))}
                 </div>
               </div>
               
@@ -156,33 +145,27 @@ export function PersonalBrand() {
             </h3>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {(() => {
-                const points = t('personalBrand.uniqueSellingPoints.points')
-                if (Array.isArray(points)) {
-                  return points.map((point: string, index: number) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      className="group"
-                    >
-                      <Card className="h-full bg-card border-0 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                        <CardContent className="p-6 text-center">
-                          <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                            <Lightbulb className="w-6 h-6 text-white" />
-                          </div>
-                          <p className="text-foreground font-medium group-hover:text-primary transition-colors">
-                            {point}
-                          </p>
-                        </CardContent>
-                      </Card>
-                    </motion.div>
-                  ))
-                }
-                return null
-              })()}
+              {t('personalBrand.uniqueSellingPoints.points', { returnObjects: true }).map((point: string, index: number) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group"
+                >
+                  <Card className="h-full bg-card border-0 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <CardContent className="p-6 text-center">
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <Lightbulb className="w-6 h-6 text-white" />
+                      </div>
+                      <p className="text-foreground font-medium group-hover:text-primary transition-colors">
+                        {point}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
 
@@ -205,27 +188,21 @@ export function PersonalBrand() {
                 </p>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {(() => {
-                    const advantages = t('personalBrand.competitiveAdvantage.advantages')
-                    if (Array.isArray(advantages)) {
-                      return advantages.map((advantage: string, index: number) => (
-                        <motion.div
-                          key={index}
-                          initial={{ opacity: 0, x: -20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.5, delay: index * 0.1 }}
-                          viewport={{ once: true }}
-                          className="flex items-start space-x-4 p-4 bg-white dark:bg-gray-900 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
-                        >
-                          <div className="w-8 h-8 bg-gradient-to-r from-green-400 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
-                            <Zap className="w-4 h-4 text-white" />
-                          </div>
-                          <p className="text-foreground font-medium">{advantage}</p>
-                        </motion.div>
-                      ))
-                    }
-                    return null
-                  })()}
+                  {t('personalBrand.competitiveAdvantage.advantages', { returnObjects: true }).map((advantage: string, index: number) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      className="flex items-start space-x-4 p-4 bg-white dark:bg-gray-900 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+                    >
+                      <div className="w-8 h-8 bg-gradient-to-r from-green-400 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Zap className="w-4 h-4 text-white" />
+                      </div>
+                      <p className="text-foreground font-medium">{advantage}</p>
+                    </motion.div>
+                  ))}
                 </div>
               </CardContent>
             </Card>

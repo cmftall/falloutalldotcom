@@ -7,7 +7,15 @@
 
 ## Summary
 
-Enhance the personal portfolio website to establish professional credibility and authority as a Senior Data Architect through compelling visual presentation, detailed case studies with metrics, and strategic content positioning that resonates with both technical and business stakeholders. The implementation will prioritize project outcomes and business impact while maintaining equal emphasis for different audience types through multiple call-to-action strategies.
+Enhance the personal portfolio website to establish professional credibility and authority as a Senior Data Architect through **credibility-first content strategy**, removal of unverifiable claims, and authentic proof of expertise. The implementation follows a comprehensive credibility audit (2025-01-27) that identified and addressed false claims, privacy issues, and positioning problems. The enhanced approach prioritizes verifiable achievements, social proof through testimonials, detailed case studies, and honest qualification of all metrics while maintaining equal emphasis for both technical and business stakeholders.
+
+**Key Shifts from Initial Design**:
+- **Credibility First**: Remove all unverifiable claims before adding new content (Tier 1 priority)
+- **Privacy Protection**: Remove public phone numbers and weak external links (GitHub)
+- **Honest Metrics**: Qualify all performance claims with "achieved up to" language
+- **Expertise Hierarchy**: Reorganize skills into Core/Advanced/Working tiers for credibility
+- **Social Proof**: Prioritize testimonials and case studies over self-promotion
+- **Accurate History**: Fix work timeline with proper overlap explanations and current employer positioning
 
 ## Technical Context
 
@@ -153,12 +161,51 @@ website/
 
 **Structure Decision**: Single Next.js web application with App Router, supporting static export for CDN deployment. The structure follows Next.js 15+ best practices with clear separation of concerns: pages in `app/`, reusable components in `components/`, utilities in `lib/`, and static assets in `public/`. Internationalization is handled through locale-specific routes and JSON translation files.
 
+## Strategic Learnings Integration (2025-01-27)
+
+### Credibility Audit Findings
+
+A comprehensive credibility audit revealed critical issues that must be addressed before proceeding with enhancement work:
+
+**Tier 1 - Critical Issues (Must Fix Immediately)**:
+1. Unverifiable claims in Industry Authority section (publications, speaking engagements, awards)
+2. Empty/weak GitHub link damaging credibility
+3. Public phone number exposure creating privacy/spam risks
+4. Work history dates inaccurate and showing future dates
+5. Metrics lacking qualification language ("30%" vs. "up to 30%")
+6. "Fortune 500" claims technically false for non-US companies
+
+**Tier 2 - Credibility Boosters (1 Week)**:
+1. Missing social proof (no testimonials from former managers/colleagues)
+2. Bullet-point achievements without detailed case studies
+3. Certifications without verification links/credential IDs
+4. Education section oversized for 8+ years experience
+
+**Tier 3 - Positioning Enhancements (2 Weeks)**:
+1. Expertise claims too broad ("Expert" in 6+ areas)
+2. Unclear availability and career positioning
+3. Broken contact form (mailto: doesn't work for most users)
+4. Generic headline tied to employer (requires updates when changing jobs)
+
+### Implementation Strategy Shift
+
+**Original Plan**: Add impressive-sounding content → Build authority
+**Revised Plan**: Remove false claims → Add verifiable proof → Build authentic authority
+
+This represents a fundamental shift from self-promotion to credibility-building through verifiable achievements, social proof, and honest presentation of expertise.
+
+### New Requirements Summary
+
+- **46 new functional requirements** (FR-021 to FR-066) covering credibility, privacy, positioning, expertise differentiation, metrics language, case studies, education sizing, and work history accuracy
+- **32 new success criteria** (SC-019 to SC-050) for validation
+- **12 strategic learnings** documented for future reference
+- **3-tier implementation priority** (Critical → Credibility Boost → Enhancement)
+
 ## Complexity Tracking
 
 *Fill ONLY if Constitution Check has violations that must be justified*
 
 | Violation | Why Needed | Simpler Alternative Rejected Because |
 |-----------|------------|-------------------------------------|
-| [e.g., 4th project] | [current need] | [why 3 projects insufficient] |
-| [e.g., Repository pattern] | [specific problem] | [why direct DB access insufficient] |
+| N/A | Constitution checks pass | No violations |
 

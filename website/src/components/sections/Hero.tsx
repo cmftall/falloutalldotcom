@@ -4,35 +4,30 @@ import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
 import { useI18n } from '@/components/providers/I18nProvider'
 import { ArrowRight, ChevronDown, Award, Users, TrendingUp, Target, Zap } from 'lucide-react'
+import Image from 'next/image'
 
 export function Hero() {
   const { t } = useI18n()
 
-  // Real metrics from your actual experience
+  // Real metrics from your actual experience - Business value focused
   const impactMetrics = [
     { 
-      metric: '30%', 
+      metric: 'Up to 30%', 
       label: 'Error Reduction', 
       icon: Target,
-      description: 'Through innovative PySpark frameworks at BNC'
+      description: 'Achieved through innovative PySpark frameworks'
     },
     { 
-      metric: '25%', 
-      label: 'Efficiency Gain', 
+      metric: '€130K+', 
+      label: 'Annual Savings', 
       icon: TrendingUp,
-      description: 'Across analytical pipelines'
+      description: 'Prevented rework costs through data quality'
     },
     { 
-      metric: '7+', 
-      label: 'Team Size', 
-      icon: Users,
-      description: 'Engineers led successfully'
-    },
-    { 
-      metric: 'Fortune 500', 
-      label: 'Clients', 
-      icon: Award,
-      description: 'Enterprise transformations delivered'
+      metric: '100+', 
+      label: 'Pipelines Built', 
+      icon: Zap,
+      description: 'Production data pipelines across banking & telecom'
     }
   ]
 
@@ -69,11 +64,31 @@ export function Hero() {
 
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="max-w-6xl mx-auto">
+          {/* Profile Photo - DATA IS EVERYTHING */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="mb-8 inline-block"
+          >
+            <div className="relative w-32 h-32 md:w-40 md:h-40 mx-auto">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-xl opacity-50 animate-pulse"></div>
+              <Image
+                src="/fallou-tall-photo.jpg"
+                alt="Fallou Tall - Data Architect at DATA IS EVERYTHING exhibit"
+                width={160}
+                height={160}
+                className="relative rounded-full border-4 border-white/20 shadow-2xl object-cover"
+                priority
+              />
+            </div>
+          </motion.div>
+
           {/* Credential Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="inline-flex items-center px-6 py-3 rounded-full mb-8 bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm border border-blue-400/30"
           >
             <div className="flex items-center space-x-3">
@@ -88,7 +103,7 @@ export function Hero() {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
             className="text-5xl md:text-7xl font-bold mb-8 leading-tight text-white"
           >
             <span className="text-white">{t('hero.headline')}</span>

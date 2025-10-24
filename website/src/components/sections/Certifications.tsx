@@ -28,50 +28,29 @@ export function Certifications() {
            </p>
           </motion.div>
 
-          {/* Certifications Grid */}
+          {/* Certifications Grid - Only verifiable professional certifications */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 id: 'azure-data-engineer',
                 name: 'Azure Data Engineer Associate',
                 issuer: 'Microsoft',
-                url: 'https://learn.microsoft.com/en-us/certifications/azure-data-engineer/'
+                url: 'https://learn.microsoft.com/en-us/certifications/azure-data-engineer/',
+                note: 'Professional certification with verifiable credentials'
               },
               {
                 id: 'gcp-data-engineer',
                 name: 'Google Cloud Professional Data Engineer',
                 issuer: 'Google',
-                url: 'https://cloud.google.com/certification/data-engineer'
+                url: 'https://cloud.google.com/certification/data-engineer',
+                note: 'Professional certification with verifiable credentials'
               },
               {
                 id: 'databricks-developer',
                 name: 'Databricks Certified Associate Developer for Apache Spark',
                 issuer: 'Databricks',
-                url: 'https://www.databricks.com/learn/certification/apache-spark-developer-associate'
-              },
-              {
-                id: 'deep-learning',
-                name: 'Deep Learning Specialization',
-                issuer: 'deeplearning.ai',
-                url: 'https://www.coursera.org/specializations/deep-learning'
-              },
-              {
-                id: 'databricks-developer-essentials',
-                name: 'Databricks Developer Essentials',
-                issuer: 'Databricks',
-                url: 'https://www.databricks.com/learn/certification/developer-essentials'
-              },
-              {
-                id: 'databricks-developer-foundations',
-                name: 'Databricks Developer Foundations',
-                issuer: 'Databricks',
-                url: 'https://www.databricks.com/learn/certification/developer-foundations'
-              },
-              {
-                id: 'deeplearning-ai-data-engineering',
-                name: 'DeepLearning.AI Data Engineering Professional Certificate',
-                issuer: 'DeepLearning.AI',
-                url: 'https://www.coursera.org/professional-certificates/data-engineering'
+                url: 'https://www.databricks.com/learn/certification/apache-spark-developer-associate',
+                note: 'Professional certification with verifiable credentials'
               }
             ].map((cert, index) => (
               <motion.div
