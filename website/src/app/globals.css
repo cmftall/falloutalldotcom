@@ -11,21 +11,21 @@
     --card-foreground: 220 26% 14%;
     --popover: 0 0% 100%;
     --popover-foreground: 220 26% 14%;
-    --primary: 222 47% 18%; /* True Navy (visible, not black) */
+    --primary: 222 47% 30%; /* Navy Blue (clearly visible) */
     --primary-foreground: 0 0% 100%;
     --secondary: 40 20% 96%; /* Light Beige */
-    --secondary-foreground: 222 47% 18%; /* True Navy */
+    --secondary-foreground: 222 47% 30%; /* True Navy */
     --muted: 40 20% 96%;
     --muted-foreground: 220 9% 46%; /* Medium Gray */
     --accent: 43 74% 53%; /* Warm Gold #D4AF37 */
-    --accent-foreground: 222 47% 18%; /* True Navy */
+    --accent-foreground: 222 47% 30%; /* True Navy */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
     --border: 40 15% 90%; /* Soft Border */
     --input: 40 15% 90%;
     --ring: 43 74% 53%; /* Gold Ring */
     --chart-1: 43 74% 53%; /* Gold */
-    --chart-2: 222 47% 18%; /* True Navy */
+    --chart-2: 222 47% 30%; /* True Navy */
     --chart-3: 160 60% 45%; /* Teal accent */
     --chart-4: 20 90% 55%; /* Coral accent */
     --chart-5: 280 65% 60%; /* Purple accent */
@@ -33,20 +33,20 @@
 
   .dark {
     /* Dark Mode - Navy dominant with Gold accents */
-    --background: 222 47% 18%; /* True Navy */
+    --background: 222 47% 30%; /* Navy Blue */
     --foreground: 40 20% 98%;
     --card: 220 26% 22%; /* Slightly lighter navy */
     --card-foreground: 40 20% 98%;
     --popover: 220 26% 22%;
     --popover-foreground: 40 20% 98%;
     --primary: 43 74% 53%; /* Gold as primary in dark */
-    --primary-foreground: 222 47% 18%; /* True Navy */
+    --primary-foreground: 222 47% 30%; /* True Navy */
     --secondary: 220 26% 25%;
     --secondary-foreground: 40 20% 98%;
     --muted: 220 26% 25%;
     --muted-foreground: 220 9% 65%;
     --accent: 43 74% 53%; /* Gold */
-    --accent-foreground: 222 47% 18%; /* True Navy */
+    --accent-foreground: 222 47% 30%; /* True Navy */
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 40 20% 98%;
     --border: 220 26% 25%;
