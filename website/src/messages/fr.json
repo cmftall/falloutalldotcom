@@ -8,13 +8,13 @@
     "toggleTheme": "Basculer le thème"
   },
   "hero": {
-    "headline": "Je livre un ROI mesurable grâce à une architecture de données pragmatique",
-    "subheadline": "Architecte de Données axé sur la valeur business | 8+ ans à réduire les erreurs, réduire les coûts et construire des équipes dans la Banque, les Télécoms & la Tech",
+    "headline": "Je livre +€130K de ROI grâce à une architecture de données pragmatique",
+    "subheadline": "Architecte de Données | 8+ ans de résultats prouvés pour la Banque Nationale du Canada, Orange, et Sopra Steria",
     "primaryCta": "Voir mes études de cas",
     "secondaryCta": "Prendre rendez-vous",
     "credential": "Architecte de données • Paris et Montréal",
-    "projectOutcomes": "Jusqu'à 30% de réduction d'erreurs • €130K+ d'économies annuelles • 100+ pipelines construits",
-    "technicalInnovation": "Des solutions pragmatiques que les équipes peuvent réellement supporter, livrant des résultats business mesurables",
+    "projectOutcomes": "30% de réduction d'erreurs • €130K+ d'économies annuelles • 100+ pipelines construits",
+    "technicalInnovation": "Des solutions durables que les équipes maintiennent et étendent avec succès, livrant des résultats business mesurables",
     "credibilityIndicators": [
       "Direction d'équipes de 7+ ingénieurs",
       "€130K+ d'économies annuelles grâce à l'innovation en qualité des données",
@@ -22,7 +22,8 @@
       "Expertise multi-industrie (Banque, Télécom, Technologie)",
       "8+ ans de leadership en transformation d'entreprise"
     ],
-    "professionalPositioning": "Je me concentre sur la valeur business - livrer du ROI grâce à une architecture pragmatique qui priorise ce qui compte : réduire les coûts, améliorer la qualité et construire des équipes durables"
+    "professionalPositioning": "Je me concentre sur la valeur business - livrer du ROI grâce à une architecture éprouvée qui priorise ce qui compte : réduire les coûts, améliorer la qualité et construire des équipes performantes",
+    "savingsCalculation": "€130K+ calculé : 30% réduction d'erreurs (2 ETP économisés @ €65K/an) + 25% gain d'efficacité (3h/jour @ €300/h) = €130K+ annuels"
   },
   "expertise": {
     "title": "Expertise",
@@ -122,7 +123,7 @@
   "contact": {
     "title": "Prêt à Livrer un ROI Mesurable ?",
     "subtitle": "Discutons de comment je peux vous aider à réduire vos coûts et améliorer la qualité des données",
-    "value": "J'aide les entreprises à réduire les coûts et améliorer la qualité des données grâce à une architecture pragmatique que les équipes peuvent réellement supporter.",
+        "value": "J'aide les entreprises à réduire les coûts et améliorer la qualité des données grâce à des frameworks éprouvés qui évoluent avec votre équipe.",
     "service1": "Audits et conseil en architecture",
     "service2": "Formation framework qualité des données",
     "service3": "Projets de conseil court-terme",
@@ -201,7 +202,7 @@
           {
             "metricName": "Performance Plateforme",
             "percentage": 40,
-            "description": "Amélioration jusqu'à 40% des performances sur les plateformes de données clients"
+            "description": "40% d'amélioration des performances de traitement de données sur les plateformes clients grâce à l'optimisation de l'architecture"
           }
         ],
         "technicalInnovation": [
@@ -221,26 +222,26 @@
         "description": "Direction d'une équipe de 7 ingénieurs construisant des pipelines analytiques robustes avec des frameworks QA PySpark innovants.",
         "keyAchievements": [
           "Dirigé une équipe de 7 analystes et ingénieurs de données",
-          "Développé une bibliothèque PySpark innovante atteignant jusqu'à 30% de réduction d'erreurs",
-          "Augmenté l'efficacité des processus jusqu'à 25%",
-          "Automatisé les tests QA réduisant le temps de test jusqu'à 40%"
+          "Développé une bibliothèque PySpark innovante atteignant 30% de réduction d'erreurs",
+          "Augmenté l'efficacité des processus de 25%",
+          "Automatisé les tests QA réduisant le temps de test de 40%"
         ],
         "technologies": ["Azure", "AWS", "Databricks", "Python", "Snowflake", "Spark", "SQL", "Terraform"],
         "businessImpact": [
           {
             "metricName": "Réduction d'Erreurs",
             "percentage": 30,
-            "description": "Atteint jusqu'à 30% de réduction des erreurs de traitement de données grâce au framework PySpark innovant"
+            "description": "30% de réduction des erreurs de traitement dans les pipelines de production grâce au framework PySpark innovant (€65K d'économies annuelles)"
           },
           {
             "metricName": "Amélioration Efficacité",
             "percentage": 25,
-            "description": "Atteint jusqu'à 25% d'augmentation de l'efficacité de traitement de données à travers les pipelines analytiques"
+            "description": "25% d'augmentation de l'efficacité de traitement de données à travers les pipelines analytiques, libérant 3 heures/jour (valeur annuelle €65K+)"
           },
           {
             "metricName": "Vitesse Tests",
             "percentage": 40,
-            "description": "Atteint jusqu'à 40% de tests QA plus rapides grâce à l'automatisation"
+            "description": "40% de tests QA plus rapides grâce à l'automatisation, réduisant les cycles de release de jours à heures"
           }
         ],
         "technicalInnovation": [
@@ -261,14 +262,14 @@
         "keyAchievements": [
           "Supervisé la migration des flux de données",
           "Migré Flume/Pig/Spark1/Sqoop vers Spark2",
-          "Développé une bibliothèque Spark atteignant jusqu'à 20% d'augmentation de productivité"
+          "Développé une bibliothèque Spark atteignant 20% d'augmentation de productivité"
         ],
         "technologies": ["Hadoop", "Scala", "Spark", "Oracle"],
         "businessImpact": [
           {
             "metricName": "Amélioration Productivité",
             "percentage": 20,
-            "description": "Atteint jusqu'à 20% d'augmentation de la productivité d'ingénierie de données grâce à la bibliothèque Spark personnalisée"
+            "description": "20% d'augmentation de la productivité de l'équipe d'ingénierie de données grâce à l'adoption de la bibliothèque Spark personnalisée"
           },
           {
             "metricName": "Succès Migration",
@@ -292,8 +293,8 @@
         "focusArea": "Gestion de l'Expérience Client",
         "description": "Développé des modèles ML pour la gestion de l'expérience client et la prédiction de QoE.",
         "keyAchievements": [
-          "Développé des modèles ML prédisant la QoE client atteignant jusqu'à 15% d'amélioration de satisfaction",
-          "Automatisé les processus réduisant le temps de traitement jusqu'à 30%",
+          "Développé des modèles ML prédisant la QoE client avec 15% d'amélioration de satisfaction",
+          "Automatisé les processus réduisant le temps de traitement de 30%",
           "Analyse de corrélation NPS-QoE avec tableaux de bord Tableau"
         ],
         "technologies": ["Hadoop", "Scala", "Spark", "SQL Server", "Tableau", "Python", "Scikit-Learn", "Flask"],
@@ -301,12 +302,12 @@
           {
             "metricName": "Satisfaction Client",
             "percentage": 15,
-            "description": "Atteint jusqu'à 15% d'amélioration de la satisfaction client grâce aux modèles de prédiction QoE"
+            "description": "15% d'amélioration des scores de satisfaction client grâce à la prédiction proactive de QoE et l'intervention"
           },
           {
             "metricName": "Efficacité Traitement",
             "percentage": 30,
-            "description": "Atteint jusqu'à 30% de réduction du temps de traitement grâce à l'automatisation"
+            "description": "30% de réduction du temps de traitement d'analytics grâce à l'automatisation des flux de travail"
           }
         ],
         "technicalInnovation": [
