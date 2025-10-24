@@ -76,26 +76,21 @@ export function WorkedWith() {
                 viewport={{ once: true }}
                 className="flex flex-col items-center justify-center group cursor-pointer"
               >
-                <div className="relative w-full h-20 flex items-center justify-center p-4">
-                  {/* Premium Placeholder with Gold Accent on Hover */}
-                  <div className="relative w-full h-full bg-background border border-border rounded-lg flex items-center justify-center group-hover:border-accent transition-all duration-300 group-hover:shadow-lg">
-                    {/* Gold corner accent */}
-                    <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    
-                    <span className="text-xs md:text-sm font-semibold text-center text-primary px-2 font-serif">
-                      {company.name}
-                    </span>
-                  </div>
-                  {/* Uncomment when logos are added:
-                  <Image
-                    src={company.logo}
-                    alt={company.alt}
-                    fill
-                    className="object-contain grayscale hover:grayscale-0 transition-all duration-500 p-4"
-                  />
-                  */}
-                </div>
+                       <div className="relative w-full h-20 flex items-center justify-center p-4">
+                         {/* Premium Logo with Gold Accent on Hover */}
+                         <div className="relative w-full h-full bg-background border border-border rounded-lg flex items-center justify-center group-hover:border-accent transition-all duration-300 group-hover:shadow-lg overflow-hidden">
+                           {/* Gold corner accent */}
+                           <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                           <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                           
+                           <Image
+                             src={company.logo}
+                             alt={company.alt}
+                             fill
+                             className="object-contain grayscale hover:grayscale-0 transition-all duration-500 p-4"
+                           />
+                         </div>
+                       </div>
                 <span className="text-xs text-accent font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-2">
                   {company.industry}
                 </span>
