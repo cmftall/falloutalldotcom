@@ -69,34 +69,6 @@ export function Expertise() {
             </div>
           </motion.div>
 
-          {/* Technical Methodologies - Premium Pills */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="mb-16"
-          >
-            <h3 className="font-serif text-2xl font-bold text-center mb-8 text-primary">
-              Advanced Methodologies & Patterns
-            </h3>
-            <div className="flex flex-wrap justify-center gap-3">
-              {(() => {
-                const methodologies = t('expertise.methodologies')
-                if (Array.isArray(methodologies)) {
-                  return methodologies.map((methodology: string, index: number) => (
-                    <Badge 
-                      key={index} 
-                      className="px-4 py-2 text-sm font-medium bg-accent/10 text-accent border border-accent/30 hover:bg-accent/20 transition-colors"
-                    >
-                      {methodology}
-                    </Badge>
-                  ))
-                }
-                return null
-              })()}
-            </div>
-          </motion.div>
 
           {/* Core Expertise Tier */}
           <motion.div
@@ -106,14 +78,6 @@ export function Expertise() {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <div className="text-center mb-8">
-              <h3 className="font-serif text-3xl font-bold text-primary mb-3">
-                {t('expertise.tiers.core.title')}
-              </h3>
-              <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-                {t('expertise.tiers.core.description')}
-              </p>
-            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
@@ -219,25 +183,6 @@ export function Expertise() {
                         ))}
                       </div>
 
-                      {/* Methodologies Section */}
-                      <div className="space-y-3">
-                        <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">
-                          Methodologies & Patterns
-                        </h4>
-                        <div className="flex flex-wrap gap-2">
-                          {(() => {
-                            const methodologies = category.methodologies
-                            if (Array.isArray(methodologies)) {
-                              return methodologies.map((methodology: string, methodIndex: number) => (
-                                <Badge key={methodIndex} variant="outline" className="text-xs">
-                                  {methodology}
-                                </Badge>
-                              ))
-                            }
-                            return null
-                          })()}
-                        </div>
-                      </div>
                     </CardContent>
 
                     {/* Enhanced Hover Effect Overlay */}
@@ -287,14 +232,6 @@ export function Expertise() {
                 transition={{ duration: 0.5 }}
                 className="mb-12 overflow-hidden"
               >
-            <div className="text-center mb-8">
-              <h3 className="font-serif text-3xl font-bold text-primary mb-3">
-                {t('expertise.tiers.advanced.title')}
-              </h3>
-              <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-                {t('expertise.tiers.advanced.description')}
-              </p>
-            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
@@ -401,25 +338,6 @@ export function Expertise() {
                         ))}
                       </div>
 
-                      {/* Methodologies Section */}
-                      <div className="space-y-3">
-                        <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">
-                          Methodologies & Patterns
-                        </h4>
-                        <div className="flex flex-wrap gap-2">
-                          {(() => {
-                            const methodologies = category.methodologies
-                            if (Array.isArray(methodologies)) {
-                              return methodologies.map((methodology: string, methodIndex: number) => (
-                                <Badge key={methodIndex} variant="outline" className="text-xs">
-                                  {methodology}
-                                </Badge>
-                              ))
-                            }
-                            return null
-                          })()}
-                        </div>
-                      </div>
                     </CardContent>
 
                     {/* Enhanced Hover Effect Overlay */}
@@ -433,41 +351,6 @@ export function Expertise() {
             )}
           </AnimatePresence>
 
-          {/* Enhanced Summary Stats with Technical Indicators */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            viewport={{ once: true }}
-            className="mt-16"
-          >
-            <Card className="bg-gradient-to-r from-primary to-primary/80 border-0 text-primary-foreground">
-              <CardContent className="p-8">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-                  <div className="flex flex-col items-center">
-                    <Award className="w-8 h-8 mb-2" />
-                    <div className="text-3xl font-bold mb-2">8+</div>
-                    <div className="text-primary-foreground/80">{t('stats.yearsExperience')}</div>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <TrendingUp className="w-8 h-8 mb-2" />
-                    <div className="text-3xl font-bold mb-2">30+</div>
-                    <div className="text-primary-foreground/80">{t('stats.technologiesMastered')}</div>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <Code className="w-8 h-8 mb-2" />
-                    <div className="text-3xl font-bold mb-2">7</div>
-                    <div className="text-primary-foreground/80">{t('stats.enterpriseProjects')}</div>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <CheckCircle className="w-8 h-8 mb-2" />
-                    <div className="text-3xl font-bold mb-2">5+</div>
-                    <div className="text-primary-foreground/80">Expertise Areas</div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
         </div>
       </div>
     </section>
