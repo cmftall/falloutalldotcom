@@ -60,7 +60,7 @@ export function Header() {
               onClick={() => scrollToSection('#contact')}
               className="bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-gray-100 px-6 py-2 rounded-lg font-medium transition-colors duration-200"
             >
-              {t('navigation.contact')}
+              {t('navigation.hireMeCta')}
             </Button>
           </div>
 

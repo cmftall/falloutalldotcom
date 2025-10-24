@@ -1,8 +1,9 @@
 {
   "navigation": {
     "home": "Accueil",
-    "work": "Études de cas",
-    "contact": "Contact"
+    "work": "Réalisations",
+    "contact": "Contact",
+    "hireMeCta": "M'engager"
   },
   "common": {
     "toggleTheme": "Basculer le thème"
