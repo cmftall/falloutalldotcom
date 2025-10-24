@@ -1,101 +1,91 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Card, CardContent } from '@/components/ui/Card'
 import { useI18n } from '@/components/providers/I18nProvider'
-import { ExternalLink, Award, Building } from 'lucide-react'
+import { ExternalLink, CheckCircle } from 'lucide-react'
 
 export function Certifications() {
   const { t } = useI18n()
   
   return (
-    <section id="certifications" className="py-24 bg-muted/30">
+    <section id="certifications" className="py-16 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
+        <div className="max-w-5xl mx-auto">
+          {/* Compact Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
-           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
              {t('certifications.title')}
            </h2>
-           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
              {t('certifications.subtitle')}
            </p>
           </motion.div>
 
-          {/* Certifications Grid - Only verifiable professional certifications */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Compact Certifications Row - Only verifiable professional certifications */}
+          <div className="space-y-4">
             {[
               {
                 id: 'azure-data-engineer',
                 name: 'Azure Data Engineer Associate',
                 issuer: 'Microsoft',
+                year: '2023',
                 url: 'https://learn.microsoft.com/en-us/certifications/azure-data-engineer/',
-                note: 'Professional certification with verifiable credentials'
               },
               {
                 id: 'gcp-data-engineer',
                 name: 'Google Cloud Professional Data Engineer',
                 issuer: 'Google',
+                year: '2022',
                 url: 'https://cloud.google.com/certification/data-engineer',
-                note: 'Professional certification with verifiable credentials'
               },
               {
                 id: 'databricks-developer',
                 name: 'Databricks Certified Associate Developer for Apache Spark',
                 issuer: 'Databricks',
+                year: '2021',
                 url: 'https://www.databricks.com/learn/certification/apache-spark-developer-associate',
-                note: 'Professional certification with verifiable credentials'
               }
             ].map((cert, index) => (
               <motion.div
                 key={cert.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="group"
               >
-                <Card className="h-full bg-card border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
-                  <CardContent className="p-8">
-                    <div className="flex items-start space-x-4 mb-6">
-                      <div className="p-3 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 text-white group-hover:scale-110 transition-transform duration-300">
-                        <Award className="h-6 w-6" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-bold text-card-foreground mb-2 group-hover:text-primary transition-colors">
-                          {cert.name}
-                        </h3>
-                        <div className="flex items-center space-x-2 text-muted-foreground">
-                          <Building className="h-4 w-4" />
-                          <span className="font-medium">{cert.issuer}</span>
-                        </div>
-                      </div>
+                <div className="flex items-center justify-between bg-background/80 backdrop-blur-sm rounded-lg p-4 shadow-sm hover:shadow-md transition-all duration-300 border border-border/50">
+                  <div className="flex items-center space-x-4 flex-1">
+                    <div className="flex-shrink-0">
+                      <CheckCircle className="h-6 w-6 text-green-500" />
                     </div>
-
-                    {cert.url && (
-                      <motion.a
-                        href={cert.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center space-x-2 text-primary hover:text-primary/80 font-medium transition-colors"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                             <span>{t('certifications.viewDetails')}</span>
-                        <ExternalLink className="h-4 w-4" />
-                      </motion.a>
-                    )}
-                  </CardContent>
-
-                  {/* Hover Effect Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600/0 to-purple-600/0 group-hover:from-blue-600/5 group-hover:to-purple-600/5 transition-all duration-500 pointer-events-none" />
-                </Card>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-base font-semibold text-foreground group-hover:text-primary transition-colors truncate">
+                        {cert.name}
+                      </h3>
+                      <p className="text-sm text-muted-foreground">
+                        {cert.issuer} • {cert.year}
+                      </p>
+                    </div>
+                  </div>
+                  {cert.url && (
+                    <a
+                      href={cert.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-shrink-0 ml-4 inline-flex items-center space-x-1 text-primary hover:text-primary/80 text-sm font-medium transition-colors group-hover:underline"
+                    >
+                      <span className="hidden sm:inline">Verify</span>
+                      <ExternalLink className="h-4 w-4" />
+                    </a>
+                  )}
+                </div>
               </motion.div>
             ))}
           </div>
