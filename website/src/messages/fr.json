@@ -1,8 +1,8 @@
 {
   "navigation": {
     "home": "Accueil",
-    "work": "Résultats",
-    "contact": "M'embaucher"
+    "work": "Études de cas",
+    "contact": "Contact"
   },
   "common": {
     "toggleTheme": "Basculer le thème"

@@ -1,8 +1,8 @@
 {
   "navigation": {
     "home": "Home",
-    "work": "Results",
-    "contact": "Hire Me"
+    "work": "Case Studies",
+    "contact": "Contact"
   },
   "common": {
     "toggleTheme": "Toggle theme"
