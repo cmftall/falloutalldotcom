@@ -39,14 +39,14 @@
     --card-foreground: 40 20% 98%;
     --popover: 220 26% 22%;
     --popover-foreground: 40 20% 98%;
-    --primary: 43 74% 53%; /* Gold as primary in dark */
-    --primary-foreground: 222 47% 30%; /* True Navy */
+    --primary: 222 47% 30%; /* Navy (same as light mode) */
+    --primary-foreground: 40 20% 98%; /* White text */
     --secondary: 220 26% 25%;
     --secondary-foreground: 40 20% 98%;
     --muted: 220 26% 25%;
     --muted-foreground: 220 9% 65%;
     --accent: 43 74% 53%; /* Gold */
-    --accent-foreground: 222 47% 30%; /* True Navy */
+    --accent-foreground: 222 47% 15%; /* Dark Navy (for contrast with gold) */
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 40 20% 98%;
     --border: 220 26% 25%;
