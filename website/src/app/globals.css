@@ -4,57 +4,59 @@
 
 @layer base {
 :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Modern Premium Color Palette - Navy, Gold, Beige */
+    --background: 40 20% 98%; /* Warm Beige #FAF8F5 */
+    --foreground: 220 26% 14%; /* Charcoal #1F2937 */
+    --card: 0 0% 100%; /* Pure White */
+    --card-foreground: 220 26% 14%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --popover-foreground: 220 26% 14%;
+    --primary: 217 91% 15%; /* Deep Navy #1E293B */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 40 20% 96%; /* Light Beige */
+    --secondary-foreground: 217 91% 15%;
+    --muted: 40 20% 96%;
+    --muted-foreground: 220 9% 46%; /* Medium Gray */
+    --accent: 43 74% 53%; /* Warm Gold #D4AF37 */
+    --accent-foreground: 217 91% 15%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 40 15% 90%; /* Soft Border */
+    --input: 40 15% 90%;
+    --ring: 43 74% 53%; /* Gold Ring */
+    --chart-1: 43 74% 53%; /* Gold */
+    --chart-2: 217 91% 15%; /* Navy */
+    --chart-3: 160 60% 45%; /* Teal accent */
+    --chart-4: 20 90% 55%; /* Coral accent */
+    --chart-5: 280 65% 60%; /* Purple accent */
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Dark Mode - Navy dominant with Gold accents */
+    --background: 217 91% 15%; /* Deep Navy */
+    --foreground: 40 20% 98%;
+    --card: 220 26% 18%; /* Slightly lighter navy */
+    --card-foreground: 40 20% 98%;
+    --popover: 220 26% 18%;
+    --popover-foreground: 40 20% 98%;
+    --primary: 43 74% 53%; /* Gold as primary in dark */
+    --primary-foreground: 217 91% 15%;
+    --secondary: 220 26% 25%;
+    --secondary-foreground: 40 20% 98%;
+    --muted: 220 26% 25%;
+    --muted-foreground: 220 9% 65%;
+    --accent: 43 74% 53%; /* Gold */
+    --accent-foreground: 217 91% 15%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --destructive-foreground: 40 20% 98%;
+    --border: 220 26% 25%;
+    --input: 220 26% 25%;
+    --ring: 43 74% 53%; /* Gold Ring */
+    --chart-1: 43 74% 53%;
+    --chart-2: 40 20% 98%;
+    --chart-3: 160 60% 65%;
+    --chart-4: 20 90% 70%;
+    --chart-5: 280 65% 75%;
   }
 }
 
@@ -67,17 +69,46 @@
   }
 }
 
-/* Sophisticated Design System */
-.sophisticated-headline {
-  @apply text-sophisticated-4xl font-bold tracking-tight text-foreground;
+/* Modern Premium Design System */
+.premium-headline {
+  font-family: 'Crimson Pro', Georgia, serif;
+  @apply text-5xl md:text-6xl font-bold tracking-tight text-primary leading-[1.1];
 }
 
-.sophisticated-subheadline {
-  @apply text-sophisticated-xl font-medium text-muted-foreground leading-relaxed;
+.premium-subheadline {
+  font-family: 'Inter', -apple-system, sans-serif;
+  @apply text-xl md:text-2xl font-normal text-muted-foreground leading-relaxed;
 }
 
-.sophisticated-body {
-  @apply text-sophisticated-base leading-relaxed text-foreground;
+.premium-body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  @apply text-base leading-relaxed text-foreground;
+}
+
+.premium-number {
+  font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+  @apply font-semibold tracking-tight;
+}
+
+.gold-accent {
+  @apply text-accent;
+}
+
+.navy-text {
+  @apply text-primary;
+}
+
+.gold-underline {
+  @apply relative;
+}
+
+.gold-underline::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300;
+}
+
+.gold-underline:hover::after {
+  @apply w-full;
 }
 
 /* Mobile-responsive typography */

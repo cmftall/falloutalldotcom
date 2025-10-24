@@ -1,201 +1,238 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, useAnimation } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
 import { useI18n } from '@/components/providers/I18nProvider'
-import { ArrowRight, ChevronDown, Award, Users, TrendingUp, Target, Zap } from 'lucide-react'
+import { ArrowRight, TrendingUp, Target, Zap } from 'lucide-react'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
 export function Hero() {
   const { t } = useI18n()
+  const [hasMounted, setHasMounted] = useState(false)
 
-  // Real metrics from your actual experience - Business value focused
-  const impactMetrics = [
-    { 
-      metric: 'Up to 30%', 
-      label: 'Error Reduction', 
-      icon: Target,
-      description: 'Achieved through innovative PySpark frameworks'
-    },
-    { 
-      metric: '€130K+', 
-      label: 'Annual Savings', 
-      icon: TrendingUp,
-      description: 'Prevented rework costs through data quality'
-    },
-    { 
-      metric: '100+', 
-      label: 'Pipelines Built', 
-      icon: Zap,
-      description: 'Production data pipelines across banking & telecom'
-    }
-  ]
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
+
+  // Animated counter hook
+  const useCounter = (end: number, duration: number = 2000) => {
+    const [count, setCount] = useState(0)
+
+    useEffect(() => {
+      if (!hasMounted) return
+      
+      let startTime: number
+      let animationFrame: number
+
+      const animate = (currentTime: number) => {
+        if (!startTime) startTime = currentTime
+        const progress = Math.min((currentTime - startTime) / duration, 1)
+        
+        setCount(Math.floor(progress * end))
+
+        if (progress < 1) {
+          animationFrame = requestAnimationFrame(animate)
+        }
+      }
+
+      animationFrame = requestAnimationFrame(animate)
+      return () => cancelAnimationFrame(animationFrame)
+    }, [end, duration, hasMounted])
+
+    return count
+  }
+
+  const savingsCount = useCounter(130)
+  const errorCount = useCounter(30)
+  const pipelinesCount = useCounter(100)
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
-      {/* Dynamic Background Pattern */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]" />
-        <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(45deg,transparent_25%,rgba(59,130,246,0.05)_50%,transparent_75%)]" />
+    <section id="home" className="relative min-h-screen flex items-center bg-background overflow-hidden">
+      {/* Subtle Background Pattern */}
+      <div className="absolute inset-0 opacity-[0.03]">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 2px 2px, hsl(var(--accent)) 1px, transparent 0)`,
+          backgroundSize: '40px 40px'
+        }} />
       </div>
 
-      {/* Floating Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(8)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-blue-400 rounded-full opacity-30"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -20, 0],
-              opacity: [0.3, 0.8, 0.3],
-            }}
-            transition={{
-              duration: 3 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
-      </div>
+      {/* Gold Accent Line - Top */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-accent to-transparent opacity-50" />
 
-      <div className="relative z-10 container mx-auto px-4 text-center">
-        <div className="max-w-6xl mx-auto">
-          {/* Profile Photo - DATA IS EVERYTHING */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="mb-8 inline-block"
-          >
-            <div className="relative w-32 h-32 md:w-40 md:h-40 mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-xl opacity-50 animate-pulse"></div>
-              <Image
-                src="/fallou-tall-photo.jpg"
-                alt="Fallou Tall - Data Architect at DATA IS EVERYTHING exhibit"
-                width={160}
-                height={160}
-                className="relative rounded-full border-4 border-white/20 shadow-2xl object-cover"
-                priority
-              />
-            </div>
-          </motion.div>
+      <div className="relative z-10 container mx-auto px-4 py-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+            
+            {/* LEFT: Photo - 40% */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="lg:col-span-2 flex justify-center lg:justify-start"
+            >
+              <div className="relative group">
+                {/* Gold Glow Behind Photo */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-accent via-primary to-accent rounded-full opacity-20 group-hover:opacity-30 transition-opacity duration-500 blur-xl" />
+                
+                {/* Photo Container */}
+                <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
+                  {/* Gold Border */}
+                  <div className="absolute inset-0 rounded-full border-4 border-accent/20" />
+                  
+                  {/* Photo */}
+                  <Image
+                    src="/fallou-tall-photo.jpg"
+                    alt="Fallou Tall - Business Value-Focused Data Architect"
+                    width={384}
+                    height={384}
+                    className="relative rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                    priority
+                  />
+                  
+                  {/* Subtle Inner Shadow */}
+                  <div className="absolute inset-0 rounded-full shadow-inner" />
+                </div>
 
-          {/* Credential Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-flex items-center px-6 py-3 rounded-full mb-8 bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm border border-blue-400/30"
-          >
-            <div className="flex items-center space-x-3">
-              <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="text-sm font-semibold text-blue-200">
-                {t('hero.credential')}
-              </span>
-            </div>
-          </motion.div>
-
-          {/* Bold Headline */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-5xl md:text-7xl font-bold mb-8 leading-tight text-white"
-          >
-            <span className="text-white">{t('hero.headline')}</span>
-          </motion.h1>
-
-          {/* Impact-Focused Subheadline */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="mb-12"
-          >
-            <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-4xl mx-auto leading-relaxed">
-              {t('hero.subheadline')}
-            </p>
-
-            {/* Real Impact Metrics */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-              {impactMetrics.map((metric, index) => (
+                {/* Availability Badge */}
                 <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-                  className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/20 transition-all duration-300"
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 1, type: 'spring' }}
+                  className="absolute bottom-4 right-4 bg-card border-2 border-accent rounded-full px-4 py-2 shadow-lg"
                 >
-                  <div className="flex items-center justify-center mb-2">
-                    <metric.icon className="w-6 h-6 text-blue-300" />
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-accent rounded-full animate-pulse" />
+                    <span className="text-sm font-semibold text-primary">Available for Consulting</span>
                   </div>
-                  <div className="text-3xl font-bold text-white mb-1">{metric.metric}</div>
-                  <div className="text-sm text-blue-200 font-medium">{metric.label}</div>
-                  <div className="text-xs text-blue-300 mt-1">{metric.description}</div>
                 </motion.div>
-              ))}
+              </div>
+            </motion.div>
+
+            {/* RIGHT: Content - 60% */}
+            <div className="lg:col-span-3 space-y-8">
+              
+              {/* Credential Badge */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="inline-flex items-center space-x-2 text-sm font-medium text-muted-foreground"
+              >
+                <span className="text-accent">●</span>
+                <span>{t('hero.credential')}</span>
+              </motion.div>
+
+              {/* Headline - Crimson Pro Serif */}
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-primary"
+              >
+                {t('hero.headline')}
+              </motion.h1>
+
+              {/* Subheadline */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl"
+              >
+                {t('hero.subheadline')}
+              </motion.p>
+
+              {/* Animated Impact Metrics - Gold */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl"
+              >
+                {/* Savings */}
+                <div className="group">
+                  <div className="flex items-baseline space-x-2">
+                    <span className="font-mono text-4xl md:text-5xl font-bold text-accent">
+                      €{savingsCount}K+
+                    </span>
+                    <TrendingUp className="h-6 w-6 text-accent opacity-70 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                  <p className="text-sm text-muted-foreground mt-1">Annual Savings</p>
+                  <p className="text-xs text-muted-foreground opacity-70">Achieved through data quality</p>
+                </div>
+
+                {/* Error Reduction */}
+                <div className="group">
+                  <div className="flex items-baseline space-x-2">
+                    <span className="font-mono text-4xl md:text-5xl font-bold text-accent">
+                      {errorCount}%
+                    </span>
+                    <Target className="h-6 w-6 text-accent opacity-70 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                  <p className="text-sm text-muted-foreground mt-1">Error Reduction</p>
+                  <p className="text-xs text-muted-foreground opacity-70">Through PySpark frameworks</p>
+                </div>
+
+                {/* Pipelines */}
+                <div className="group">
+                  <div className="flex items-baseline space-x-2">
+                    <span className="font-mono text-4xl md:text-5xl font-bold text-accent">
+                      {pipelinesCount}+
+                    </span>
+                    <Zap className="h-6 w-6 text-accent opacity-70 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                  <p className="text-sm text-muted-foreground mt-1">Pipelines Built</p>
+                  <p className="text-xs text-muted-foreground opacity-70">Production-grade systems</p>
+                </div>
+              </motion.div>
+
+              {/* CTAs */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1 }}
+                className="flex flex-col sm:flex-row gap-4"
+              >
+                <Button
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group"
+                  onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  {t('hero.primaryCta')}
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+                
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground px-8 py-6 text-lg font-semibold transition-all duration-300 group"
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  {t('hero.secondaryCta')}
+                  <span className="ml-2 font-mono text-sm">€700-1800/day</span>
+                </Button>
+              </motion.div>
+
+              {/* Social Proof Tags */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 1.2 }}
+                className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground"
+              >
+                <span className="font-medium text-primary">Trusted by:</span>
+                <span className="px-3 py-1 bg-secondary/50 rounded-full">National Bank of Canada</span>
+                <span className="px-3 py-1 bg-secondary/50 rounded-full">Orange</span>
+                <span className="px-3 py-1 bg-secondary/50 rounded-full">Sopra Steria</span>
+              </motion.div>
             </div>
-          </motion.div>
-
-          {/* Clear CTAs */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
-          >
-            <Button
-              variant="default"
-              size="lg"
-              className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 px-8 py-4 text-lg font-semibold"
-              onClick={() => {
-                const workSection = document.getElementById('work')
-                workSection?.scrollIntoView({ behavior: 'smooth' })
-              }}
-            >
-              {t('hero.primaryCta')}
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="group border-blue-400 text-blue-200 hover:bg-blue-500 hover:text-white px-8 py-4 text-lg font-semibold"
-              onClick={() => {
-                const contactSection = document.getElementById('contact')
-                contactSection?.scrollIntoView({ behavior: 'smooth' })
-              }}
-            >
-              {t('hero.secondaryCta')}
-              <Zap className="ml-2 h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-            </Button>
-          </motion.div>
-
-          {/* Scroll Indicator */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1 }}
-          >
-            <motion.button
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="flex flex-col items-center text-blue-300 hover:text-white transition-colors duration-300 cursor-pointer group mx-auto"
-              onClick={() => {
-                const workSection = document.getElementById('work')
-                workSection?.scrollIntoView({ behavior: 'smooth' })
-              }}
-              aria-label="Scroll to see results"
-            >
-              <span className="text-sm mb-2 group-hover:text-white transition-colors">See the results</span>
-              <ChevronDown className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
-            </motion.button>
-          </motion.div>
+          </div>
         </div>
       </div>
+
+      {/* Gold Accent Line - Bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-accent to-transparent opacity-50" />
     </section>
   )
 }

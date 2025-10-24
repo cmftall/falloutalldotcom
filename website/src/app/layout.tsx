@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Crimson_Pro } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/lib/theme-provider'
 import { Analytics } from '@/components/Analytics'
@@ -9,6 +9,14 @@ const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   preload: true,
+  variable: '--font-inter',
+})
+
+const crimsonPro = Crimson_Pro({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ['400', '600', '700'],
+  variable: '--font-crimson',
 })
 
 export const metadata: Metadata = {
@@ -125,7 +133,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.variable} ${crimsonPro.variable} font-sans`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

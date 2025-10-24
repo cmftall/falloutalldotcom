@@ -9,8 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-crimson)', 'Crimson Pro', 'Georgia', 'serif'],
+        mono: ['SF Mono', 'Monaco', 'Courier New', 'monospace'],
       },
       fontSize: {
         'sophisticated-xs': ['0.75rem', { lineHeight: '1rem' }],
