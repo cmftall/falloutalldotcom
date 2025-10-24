@@ -38,7 +38,7 @@ export function Expertise() {
     <section id="expertise" className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
-          {/* Enhanced Section Header */}
+          {/* Premium Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -46,25 +46,30 @@ export function Expertise() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-             {t('expertise.title')}
-           </h2>
-           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-4">
-             {t('expertise.subtitle')}
-           </p>
-           <p className="text-lg text-blue-600 dark:text-blue-400 font-medium mb-8">
-             {t('expertise.technicalDepth')}
-           </p>
-           
-           {/* Architectural Thinking Statement */}
-           <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20 rounded-lg p-6 max-w-4xl mx-auto">
-             <p className="text-lg text-gray-700 dark:text-gray-300 font-medium">
-               {t('expertise.architecturalThinking')}
-             </p>
-           </div>
+            <div className="inline-flex items-center space-x-3 mb-6">
+              <div className="h-px w-12 bg-accent" />
+              <h2 className="font-serif text-4xl md:text-5xl font-bold text-primary">
+                {t('expertise.title')}
+              </h2>
+              <div className="h-px w-12 bg-accent" />
+            </div>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-6">
+              {t('expertise.subtitle')}
+            </p>
+            
+            {/* Architectural Thinking Statement - Premium Card */}
+            <div className="bg-card border border-accent/20 rounded-lg p-6 max-w-4xl mx-auto shadow-sm relative overflow-hidden">
+              {/* Gold corner accents */}
+              <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-accent opacity-30" />
+              <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-accent opacity-30" />
+              
+              <p className="text-base font-medium text-primary relative z-10">
+                {t('expertise.architecturalThinking')}
+              </p>
+            </div>
           </motion.div>
 
-          {/* Technical Methodologies */}
+          {/* Technical Methodologies - Premium Pills */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -72,7 +77,7 @@ export function Expertise() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h3 className="text-2xl font-bold text-center mb-8 text-foreground">
+            <h3 className="font-serif text-2xl font-bold text-center mb-8 text-primary">
               Advanced Methodologies & Patterns
             </h3>
             <div className="flex flex-wrap justify-center gap-3">
@@ -80,7 +85,10 @@ export function Expertise() {
                 const methodologies = t('expertise.methodologies')
                 if (Array.isArray(methodologies)) {
                   return methodologies.map((methodology: string, index: number) => (
-                    <Badge key={index} variant="secondary" className="px-4 py-2 text-sm font-medium">
+                    <Badge 
+                      key={index} 
+                      className="px-4 py-2 text-sm font-medium bg-accent/10 text-accent border border-accent/30 hover:bg-accent/20 transition-colors"
+                    >
                       {methodology}
                     </Badge>
                   ))
@@ -99,10 +107,10 @@ export function Expertise() {
             className="mb-12"
           >
             <div className="text-center mb-8">
-              <h3 className="text-3xl font-bold text-foreground mb-3">
+              <h3 className="font-serif text-3xl font-bold text-primary mb-3">
                 {t('expertise.tiers.core.title')}
               </h3>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-base text-muted-foreground max-w-2xl mx-auto">
                 {t('expertise.tiers.core.description')}
               </p>
             </div>
@@ -280,10 +288,10 @@ export function Expertise() {
                 className="mb-12 overflow-hidden"
               >
             <div className="text-center mb-8">
-              <h3 className="text-3xl font-bold text-foreground mb-3">
+              <h3 className="font-serif text-3xl font-bold text-primary mb-3">
                 {t('expertise.tiers.advanced.title')}
               </h3>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-base text-muted-foreground max-w-2xl mx-auto">
                 {t('expertise.tiers.advanced.description')}
               </p>
             </div>
