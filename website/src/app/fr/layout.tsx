@@ -1,5 +1,4 @@
 import { ErrorBoundary } from '@/components/ErrorBoundary'
-import { Analytics } from '@/components/Analytics'
 import { I18nProvider } from '@/components/providers/I18nProvider'
 import { loadMessages } from '@/lib/i18n'
 import { Header } from '@/components/layout/Header'
@@ -22,7 +21,6 @@ export default async function FrLayout({
           </main>
           <Footer />
         </div>
-        <Analytics />
       </ErrorBoundary>
     </I18nProvider>
   )

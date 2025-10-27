@@ -1,7 +1,6 @@
 import dynamic from 'next/dynamic'
 import { Hero } from '@/components/sections/Hero'
 import { WorkedWith } from '@/components/sections/WorkedWith'
-import { LeadMagnet } from '@/components/sections/LeadMagnet'
 
 // Lazy load non-critical sections for better performance
 const FeaturedWork = dynamic(() => import('@/components/sections/FeaturedWork').then(mod => ({ default: mod.FeaturedWork })), {
@@ -18,7 +17,6 @@ export default function FrenchPage() {
       <Hero />
       <WorkedWith />
       <FeaturedWork />
-      <LeadMagnet />
       <Contact />
     </>
   )

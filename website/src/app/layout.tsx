@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Inter, Crimson_Pro } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/lib/theme-provider'
-import { Analytics } from '@/components/Analytics'
 import { ErrorBoundary } from '@/components/ErrorBoundary'
 
 const inter = Inter({ 
@@ -136,13 +135,12 @@ export default function RootLayout({
       <body className={`${inter.variable} ${crimsonPro.variable} font-sans`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="light"
+          forcedTheme="light"
           disableTransitionOnChange
         >
           <ErrorBoundary>
             {children}
-            <Analytics />
           </ErrorBoundary>
         </ThemeProvider>
       </body>

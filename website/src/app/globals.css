@@ -4,20 +4,20 @@
 
 @layer base {
 :root {
-    /* Modern Premium Color Palette - Navy, Gold, Beige */
+    /* Modern Premium Color Palette - Navy, Gold, Beige - Enhanced */
     --background: 40 20% 98%; /* Warm Beige #FAF8F5 */
     --foreground: 220 26% 14%; /* Charcoal #1F2937 */
     --card: 0 0% 100%; /* Pure White */
     --card-foreground: 220 26% 14%;
     --popover: 0 0% 100%;
     --popover-foreground: 220 26% 14%;
-    --primary: 222 47% 30%; /* Navy Blue (clearly visible) */
+    --primary: 222 47% 26%; /* Navy Blue (slightly darker for better contrast) */
     --primary-foreground: 0 0% 100%;
     --secondary: 40 20% 96%; /* Light Beige */
     --secondary-foreground: 222 47% 30%; /* True Navy */
     --muted: 40 20% 96%;
     --muted-foreground: 220 9% 46%; /* Medium Gray */
-    --accent: 43 74% 53%; /* Warm Gold #D4AF37 */
+    --accent: 43 76% 48%; /* Warm Gold #D4AF37 (slightly richer) */
     --accent-foreground: 222 47% 30%; /* True Navy */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
@@ -31,33 +31,6 @@
     --chart-5: 280 65% 60%; /* Purple accent */
   }
 
-  .dark {
-    /* Dark Mode - Navy dominant with Gold accents */
-    --background: 222 47% 30%; /* Navy Blue */
-    --foreground: 40 20% 98%;
-    --card: 220 26% 22%; /* Slightly lighter navy */
-    --card-foreground: 40 20% 98%;
-    --popover: 220 26% 22%;
-    --popover-foreground: 40 20% 98%;
-    --primary: 222 47% 30%; /* Navy (same as light mode) */
-    --primary-foreground: 40 20% 98%; /* White text */
-    --secondary: 220 26% 25%;
-    --secondary-foreground: 40 20% 98%;
-    --muted: 220 26% 25%;
-    --muted-foreground: 220 9% 65%;
-    --accent: 43 74% 53%; /* Gold */
-    --accent-foreground: 222 47% 15%; /* Dark Navy (for contrast with gold) */
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 40 20% 98%;
-    --border: 220 26% 25%;
-    --input: 220 26% 25%;
-    --ring: 43 74% 53%; /* Gold Ring */
-    --chart-1: 43 74% 53%;
-    --chart-2: 40 20% 98%;
-    --chart-3: 160 60% 65%;
-    --chart-4: 20 90% 70%;
-    --chart-5: 280 65% 75%;
-  }
 }
 
 @layer base {
@@ -104,7 +77,8 @@
 
 .gold-underline::after {
   content: '';
-  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300;
+  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-500;
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.4);
 }
 
 .gold-underline:hover::after {
@@ -133,7 +107,16 @@
 }
 
 .sophisticated-card {
-  @apply bg-card border border-border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300;
+  @apply bg-card border border-border rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1;
+}
+
+/* Enhanced card variants */
+.card-elevated {
+  @apply shadow-md hover:shadow-2xl transition-all duration-300;
+}
+
+.card-floating {
+  @apply shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500;
 }
 
 .sophisticated-button {
@@ -265,6 +248,33 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Professional subtle animations */
+@keyframes gentle-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+@keyframes subtle-glow {
+  0%, 100% {
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.15);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25);
+  }
+}
+
+.animate-gentle-pulse {
+  animation: gentle-pulse 3s ease-in-out infinite;
+}
+
+.animate-subtle-glow {
+  animation: subtle-glow 2s ease-in-out infinite;
 }
 
 /* Accessibility enhancements */

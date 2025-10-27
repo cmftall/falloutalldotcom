@@ -23,7 +23,7 @@ export function LeadMagnet() {
 
   if (submitted) {
     return (
-      <section className="py-20 bg-accent/5 border-y border-accent/20">
+      <section id="resources" className="py-20 bg-accent/5 border-y border-accent/20">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
             <motion.div
@@ -53,7 +53,7 @@ export function LeadMagnet() {
   }
 
   return (
-    <section className="py-20 bg-accent/5 border-y border-accent/20">
+    <section id="resources" className="py-20 bg-accent/5 border-y border-accent/20">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

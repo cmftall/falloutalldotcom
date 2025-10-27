@@ -1,7 +1,7 @@
 # 📊 FALLOU TALL - COMPLETE PROFESSIONAL EXPERIENCE
 
 **8 Years of Data Engineering & Architecture**  
-**€360K+ in Proven Savings | 14M+ Users Impacted | 4 Countries**
+**€360K+ in Proven Savings | 4 Countries**
 
 ---
 
@@ -23,42 +23,35 @@
 ```
 
 **Total Impact:**
-- **€360K+ in documented savings** (€130K at National Bank, €100K+ at Onepoint, €130K+ at Orange)
-- **14M+ customers** served (Orange migrations)
-- **150+ data pipelines** built and maintained
+
+- **100+ data pipelines** built and maintained
 - **4 enterprise clients** consulted
 - **7+ engineers** led and trained
-- **75% client retention** rate in consulting
 
 ---
 
 ## 💼 **COMPLETE WORK HISTORY**
 
 ### **1. SOPRA STERIA** 🏢
-**Current Role: Lead Data Architect - Center of Excellence**  
+**Current Role: Transversal Data Architect - Center of Excellence**  
 **Duration:** November 2025 - Present (Current)  
 **Location:** Paris, France  
-**Team Size:** Center of Excellence (architecture practice)
 
 #### **What I'm Building:**
-Leading the creation of a Data Architecture Center of Excellence at one of Europe's largest consulting firms (47,000+ employees). Establishing architecture standards and frameworks that will be used across dozens of client projects.
+- ? To complete from the Sopra job description here - https://careers.soprasteria.com/job/architecte-data-transverse-dcoe-france-in-courbevoie-france-jid-3789
 
 #### **Key Responsibilities:**
-- **Architecture Standards:** Creating reusable patterns for multi-cloud data platforms
-- **Consultant Training:** Teaching data architects modern platform design
-- **Client Advisory:** Providing architecture expertise on major projects
-- **Framework Development:** Building governance and best practices
+- ? To complete from the Sopra job description here - https://careers.soprasteria.com/job/architecte-data-transverse-dcoe-france-in-courbevoie-france-jid-3789
 
 #### **Technologies:**
-Azure, AWS, GCP, Databricks, Snowflake, Terraform, Kubernetes
+- ? To complete from the Sopra job description here - https://careers.soprasteria.com/job/architecte-data-transverse-dcoe-france-in-courbevoie-france-jid-3789
 
 #### **Current Status:**
 - Role started November 2025
-- Building foundation for Center of Excellence
-- Metrics pending (new role, early stage)
+- ? To complete from the Sopra job description here - https://careers.soprasteria.com/job/architecte-data-transverse-dcoe-france-in-courbevoie-france-jid-3789
 
 #### **Why This Matters:**
-This is the natural progression from hands-on engineering to strategic architecture leadership. Instead of building systems for one company, I'm now defining how systems should be built across an entire consulting practice.
+- ? To complete from the Sopra job description here - https://careers.soprasteria.com/job/architecte-data-transverse-dcoe-france-in-courbevoie-france-jid-3789
 
 #### **Honest Assessment:**
 Too early for concrete metrics, but the scope is significant - my work will impact dozens of projects and hundreds of engineers.
@@ -66,37 +59,29 @@ Too early for concrete metrics, but the scope is significant - my work will impa
 ---
 
 ### **2. ONEPOINT** 🌐
-**Role: Expert Data Architect (Consulting)**  
+**Role: Expert Data (Consulting)**  
 **Duration:** September 2024 - October 2025 (14 months)  
 **Location:** Paris, France & Montreal, Canada  
 **Employment:** Part-time (09/2024-04/2025) alongside National Bank, then full-time (05/2025-10/2025)
 
 #### **The Business:**
-Consulting on enterprise data platforms for 4 major clients across banking, telecom, and technology sectors.
+Consulting on enterprise data platforms for major clients across banking, telecom, and technology sectors.
 
 #### **What I Did:**
 - **Technical Audits:** Assessed existing data infrastructure, identified issues
-- **Architecture Design:** Designed scalable data platforms (multi-cloud)
+- **Architecture Design:** Designed scalable cloud data platforms
 - **Implementation Advisory:** Guided teams on ETL/ELT pipelines, DataOps
 - **Training:** Trained client teams on sustainable data practices
 
 #### **Real Business Results:**
 - **40% performance improvement** in client data processing systems through optimized architecture
-- **75% client retention** - 3 out of 4 clients extended their contracts based on delivered value
-- **€100K+ savings identified** through audit recommendations
-- **4 enterprises served** across 3 industries
+- **€50K+ savings identified** through audit recommendations
 
 #### **Technologies:**
 Azure, AWS, Databricks, Snowflake, Python, Spark, SQL, Github Actions
 
 #### **Why This Succeeded:**
 I didn't just deliver reports - I rolled up my sleeves and helped teams implement solutions. Clients renewed because they saw actual improvements, not just PowerPoint slides.
-
-#### **Client Industries:**
-- Banking: Data quality and compliance improvements
-- Telecom: Real-time analytics platform design  
-- Technology: Multi-cloud data governance
-- (4th client - confidential)
 
 ---
 
@@ -153,7 +138,7 @@ Azure, AWS, Databricks, Python, Snowflake, Spark, SQL, Terraform, dbt
 #### **Architecture Details:**
 - **Data Modeling:** 20+ dimensional models (Star schemas + OBT)
 - **Architecture:** Hybrid (Data Lake + Data Warehouse)
-- **Replaced:** On-premise Oracle/Teradata + Informatica/DataStage
+- **Replaced:** Legacy system
 - **Volume:** 10-100 TB total, 200GB-1TB daily processing
 - **Domains:** Customer & Marketing Analytics (bank-wide)
 - **SCD Type 2** for historical tracking
@@ -170,7 +155,7 @@ Not just the technical achievement - I built something the team could maintain a
 **Company Scale:** 14M+ customers, Africa's largest Orange subsidiary
 
 #### **The Challenge:**
-Orange needed to migrate 50+ critical data workflows to a new Hadoop cluster while serving 14 million customers 24/7. One hour of downtime = revenue loss + customer complaints + regulatory issues. The systems were 5+ years old and using legacy technologies.
+Orange needed to migrate 50+ critical data workflows to a new Hadoop cluster while serving 14 million customers 24/7. One hour of downtime = revenue loss + customer complaints + regulatory issues. The systems were old and using legacy technologies.
 
 #### **What I Did:**
 Led the zero-downtime migration of all data systems. Modernized workflows from legacy tools (Flume, Pig, Spark 1.x, Sqoop) to modern Spark 2.x while keeping everything running.
@@ -304,7 +289,7 @@ Data products sold to:
   ↓
 2021: + Team leadership, Quality frameworks, dbt (Lead at major bank)
   ↓
-2022: + Architecture design, Multi-cloud, Consulting (Architect)
+2024: + Architecture design, Multi-cloud, Consulting (Architect)
   ↓
 2025: + Center of Excellence, Architecture standards (Lead Architect)
 ```
@@ -319,8 +304,6 @@ Data products sold to:
   ↓
 2021: Saved €130K+/year (direct cost reduction)
   ↓
-2022: 75% client retention (consulting excellence)
-  ↓
 2025: Building frameworks for dozens of projects (strategic impact)
 ```
 
@@ -334,7 +317,7 @@ Data products sold to:
   ↓
 2021: Team lead (7 engineers), hiring, training
   ↓
-2022: Consulting expert, client advisory
+2024: Consulting expert, client advisory
   ↓
 2025: Center of Excellence lead, practice development
 ```
@@ -345,7 +328,6 @@ Data products sold to:
 
 ### **Documented Financial Impact:**
 - **National Bank of Canada:** €130K-215K/year saved
-- **Onepoint Clients:** €100K+ savings identified
 - **Orange Migrations:** €130K+ value (productivity + risk mitigation)
 - **Orange QoE:** 15% satisfaction = millions in retention
 - **Total:** **€360K+ documented annual value**
@@ -363,7 +345,6 @@ Data products sold to:
 - **Spark Library:** Team standard at Orange
 - **Zero-downtime Strategy:** Deployed across 50+ systems
 - **ML Models:** 15% customer satisfaction improvement
-- **Architecture Patterns:** Now used across Onepoint clients
 
 ---
 
@@ -382,7 +363,7 @@ National Bank team kept improving my framework after I left. That's success - wh
 Zero-downtime migration for 14M users isn't luck - it's planning, testing, and contingency plans. I deliver without drama.
 
 ### **5. Consultant Mindset**
-75% client retention at Onepoint because I deliver value, not slide decks. Clients keep me because I make their problems go away.
+Clients keep me because I make their problems go away.
 
 ---
 
@@ -390,7 +371,7 @@ Zero-downtime migration for 14M users isn't luck - it's planning, testing, and c
 
 ### **Countries Worked:**
 - 🇫🇷 **France** (Paris) - Current (Sopra Steria, Onepoint)
-- 🇨🇦 **Canada** (Montreal) - 3.5 years (National Bank, Onepoint remote)
+- 🇨🇦 **Canada** (Montreal) - 3.5 years (National Bank, Onepoint)
 - 🇨🇮 **Côte d'Ivoire** (Abidjan) - 1 year (Orange)
 - 🇸🇳 **Sénégal** (Dakar) - 1.5 years (Orange)
 
@@ -404,33 +385,31 @@ Zero-downtime migration for 14M users isn't luck - it's planning, testing, and c
 ## 🛠️ **COMPLETE TECHNOLOGY STACK**
 
 ### **Cloud Platforms:**
-- **Azure** (4 years) - Primary at National Bank, Onepoint
-- **AWS** (3 years) - Multi-cloud projects, Onepoint
-- **GCP** (1 year) - Sopra Steria multi-cloud
+- **Azure** (4 years) - Primary at National Bank
+- **AWS** (3 years) - Multi-cloud projects, National Bank, Onepoint
 
 ### **Data Processing:**
-- **Apache Spark** (6 years) - Core technology since 2018
-- **PySpark** (5 years) - Built frameworks, 100+ pipelines
+- **Apache Spark** (8 years) - Core technology since 2018
+- **PySpark** (8 years) - Built frameworks, 100+ pipelines
 - **Scala** (4 years) - Early Orange projects
-- **Databricks** (4 years) - Primary platform
+- **Databricks** (5 years) - Primary platform
 
 ### **Databases:**
-- **Snowflake** (3 years) - National Bank, consulting
+- **Snowflake** (4 years) - National Bank, consulting
 - **PostgreSQL, Oracle** (5 years) - Multiple projects
 - **Cassandra** (2 years) - Orange microservices
 - **Delta Lake** (3 years) - Lakehouse architectures
 
 ### **Data Engineering:**
-- **dbt** (3 years) - Data modeling at National Bank
+- **dbt** (2 years) - Data modeling at National Bank
 - **Apache Airflow** (4 years) - Orchestration
-- **Kafka** (2 years) - Real-time streaming
+- **Kafka** (3 years) - Real-time streaming
 - **ETL/ELT** (8 years) - Core skill
 
 ### **DevOps & Infrastructure:**
 - **Terraform** (3 years) - Infrastructure as Code
-- **Kubernetes** (2 years) - Orange microservices
 - **Docker** (4 years) - Containerization
-- **GitHub Actions** (2 years) - CI/CD pipelines
+- **GitHub Actions** (4 years) - CI/CD pipelines
 
 ### **Machine Learning:**
 - **Scikit-Learn, TensorFlow** (3 years) - Orange projects
@@ -454,16 +433,14 @@ Zero-downtime migration for 14M users isn't luck - it's planning, testing, and c
 ### **Impact:**
 - **€360K+** documented annual value delivered
 - **14M+ users** served without downtime
-- **150+ pipelines** built
+- **100+ pipelines** built
 - **7 engineers** led and trained
 - **4 enterprise clients** consulted
-- **75%** client retention rate
 
 ### **Technical:**
 - **20+ technologies** mastered
 - **3 cloud platforms** (Azure, AWS, GCP)
 - **3 major frameworks** created (PySpark QA, Spark Library, Architecture Patterns)
-- **100%** delivery success rate (0 failed projects)
 
 ---
 
@@ -477,7 +454,7 @@ Zero-downtime migration for 14M users isn't luck - it's planning, testing, and c
 ### **Master in Applied Mathematics**
 **Institution:** Cheikh Anta Diop University  
 **Year:** 2016  
-**Focus:** Mathematical modeling, statistics
+**Focus:** Mathematical modeling, statistics, Operation Research
 
 ---
 
@@ -493,7 +470,7 @@ You're hiring someone who has:
 
 ### **For Clients:**
 You're getting someone who:
-- Delivers results, not presentations (75% retention rate)
+- Delivers results, not presentations 
 - Understands business, not just tech (every project has ROI)
 - Manages risk (zero-downtime for 14M users)
 - Builds lasting solutions (National Bank still using my framework)
@@ -511,7 +488,7 @@ I've documented everything here:
 ## 🚀 **WHAT'S NEXT**
 
 ### **Current Focus (2025):**
-Building the Data Architecture Center of Excellence at Sopra Steria. This will be my most strategic role yet - instead of building one system, I'm defining how dozens of systems should be built.
+- ? Take it from https://careers.soprasteria.com/job/architecte-data-transverse-dcoe-france-in-courbevoie-france-jid-3789
 
 ### **Career Goals:**
 Continue the progression from tactical execution to strategic architecture. Want to influence how enterprises think about data architecture, not just implement their plans.
@@ -529,6 +506,6 @@ Continue the progression from tactical execution to strategic architecture. Want
 
 ---
 
-**Last Updated:** January 2025  
-**Document Status:** Complete professional history, all information verifiable
+**Last Updated:** October 2025  
+**Document Status:** Complete professional history
 

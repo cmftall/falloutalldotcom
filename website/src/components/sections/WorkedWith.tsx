@@ -36,7 +36,7 @@ export function WorkedWith() {
   ]
 
   return (
-    <section className="py-20 bg-card border-y border-accent/10">
+    <section id="companies" className="py-20 bg-card border-y border-accent/10">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Gold "Trusted By" Header */}

@@ -4,7 +4,6 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
-import { ThemeToggle } from '@/components/ui/ThemeToggle'
 import { LanguageSelector } from '@/components/ui/LanguageSelector'
 import { useI18n } from '@/components/providers/I18nProvider'
 import { SITE_CONFIG } from '@/lib/constants'
@@ -24,15 +23,15 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-slate-900/60">
+    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="h-10 w-10 rounded-full bg-slate-900 dark:bg-white flex items-center justify-center">
-              <span className="text-white dark:text-slate-900 font-bold text-sm">FT</span>
+            <div className="h-10 w-10 rounded-full bg-primary flex items-center justify-center">
+              <span className="text-primary-foreground font-bold text-sm">FT</span>
             </div>
-            <span className="font-bold text-lg text-slate-900 dark:text-white">{SITE_CONFIG.name}</span>
+            <span className="font-bold text-lg text-foreground">{SITE_CONFIG.name}</span>
           </Link>
 
           {/* Desktop Navigation - Hidden on mobile */}
@@ -45,7 +44,7 @@ export function Header() {
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className="text-sm font-medium text-slate-600 dark:text-gray-300 hover:text-slate-900 dark:hover:text-white transition-colors duration-200"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
               >
                 {t(`navigation.${item.key}`)}
               </button>
@@ -55,10 +54,9 @@ export function Header() {
           {/* Desktop Actions - Hidden on mobile */}
           <div className="hidden md:flex items-center space-x-4">
             <LanguageSelector />
-            <ThemeToggle />
             <Button
               onClick={() => scrollToSection('#contact')}
-              className="bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-gray-100 px-6 py-2 rounded-lg font-medium transition-colors duration-200"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-2 rounded-lg font-medium transition-colors duration-200"
             >
               {t('navigation.hireMeCta')}
             </Button>
@@ -67,7 +65,6 @@ export function Header() {
           {/* Mobile Actions - Only visible on mobile */}
           <div className="flex md:hidden items-center space-x-2">
             <LanguageSelector size="sm" />
-            <ThemeToggle />
             <Button
               variant="ghost"
               size="icon"
@@ -85,7 +82,7 @@ export function Header() {
 
         {/* Mobile Navigation - Only visible on mobile when menu is open */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-slate-200 dark:border-slate-700 bg-white/95 dark:bg-slate-900/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-slate-900/60">
+          <div className="md:hidden border-t border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <nav className="flex flex-col space-y-2 py-4">
               {[
                 { href: '#home', key: 'home' },
@@ -95,15 +92,15 @@ export function Header() {
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="px-4 py-2 text-sm font-medium text-slate-600 dark:text-gray-300 hover:text-slate-900 dark:hover:text-white transition-colors text-left"
+                  className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors text-left"
                 >
                   {t(`navigation.${item.key}`)}
                 </button>
               ))}
-              <div className="px-4 pt-4 border-t border-slate-200 dark:border-slate-700">
+              <div className="px-4 pt-4 border-t border-border">
                 <Button
                   onClick={() => scrollToSection('#contact')}
-                  className="w-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-gray-100"
+                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
                 >
                   {t('navigation.contact')}
                 </Button>
