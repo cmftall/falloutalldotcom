@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
-import { Mail, MapPin, Linkedin, CheckCircle, TrendingUp } from 'lucide-react'
+import { Mail, MapPin, Linkedin, CheckCircle, TrendingUp, Calendar } from 'lucide-react'
 import { useI18n } from '@/components/providers/I18nProvider'
 
 export function Contact() {
@@ -68,24 +68,37 @@ export function Contact() {
             </div>
           </motion.div>
 
-          {/* Primary CTA Button */}
+          {/* Primary CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-12 space-y-4"
           >
             <Button
               size="lg"
               className="relative text-xl px-10 py-6 font-serif font-semibold shadow-xl rounded-full overflow-hidden group bg-accent text-accent-foreground hover:bg-accent/90"
-              onClick={() => window.open('mailto:cmftall@gmail.com?subject=Consulting Inquiry', '_blank')}
+              onClick={() => window.open('https://calendly.com/falloutall', '_blank')}
             >
               <span className="relative z-10 flex items-center justify-center">
-                <Mail className="mr-3 h-6 w-6" />
+                <Calendar className="mr-3 h-6 w-6" />
                 {t('contact.primaryCta')}
               </span>
             </Button>
+            <div>
+              <Button
+                size="lg"
+                variant="secondary"
+                className="relative text-lg px-8 py-5 font-serif font-semibold shadow-lg rounded-full overflow-hidden group"
+                onClick={() => window.open('mailto:cmftall@gmail.com?subject=Consulting Inquiry', '_blank')}
+              >
+                <span className="relative z-10 flex items-center justify-center">
+                  <Mail className="mr-2 h-5 w-5" />
+                  {t('contact.emailCta')}
+                </span>
+              </Button>
+            </div>
           </motion.div>
 
           {/* Contact Details */}

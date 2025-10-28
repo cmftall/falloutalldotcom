@@ -8,7 +8,7 @@
   "common": {
     "toggleTheme": "Toggle theme"
   },
-         "hero": {
+        "hero": {
            "headline": "Building data systems that work: error reduction, faster pipelines, and trails that survive your team",
            "subheadline": "8 years leading teams of 7+ engineers at National Bank of Canada, Orange, Onepoint. Delivered €130K+ annual savings through proven quality frameworks.",
            "primaryCta": "See My Work",
@@ -16,7 +16,7 @@
            "credential": "Data Architect • Paris & Montreal",
            "projectOutcomes": "€130K+ saved at National Bank • Zero downtime for 14M+ Orange customers • 75% client retention",
            "technicalInnovation": "I build solutions that work. No fancy tech for tech's sake. Just reliable systems that save money and time.",
-           "credibilityIndicators": [
+          "credibilityIndicators": [
              "Saved National Bank €130K+/year fixing data quality issues",
              "Zero downtime migration for 14M+ Orange customers",
              "3 out of 4 consulting clients extended their contracts",
@@ -24,7 +24,7 @@
            ],
            "professionalPositioning": "I don't do buzzwords or fancy presentations. I fix what's broken, make it reliable, and move on. If your data systems are costing you money, I can probably help.",
            "savingsCalculation": "Real example: National Bank saved €130K+/year when I reduced their data errors by 30% and sped up processing by 25%"
-         },
+        },
   "expertise": {
     "title": "Expertise",
     "subtitle": "Core competencies organized by proficiency and depth of experience",
@@ -46,21 +46,21 @@
       "core": {
         "title": "Core Expertise",
         "description": "Deep expertise proven through extensive professional practice",
-        "categories": {
-          "dataEngineering": {
-            "name": "Data Engineering", 
-            "skills": "Python, Scala, SQL, Apache Airflow, Terraform",
-            "proficiency": "Expert",
-            "yearsExperience": 8,
-            "methodologies": ["ETL/ELT pipeline design", "Data quality frameworks", "Infrastructure as Code"]
-          },
-          "databases": {
-            "name": "Databases",
-            "skills": "PostgreSQL, Oracle, Cassandra, MongoDB, Delta Lake",
-            "proficiency": "Expert",
-            "yearsExperience": 7,
-            "methodologies": ["Database optimization", "Data modeling", "Performance tuning"]
-          },
+    "categories": {
+      "dataEngineering": {
+        "name": "Data Engineering", 
+        "skills": "Python, Scala, SQL, Apache Airflow, Terraform",
+        "proficiency": "Expert",
+        "yearsExperience": 8,
+        "methodologies": ["ETL/ELT pipeline design", "Data quality frameworks", "Infrastructure as Code"]
+      },
+      "databases": {
+        "name": "Databases",
+        "skills": "PostgreSQL, Oracle, Cassandra, MongoDB, Delta Lake",
+        "proficiency": "Expert",
+        "yearsExperience": 7,
+        "methodologies": ["Database optimization", "Data modeling", "Performance tuning"]
+      },
           "cloudPlatforms": {
             "name": "Cloud Data Architecture",
             "skills": "Azure, AWS, Databricks, Snowflake, Apache Spark",
@@ -77,16 +77,16 @@
           "machineLearning": {
             "name": "Machine Learning",
             "skills": "Scikit-Learn, TensorFlow, Pandas, NumPy, MLflow",
-            "proficiency": "Advanced",
+        "proficiency": "Advanced",
             "yearsExperience": 5,
             "methodologies": ["ML model deployment", "Feature engineering", "Model monitoring"]
-          },
-          "devops": {
+      },
+      "devops": {
             "name": "DevOps & DataOps",
-            "skills": "GitHub Actions, Azure DevOps, Docker, Kubernetes, DataOps",
-            "proficiency": "Advanced",
-            "yearsExperience": 5,
-            "methodologies": ["CI/CD pipelines", "Container orchestration", "DataOps automation"]
+        "skills": "GitHub Actions, Azure DevOps, Docker, Kubernetes, DataOps",
+        "proficiency": "Advanced",
+        "yearsExperience": 5,
+        "methodologies": ["CI/CD pipelines", "Container orchestration", "DataOps automation"]
           },
           "visualization": {
             "name": "Data Visualization",
@@ -122,11 +122,12 @@
           "service1": "Fix broken data systems",
           "service2": "Zero-downtime migrations",
           "service3": "Data quality frameworks",
-          "primaryCta": "Email Me",
+          "primaryCta": "Schedule a Call",
+          "emailCta": "Email Me",
           "rates": "€700-1800/day depending on project",
           "email": "Email",
           "location": "Location"
-         },
+        },
   "footer": {
     "copyright": "© 2025 Fallou TALL. All rights reserved.",
     "builtWith": "Built with Next.js and Tailwind CSS"
@@ -136,70 +137,70 @@
           "subtitle": "3 companies, 3 big problems, 3 successful outcomes",
           "businessImpactStatement": "No fluff. These are actual projects with real numbers from real companies.",
           "projects": {
-            "bnc-analytical-foundation": {
+      "bnc-analytical-foundation": {
               "company": "National Bank of Canada",
-              "role": "Lead Data Engineer",
+        "role": "Lead Data Engineer", 
               "duration": "2021 - 2025",
               "location": "Montreal, Canada",
               "focusArea": "Fixed broken data systems costing €130K+/year",
               "description": "Led team of 7 engineers to fix failing data systems at Canada's 6th largest bank. Built quality framework that reduced errors by 30% and saved €130K+ annually.",
-              "keyAchievements": [
+        "keyAchievements": [
                 "Reduced data errors by 30%, saving €65K in labor costs annually",
                 "Increased processing speed by 25%, freeing 3 hours/day per engineer (€65K+ annual value)",
                 "Cut testing time by 40%, speeding up releases from days to hours",
                 "Team adopted my framework as the company standard"
               ],
               "technologies": ["Azure", "Python", "Databricks"],
-              "businessImpact": [
-                {
+        "businessImpact": [
+          {
                   "metricName": "Cost Savings",
-                  "percentage": 30,
+            "percentage": 30,
                   "description": "€130K+ annual savings: 30% fewer errors (€65K) + 25% faster processing (€65K)"
                 },
                 {
                   "metricName": "Speed",
-                  "percentage": 40,
+            "percentage": 40,
                   "description": "Releases 40% faster - from days to hours"
-                }
-              ],
-              "technicalInnovation": [
+          }
+        ],
+        "technicalInnovation": [
                 "Quality framework now used company-wide",
                 "Automated testing reducing manual work by 40%"
               ],
               "industry": "Banking"
             },
             "orange-zero-downtime": {
-              "company": "Orange Côte d'Ivoire",
-              "role": "Lead Data Engineer",
+        "company": "Orange Côte d'Ivoire",
+        "role": "Lead Data Engineer",
               "duration": "2020 - 2021",
               "location": "Abidjan, Côte d'Ivoire",
               "focusArea": "Zero-downtime migration for Africa's largest telecom",
               "description": "Migrated 50+ critical data systems with zero downtime for Orange's 14M+ customers. Modernized outdated systems while keeping everything running 24/7.",
-              "keyAchievements": [
+        "keyAchievements": [
                 "Migrated 50+ critical workflows with zero downtime - business kept running",
                 "20% productivity boost for engineering team through better tools",
                 "Modernized 5-year-old legacy systems without disrupting operations",
                 "Completed ahead of schedule with zero incidents"
               ],
               "technologies": ["Hadoop", "Spark", "Python"],
-              "businessImpact": [
-                {
+        "businessImpact": [
+          {
                   "metricName": "Zero Downtime",
-                  "percentage": 100,
+            "percentage": 100,
                   "description": "100% uptime during migration - 14M+ customers unaffected"
                 },
                 {
                   "metricName": "Team Productivity",
                   "percentage": 20,
                   "description": "20% productivity increase through modernized tools"
-                }
-              ],
-              "technicalInnovation": [
+          }
+        ],
+        "technicalInnovation": [
                 "Zero-downtime migration strategy for 50+ systems",
                 "Custom tools increasing team productivity by 20%"
-              ],
-              "industry": "Telecommunications"
-            },
+        ],
+        "industry": "Telecommunications"
+      },
             "onepoint-consulting": {
               "company": "Onepoint",
               "role": "Expert Data Architect",
@@ -207,15 +208,15 @@
               "location": "Paris, France & Montreal, Canada",
               "focusArea": "Enterprise data consulting across 4 major clients",
               "description": "Delivered data audits and architecture design for 4 enterprise clients across banking, telecom, and tech. 3 out of 4 clients extended contracts based on results.",
-              "keyAchievements": [
+        "keyAchievements": [
                 "Improved client system performance by 40% through better architecture",
                 "3 out of 4 clients renewed contracts - 75% retention rate",
                 "Delivered audits identifying €100K+ savings opportunities",
                 "Trained client teams on sustainable data practices"
               ],
               "technologies": ["Azure", "AWS", "Databricks", "Snowflake"],
-              "businessImpact": [
-                {
+        "businessImpact": [
+          {
                   "metricName": "Performance",
                   "percentage": 40,
                   "description": "40% faster data processing across client systems"
@@ -224,16 +225,16 @@
                   "metricName": "Client Retention",
                   "percentage": 75,
                   "description": "3 of 4 clients extended engagements based on delivered value"
-                }
-              ],
-              "technicalInnovation": [
+          }
+        ],
+        "technicalInnovation": [
                 "Multi-cloud architecture patterns",
                 "Security-first data design frameworks"
               ],
               "industry": "Consulting"
-            }
-          }
-        },
+      }
+    }
+  },
   "stats": {
     "yearsExperience": "Years Experience",
     "technologiesMastered": "Technologies Mastered",

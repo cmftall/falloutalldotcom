@@ -128,7 +128,8 @@
     "service1": "Audits et conseil en architecture",
     "service2": "Formation framework qualité des données",
     "service3": "Projets de conseil court-terme",
-    "primaryCta": "Prendre Rendez-vous",
+    "primaryCta": "Planifier un Appel",
+    "emailCta": "M'Envoyer un Email",
     "rates": "€700-1800/jour",
     "email": "Email",
     "location": "Localisation"
