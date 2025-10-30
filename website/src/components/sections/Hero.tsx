@@ -6,6 +6,11 @@ import { useI18n } from '@/components/providers/I18nProvider'
 import { ArrowRight, TrendingUp, Target, Zap } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { useImagePath } from '@/lib/image-utils'
+// Statically import the photo so Next bundles it under /_next/static/media
+// This guarantees availability even if public assets are not copied
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore - Allow importing image asset
+import photoStaticUrl from '@/../public/fallou-tall-photo.jpg'
 
 export function Hero() {
   const { t } = useI18n()
@@ -13,9 +18,8 @@ export function Hero() {
   const [savingsCount, setSavingsCount] = useState(0)
   const [errorCount, setErrorCount] = useState(0)
   const [pipelinesCount, setPipelinesCount] = useState(0)
-  // Get image path using utility function
-  // This ensures correct path resolution with static export and locale routing
-  const imagePath = useImagePath('/fallou-tall-photo.jpg')
+  // Prefer the statically imported URL (bundled by Next). Fallback to public path.
+  const imagePath = (typeof photoStaticUrl === 'string' && photoStaticUrl) || useImagePath('/fallou-tall-photo.jpg')
 
   useEffect(() => {
     setHasMounted(true)
