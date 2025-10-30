@@ -10,44 +10,54 @@ import { useEffect, useState } from 'react'
 export function Hero() {
   const { t } = useI18n()
   const [hasMounted, setHasMounted] = useState(false)
+  const [savingsCount, setSavingsCount] = useState(0)
+  const [errorCount, setErrorCount] = useState(0)
+  const [pipelinesCount, setPipelinesCount] = useState(0)
 
   useEffect(() => {
     setHasMounted(true)
-  }, [])
-
-  // Animated counter hook - memoized for performance
-  const useCounter = (end: number, duration: number = 2000) => {
-    const [count, setCount] = useState(0)
-
-    useEffect(() => {
-      if (!hasMounted) return
-      
-      let startTime: number
-      let animationFrame: number
+    
+    // Animate counters with requestAnimationFrame
+    const animateCounter = (
+      setter: (value: number) => void,
+      end: number,
+      duration: number = 2000
+    ) => {
+      let startTime: number | null = null
+      let animationFrame: number | null = null
 
       const animate = (currentTime: number) => {
-        if (!startTime) startTime = currentTime
-        const progress = Math.min((currentTime - startTime) / duration, 1)
+        if (startTime === null) startTime = currentTime
+        const elapsed = currentTime - startTime
+        const progress = Math.min(elapsed / duration, 1)
         
-        setCount(Math.floor(progress * end))
+        setter(Math.floor(progress * end))
 
         if (progress < 1) {
           animationFrame = requestAnimationFrame(animate)
         }
       }
 
+      // Start animation after a small delay to ensure rendering
       animationFrame = requestAnimationFrame(animate)
-      return () => cancelAnimationFrame(animationFrame)
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [end, duration])
+      
+      return () => {
+        if (animationFrame !== null) {
+          cancelAnimationFrame(animationFrame)
+        }
+      }
+    }
 
-    return count
-  }
+    const cleanupSavings = animateCounter(setSavingsCount, 200, 2000)
+    const cleanupError = animateCounter(setErrorCount, 30, 2000)
+    const cleanupPipelines = animateCounter(setPipelinesCount, 100, 2000)
 
-  // Counters for animated metrics
-  const savingsCount = useCounter(200, 2000)
-  const errorCount = useCounter(30, 2000)
-  const pipelinesCount = useCounter(100, 2000)
+    return () => {
+      cleanupSavings()
+      cleanupError()
+      cleanupPipelines()
+    }
+  }, [])
 
   return (
     <section id="home" className="relative min-h-screen flex items-center bg-background overflow-hidden">
@@ -93,11 +103,7 @@ export function Hero() {
                     style={{
                       boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)'
                     }}
-                    onError={(e) => {
-                      // Fallback: If image fails to load, hide it and show placeholder
-                      const target = e.target as HTMLImageElement
-                      target.style.display = 'none'
-                    }}
+                    unoptimized
                   />
                   
                   {/* Inner Glow on Hover */}
