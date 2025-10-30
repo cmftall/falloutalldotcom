@@ -84,7 +84,7 @@ export function Hero() {
               transition={{ duration: 0.8 }}
               className="lg:col-span-2 flex justify-center lg:justify-start"
             >
-              <div className="relative group">
+              <div className="relative group pb-8 sm:pb-0">
                 {/* Enhanced Shadow Behind Photo */}
                 <div className="absolute -inset-4 bg-gradient-to-br from-primary/10 via-accent/5 to-primary/10 rounded-full opacity-60 group-hover:opacity-80 transition-opacity duration-500 blur-2xl" />
                 
@@ -111,17 +111,18 @@ export function Hero() {
                     }}
                     onError={(e) => {
                       const target = e.currentTarget
-                      if (process.env.NODE_ENV === 'development') {
-                        console.error('Failed to load profile image:', {
-                          attemptedPath: imagePath,
-                          windowOrigin: typeof window !== 'undefined' ? window.location.origin : 'N/A',
-                          currentPath: typeof window !== 'undefined' ? window.location.pathname : 'N/A',
-                          imageExists: false
-                        })
-                      }
-                      // Try fallback with explicit origin
+                      // Always log in production to diagnose failures in Vercel
+                      console.error('Failed to load profile image:', {
+                        attemptedPath: imagePath,
+                        windowOrigin: typeof window !== 'undefined' ? window.location.origin : 'N/A',
+                        currentPath: typeof window !== 'undefined' ? window.location.pathname : 'N/A'
+                      })
+                      // Try fallback with explicit origin if not already absolute
                       if (typeof window !== 'undefined' && !imagePath.startsWith('http')) {
-                        target.src = `${window.location.origin}${imagePath}`
+                        const fallback = `${window.location.origin}${imagePath}`
+                        if (target.src !== fallback) {
+                          target.src = fallback
+                        }
                       }
                     }}
                     onLoad={() => {
@@ -139,10 +140,10 @@ export function Hero() {
                     return availability && typeof availability === 'string' && availability.trim() !== ''
                   })() && (
                     <motion.div
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{ delay: 1, type: 'spring' }}
-                      className="absolute -bottom-3 left-1/2 -translate-x-1/2 sm:left-0 sm:translate-x-0 bg-card border-2 border-accent rounded-full px-3 py-1.5 sm:px-4 sm:py-2 shadow-xl z-20 whitespace-nowrap"
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.8, type: 'spring', stiffness: 200, damping: 20 }}
+                      className="mt-3 sm:mt-0 sm:absolute sm:-bottom-3 sm:left-0 bg-card border-2 border-accent rounded-full px-3 py-1.5 sm:px-4 sm:py-2 shadow-xl z-20 whitespace-nowrap flex justify-center"
                       style={{
                         boxShadow: '0 10px 15px -3px rgba(212, 175, 55, 0.3), 0 4px 6px -2px rgba(212, 175, 55, 0.2)'
                       }}
