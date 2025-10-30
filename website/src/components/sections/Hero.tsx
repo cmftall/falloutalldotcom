@@ -91,19 +91,16 @@ export function Hero() {
                   <div className="absolute inset-0 rounded-full border-2 border-accent/30 shadow-lg" />
                   
                   {/* Photo */}
-                  <Image
+                  <img
                     src="/fallou-tall-photo.jpg"
                     alt="Fallou Tall - Data Architect Consultant"
                     width={384}
                     height={384}
                     className="relative rounded-full object-cover shadow-2xl transition-all duration-300 group-hover:scale-[1.02]"
-                    priority
-                    quality={90}
-                    sizes="(max-width: 640px) 192px, (max-width: 768px) 256px, (max-width: 1024px) 320px, 384px"
+                    loading="eager"
                     style={{
                       boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)'
                     }}
-                    unoptimized
                   />
                   
                   {/* Inner Glow on Hover */}
