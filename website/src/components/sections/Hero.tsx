@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/Button'
 import { useI18n } from '@/components/providers/I18nProvider'
 import { ArrowRight, TrendingUp, Target, Zap } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import { useImagePath } from '@/lib/image-utils'
 
 export function Hero() {
   const { t } = useI18n()
@@ -12,6 +13,18 @@ export function Hero() {
   const [savingsCount, setSavingsCount] = useState(0)
   const [errorCount, setErrorCount] = useState(0)
   const [pipelinesCount, setPipelinesCount] = useState(0)
+  // Build locale-prefixed asset path to avoid static host redirects
+  const localePrefixed = `/${t ? ((): 'en' | 'fr' => {
+    try {
+      // infer locale from i18n provider via a known key
+      const sample = t('hero.credential')
+      // if we are on French page, credential contains 'Paris et Montréal'
+      return typeof sample === 'string' && sample.includes('Paris et Montréal') ? 'fr' : 'en'
+    } catch {
+      return 'en'
+    }
+  })() : 'en'}/fallou-tall-photo.jpg`
+  const imagePath = useImagePath(localePrefixed)
 
   useEffect(() => {
     setHasMounted(true)
@@ -80,7 +93,7 @@ export function Hero() {
               transition={{ duration: 0.8 }}
               className="lg:col-span-2 flex justify-center lg:justify-start"
             >
-              <div className="relative group">
+              <div className="relative group pb-8 sm:pb-0">
                 {/* Enhanced Shadow Behind Photo */}
                 <div className="absolute -inset-4 bg-gradient-to-br from-primary/10 via-accent/5 to-primary/10 rounded-full opacity-60 group-hover:opacity-80 transition-opacity duration-500 blur-2xl" />
                 
@@ -89,51 +102,68 @@ export function Hero() {
                   {/* Subtle Border with Depth */}
                   <div className="absolute inset-0 rounded-full border-2 border-accent/30 shadow-lg" />
                   
-                  {/* Photo - Using standard img tag for maximum compatibility with static export */}
-                  {/* Next.js Image component has issues with static export + locale routing */}
+                  {/* Photo - Standard img tag for maximum compatibility with static export */}
+                  {/* Using absolute path from root ensures it works with locale routing */}
                   <img
-                    src="/fallou-tall-photo.jpg"
+                    src={imagePath}
                     alt="Fallou Tall - Data Architect Consultant"
                     width={384}
                     height={384}
-                    className="relative rounded-full object-cover shadow-2xl transition-all duration-300 group-hover:scale-[1.02]"
+                    className="relative rounded-full object-cover shadow-2xl transition-all duration-300 group-hover:scale-[1.02] z-10"
                     loading="eager"
                     style={{
                       boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)',
                       width: '100%',
                       height: '100%',
-                      objectFit: 'cover'
+                      objectFit: 'cover',
+                      display: 'block'
                     }}
                     onError={(e) => {
-                      // Fallback handling if image fails to load
-                      console.error('Failed to load profile image:', e)
+                      const target = e.currentTarget
+                      // Always log in production to diagnose failures in Vercel
+                      console.error('Failed to load profile image:', {
+                        attemptedPath: imagePath,
+                        windowOrigin: typeof window !== 'undefined' ? window.location.origin : 'N/A',
+                        currentPath: typeof window !== 'undefined' ? window.location.pathname : 'N/A'
+                      })
+                      // Try fallback with explicit origin if not already absolute
+                      if (typeof window !== 'undefined' && !imagePath.startsWith('http')) {
+                        const fallback = `${window.location.origin}${imagePath}`
+                        if (target.src !== fallback) {
+                          target.src = fallback
+                        }
+                      }
+                    }}
+                    onLoad={() => {
+                      if (process.env.NODE_ENV === 'development') {
+                        console.log('Profile image loaded successfully:', imagePath)
+                      }
                     }}
                   />
                   
                   {/* Inner Glow on Hover */}
                   <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent/0 via-accent/0 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                  {/* Availability Badge (anchored to photo container) */}
+                  {(() => {
+                    const availability = t('hero.availability')
+                    return availability && typeof availability === 'string' && availability.trim() !== ''
+                  })() && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.8, type: 'spring', stiffness: 200, damping: 20 }}
+                      className="mt-3 sm:mt-0 sm:absolute sm:-bottom-3 sm:left-0 bg-card border-2 border-accent rounded-full px-3 py-1.5 sm:px-4 sm:py-2 shadow-xl z-20 whitespace-nowrap flex justify-center"
+                      style={{
+                        boxShadow: '0 10px 15px -3px rgba(212, 175, 55, 0.3), 0 4px 6px -2px rgba(212, 175, 55, 0.2)'
+                      }}
+                    >
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-accent rounded-full animate-pulse" />
+                        <span className="text-xs sm:text-sm font-semibold text-primary">{t('hero.availability')}</span>
+                      </div>
+                    </motion.div>
+                  )}
                 </div>
-
-                {/* Availability Badge */}
-                {(() => {
-                  const availability = t('hero.availability')
-                  return availability && typeof availability === 'string' && availability.trim() !== ''
-                })() && (
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ delay: 1, type: 'spring' }}
-                    className="absolute -bottom-2 right-0 bg-card border-2 border-accent rounded-full px-4 py-2 shadow-xl"
-                    style={{
-                      boxShadow: '0 10px 15px -3px rgba(212, 175, 55, 0.3), 0 4px 6px -2px rgba(212, 175, 55, 0.2)'
-                    }}
-                  >
-                    <div className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-                      <span className="text-sm font-semibold text-primary">{t('hero.availability')}</span>
-                    </div>
-                  </motion.div>
-                )}
               </div>
             </motion.div>
 
