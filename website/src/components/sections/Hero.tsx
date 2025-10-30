@@ -13,8 +13,18 @@ export function Hero() {
   const [savingsCount, setSavingsCount] = useState(0)
   const [errorCount, setErrorCount] = useState(0)
   const [pipelinesCount, setPipelinesCount] = useState(0)
-  // Use absolute path from root; file is copied to out/ during postbuild
-  const imagePath = useImagePath('/fallou-tall-photo.jpg')
+  // Build locale-prefixed asset path to avoid static host redirects
+  const localePrefixed = `/${t ? ((): 'en' | 'fr' => {
+    try {
+      // infer locale from i18n provider via a known key
+      const sample = t('hero.credential')
+      // if we are on French page, credential contains 'Paris et Montréal'
+      return typeof sample === 'string' && sample.includes('Paris et Montréal') ? 'fr' : 'en'
+    } catch {
+      return 'en'
+    }
+  })() : 'en'}/fallou-tall-photo.jpg`
+  const imagePath = useImagePath(localePrefixed)
 
   useEffect(() => {
     setHasMounted(true)
