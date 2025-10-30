@@ -4,23 +4,14 @@ import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
 import { useI18n } from '@/components/providers/I18nProvider'
 import { ArrowRight, TrendingUp, Target, Zap } from 'lucide-react'
-import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import { usePathname } from 'next/navigation'
 
 export function Hero() {
   const { t } = useI18n()
-  const pathname = usePathname()
   const [hasMounted, setHasMounted] = useState(false)
   const [savingsCount, setSavingsCount] = useState(0)
   const [errorCount, setErrorCount] = useState(0)
   const [pipelinesCount, setPipelinesCount] = useState(0)
-  
-  // Absolute path that works regardless of locale routing
-  // Using absolute path ensures it resolves correctly from /en/ or /fr/ routes
-  const imagePath = typeof window !== 'undefined' 
-    ? `${window.location.origin}/fallou-tall-photo.jpg`
-    : '/fallou-tall-photo.jpg'
 
   useEffect(() => {
     setHasMounted(true)
