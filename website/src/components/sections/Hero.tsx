@@ -133,28 +133,27 @@ export function Hero() {
                   
                   {/* Inner Glow on Hover */}
                   <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent/0 via-accent/0 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                  {/* Availability Badge (anchored to photo container) */}
+                  {(() => {
+                    const availability = t('hero.availability')
+                    return availability && typeof availability === 'string' && availability.trim() !== ''
+                  })() && (
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ delay: 1, type: 'spring' }}
+                      className="absolute -bottom-3 left-1/2 -translate-x-1/2 sm:left-0 sm:translate-x-0 bg-card border-2 border-accent rounded-full px-3 py-1.5 sm:px-4 sm:py-2 shadow-xl z-20 whitespace-nowrap"
+                      style={{
+                        boxShadow: '0 10px 15px -3px rgba(212, 175, 55, 0.3), 0 4px 6px -2px rgba(212, 175, 55, 0.2)'
+                      }}
+                    >
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-accent rounded-full animate-pulse" />
+                        <span className="text-xs sm:text-sm font-semibold text-primary">{t('hero.availability')}</span>
+                      </div>
+                    </motion.div>
+                  )}
                 </div>
-
-                {/* Availability Badge */}
-                {(() => {
-                  const availability = t('hero.availability')
-                  return availability && typeof availability === 'string' && availability.trim() !== ''
-                })() && (
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ delay: 1, type: 'spring' }}
-                    className="absolute -bottom-2 right-0 bg-card border-2 border-accent rounded-full px-4 py-2 shadow-xl"
-                    style={{
-                      boxShadow: '0 10px 15px -3px rgba(212, 175, 55, 0.3), 0 4px 6px -2px rgba(212, 175, 55, 0.2)'
-                    }}
-                  >
-                    <div className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-                      <span className="text-sm font-semibold text-primary">{t('hero.availability')}</span>
-                    </div>
-                  </motion.div>
-                )}
               </div>
             </motion.div>
 
