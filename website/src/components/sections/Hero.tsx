@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/Button'
 import { useI18n } from '@/components/providers/I18nProvider'
 import { ArrowRight, TrendingUp, Target, Zap } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import { useImagePath } from '@/lib/image-utils'
 
 export function Hero() {
   const { t } = useI18n()
@@ -12,6 +13,9 @@ export function Hero() {
   const [savingsCount, setSavingsCount] = useState(0)
   const [errorCount, setErrorCount] = useState(0)
   const [pipelinesCount, setPipelinesCount] = useState(0)
+  // Get image path using utility function
+  // This ensures correct path resolution with static export and locale routing
+  const imagePath = useImagePath('/fallou-tall-photo.jpg')
 
   useEffect(() => {
     setHasMounted(true)
@@ -89,24 +93,41 @@ export function Hero() {
                   {/* Subtle Border with Depth */}
                   <div className="absolute inset-0 rounded-full border-2 border-accent/30 shadow-lg" />
                   
-                  {/* Photo - Using standard img tag for maximum compatibility with static export */}
-                  {/* Next.js Image component has issues with static export + locale routing */}
+                  {/* Photo - Standard img tag for maximum compatibility with static export */}
+                  {/* Using absolute path from root ensures it works with locale routing */}
                   <img
-                    src="/fallou-tall-photo.jpg"
+                    src={imagePath}
                     alt="Fallou Tall - Data Architect Consultant"
                     width={384}
                     height={384}
-                    className="relative rounded-full object-cover shadow-2xl transition-all duration-300 group-hover:scale-[1.02]"
+                    className="relative rounded-full object-cover shadow-2xl transition-all duration-300 group-hover:scale-[1.02] z-10"
                     loading="eager"
                     style={{
                       boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)',
                       width: '100%',
                       height: '100%',
-                      objectFit: 'cover'
+                      objectFit: 'cover',
+                      display: 'block'
                     }}
                     onError={(e) => {
-                      // Fallback handling if image fails to load
-                      console.error('Failed to load profile image:', e)
+                      const target = e.currentTarget
+                      if (process.env.NODE_ENV === 'development') {
+                        console.error('Failed to load profile image:', {
+                          attemptedPath: imagePath,
+                          windowOrigin: typeof window !== 'undefined' ? window.location.origin : 'N/A',
+                          currentPath: typeof window !== 'undefined' ? window.location.pathname : 'N/A',
+                          imageExists: false
+                        })
+                      }
+                      // Try fallback with explicit origin
+                      if (typeof window !== 'undefined' && !imagePath.startsWith('http')) {
+                        target.src = `${window.location.origin}${imagePath}`
+                      }
+                    }}
+                    onLoad={() => {
+                      if (process.env.NODE_ENV === 'development') {
+                        console.log('Profile image loaded successfully:', imagePath)
+                      }
                     }}
                   />
                   
