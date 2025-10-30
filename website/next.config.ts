@@ -21,10 +21,8 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
   },
-  // Enable ESLint during builds - warnings won't fail the build
-  eslint: {
-    ignoreDuringBuilds: false,
-  },
+  // Note: ESLint configuration is in eslint.config.mjs
+  // Next.js 16 handles ESLint automatically during builds
   // Note: Headers are not applied with static export (output: 'export')
   // For static hosting (Vercel/Netlify), configure headers via _headers file or platform settings
   // async headers() {

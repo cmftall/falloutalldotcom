@@ -18,7 +18,8 @@ const eslintConfig = [
       "node_modules/**/*",
       ".next/**/*",
       "dist/**/*",
-      "build/**/*"
+      "build/**/*",
+      "coverage/**/*"
     ]
   },
   {
@@ -27,7 +28,10 @@ const eslintConfig = [
       "@typescript-eslint": typescriptEslint,
     },
     rules: {
-      "@typescript-eslint/no-unused-vars": "error",
+      "@typescript-eslint/no-unused-vars": ["error", { 
+        argsIgnorePattern: "^_",
+        varsIgnorePattern: "^_" 
+      }],
       "@typescript-eslint/no-explicit-any": "off", // Allow any for performance monitoring
       "prefer-const": "error",
       "no-var": "error",
