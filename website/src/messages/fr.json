@@ -19,22 +19,22 @@
   },
   "hero": {
     "headline": "Je répare les systèmes de données qui vous coûtent de l'argent",
-    "subheadline": "Architecte de Données Consultant | Livré €200K+ de valeur annuelle | Disponible pour projets de 2-6 mois",
+    "subheadline": "Architecte de Données Consultant | Plus de €200K de valeur annuelle livrés | Disponible pour des projets de 2 à 6 mois",
     "primaryCta": "Réserver un Appel Stratégique Gratuit",
     "secondaryCta": "Voir les Études de Cas",
     "credential": "Architecte de Données Consultant • Paris et Montréal",
     "availability": "Disponible immédiatement pour nouveaux projets",
-    "projectOutcomes": "30% de réduction d'erreurs • €200K+ de valeur annuelle • 100+ pipelines construits",
+    "projectOutcomes": "30% de réduction d'erreurs • Plus de €200K de valeur annuelle • Plus de 100 pipelines en production",
     "technicalInnovation": "Des solutions durables que les équipes maintiennent et étendent avec succès, livrant des résultats business mesurables",
-    "credibilityIndicators": [
-      "Direction d'équipes de 7+ ingénieurs",
-      "€200K+ de valeur annuelle grâce à l'innovation en qualité des données et architecture",
-      "100+ pipelines de production construits et maintenus",
-      "Expertise multi-industrie (Banque, Télécom, Technologie)",
-      "8+ ans de leadership en transformation d'entreprise"
-    ],
+      "credibilityIndicators": [
+        "Direction d'équipes de 7+ ingénieurs",
+        "Plus de €200K de valeur annuelle grâce à l'innovation en qualité des données et architecture",
+        "Plus de 100 pipelines de production construits et maintenus",
+        "Expertise multi-industrie (Banque, Télécom, Technologie)",
+        "Plus de 8 ans de leadership en transformation d'entreprise"
+      ],
     "professionalPositioning": "Je me concentre sur la valeur business - livrer du ROI grâce à une architecture éprouvée qui priorise ce qui compte : réduire les coûts, améliorer la qualité et construire des équipes performantes",
-    "savingsCalculation": "€200K+ calculé : 30% réduction d'erreurs (€65K+) + 25% gain d'efficacité (€65K+) + 40% vitesse tests (€20K+) + valeur plateforme business = €200K+ valeur annuelle"
+    "savingsCalculation": "Plus de €200K calculés : 30% de réduction d'erreurs (plus de €65K) + 25% de gain d'efficacité (plus de €65K) + 40% de vitesse des tests (plus de €20K) + valeur de la plateforme business = plus de €200K de valeur annuelle"
   },
   "expertise": {
     "title": "Expertise",
@@ -194,7 +194,7 @@
     ]
   },
   "footer": {
-    "description": "Je répare les systèmes de données cassés. Livré €200K+ de valeur annuelle à la Banque Nationale. Disponible pour projets de 2-6 mois.",
+    "description": "Je répare les systèmes de données cassés. Plus de €200K de valeur annuelle livrés à la Banque Nationale. Disponible pour des projets de 2 à 6 mois.",
     "navigationTitle": "Navigation",
     "connectTitle": "Contact",
     "copyright": "© 2025 Fallou TALL. Tous droits réservés.",
@@ -222,17 +222,17 @@
         "role": "Architecte DATA Transverse - DCoE",
         "duration": "À partir de 11/2025 (À venir)",
         "location": "Courbevoie, France",
-        "durationNote": "Poste à venir à partir de novembre 2025 - Disponible pour projets de conseil jusqu'à cette date",
+        "durationNote": "Poste à venir à partir de novembre 2025 - Disponible pour des projets de conseil jusqu'à cette date",
         "focusArea": "Architecture de transformation Data et IA multi-industries",
-        "description": "À partir de novembre 2025, je rejoindrai le Centre d'Excellence Data de Sopra Steria en tant qu'Architecte de Données Transverse. Je concevrai des architectures de données pour des clients dans les secteurs Banque, Assurance, Secteur Public, Télécom, Média, Jeux, Industrie et Services. Appui aux équipes delivery de la prospection à l'avant-vente jusqu'à la livraison de solutions, avec focus sur l'architecture de données, la gouvernance, le catalogue de données, la gestion de référentiels, la qualité de données et l'industrialisation d'IA. Disponible pour projets de conseil jusqu'en novembre 2025.",
-        "ctaQuestion": "Besoin d'architecture de données entreprise ? Disponible pour conseil jusqu'en novembre 2025.",
+        "description": "À partir de novembre 2025, je rejoindrai le Centre d'Excellence Data de Sopra Steria en tant qu'Architecte de Données Transverse. Je concevrai des architectures de données pour des clients dans les secteurs Banque, Assurance, Secteur Public, Télécom, Média, Jeux, Industrie et Services. J'appuierai les équipes de livraison de la prospection à l'avant-vente jusqu'à la mise en production de solutions, en me concentrant sur l'architecture de données, la gouvernance, le catalogue de données, la gestion de référentiels, la qualité des données et l'industrialisation de l'IA. Disponible pour des projets de conseil jusqu'en novembre 2025.",
+        "ctaQuestion": "Besoin d'architecture de données d'entreprise ? Disponible pour du conseil jusqu'en novembre 2025.",
         "keyResponsibilities": [
-          "Élaborer des architectures optimisées (plateformes analytiques, temps réel, IoT)",
-          "Concevoir et mettre en place des ingestions de données (temps réel, asynchrone, outils d'intermédiation)",
+          "Concevoir des architectures optimisées (plateformes analytiques, temps réel, IoT)",
+          "Concevoir et mettre en place des stratégies d'ingestion de données (temps réel, asynchrone, outils d'intermédiation)",
           "Participer à des ateliers clients de conception et de conseil",
-          "Cadrage/AVV : analyser des RFP, construire des réponses techniques (architecture fonctionnelle, technique et logicielle), présenter aux clients",
-          "Encadrer des équipes de développement et participer au delivery de solutions",
-          "Collaborer avec les éditeurs phares du marché et les Hyperscaler"
+          "Cadrage et avant-vente : analyser des appels d'offres, construire des réponses techniques (architecture fonctionnelle, technique et logicielle), présenter aux clients",
+          "Encadrer des équipes de développement et participer à la livraison de solutions",
+          "Collaborer avec les éditeurs leaders du marché et les hyperscalers"
         ],
         "technologies": ["Azure", "AWS", "Databricks", "Python", "Snowflake", "Spark", "SQL", "Java", "Scala", "MDM", "ETL", "ESB", "API Management", "Terraform"],
         "technicalInnovation": [
@@ -250,10 +250,10 @@
         "role": "Consultant Expert Data",
         "duration": "09/2024 - 10/2025",
         "location": "Canada et France",
-        "durationNote": "Temps partiel 09/2024-04/2025 en parallèle de BNC, puis contrat complet jusqu'à 10/2025",
-        "focusArea": "Implémentation de plateforme de données moderne et évolutive",
-        "description": "Aidé 4 clients entreprises au Canada et en France à résoudre leurs problèmes de plateforme de données. Livré des audits techniques identifiant opportunités d'économies, conçu des architectures modernes améliorant les performances de 40%, et établi des frameworks de gouvernance. Atteint 95% de satisfaction client avec résultats mesurables.",
-        "ctaQuestion": "Vous voulez 95% de satisfaction client pour votre plateforme de données ?",
+        "durationNote": "Temps partiel 09/2024-04/2025 en parallèle de la BNC, puis contrat complet jusqu'en 10/2025",
+        "focusArea": "Implémentation de plateformes de données modernes et évolutives",
+        "description": "J'ai aidé 4 clients entreprises au Canada et en France à résoudre leurs problèmes de plateforme de données. J'ai livré des audits techniques identifiant des opportunités d'économies, conçu des architectures modernes améliorant les performances de 40%, et établi des frameworks de gouvernance. J'ai atteint 95% de satisfaction client avec des résultats mesurables.",
+        "ctaQuestion": "Vous souhaitez 95% de satisfaction client pour votre plateforme de données ?",
         "keyAchievements": [
           "Audits techniques, conception d'architecture de données",
           "Développement de pipelines ETL/ELT",
@@ -287,44 +287,44 @@
         "role": "Lead Data Engineer",
         "duration": "11/2021 - 04/2025",
         "location": "Montréal, Canada",
-        "focusArea": "Entrepôt de données moderne permettant reporting critique et analytiques à l'échelle de la banque",
-        "description": "Construit un entrepôt de données moderne (data lake + data warehouse) qui a permis des décisions business critiques à la 6ème plus grande banque du Canada. La plateforme alimente la stratégie d'acquisition client Marketing (suivi CAC, segmentation, Next Best Action), détection de fraude en temps réel, analytiques Cartes & Paiements, et reporting exécutif utilisé par la direction. Initialement construit sur Azure avec Snowflake et Databricks, puis migré avec succès vers AWS sans interruption. Le framework de qualité des données PySpark que j'ai développé a réduit les erreurs de 30% et a été adopté banque par 10-20+ équipes (Marketing, Gestion de Patrimoine, Cartes, Fraude). Collaboration avec le CDO pour établir standards de gouvernance qualité des données banque.",
-        "ctaQuestion": "Vous voulez €200K+ de valeur annuelle de vos systèmes de données ?",
+        "focusArea": "Entrepôt de données moderne permettant des reporting critiques et des analytiques à l'échelle de la banque",
+        "description": "J'ai construit un entrepôt de données moderne (data lake + data warehouse) qui a permis des décisions d'affaires critiques pour la 6ème plus grande banque du Canada. La plateforme alimente la stratégie d'acquisition client du Marketing (suivi CAC, segmentation, Next Best Action), la détection de fraude en temps réel, les analytiques Cartes & Paiements, et le reporting exécutif utilisé par la direction. Initialement construit sur Azure avec Snowflake et Databricks, puis migré avec succès vers AWS sans interruption. Le framework de qualité des données PySpark que j'ai développé a réduit les erreurs de 30% et a été adopté à l'échelle de la banque par plus de 10-20 équipes (Marketing, Gestion de Patrimoine, Cartes, Fraude). Collaboration avec le CDO pour établir des standards de gouvernance de la qualité des données à l'échelle de la banque.",
+        "ctaQuestion": "Vous souhaitez plus de €200K de valeur annuelle de vos systèmes de données ?",
         "keyAchievements": [
           "Direction d'une équipe de 7 ingénieurs construisant un entrepôt de données moderne (Snowflake + Databricks) sur AWS et Azure, initialement sur Azure puis migré vers AWS",
-          "Construction d'une fondation analytique banque permettant reporting critique : Marketing (CAC, segmentation, Next Best Action), Cartes & Paiements, Détection de Fraude, Reporting Exécutif, IA/ML",
-          "Conception d'architecture et modèles de données pour plateforme analytique multi-domaines supportant des millions d'enregistrements clients",
-          "Développement d'un framework de qualité des données PySpark atteignant 30% de réduction d'erreurs dans les pipelines de l'équipe ; outil adopté banque par 10-20+ équipes à travers Marketing, Gestion de Patrimoine, Cartes, Fraude",
+          "Construction d'une fondation analytique bancaire permettant des reporting critiques : Marketing (CAC, segmentation, Next Best Action), Cartes & Paiements, Détection de Fraude, Reporting Exécutif, IA/ML",
+          "Conception d'architecture et de modèles de données pour une plateforme analytique multi-domaines supportant des millions d'enregistrements clients",
+          "Développement d'un framework de qualité des données PySpark atteignant 30% de réduction d'erreurs dans les pipelines de l'équipe ; outil adopté à l'échelle de la banque par plus de 10-20 équipes à travers Marketing, Gestion de Patrimoine, Cartes, Fraude",
           "Augmentation de l'efficacité de l'équipe de 25% (3 heures/jour libérées par ingénieur) et réduction du temps de test de 40%",
-          "Travail avec le CDO pour définir, standardiser et opérationnaliser les dimensions de qualité des données, permettant cohérence inter-départementale dans les standards de qualité"
+          "Travail avec le CDO pour définir, standardiser et opérationnaliser les dimensions de qualité des données, permettant une cohérence inter-départementale dans les standards de qualité"
         ],
         "technologies": ["Azure", "AWS", "Snowflake", "Databricks", "Python", "PySpark", "Spark", "SQL", "Terraform"],
         "businessImpact": [
           {
             "metricName": "Réduction d'Erreurs",
             "percentage": 30,
-            "description": "30% de réduction des erreurs de traitement dans les pipelines de production de l'équipe grâce au framework PySpark (€65K+ d'économies annuelles)"
+            "description": "30% de réduction des erreurs de traitement dans les pipelines de production de l'équipe grâce au framework PySpark (plus de €65K d'économies annuelles)"
           },
           {
             "metricName": "Amélioration Efficacité",
             "percentage": 25,
-            "description": "25% d'augmentation de l'efficacité de l'équipe, libérant 3 heures/jour par ingénieur pour travail à haute valeur (€65K+ valeur annuelle)"
+            "description": "25% d'augmentation de l'efficacité de l'équipe, libérant 3 heures/jour par ingénieur pour un travail à haute valeur ajoutée (plus de €65K de valeur annuelle)"
           },
           {
             "metricName": "Vitesse Tests",
             "percentage": 40,
-            "description": "40% de tests QA plus rapides grâce à l'automatisation, réduisant les cycles de release de jours à heures (€20K+ valeur annuelle)"
+            "description": "40% de tests QA plus rapides grâce à l'automatisation, réduisant les cycles de mise en production de jours à heures (plus de €20K de valeur annuelle)"
           },
           {
             "metricName": "Adoption Banque",
             "percentage": 100,
-            "description": "Framework de qualité des données adopté comme standard banque par Marketing, Gestion de Patrimoine, Cartes, Fraude, et 10-20+ équipes dans l'organisation"
+            "description": "Framework de qualité des données adopté comme standard bancaire par Marketing, Gestion de Patrimoine, Cartes, Fraude, et plus de 10-20 équipes dans l'organisation"
           }
         ],
         "technicalInnovation": [
           "Architecture d'entrepôt de données moderne (data lake + data warehouse) avec Snowflake et Databricks",
           "Stratégie de migration multi-cloud (Azure vers AWS) sans interruption",
-          "Framework de qualité des données PySpark adopté banque",
+          "Framework de qualité des données PySpark adopté à l'échelle de la banque",
           "Framework de gouvernance de qualité des données inter-départementale",
           "Architecture analytique évolutive supportant des millions d'enregistrements clients",
           "Modélisation de données pour analytiques multi-domaines (Marketing, Cartes, Fraude, Exécutif, IA/ML)"
@@ -337,12 +337,12 @@
         "duration": "09/2020 - 08/2021",
         "location": "Côte d'Ivoire",
         "focusArea": "Migration et mise à jour de cluster Hadoop",
-        "description": "Dirigé la migration sans interruption des flux de données vers un nouveau cluster Hadoop. Développé des outils de productivité et orchestré des pipelines de données complexes.",
+        "description": "J'ai dirigé la migration sans interruption des flux de données vers un nouveau cluster Hadoop. J'ai développé des outils de productivité et orchestré des pipelines de données complexes.",
         "ctaQuestion": "Besoin de migration sans interruption pour vos systèmes de données ?",
         "keyAchievements": [
-          "Supervisé la migration des flux de données",
-          "Migré Flume/Pig/Spark1/Sqoop vers Spark2",
-          "Développé une bibliothèque Spark atteignant 20% d'augmentation de productivité"
+          "J'ai supervisé la migration des flux de données",
+          "J'ai migré Flume/Pig/Spark1/Sqoop vers Spark2",
+          "J'ai développé une bibliothèque Spark atteignant 20% d'augmentation de productivité"
         ],
         "technologies": ["Hadoop", "Scala", "Spark", "Oracle"],
         "businessImpact": [
@@ -371,10 +371,10 @@
         "duration": "06/2019 - 08/2020",
         "location": "Sénégal",
         "focusArea": "Gestion de l'Expérience Client",
-        "description": "Développé des modèles ML pour la gestion de l'expérience client et la prédiction de QoE.",
+        "description": "J'ai développé des modèles ML pour la gestion de l'expérience client et la prédiction de QoE.",
         "keyAchievements": [
-          "Développé des modèles ML prédisant la QoE client avec 15% d'amélioration de satisfaction",
-          "Automatisé les processus réduisant le temps de traitement de 30%",
+          "J'ai développé des modèles ML prédisant la QoE client avec 15% d'amélioration de satisfaction",
+          "J'ai automatisé les processus réduisant le temps de traitement de 30%",
           "Analyse de corrélation NPS-QoE avec tableaux de bord Tableau"
         ],
         "technologies": ["Hadoop", "Scala", "Spark", "SQL Server", "Tableau", "Python", "Scikit-Learn", "Flask"],
@@ -406,7 +406,7 @@
         "focusArea": "Plateforme de monétisation de données numériques",
         "description": "Architecture micro-services avec Kubernetes/Kafka/Cassandra/Spark/Node.js, modélisation de localisation à partir de données CDR, prédiction de mouvement de population avec SparkML.",
         "keyAchievements": [
-          "Architecture micro-services avec Kubernetes/Kafka/Cassandra/Spark/Node.js",
+          "J'ai développé une architecture micro-services avec Kubernetes/Kafka/Cassandra/Spark/Node.js",
           "Modélisation de localisation à partir de données CDR",
           "Prédiction de mouvement de population avec SparkML"
         ],
