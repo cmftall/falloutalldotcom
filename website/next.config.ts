@@ -2,9 +2,9 @@ import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
   // Image optimization configuration
-  // For static export (production), images are unoptimized but Vercel will optimize on deployment
+  // Images MUST be unoptimized for static export (output: 'export')
   images: {
-    unoptimized: process.env.NODE_ENV === 'production' && process.env.NEXT_PUBLIC_USE_STATIC_EXPORT === 'true',
+    unoptimized: true, // Required for static export - Next.js Image API not available in static builds
     formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],

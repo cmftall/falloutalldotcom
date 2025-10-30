@@ -93,6 +93,11 @@ export function Hero() {
                     style={{
                       boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)'
                     }}
+                    onError={(e) => {
+                      // Fallback: If image fails to load, hide it and show placeholder
+                      const target = e.target as HTMLImageElement
+                      target.style.display = 'none'
+                    }}
                   />
                   
                   {/* Inner Glow on Hover */}
