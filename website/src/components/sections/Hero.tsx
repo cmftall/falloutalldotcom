@@ -6,13 +6,21 @@ import { useI18n } from '@/components/providers/I18nProvider'
 import { ArrowRight, TrendingUp, Target, Zap } from 'lucide-react'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation'
 
 export function Hero() {
   const { t } = useI18n()
+  const pathname = usePathname()
   const [hasMounted, setHasMounted] = useState(false)
   const [savingsCount, setSavingsCount] = useState(0)
   const [errorCount, setErrorCount] = useState(0)
   const [pipelinesCount, setPipelinesCount] = useState(0)
+  
+  // Absolute path that works regardless of locale routing
+  // Using absolute path ensures it resolves correctly from /en/ or /fr/ routes
+  const imagePath = typeof window !== 'undefined' 
+    ? `${window.location.origin}/fallou-tall-photo.jpg`
+    : '/fallou-tall-photo.jpg'
 
   useEffect(() => {
     setHasMounted(true)
@@ -90,7 +98,8 @@ export function Hero() {
                   {/* Subtle Border with Depth */}
                   <div className="absolute inset-0 rounded-full border-2 border-accent/30 shadow-lg" />
                   
-                  {/* Photo */}
+                  {/* Photo - Using standard img tag for maximum compatibility with static export */}
+                  {/* Next.js Image component has issues with static export + locale routing */}
                   <img
                     src="/fallou-tall-photo.jpg"
                     alt="Fallou Tall - Data Architect Consultant"
@@ -99,7 +108,14 @@ export function Hero() {
                     className="relative rounded-full object-cover shadow-2xl transition-all duration-300 group-hover:scale-[1.02]"
                     loading="eager"
                     style={{
-                      boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)'
+                      boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)',
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover'
+                    }}
+                    onError={(e) => {
+                      // Fallback handling if image fails to load
+                      console.error('Failed to load profile image:', e)
                     }}
                   />
                   
