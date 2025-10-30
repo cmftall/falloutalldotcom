@@ -113,62 +113,135 @@ I didn't just deliver reports - I rolled up my sleeves and helped teams implemen
 **Role: Lead Data Engineer**  
 **Duration:** November 2021 - April 2025 (3.5 years)  
 **Location:** Montreal, Canada  
-**Team Size:** Led team of 7 (2 junior, 2 mid, 3 senior)
+**Team Size:** Led team of 7 engineers (2 junior, 2 mid-level, 3 senior)
 
 #### **The Challenge:**
-Canada's 6th largest bank ($400B+ assets) had failing data systems costing them money daily. Data errors were constant, pipelines were breaking, testing took forever, and the engineering team was overwhelmed.
+Canada's 6th largest bank ($400B+ assets) had failing data systems costing them money daily. The bank needed a modern analytical foundation to support critical business decisions, but existing systems were fragmented:
+- Data errors were constant (50+ per month)
+- Pipelines were breaking regularly
+- Testing took 2-5 days per release
+- The engineering team was overwhelmed
+- No centralized data quality standards
+- Legacy systems couldn't support modern analytics needs
 
 #### **What I Built:**
-Led a team of 7 engineers to build robust analytical pipelines and created a quality framework that became the company standard. Built 100+ production pipelines processing 200GB-1TB daily across 20+ source systems.
+Led a team of 7 engineers to build a modern data warehouse (data lake + data warehouse) that became the analytical foundation for Canada's 6th largest bank. The platform enabled critical business decisions across Marketing, Cards & Payments, Fraud Detection, and Executive reporting used by board-level leadership.
+
+**Platform Capabilities:**
+- **Marketing Analytics:** Customer acquisition strategy (CAC tracking, segmentation, Next Best Action)
+- **Real-time Fraud Detection:** Fraud analytics and detection systems
+- **Cards & Payment Analytics:** Transaction analysis and insights
+- **Executive Reporting:** Board-level reporting and dashboards
+- **AI/ML Support:** Foundation for machine learning models
+
+#### **The Technical Architecture:**
+- **Initial Platform:** Azure with Snowflake and Databricks
+- **Migration:** Successfully migrated to AWS with zero downtime
+- **Architecture Pattern:** Hybrid (Data Lake + Data Warehouse)
+- **Data Modeling:** 20+ dimensional models (Star schemas + One Big Table patterns)
+- **Processing Volume:** 10-100 TB total data, 200GB-1TB daily processing
+- **Source Systems:** 20+ source systems integrated
+- **Historical Tracking:** SCD Type 2 for historical data management
+- **Domains:** Customer & Marketing Analytics (bank-wide usage)
 
 #### **The Numbers (All Verifiable):**
 
 **Error Reduction - €65K+ Annual Savings:**
-- **Before:** 50+ data errors per month
+- **Before:** 50+ data errors per month in production pipelines
 - **After:** ~35 errors per month  
-- **Result:** 30% reduction
-- **Impact:** Each error = 4-8 hours × 2-3 people to fix
-- **Savings:** 180-240 hours/month saved = **€65K-130K/year**
+- **Result:** 30% reduction in data processing errors
+- **Calculation:** Each error = 4-8 hours × 2-3 people to fix
+- **Impact:** 180-240 hours/month saved
+- **Annual Savings:** **€65K-130K/year** in reduced support costs
 
 **Processing Speed - €65K+ Annual Value:**
 - **Improvement:** 25% faster data processing
-- **Impact:** 3 hours/day saved per engineer × 7 engineers
-- **Capacity:** 125GB+ more daily capacity = enabled more data sources
-- **Value:** **€65K+/year** in productivity gains
+- **Impact:** 3 hours/day saved per engineer × 7 engineers = 21 hours/day
+- **Capacity Gain:** 125GB+ more daily capacity enabled additional data sources
+- **Business Value:** More timely analytics, faster decision-making
+- **Annual Value:** **€65K+/year** in productivity gains
 
 **Testing Speed - Release Acceleration:**
-- **Before:** 2-5 days for QA testing
+- **Before:** 2-5 days for QA testing per release
 - **After:** 1.8 days average
-- **Result:** 40% faster releases
-- **Impact:** 10-20 deployments/month × 1.25 days saved = 19 days/month of additional capacity
+- **Result:** 40% faster release cycles
+- **Impact:** 10-20 deployments/month × 1.25 days saved = 19-25 days/month additional capacity
+- **Business Value:** Faster time-to-market for new analytics capabilities
+- **Annual Value:** **€20K+/year** in reduced testing overhead
 
-**Total Documented Savings: €130K-215K/year**
+**Total Documented Savings: €150K-215K/year**
 
-#### **What Made This Work:**
-The PySpark QA framework I built wasn't just code - it became the company standard:
-- **Adoption:** Started optional, became mandatory
-- **Coverage:** Used in 80+ of 100+ pipelines
-- **Open-source:** Internally open-sourced, multiple teams contributed
-- **8 validation types:** Schema, business rules, statistical anomalies, data quality, reconciliation, automated alerts
+#### **The PySpark QA Framework - Bank-Wide Standard:**
+The data quality framework I developed wasn't just a tool - it became a bank-wide standard:
 
-#### **Technologies:**
-Azure, AWS, Databricks, Python, Snowflake, Spark, SQL, Terraform, dbt
+**Adoption Journey:**
+- **Started:** Optional framework for our team
+- **Proven:** 30% error reduction demonstrated value
+- **Adopted:** Became mandatory standard across data engineering
+- **Expanded:** Used in 80+ of 100+ production pipelines
+- **Open-Sourced:** Internally open-sourced, multiple teams contributed improvements
+- **Still Running:** Framework maintained and extended after I left
 
-#### **Team Development:**
-- **1 engineer became team lead** (my successor)
-- **2 engineers promoted** to senior roles
-- **All 7 trained** on modern cloud data architecture
+**Technical Capabilities:**
+- **8 Validation Types:** Schema validation, business rules, statistical anomalies, data quality checks, reconciliation, automated alerts, completeness checks, referential integrity
+- **Automated Testing:** Reduced manual QA effort by 40%
+- **Real-time Monitoring:** Automated alerts for data quality issues
+- **Reusable Components:** Modular design enabled adoption across teams
 
-#### **Architecture Details:**
-- **Data Modeling:** 20+ dimensional models (Star schemas + OBT)
-- **Architecture:** Hybrid (Data Lake + Data Warehouse)
-- **Replaced:** Legacy system
-- **Volume:** 10-100 TB total, 200GB-1TB daily processing
-- **Domains:** Customer & Marketing Analytics (bank-wide)
-- **SCD Type 2** for historical tracking
+**Cross-Departmental Impact:**
+- **Marketing:** Used for customer segmentation and CAC analytics
+- **Wealth Management:** Data quality for portfolio analytics
+- **Cards & Payments:** Transaction data validation
+- **Fraud Detection:** Data quality for ML models
+- **10-20+ Teams:** Adopted framework across departments
+
+#### **Collaboration with CDO (Chief Data Officer):**
+Worked directly with the CDO to:
+- **Define:** Data quality dimensions and metrics
+- **Standardize:** Cross-departmental data quality standards
+- **Operationalize:** Implement governance frameworks
+- **Enable:** Consistent data quality practices across the bank
+
+#### **Technologies & Tools:**
+**Cloud Platforms:** Azure (initial), AWS (migrated), Snowflake, Databricks  
+**Languages:** Python, PySpark, Spark, SQL  
+**Infrastructure:** Terraform (Infrastructure as Code)  
+**Data Modeling:** dbt (data transformation)  
+**Processing:** 100+ production pipelines, real-time and batch processing
+
+#### **Team Development & Leadership:**
+- **1 Engineer → Team Lead:** My direct successor was promoted from within the team
+- **2 Engineers → Senior Roles:** Promoted to senior positions during my tenure
+- **7 Engineers Trained:** All team members trained on modern cloud data architecture
+- **Knowledge Transfer:** Comprehensive documentation and training programs
+- **Sustainable Success:** Team continued improving the framework after I left
+
+#### **Multi-Cloud Migration Achievement:**
+Successfully migrated the entire platform from Azure to AWS with:
+- **Zero Downtime:** No service interruption
+- **Data Integrity:** 100% data consistency maintained
+- **Performance Maintained:** No degradation in processing speed
+- **Team Trained:** All engineers adapted to new infrastructure seamlessly
+
+#### **Business Impact Beyond Numbers:**
+- **Critical Reporting:** Platform powers executive dashboards used by board-level leadership
+- **Customer Acquisition:** Marketing's Next Best Action strategy relies on this platform
+- **Fraud Prevention:** Real-time fraud detection processes millions of transactions
+- **Compliance:** Meets regulatory requirements for data governance
+- **Strategic Foundation:** Enables AI/ML initiatives across the bank
 
 #### **Why This Was My Best Work:**
-Not just the technical achievement - I built something the team could maintain and extend after I left. The framework is still running, still saving money, still being improved by the team I trained.
+This project combined technical excellence with lasting organizational change:
+
+1. **Technical Achievement:** Built a modern data platform serving Canada's 6th largest bank
+2. **Framework Innovation:** Created a quality framework that became a bank standard
+3. **Team Development:** Trained and promoted engineers, built sustainable practices
+4. **Organizational Impact:** Influenced data quality standards across 10-20+ teams
+5. **Long-Term Value:** Framework still running, still saving money, still being improved
+6. **Zero-Downtime Migration:** Successfully moved entire platform between cloud providers
+7. **Business Enablement:** Platform supports critical business decisions at the highest levels
+
+The ultimate proof of success: The framework I built is still being used, extended, and improved by the teams I trained. That's sustainable impact - not just delivering a project, but building capabilities that outlive your presence.
 
 ---
 
