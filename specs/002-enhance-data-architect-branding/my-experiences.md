@@ -33,28 +33,52 @@
 ## 💼 **COMPLETE WORK HISTORY**
 
 ### **1. SOPRA STERIA** 🏢
-**Current Role: Transversal Data Architect - Center of Excellence**  
+**Current Role: Transverse Data Architect - Center of Excellence (DCoE)**  
 **Duration:** November 2025 - Present (Current)  
-**Location:** Paris, France  
+**Location:** Courbevoie, France  
 
 #### **What I'm Building:**
-- ? To complete from the Sopra job description here - https://careers.soprasteria.com/job/architecte-data-transverse-dcoe-france-in-courbevoie-france-jid-3789
+As a Transverse Data Architect in Sopra Steria's Data Center of Excellence, I architect data solutions for clients across multiple industries: Banking, Insurance, Public Sector, Telecom, Media, Gaming, Industry and Services. This is a strategic role where I support delivery teams from prospecting through pre-sales to solution delivery.
 
 #### **Key Responsibilities:**
-- ? To complete from the Sopra job description here - https://careers.soprasteria.com/job/architecte-data-transverse-dcoe-france-in-courbevoie-france-jid-3789
+- **Elaborate optimized data architectures:** Design analytical platforms, real-time systems, and IoT data solutions
+- **Design data ingestion strategies:** Implement real-time, asynchronous, and intermediation tools for data collection
+- **Client engagement:** Participate in workshops for design and consulting, provide technical leadership
+- **Pre-sales support:** Analyze RFPs, craft technical responses (functional, technical, software architecture), deliver client presentations
+- **Solution delivery:** Lead development teams and participate actively in solution implementation
+- **Ecosystem collaboration:** Work with market-leading editors and hyperscalers to deliver best-in-class solutions
+
+#### **Focus Areas:**
+- Data architecture and platform design
+- Data governance frameworks
+- Data catalog and referential management
+- Data quality frameworks and standards
+- AI industrialization and ML Ops
 
 #### **Technologies:**
-- ? To complete from the Sopra job description here - https://careers.soprasteria.com/job/architecte-data-transverse-dcoe-france-in-courbevoie-france-jid-3789
+Azure, AWS, Databricks, Python, Snowflake, Spark, SQL, Java, Scala, MDM, ETL, ESB, API Management, Terraform
 
 #### **Current Status:**
-- Role started November 2025
-- ? To complete from the Sopra job description here - https://careers.soprasteria.com/job/architecte-data-transverse-dcoe-france-in-courbevoie-france-jid-3789
+- Role starts November 2025
+- Available for consulting projects until November 2025
+- Working across 8+ industry sectors
+- Supporting dozens of projects simultaneously
 
 #### **Why This Matters:**
-- ? To complete from the Sopra job description here - https://careers.soprasteria.com/job/architecte-data-transverse-dcoe-france-in-courbevoie-france-jid-3789
+This role represents a shift from individual project delivery to enterprise-wide architecture standards. Instead of building one system, I'm designing frameworks and patterns that will be reused across hundreds of projects. My work influences:
+- **Pre-sales:** Technical architecture decisions that win contracts
+- **Delivery:** Standardized patterns that accelerate project delivery
+- **Practice Development:** Building reusable assets for the entire Data Center of Excellence
+- **Client Success:** Multi-sector expertise means I can spot patterns across industries
+
+#### **The Scope:**
+- **8+ industry sectors:** Banking, Insurance, Public Sector, Telecom, Media, Gaming, Industry, Services
+- **Full project lifecycle:** From initial prospecting to solution delivery
+- **Strategic impact:** Architecture decisions affect entire client organizations
+- **Team support:** Enabling delivery teams with best practices and standards
 
 #### **Honest Assessment:**
-Too early for concrete metrics, but the scope is significant - my work will impact dozens of projects and hundreds of engineers.
+Too early for concrete metrics (role starts November 2025), but the scope is significant - my architecture work will impact dozens of projects, hundreds of engineers, and millions of end users across Sopra Steria's client portfolio. This is a Center of Excellence role, meaning I'm building reusable assets and standards, not just delivering individual projects.
 
 ---
 
@@ -488,7 +512,11 @@ I've documented everything here:
 ## 🚀 **WHAT'S NEXT**
 
 ### **Current Focus (2025):**
-- ? Take it from https://careers.soprasteria.com/job/architecte-data-transverse-dcoe-france-in-courbevoie-france-jid-3789
+- **Architecture Design:** Multi-sector data architecture patterns for Banking, Insurance, Public Sector, Telecom, Media, Gaming, Industry and Services
+- **Pre-Sales Support:** Technical responses, architecture presentations, RFP analysis
+- **Governance Frameworks:** Data quality, data catalog, referential management standards
+- **AI Industrialization:** ML Ops and AI deployment methodologies
+- **Practice Development:** Building reusable architecture assets for Sopra Steria's Data Center of Excellence
 
 ### **Career Goals:**
 Continue the progression from tactical execution to strategic architecture. Want to influence how enterprises think about data architecture, not just implement their plans.
