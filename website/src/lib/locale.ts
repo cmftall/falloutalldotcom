@@ -33,7 +33,9 @@ export const detectLanguage = (): Locale => {
       }
     }
   } catch (error) {
-    console.warn('Language detection failed:', error)
+    if (process.env.NODE_ENV === 'development') {
+      console.warn('Language detection failed:', error)
+    }
   }
   
   // Default fallback to English
@@ -56,7 +58,9 @@ export const saveLanguagePreference = (locale: Locale, source: LanguageSource = 
     
     localStorage.setItem('language-preference', JSON.stringify(preference))
   } catch (error) {
-    console.warn('Failed to save language preference:', error)
+    if (process.env.NODE_ENV === 'development') {
+      console.warn('Failed to save language preference:', error)
+    }
   }
 }
 
@@ -77,7 +81,9 @@ export const loadLanguagePreference = (): Locale | null => {
       return preference.locale
     }
   } catch (error) {
-    console.warn('Failed to load language preference:', error)
+    if (process.env.NODE_ENV === 'development') {
+      console.warn('Failed to load language preference:', error)
+    }
   }
   
   return null

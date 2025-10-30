@@ -4,6 +4,7 @@ import { Hero } from '@/components/sections/Hero'
 import { FeaturedWork } from '@/components/sections/FeaturedWork'
 import { Contact } from '@/components/sections/Contact'
 import { I18nProvider } from '@/components/providers/I18nProvider'
+import type { TranslationMessages } from '@/lib/types'
 
 // Mock framer-motion to avoid animation issues in tests
 jest.mock('framer-motion', () => ({
@@ -27,49 +28,142 @@ jest.mock('next-themes', () => ({
 }))
 
 // Mock i18n provider
-const mockMessages = {
+const mockMessages: TranslationMessages = {
   navigation: {
     home: 'Home',
-    about: 'About',
     work: 'Work',
-    expertise: 'Expertise',
-    education: 'Education',
-    certifications: 'Certifications',
-    contact: 'Contact'
+    faq: 'FAQ',
+    contact: 'Contact',
+    hireMeCta: 'Hire Me',
+    caseStudies: 'Case Studies'
+  },
+  common: {
+    loading: 'Loading...',
+    error: 'An error occurred',
+    retry: 'Retry',
+    close: 'Close',
+    open: 'Open',
+    readMore: 'Read More',
+    viewProject: 'View Project',
+    learnMore: 'Learn More',
+    pageNotFound: 'Page Not Found',
+    pageNotFoundDescription: 'Sorry, the page you\'re looking for doesn\'t exist or has been moved.',
+    goHome: 'Go Home',
+    goBack: 'Go Back',
+    tryThesePages: 'Or try one of these pages:',
+    toggleTheme: 'Toggle theme'
+  },
+  error: {
+    title: 'Something went wrong',
+    message: 'We\'re sorry, but something unexpected happened. Please try refreshing the page.',
+    details: 'Error Details',
+    tryAgain: 'Try Again',
+    refreshPage: 'Refresh Page'
   },
   hero: {
     headline: 'I architect data ecosystems that transform enterprises.',
     subheadline: 'Senior Data Architect at Sopra Steria • 8+ years leading enterprise transformations',
     primaryCta: 'View My Work',
     secondaryCta: 'Get In Touch',
-    credential: 'Data Architect • Paris, France et Montreal Canada'
+    credential: 'Data Architect • Paris, France et Montreal Canada',
+    availability: '',
+    projectOutcomes: '',
+    technicalInnovation: '',
+    credibilityIndicators: [],
+    professionalPositioning: '',
+    savingsCalculation: ''
   },
   work: {
     title: 'Selected Projects',
     subtitle: 'Enterprise transformations that deliver measurable impact',
+    businessImpactStatement: '',
+    technicalInnovation: '',
+    cta: {
+      question: '',
+      button: ''
+    },
+    sections: {
+      keyAchievements: '',
+      keyResponsibilities: '',
+      businessImpact: '',
+      technicalInnovation: '',
+      technologies: ''
+    },
     projects: {
       'sopra-steria': {
         company: 'Sopra Steria',
         role: 'Data Architect',
+        duration: '',
+        location: '',
+        focusArea: '',
         description: 'Leading a team within the Data Center of Excellence across 8+ client sectors including Banking, Insurance, and Telecom.',
-        impact: 'Multi-cloud architecture • TB+ data processing • Cross-industry compliance'
+        technologies: [],
+        industry: ''
       }
     }
   },
   contact: {
     title: 'Contact',
     subtitle: 'Let\'s discuss how I can help transform your data landscape',
+    value: '',
+    availability: '',
+    pricingTitle: '',
+    pricingStandard: '',
+    pricingComplex: '',
+    pricingProject: '',
+    processTitle: '',
+    processStep1: '',
+    processStep2: '',
+    processStep3: '',
+    processStep4: '',
+    service1: '',
+    service2: '',
+    service3: '',
+    primaryCta: '',
+    emailCta: '',
+    emailSubject: '',
+    rates: '',
     email: 'Email',
-    phone: 'Phone',
     location: 'Location',
-    quickLinks: 'Quick Links',
-    linkedinProfile: 'LinkedIn Profile',
-    githubPortfolio: 'GitHub Portfolio',
-    message: 'Message',
-    messagePlaceholder: 'Tell me about your project...',
-    sendMessage: 'Send Message'
+    locationText: '',
+    linkedin: 'LinkedIn'
+  },
+  faq: {
+    title: '',
+    subtitle: '',
+    ctaText: '',
+    ctaButton: '',
+    items: []
+  },
+  footer: {
+    description: '',
+    navigationTitle: '',
+    connectTitle: '',
+    copyright: '',
+    availability: ''
+  },
+  workedWith: {
+    title: '',
+    subtitle: '',
+    industries: {
+      banking: '',
+      telecommunications: '',
+      consulting: '',
+      technology: ''
+    },
+    industryPills: {
+      bankingFinance: '',
+      telecommunications: '',
+      consulting: '',
+      technology: ''
+    }
+  },
+  stats: {
+    yearsExperience: '',
+    technologiesMastered: '',
+    enterpriseProjects: ''
   }
-}
+} as TranslationMessages
 
 const TestWrapper = ({ children }: { children: React.ReactNode }) => (
   <I18nProvider initialLocale="en" initialMessages={mockMessages}>

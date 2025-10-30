@@ -3,6 +3,7 @@ import { Inter, Crimson_Pro } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/lib/theme-provider'
 import { ErrorBoundary } from '@/components/ErrorBoundary'
+import { Analytics } from '@/components/Analytics'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -19,9 +20,9 @@ const crimsonPro = Crimson_Pro({
 })
 
 export const metadata: Metadata = {
-  title: 'Fallou TALL - Data Architect Delivering Measurable ROI | €700-1800/day',
-  description: 'I deliver measurable ROI through pragmatic data architecture. 8+ years reducing errors by up to 30%, achieving €130K+ annual savings, and building 100+ production pipelines. Business-focused Data Architect for enterprise consulting.',
-  keywords: ['Data Architect', 'Data Engineering Consultant', 'ROI Data Architecture', 'Enterprise Data Transformation', 'DataOps', 'PySpark Framework', 'Cloud Data Architecture', 'Paris', 'France', 'Montreal', 'Canada', 'National Bank of Canada', 'Orange', 'Sopra Steria', 'Azure', 'AWS', 'Databricks', 'Data Quality', 'Cost Reduction', 'Business Value'],
+  title: 'Fallou TALL - Data Architect Consultant | €1,200-1,800/day',
+  description: 'Data Architect Consultant | €200K+ annual value delivered | Fix broken data systems | €1,200-1,800/day | Available immediately for 2-6 month projects',
+  keywords: ['Data Architect Consultant', 'Data Architecture Consultant', 'Data Engineering Consultant', 'ROI Data Architecture', 'Enterprise Data Transformation', 'DataOps', 'PySpark Framework', 'Cloud Data Architecture', 'Paris', 'France', 'Montreal', 'Canada', 'National Bank of Canada', 'Orange', 'Sopra Steria', 'Azure', 'AWS', 'Databricks', 'Data Quality', 'Cost Reduction', 'Business Value', 'Freelance Data Architect', 'Independent Data Consultant'],
   authors: [{ name: 'Fallou TALL' }],
   creator: 'Fallou TALL',
   publisher: 'Fallou TALL',
@@ -35,16 +36,16 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Fallou TALL - Data Architect Delivering Measurable ROI',
-    description: 'I deliver measurable ROI through pragmatic data architecture. 8+ years achieving €130K+ annual savings, up to 30% error reduction, 100+ production pipelines built. Trusted by National Bank of Canada, Orange, Onepoint, Sopra Steria.',
+    title: 'Fallou TALL - Data Architect Consultant | Measurable ROI',
+    description: 'Data Architect Consultant | €200K+ annual value delivered | Fix broken data systems | €1,200-1,800/day | Available immediately',
     url: 'https://falloutall.com',
-    siteName: 'Fallou TALL - Data Architecture Consulting',
+    siteName: 'Fallou TALL - Data Architect Consultant',
     images: [
       {
         url: '/fallou-tall-photo.jpg',
         width: 1024,
         height: 768,
-        alt: 'Fallou TALL - Business Value-Focused Data Architect',
+        alt: 'Fallou TALL - Data Architect Consultant',
       },
     ],
     locale: 'en_US',
@@ -52,8 +53,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fallou TALL - Data Architect Delivering Measurable ROI',
-    description: 'I deliver measurable ROI through pragmatic data architecture. €130K+ annual savings, up to 30% error reduction, 100+ production pipelines. €700-1800/day consulting.',
+    title: 'Fallou TALL - Data Architect Consultant',
+    description: 'Data Architect Consultant | €200K+ annual value | Fix broken data systems | €1,200-1,800/day | Available immediately',
     images: ['/fallou-tall-photo.jpg'],
   },
   robots: {
@@ -77,12 +78,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const jsonLd = {
+  const personSchema = {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Fallou TALL',
-    jobTitle: 'Senior Data Architect',
-    description: 'Data Architect delivering measurable ROI through pragmatic data architecture. Specialized in enterprise data transformations, DataOps, and cloud-native solutions.',
+    jobTitle: 'Data Architect Consultant',
+    description: 'Data Architect Consultant delivering measurable ROI through pragmatic data architecture. Specialized in enterprise data transformations, DataOps, and cloud-native solutions. Available for 2-6 month consulting projects.',
     url: 'https://falloutall.com',
     image: 'https://falloutall.com/fallou-tall-photo.jpg',
     sameAs: [
@@ -124,12 +125,51 @@ export default function RootLayout({
     }
   }
 
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: 'Data Architect Consulting Services',
+    provider: {
+      '@type': 'Person',
+      name: 'Fallou TALL',
+      jobTitle: 'Data Architect Consultant'
+    },
+    description: 'Enterprise data architecture consulting services delivering measurable ROI. Specialized in fixing broken data systems, reducing costs, and improving data quality. Available for 2-6 month consulting projects.',
+    serviceType: 'Data Architecture Consulting',
+    areaServed: ['France', 'Canada', 'Europe', 'North America'],
+    availableChannel: {
+      '@type': 'ServiceChannel',
+      serviceUrl: 'https://falloutall.com',
+      servicePhone: null,
+      serviceEmail: 'cmftall@gmail.com',
+      availableLanguage: ['French', 'English']
+    },
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'EUR',
+      price: '1200-1800',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: '1200-1800',
+        priceCurrency: 'EUR',
+        unitCode: 'DAY',
+        unitText: 'per day'
+      }
+    },
+    url: 'https://falloutall.com',
+    aggregateRating: null // Add when testimonials available
+  }
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
         />
       </head>
       <body className={`${inter.variable} ${crimsonPro.variable} font-sans`}>
@@ -140,6 +180,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ErrorBoundary>
+            <Analytics />
             {children}
           </ErrorBoundary>
         </ThemeProvider>

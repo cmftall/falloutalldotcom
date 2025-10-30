@@ -1,16 +1,138 @@
-// Re-export types from locale.ts for convenience
-export type { LanguageSource, LanguagePreference } from './locale'
+// Type definitions for translation messages
+export interface TranslationMessages {
+  navigation: {
+    home: string
+    work: string
+    faq: string
+    contact: string
+    hireMeCta: string
+    caseStudies: string
+  }
+  common: {
+    toggleTheme: string
+  }
+  error: {
+    title: string
+    message: string
+    details: string
+    tryAgain: string
+    refreshPage: string
+  }
+  hero: {
+    headline: string
+    subheadline: string
+    primaryCta: string
+    secondaryCta: string
+    credential: string
+    availability: string
+    projectOutcomes: string
+    technicalInnovation: string
+    credibilityIndicators: string[]
+    professionalPositioning: string
+    savingsCalculation: string
+  }
+  work: {
+    title: string
+    subtitle: string
+    technicalInnovation: string
+    businessImpactStatement?: string
+    cta: {
+      question: string
+      button: string
+    }
+    sections: {
+      keyAchievements: string
+      keyResponsibilities: string
+      businessImpact: string
+      technicalInnovation: string
+      technologies: string
+    }
+    projects: Record<string, ProjectData>
+  }
+  contact: {
+    title: string
+    subtitle: string
+    value: string
+    availability: string
+    pricingTitle: string
+    pricingStandard: string
+    pricingComplex: string
+    pricingProject: string
+    processTitle: string
+    processStep1: string
+    processStep2: string
+    processStep3: string
+    processStep4: string
+    service1: string
+    service2: string
+    service3: string
+    primaryCta: string
+    emailCta: string
+    emailSubject: string
+    rates: string
+    email: string
+    location: string
+    locationText: string
+    linkedin: string
+  }
+  faq: {
+    title: string
+    subtitle: string
+    ctaText: string
+    ctaButton: string
+    items: FAQItem[]
+  }
+  workedWith: {
+    title: string
+    subtitle: string
+    industries: {
+      banking: string
+      telecommunications: string
+      consulting: string
+      technology: string
+    }
+    industryPills: {
+      bankingFinance: string
+      telecommunications: string
+      consulting: string
+      technology: string
+    }
+  }
+  footer: {
+    description: string
+    navigationTitle: string
+    connectTitle: string
+    copyright: string
+    availability: string
+  }
+}
 
-// Define Locale type locally
-export type Locale = 'en' | 'fr'
+export interface FAQItem {
+  question: string
+  answer: string
+}
 
-// Import for internal use
-import type { LanguageSource } from './locale'
+export interface BusinessImpact {
+  metricName: string
+  percentage: number | string
+  description: string
+}
 
-// Navigation types
-export interface NavItem {
-  label: string
-  href: string
+export interface ProjectData {
+  company: string
+  role: string
+  duration: string
+  durationNote?: string
+  location: string
+  focusArea: string
+  description: string
+  keyAchievements?: string[]
+  keyResponsibilities?: string[]
+  technologies: string[]
+  businessImpact?: BusinessImpact[]
+  technicalInnovation?: string[]
+  industry: string
+  ctaQuestion?: string
 }
 
 export interface ContactInfo {
@@ -18,77 +140,4 @@ export interface ContactInfo {
   location: string
   languages: string[]
   linkedin: string
-  phone?: string // Optional: Available after initial contact
-  github?: string // Removed from public display
-}
-
-// Additional types for internationalization
-export type ContentNamespace = 
-  | 'navigation'
-  | 'hero'
-  | 'about'
-  | 'expertise'
-  | 'education'
-  | 'certifications'
-  | 'contact'
-  | 'footer'
-  | 'common'
-
-export interface TranslationKey {
-  namespace: ContentNamespace
-  key: string
-}
-
-export interface TranslationOptions {
-  fallback?: string
-  variables?: Record<string, string | number>
-}
-
-// Language selector component props
-export interface LanguageSelectorProps {
-  currentLocale: string
-  availableLocales: string[]
-  onLanguageChange: (locale: string) => void
-  disabled?: boolean
-  className?: string
-}
-
-// Translation hook return type
-export interface UseTranslationReturn {
-  locale: string
-  t: (key: string, namespace?: ContentNamespace, options?: TranslationOptions) => string
-  changeLanguage: (locale: string) => Promise<void>
-  isLoading: boolean
-  error: string | null
-}
-
-// Language detection result
-export interface LanguageDetectionResult {
-  detectedLocale: string
-  source: LanguageSource
-  confidence: 'high' | 'medium' | 'low'
-}
-
-// Error types
-export class TranslationError extends Error {
-  constructor(
-    message: string,
-    public key: string,
-    public namespace: ContentNamespace,
-    public locale: string
-  ) {
-    super(message)
-    this.name = 'TranslationError'
-  }
-}
-
-export class LanguageDetectionError extends Error {
-  constructor(
-    message: string,
-    public detectedLanguage: string,
-    public supportedLanguages: string[]
-  ) {
-    super(message)
-    this.name = 'LanguageDetectionError'
-  }
 }

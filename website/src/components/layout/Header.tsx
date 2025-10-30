@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
+import { useRouter, usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { LanguageSelector } from '@/components/ui/LanguageSelector'
@@ -11,15 +11,39 @@ import { SITE_CONFIG } from '@/lib/constants'
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { t } = useI18n()
+  const router = useRouter()
+  const pathname = usePathname()
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId.replace('#', ''))
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+      const headerOffset = 80 // Height of sticky header + padding
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
     }
     setIsMenuOpen(false)
+  }
+
+  const handleLogoClick = () => {
+    const locale = pathname.startsWith('/fr') ? 'fr' : 'en'
+    router.push(`/${locale}#home`)
+    // Small delay to ensure route change before scrolling
+    setTimeout(() => {
+      const element = document.getElementById('home')
+      if (element) {
+        const headerOffset = 80
+        const elementPosition = element.getBoundingClientRect().top
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
+      }
+    }, 100)
   }
 
   return (
@@ -27,18 +51,23 @@ export function Header() {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 group">
+          <button 
+            onClick={handleLogoClick}
+            className="flex items-center space-x-3 group"
+            aria-label="Go to home"
+          >
             <div className="h-10 w-10 rounded-full bg-primary flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-sm">FT</span>
             </div>
             <span className="font-bold text-lg text-foreground">{SITE_CONFIG.name}</span>
-          </Link>
+          </button>
 
           {/* Desktop Navigation - Hidden on mobile */}
           <nav className="hidden md:flex items-center space-x-8">
             {[
               { href: '#home', key: 'home' },
               { href: '#work', key: 'work' },
+              { href: '#faq', key: 'faq' },
               { href: '#contact', key: 'contact' }
             ].map((item) => (
               <button
@@ -87,6 +116,7 @@ export function Header() {
               {[
                 { href: '#home', key: 'home' },
                 { href: '#work', key: 'work' },
+                { href: '#faq', key: 'faq' },
                 { href: '#contact', key: 'contact' }
               ].map((item) => (
                 <button

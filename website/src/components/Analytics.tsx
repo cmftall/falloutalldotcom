@@ -4,12 +4,16 @@ import { useEffect } from 'react'
 import { initGoogleAnalytics, initPlausible, trackWebVitals } from '@/lib/analytics'
 import { initErrorTracking } from '@/lib/error-monitoring'
 import { useWebVitals } from '@/lib/performance'
+import { validateEnvironmentVariables } from '@/lib/env-validation'
 
 export function Analytics() {
   // Initialize performance monitoring
   useWebVitals()
 
   useEffect(() => {
+    // Validate environment variables on mount
+    validateEnvironmentVariables()
+
     // Initialize error tracking in all environments
     initErrorTracking()
 

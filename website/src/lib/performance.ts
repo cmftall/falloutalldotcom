@@ -22,7 +22,9 @@ export function useWebVitals() {
         const entries = entryList.getEntries()
         const lastEntry = entries[entries.length - 1]
         
-        console.log('LCP:', lastEntry.startTime)
+        if (process.env.NODE_ENV === 'development') {
+          console.log('LCP:', lastEntry.startTime)
+        }
         
         // Send to analytics service
         if (typeof window !== 'undefined' && window.gtag) {
@@ -43,7 +45,9 @@ export function useWebVitals() {
         const entries = entryList.getEntries()
         entries.forEach((entry) => {
           const fidEntry = entry as any // Type assertion for FID-specific properties
-          console.log('FID:', fidEntry.processingStart - fidEntry.startTime)
+          if (process.env.NODE_ENV === 'development') {
+            console.log('FID:', fidEntry.processingStart - fidEntry.startTime)
+          }
           
           // Send to analytics service
           if (typeof window !== 'undefined' && window.gtag) {
@@ -77,7 +81,9 @@ export function useWebVitals() {
 
       // Report CLS when page is hidden
       const reportCLS = () => {
-        console.log('CLS:', clsValue)
+        if (process.env.NODE_ENV === 'development') {
+          console.log('CLS:', clsValue)
+        }
         
         // Send to analytics service
         if (typeof window !== 'undefined' && window.gtag) {
@@ -104,7 +110,9 @@ export function useWebVitals() {
       new PerformanceObserver((entryList) => {
         const entries = entryList.getEntries()
         entries.forEach((entry) => {
-          console.log('FCP:', entry.startTime)
+          if (process.env.NODE_ENV === 'development') {
+            console.log('FCP:', entry.startTime)
+          }
           
           // Send to analytics service
           if (typeof window !== 'undefined' && window.gtag) {
@@ -143,7 +151,9 @@ export function checkPerformanceBudget() {
       totalLoadTime: navigation.loadEventEnd - navigation.fetchStart,
     }
 
+    if (process.env.NODE_ENV === 'development') {
     console.log('Performance Metrics:', metrics)
+  }
 
     // Check against performance budgets
     const budgets = {
@@ -155,7 +165,9 @@ export function checkPerformanceBudget() {
     Object.entries(metrics).forEach(([metric, value]) => {
       const budget = budgets[metric as keyof typeof budgets]
       if (value > budget) {
-        console.warn(`Performance budget exceeded for ${metric}: ${value}ms > ${budget}ms`)
+        if (process.env.NODE_ENV === 'development') {
+          console.warn(`Performance budget exceeded for ${metric}: ${value}ms > ${budget}ms`)
+        }
       }
     })
   }
@@ -192,15 +204,17 @@ export function analyzeResourceTiming() {
     }
   })
 
-  console.log('Resource Analysis:', analysis)
-  
-  // Log warnings for performance issues
-  if (analysis.slowResources.length > 0) {
-    console.warn(`Found ${analysis.slowResources.length} slow resources:`, analysis.slowResources)
-  }
-  
-  if (analysis.largeResources.length > 0) {
-    console.warn(`Found ${analysis.largeResources.length} large resources:`, analysis.largeResources)
+  if (process.env.NODE_ENV === 'development') {
+    console.log('Resource Analysis:', analysis)
+    
+    // Log warnings for performance issues
+    if (analysis.slowResources.length > 0) {
+      console.warn(`Found ${analysis.slowResources.length} slow resources:`, analysis.slowResources)
+    }
+    
+    if (analysis.largeResources.length > 0) {
+      console.warn(`Found ${analysis.largeResources.length} large resources:`, analysis.largeResources)
+    }
   }
 
   return analysis

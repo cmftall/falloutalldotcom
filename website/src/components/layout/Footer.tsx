@@ -1,9 +1,11 @@
 'use client'
 
-import Link from 'next/link'
 import { Mail, Linkedin, Github, MapPin } from 'lucide-react'
+import { CONTACT_INFO } from '@/lib/constants'
+import { useI18n } from '@/components/providers/I18nProvider'
 
 export function Footer() {
+  const { t } = useI18n()
 
   return (
     <footer className="border-t border-border bg-background py-12">
@@ -14,36 +16,84 @@ export function Footer() {
           <div>
             <h3 className="font-serif text-lg font-bold text-primary mb-4">Fallou TALL</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Data Architect delivering measurable ROI through proven quality frameworks and team leadership.
+              {t('footer.description')}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Navigation</h4>
+            <h4 className="font-semibold text-foreground mb-4">{t('footer.navigationTitle')}</h4>
             <ul className="space-y-2">
               <li>
                 <a 
                   href="#home" 
+                  onClick={(e) => {
+                    e.preventDefault()
+                    const element = document.querySelector('#home')
+                    if (element) {
+                      const headerOffset = 80
+                      const elementPosition = element.getBoundingClientRect().top
+                      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+                      window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
+                    }
+                  }}
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Home
+                  {t('navigation.home')}
                 </a>
               </li>
               <li>
                 <a 
                   href="#work" 
+                  onClick={(e) => {
+                    e.preventDefault()
+                    const element = document.querySelector('#work')
+                    if (element) {
+                      const headerOffset = 80
+                      const elementPosition = element.getBoundingClientRect().top
+                      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+                      window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
+                    }
+                  }}
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Case Studies
+                  {t('navigation.caseStudies')}
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#faq" 
+                  onClick={(e) => {
+                    e.preventDefault()
+                    const element = document.querySelector('#faq')
+                    if (element) {
+                      const headerOffset = 80
+                      const elementPosition = element.getBoundingClientRect().top
+                      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+                      window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
+                    }
+                  }}
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  {t('navigation.faq')}
                 </a>
               </li>
               <li>
                 <a 
                   href="#contact" 
+                  onClick={(e) => {
+                    e.preventDefault()
+                    const element = document.querySelector('#contact')
+                    if (element) {
+                      const headerOffset = 80
+                      const elementPosition = element.getBoundingClientRect().top
+                      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+                      window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
+                    }
+                  }}
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Contact
+                  {t('navigation.contact')}
                 </a>
               </li>
             </ul>
@@ -51,19 +101,19 @@ export function Footer() {
 
           {/* Contact & Social */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Connect</h4>
+            <h4 className="font-semibold text-foreground mb-4">{t('footer.connectTitle')}</h4>
             <ul className="space-y-3">
               <li className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4 text-accent" />
-                <span className="text-sm text-muted-foreground">Paris & Montreal</span>
+                <span className="text-sm text-muted-foreground">{t('contact.locationText')}</span>
               </li>
               <li className="flex items-center space-x-2">
                 <Mail className="h-4 w-4 text-accent" />
                 <a 
-                  href="mailto:cmftall@gmail.com"
+                  href={`mailto:${CONTACT_INFO.email}?subject=${encodeURIComponent(t('contact.emailSubject'))}`}
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
-                  cmftall@gmail.com
+                  {CONTACT_INFO.email}
                 </a>
               </li>
               <li className="flex items-center space-x-4 pt-2">
@@ -94,10 +144,10 @@ export function Footer() {
         <div className="border-t border-border mt-8 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-muted-foreground text-center md:text-left">
-              © 2025 Fallou TALL. All rights reserved.
+              {t('footer.copyright')}
             </p>
             <p className="text-xs text-muted-foreground text-center md:text-right">
-              Built with Next.js & Tailwind CSS
+              {t('footer.availability')}
             </p>
           </div>
         </div>

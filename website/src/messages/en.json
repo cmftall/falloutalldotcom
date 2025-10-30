@@ -2,28 +2,38 @@
   "navigation": {
     "home": "Home",
     "work": "Work",
+    "faq": "FAQ",
     "contact": "Contact",
-    "hireMeCta": "Hire Me"
+    "hireMeCta": "Hire Me",
+    "caseStudies": "Case Studies"
   },
   "common": {
     "toggleTheme": "Toggle theme"
   },
+  "error": {
+    "title": "Something went wrong",
+    "message": "We're sorry, but something unexpected happened. Please try refreshing the page.",
+    "details": "Error Details",
+    "tryAgain": "Try Again",
+    "refreshPage": "Refresh Page"
+  },
         "hero": {
-           "headline": "Building data systems that work: error reduction, faster pipelines, and trails that survive your team",
-           "subheadline": "8 years leading teams of 7+ engineers at National Bank of Canada, Orange, Onepoint. Delivered €130K+ annual savings through proven quality frameworks.",
-           "primaryCta": "See My Work",
-           "secondaryCta": "Talk to Me",
-           "credential": "Data Architect • Paris & Montreal",
-           "projectOutcomes": "€130K+ saved at National Bank • Zero downtime for 14M+ Orange customers • 75% client retention",
+           "headline": "I fix broken data systems that cost you money",
+           "subheadline": "Data Architect Consultant | Delivered €200K+ annual value | Available for 2-6 month projects",
+           "primaryCta": "Schedule Free Strategy Call",
+           "secondaryCta": "View Case Studies",
+           "credential": "Data Architect Consultant • Paris & Montreal",
+           "availability": "Available immediately for new projects",
+           "projectOutcomes": "€200K+ annual value delivered at National Bank • Zero downtime for 14M+ Orange customers • 100+ production pipelines built",
            "technicalInnovation": "I build solutions that work. No fancy tech for tech's sake. Just reliable systems that save money and time.",
           "credibilityIndicators": [
-             "Saved National Bank €130K+/year fixing data quality issues",
+             "Delivered €200K+ annual value at National Bank through data quality and architecture improvements",
              "Zero downtime migration for 14M+ Orange customers",
-             "3 out of 4 consulting clients extended their contracts",
+             "Modern data warehouse enabling bank-wide critical reporting and analytics",
              "Led teams of 7+ engineers at Canada's 6th largest bank"
            ],
            "professionalPositioning": "I don't do buzzwords or fancy presentations. I fix what's broken, make it reliable, and move on. If your data systems are costing you money, I can probably help.",
-           "savingsCalculation": "Real example: National Bank saved €130K+/year when I reduced their data errors by 30% and sped up processing by 25%"
+           "savingsCalculation": "Real example: National Bank achieved €200K+ annual value through 30% error reduction, 25% processing speed improvement, and platform enabling critical business decisions"
         },
   "expertise": {
     "title": "Expertise",
@@ -117,124 +127,305 @@
   },
         "contact": {
           "title": "Let's Talk",
-          "subtitle": "If your data systems are broken and costing you money, I can probably help",
-          "value": "I'm based in Paris and Montreal. I do short-term projects (2-6 months) for companies with data problems.",
+          "subtitle": "Ready to fix your data problems? Book a free 30-minute strategy call to discuss your challenges and how I can help.",
+          "value": "I work with companies for 2-6 month projects to fix broken data systems, reduce costs, and improve quality. Based in Paris & Montreal, available for remote and on-site work.",
+          "availability": "Available immediately for new projects",
+          "pricingTitle": "Pricing",
+          "pricingStandard": "€1,200/day for standard data engineering projects",
+          "pricingComplex": "€1,500-1,800/day for complex architecture work",
+          "pricingProject": "Project-based pricing available for multi-month engagements",
+          "processTitle": "How I Work",
+          "processStep1": "1. Discovery Call (30 min free) - I analyze your biggest data cost drivers and quality issues",
+          "processStep2": "2. Custom Proposal - ROI-focused solution with timeline and pricing (not generic templates)",
+          "processStep3": "3. Fast Kickoff - Start work within 1-2 weeks (I move quickly)",
+          "processStep4": "4. Weekly Updates - Transparent metrics showing progress and value delivered",
           "service1": "Fix broken data systems",
           "service2": "Zero-downtime migrations",
           "service3": "Data quality frameworks",
-          "primaryCta": "Schedule a Call",
+          "primaryCta": "Schedule Free Strategy Call",
           "emailCta": "Email Me",
-          "rates": "€700-1800/day depending on project",
+          "emailSubject": "Consulting Inquiry",
+          "rates": "€1,200-1,800/day",
           "email": "Email",
-          "location": "Location"
+          "location": "Location",
+          "locationText": "Paris & Montreal",
+          "linkedin": "LinkedIn"
         },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Common questions about working with me",
+    "ctaText": "Still have questions? Let's talk.",
+    "ctaButton": "Get In Touch",
+    "items": [
+      {
+        "question": "What if I'm not ready for a 2-6 month engagement?",
+        "answer": "I'm flexible. I offer shorter 2-4 week assessments and 1-2 month quick wins for urgent issues. We can start small (assess your data architecture and identify top 3 cost drivers) and scale up based on results. Many clients start with a 4-week assessment and then extend to a full engagement once they see the ROI."
+      },
+      {
+        "question": "Can you work with our existing team?",
+        "answer": "Absolutely. I integrate seamlessly with existing teams. In fact, I prefer working alongside your engineers because they know your systems best. I focus on knowledge transfer, so your team can maintain and extend the solutions after I leave. At National Bank, I led a team of 7 engineers, and the solutions are still running successfully today."
+      },
+      {
+        "question": "What if we only need help for 1-2 weeks?",
+        "answer": "I offer focused 1-2 week consulting sprints for specific problems like 'fix our data quality pipeline' or 'optimize our Snowflake costs.' These are perfect for urgent issues. However, data architecture improvements typically deliver the best ROI over 2-6 months because we can implement comprehensive solutions, not just quick fixes."
+      },
+      {
+        "question": "How do you ensure ROI on data projects?",
+        "answer": "I start every project by identifying measurable metrics: error reduction targets, cost savings goals, efficiency improvements. At National Bank, I delivered €200K+ annual value by tracking specific KPIs (30% error reduction, 25% efficiency gain, 40% faster testing). You'll get weekly updates with these metrics so you see progress in real-time, not just at the end."
+      },
+      {
+        "question": "Do you work remotely or on-site?",
+        "answer": "Both. I'm based in Paris and Montreal, but I work remotely with clients worldwide (Europe, North America). For critical phases or team workshops, I can travel on-site. Most of my work is remote, which keeps costs down and allows for flexible scheduling across time zones."
+      },
+      {
+        "question": "What makes you different from other data consultants?",
+        "answer": "Three things: (1) I focus on ROI, not just technical implementation. Every solution I build directly ties to cost savings or quality improvements you can measure. (2) I move fast—I start within 1-2 weeks and deliver results quickly. (3) I build solutions your team can maintain. No vendor lock-in or mysterious black boxes. You own the code and knowledge."
+      },
+      {
+        "question": "What if the project doesn't deliver the expected ROI?",
+        "answer": "I'm transparent about risks upfront. During the free discovery call, I'll tell you if I can realistically achieve your goals. I don't take on projects where I can't deliver value. If we discover during the engagement that the scope needs to change, we adjust the plan transparently. I set realistic expectations and deliver measurable results, which is why clients continue working with me."
+      }
+    ]
+  },
   "footer": {
+    "description": "I fix broken data systems. Delivered €200K+ annual value at National Bank. Available for 2-6 month projects.",
+    "navigationTitle": "Navigation",
+    "connectTitle": "Connect",
     "copyright": "© 2025 Fallou TALL. All rights reserved.",
-    "builtWith": "Built with Next.js and Tailwind CSS"
+    "availability": "Available immediately for new projects"
   },
         "work": {
           "title": "Real Projects, Real Results",
-          "subtitle": "3 companies, 3 big problems, 3 successful outcomes",
-          "businessImpactStatement": "No fluff. These are actual projects with real numbers from real companies.",
+          "subtitle": "Concrete proof I can deliver measurable ROI for your business",
+          "businessImpactStatement": "Clear proof of business value and ROI through measurable results",
+          "technicalInnovation": "Technical innovation combined with measurable business impact",
+          "cta": {
+            "question": "Want similar results for your data systems?",
+            "button": "Schedule Free Strategy Call"
+          },
+          "sections": {
+            "keyAchievements": "Key Achievements",
+            "keyResponsibilities": "Key Responsibilities",
+            "businessImpact": "Business Impact",
+            "technicalInnovation": "Technical Innovation",
+            "technologies": "Technologies & Tools"
+          },
           "projects": {
-      "bnc-analytical-foundation": {
-              "company": "National Bank of Canada",
-        "role": "Lead Data Engineer", 
-              "duration": "2021 - 2025",
-              "location": "Montreal, Canada",
-              "focusArea": "Fixed broken data systems costing €130K+/year",
-              "description": "Led team of 7 engineers to fix failing data systems at Canada's 6th largest bank. Built quality framework that reduced errors by 30% and saved €130K+ annually.",
-        "keyAchievements": [
-                "Reduced data errors by 30%, saving €65K in labor costs annually",
-                "Increased processing speed by 25%, freeing 3 hours/day per engineer (€65K+ annual value)",
-                "Cut testing time by 40%, speeding up releases from days to hours",
-                "Team adopted my framework as the company standard"
+            "sopra-steria-data-architect": {
+              "company": "Sopra Steria",
+              "role": "Transverse Data Architect - DCoE",
+              "duration": "Starting 11/2025 (Upcoming)",
+              "location": "Courbevoie, France",
+              "durationNote": "Upcoming role starting November 2025 - Available for consulting projects until then",
+              "focusArea": "Data and AI transformation architecture across multiple industries",
+              "description": "Starting November 2025, I will join Sopra Steria's Data Center of Excellence as a Transverse Data Architect. I will architect data solutions for clients across Banking, Insurance, Public Sector, Telecom, Media, Gaming, Industry and Services. Supporting delivery teams from prospecting through pre-sales to solution delivery, with focus on data architecture, governance, data catalog, referential management, data quality, and AI industrialization. Available for consulting projects until November 2025.",
+              "ctaQuestion": "Need enterprise data architecture? Available for consulting until November 2025.",
+              "keyResponsibilities": [
+                "Elaborate optimized data architectures (analytical platforms, real-time, IoT)",
+                "Design and implement data ingestion strategies (real-time, asynchronous, intermediation tools)",
+                "Participate in client workshops for design and consulting",
+                "Provide pre-sales support: RFP analysis, technical responses (functional, technical, software architecture), client presentations",
+                "Lead development teams and participate in solution delivery",
+                "Collaborate with market-leading editors and hyperscalers"
               ],
-              "technologies": ["Azure", "Python", "Databricks"],
-        "businessImpact": [
-          {
-                  "metricName": "Cost Savings",
-            "percentage": 30,
-                  "description": "€130K+ annual savings: 30% fewer errors (€65K) + 25% faster processing (€65K)"
-                },
-                {
-                  "metricName": "Speed",
-            "percentage": 40,
-                  "description": "Releases 40% faster - from days to hours"
-          }
-        ],
-        "technicalInnovation": [
-                "Quality framework now used company-wide",
-                "Automated testing reducing manual work by 40%"
+              "technologies": ["Azure", "AWS", "Databricks", "Python", "Snowflake", "Spark", "SQL", "Java", "Scala", "MDM", "ETL", "ESB", "API Management", "Terraform"],
+              "technicalInnovation": [
+                "Multi-sector data architecture patterns",
+                "Data governance and quality frameworks",
+                "Data catalog and referential management solutions",
+                "AI industrialization methodologies",
+                "Cloud and on-premise hybrid architectures",
+                "Real-time and batch data ingestion strategies"
               ],
-              "industry": "Banking"
+              "industry": "Technology & Consulting"
             },
-            "orange-zero-downtime": {
-        "company": "Orange Côte d'Ivoire",
-        "role": "Lead Data Engineer",
-              "duration": "2020 - 2021",
-              "location": "Abidjan, Côte d'Ivoire",
-              "focusArea": "Zero-downtime migration for Africa's largest telecom",
-              "description": "Migrated 50+ critical data systems with zero downtime for Orange's 14M+ customers. Modernized outdated systems while keeping everything running 24/7.",
-        "keyAchievements": [
-                "Migrated 50+ critical workflows with zero downtime - business kept running",
-                "20% productivity boost for engineering team through better tools",
-                "Modernized 5-year-old legacy systems without disrupting operations",
-                "Completed ahead of schedule with zero incidents"
-              ],
-              "technologies": ["Hadoop", "Spark", "Python"],
-        "businessImpact": [
-          {
-                  "metricName": "Zero Downtime",
-            "percentage": 100,
-                  "description": "100% uptime during migration - 14M+ customers unaffected"
-                },
-                {
-                  "metricName": "Team Productivity",
-                  "percentage": 20,
-                  "description": "20% productivity increase through modernized tools"
-          }
-        ],
-        "technicalInnovation": [
-                "Zero-downtime migration strategy for 50+ systems",
-                "Custom tools increasing team productivity by 20%"
-        ],
-        "industry": "Telecommunications"
-      },
-            "onepoint-consulting": {
+            "onepoint-expert-data": {
               "company": "Onepoint",
-              "role": "Expert Data Architect",
-              "duration": "2022 - 2025",
-              "location": "Paris, France & Montreal, Canada",
-              "focusArea": "Enterprise data consulting across 4 major clients",
-              "description": "Delivered data audits and architecture design for 4 enterprise clients across banking, telecom, and tech. 3 out of 4 clients extended contracts based on results.",
-        "keyAchievements": [
-                "Improved client system performance by 40% through better architecture",
-                "3 out of 4 clients renewed contracts - 75% retention rate",
-                "Delivered audits identifying €100K+ savings opportunities",
-                "Trained client teams on sustainable data practices"
+              "role": "Expert Data Consultant",
+              "duration": "09/2024 - 10/2025",
+              "location": "Canada and France",
+              "durationNote": "Part-time 09/2024-04/2025 alongside BNC, then full contract until 10/2025",
+              "focusArea": "Modern and scalable data platform implementation",
+              "description": "Helped 4 enterprise clients in Canada and France fix their data platform problems. Delivered technical audits identifying cost-saving opportunities, designed modern architectures that improved platform performance by 40%, and established data governance frameworks. Achieved 95% client satisfaction with measurable results.",
+              "ctaQuestion": "Want 95% client satisfaction for your data platform?",
+              "keyAchievements": [
+                "Technical audits, data architecture design",
+                "ETL/ELT pipeline development",
+                "DataOps implementation",
+                "Monitoring solutions and data security",
+                "Training and support"
               ],
-              "technologies": ["Azure", "AWS", "Databricks", "Snowflake"],
-        "businessImpact": [
-          {
-                  "metricName": "Performance",
-                  "percentage": 40,
-                  "description": "40% faster data processing across client systems"
+              "technologies": ["Azure", "AWS", "Databricks", "Python", "Snowflake", "Spark", "SQL", "Github Actions"],
+              "businessImpact": [
+                {
+                  "metricName": "Client Satisfaction",
+                  "percentage": 95,
+                  "description": "High client satisfaction with data platform implementations"
                 },
                 {
-                  "metricName": "Client Retention",
-                  "percentage": 75,
-                  "description": "3 of 4 clients extended engagements based on delivered value"
-          }
-        ],
-        "technicalInnovation": [
-                "Multi-cloud architecture patterns",
-                "Security-first data design frameworks"
+                  "metricName": "Platform Performance",
+                  "percentage": 40,
+                  "description": "40% improvement in data processing performance across client platforms through architecture optimization"
+                }
               ],
-              "industry": "Consulting"
-      }
-    }
-  },
+              "technicalInnovation": [
+                "Modern data platform architecture patterns",
+                "DataOps automation frameworks",
+                "Multi-cloud data governance solutions",
+                "Security-first data architecture design"
+              ],
+              "industry": "Consulting & Technology"
+            },
+            "bnc-analytical-foundation": {
+              "company": "National Bank of Canada",
+              "role": "Lead Data Engineer", 
+              "duration": "11/2021 - 04/2025",
+              "location": "Montreal, Canada",
+              "focusArea": "Modern data warehouse enabling bank-wide critical reporting and analytics",
+              "description": "Built a modern data warehouse (data lake + data warehouse) that enabled critical business decisions across Canada's 6th largest bank. The platform powers Marketing's customer acquisition strategy (CAC tracking, segmentation, Next Best Action), real-time fraud detection, Cards & Payment analytics, and executive reporting used by board-level leadership. Initially built on Azure with Snowflake and Databricks, then successfully migrated to AWS with zero downtime. The PySpark data quality framework I developed reduced errors by 30% and was adopted bank-wide across 10-20+ teams (Marketing, Wealth, Cards, Fraud). Collaborated with CDO to establish bank-wide data quality governance standards.",
+              "keyAchievements": [
+                "Led team of 7 engineers building modern data warehouse (Snowflake + Databricks) on AWS and Azure, initially on Azure then migrated to AWS",
+                "Built bank-wide analytical foundation enabling critical reporting: Marketing (CAC, segmentation, Next Best Action), Cards & Payment, Fraud Detection, Executive reporting, AI/ML",
+                "Designed architecture and data models for multi-domain analytical platform supporting millions of customer records",
+                "Developed PySpark data quality framework achieving 30% error reduction in team's pipelines; tool adopted bank-wide by 10-20+ teams across Marketing, Wealth, Cards, Fraud departments",
+                "Increased team efficiency by 25% (3 hours/day freed per engineer) and reduced testing time by 40%",
+                "Worked with CDO to define, standardize, and operationalize data quality dimensions, enabling cross-departmental consistency in data quality standards"
+              ],
+              "technologies": ["Azure", "AWS", "Snowflake", "Databricks", "Python", "PySpark", "Spark", "SQL", "Terraform"],
+              "businessImpact": [
+                {
+                  "metricName": "Error Reduction",
+                  "percentage": 30,
+                  "description": "30% reduction in data processing errors in team's production pipelines through PySpark framework (€65K+ annual savings)"
+                },
+                {
+                  "metricName": "Efficiency Improvement",
+                  "percentage": 25,
+                  "description": "25% increase in team efficiency, freeing 3 hours/day per engineer for higher-value work (€65K+ annual value)"
+                },
+                {
+                  "metricName": "Testing Speed",
+                  "percentage": 40,
+                  "description": "40% faster QA testing through automation, reducing release cycles from days to hours (€20K+ annual value)"
+                },
+                {
+                  "metricName": "Bank-Wide Adoption",
+                  "percentage": 100,
+                  "description": "Data quality framework adopted as bank standard by Marketing, Wealth, Cards, Fraud, and 10-20+ teams across the organization"
+                }
+              ],
+              "technicalInnovation": [
+                "Modern data warehouse architecture (data lake + data warehouse) with Snowflake and Databricks",
+                "Multi-cloud migration strategy (Azure to AWS) with zero downtime",
+                "PySpark data quality framework adopted bank-wide",
+                "Cross-departmental data quality governance framework",
+                "Scalable analytical architecture supporting millions of customer records",
+                "Data modeling for multi-domain analytics (Marketing, Cards, Fraud, Executive, AI/ML)"
+              ],
+              "industry": "Banking & Financial Services"
+            },
+            "orange-hadoop-migration": {
+              "company": "Orange Côte d'Ivoire",
+              "role": "Lead Data Engineer",
+              "duration": "09/2020 - 08/2021",
+              "location": "Côte d'Ivoire",
+              "focusArea": "Hadoop cluster migration and update",
+              "description": "Led zero-downtime migration of data workflows to new Hadoop cluster. Developed productivity tools and orchestrated complex data pipelines.",
+              "ctaQuestion": "Need zero-downtime migration for your data systems?",
+              "keyAchievements": [
+                "Supervised data workflow migration",
+                "Migrated Flume/Pig/Spark1/Sqoop to Spark2",
+                "Developed Spark library achieving 20% productivity increase"
+              ],
+              "technologies": ["Hadoop", "Scala", "Spark", "Oracle"],
+              "businessImpact": [
+                {
+                  "metricName": "Productivity Improvement",
+                  "percentage": 20,
+                  "description": "20% increase in data engineering team productivity through adoption of custom Spark library"
+                },
+                {
+                  "metricName": "Migration Success",
+                  "percentage": 100,
+                  "description": "Successfully completed zero-downtime migration of critical data workflows"
+                }
+              ],
+              "technicalInnovation": [
+                "Zero-downtime migration strategy",
+                "Custom Spark productivity library",
+                "Advanced workflow orchestration",
+                "Legacy system modernization"
+              ],
+              "industry": "Telecommunications"
+            },
+            "orange-qoe-management": {
+              "company": "Orange Sénégal",
+              "role": "Senior Data Engineer & Data Scientist",
+              "duration": "06/2019 - 08/2020",
+              "location": "Sénégal",
+              "focusArea": "Customer Experience Management",
+              "description": "Developed ML models for customer experience management and QoE prediction.",
+              "keyAchievements": [
+                "Developed ML models predicting customer QoE with 15% satisfaction improvement",
+                "Automated processes reducing processing time by 30%",
+                "NPS-QoE correlation analysis with Tableau dashboards"
+              ],
+              "technologies": ["Hadoop", "Scala", "Spark", "SQL Server", "Tableau", "Python", "Scikit-Learn", "Flask"],
+              "businessImpact": [
+                {
+                  "metricName": "Customer Satisfaction",
+                  "percentage": 15,
+                  "description": "15% improvement in customer satisfaction scores through proactive QoE prediction and intervention"
+                },
+                {
+                  "metricName": "Processing Efficiency",
+                  "percentage": 30,
+                  "description": "30% reduction in analytics processing time through workflow automation"
+                }
+              ],
+              "technicalInnovation": [
+                "Advanced ML models for QoE prediction",
+                "Automated data processing pipelines",
+                "Real-time customer analytics",
+                "Advanced correlation analysis"
+              ],
+              "industry": "Telecommunications"
+            },
+            "orange-data-monetization": {
+              "company": "Orange Sénégal",
+              "role": "Data Engineer & Data Scientist",
+              "duration": "10/2018 - 04/2019",
+              "location": "Sénégal",
+              "focusArea": "Digital data monetization platform",
+              "description": "Micro-services architecture with Kubernetes/Kafka/Cassandra/Spark/Node.js, location modeling from CDR data, population movement prediction with SparkML.",
+              "keyAchievements": [
+                "Micro-services architecture with Kubernetes/Kafka/Cassandra/Spark/Node.js",
+                "Location modeling from CDR data",
+                "Population movement prediction with SparkML"
+              ],
+              "technologies": ["Cassandra", "Kafka", "Kubernetes", "Scala", "Spark"],
+              "businessImpact": [
+                {
+                  "metricName": "Platform Scalability",
+                  "percentage": 300,
+                  "description": "Achieved 3x scalability with micro-services architecture supporting high-volume data processing"
+                },
+                {
+                  "metricName": "Data Monetization",
+                  "percentage": 25,
+                  "description": "Enabled new revenue streams through data-driven insights"
+                }
+              ],
+              "technicalInnovation": [
+                "Micro-services data architecture",
+                "Real-time location analytics",
+                "Population movement prediction models",
+                "Advanced CDR data processing"
+              ],
+              "industry": "Telecommunications"
+            }
+          }
+        },
   "stats": {
     "yearsExperience": "Years Experience",
     "technologiesMastered": "Technologies Mastered",
@@ -254,5 +445,21 @@
     "goHome": "Go Home",
     "goBack": "Go Back",
     "tryThesePages": "Or try one of these pages:"
+  },
+  "workedWith": {
+    "title": "Trusted By",
+    "subtitle": "Proven results across enterprise organizations",
+    "industries": {
+      "banking": "Banking",
+      "telecommunications": "Telecommunications",
+      "consulting": "Consulting",
+      "technology": "Technology"
+    },
+    "industryPills": {
+      "bankingFinance": "Banking & Finance",
+      "telecommunications": "Telecommunications",
+      "consulting": "Consulting",
+      "technology": "Technology"
+    }
   }
 }
