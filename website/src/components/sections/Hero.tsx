@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/Button'
 import { useI18n } from '@/components/providers/I18nProvider'
-import { ArrowRight, TrendingUp, Target, Zap } from 'lucide-react'
+import { ArrowRight, Target, Zap } from 'lucide-react'
 import { useImagePath } from '@/lib/image-utils'
 import { trackEvent } from '@/lib/analytics'
 import { logger } from '@/lib/logger'
