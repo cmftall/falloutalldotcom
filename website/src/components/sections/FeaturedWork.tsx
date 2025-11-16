@@ -52,7 +52,7 @@ export function FeaturedWork() {
           {/* Projects Grid */}
           {projectKeys.length > 0 ? (
             <div className="space-y-8 md:space-y-12 mt-8 md:mt-16 px-4">
-            {projectKeys.map((projectId, index) => {
+            {projectKeys.map((projectId) => {
               if (!projectId) return null
               
               const project = projects[projectId]

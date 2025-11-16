@@ -40,7 +40,7 @@ export function FloatingCTA() {
                   if (typeof title === 'string' && title && !title.includes('floatingCta')) {
                     return title
                   }
-                } catch (e) {
+                } catch {
                   // Fallback
                 }
                 return 'Ready to reduce data errors?'
@@ -53,7 +53,7 @@ export function FloatingCTA() {
                   if (typeof subtitle === 'string' && subtitle && !subtitle.includes('floatingCta')) {
                     return subtitle
                   }
-                } catch (e) {
+                } catch {
                   // Fallback
                 }
                 return 'Book a free strategy call - no commitment'
@@ -72,30 +72,30 @@ export function FloatingCTA() {
                       if (typeof button === 'string' && button && !button.includes('floatingCta')) {
                         return button
                       }
-                    } catch (e) {
-                      // Fallback
-                    }
-                    return 'Book Call'
-                  })()
-                })
-                const link = document.createElement('a')
-                link.href = SITE_CONFIG.links.calendly
-                link.target = '_blank'
-                link.rel = 'noopener noreferrer'
-                link.click()
-              }}
-              className="bg-accent text-accent-foreground hover:bg-accent/90 px-4 md:px-6 py-2 md:py-3 text-sm md:text-base font-semibold shadow-lg"
-            >
-              <Calendar className="mr-2 h-4 w-4" />
-              {(() => {
-                try {
-                  const button = t('hero.floatingCta.button')
-                  if (typeof button === 'string' && button && !button.includes('floatingCta')) {
-                    return button
-                  }
-                } catch (e) {
+                } catch {
                   // Fallback
                 }
+                return 'Book Call'
+              })()
+            })
+            const link = document.createElement('a')
+            link.href = SITE_CONFIG.links.calendly
+            link.target = '_blank'
+            link.rel = 'noopener noreferrer'
+            link.click()
+          }}
+          className="bg-accent text-accent-foreground hover:bg-accent/90 px-4 md:px-6 py-2 md:py-3 text-sm md:text-base font-semibold shadow-lg"
+        >
+          <Calendar className="mr-2 h-4 w-4" />
+          {(() => {
+            try {
+              const button = t('hero.floatingCta.button')
+              if (typeof button === 'string' && button && !button.includes('floatingCta')) {
+                return button
+              }
+            } catch {
+              // Fallback
+            }
                 return 'Book Call'
               })()}
             </Button>
