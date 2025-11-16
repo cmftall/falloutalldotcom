@@ -42,7 +42,7 @@ export function WorkedWith() {
   ]
 
   return (
-    <section id="workedWith" className="py-20 md:py-28 bg-card border-y border-border/50">
+    <section id="workedWith" className="py-20 md:py-32 bg-card border-y border-border/50">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
@@ -60,7 +60,7 @@ export function WorkedWith() {
           </div>
 
           {/* Companies Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
             {companies.map((company) => (
               <div
                 key={company.name}

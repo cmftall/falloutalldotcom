@@ -69,87 +69,57 @@ export function Contact() {
             })()}
           </div>
 
-          {/* Combined: Value Proposition + Services - Simplified */}
-          <div className="mb-10 md:mb-12">
-            <p className="text-sm md:text-base text-center mb-4 md:mb-6 text-foreground font-medium px-4">
+          {/* Simplified: Value + Process Combined - More Compact */}
+          <div className="mb-8 md:mb-10 bg-card border border-border/50 rounded-lg p-4 md:p-6">
+            <p className="text-sm md:text-base text-center mb-4 md:mb-5 text-foreground font-medium">
               {t('contact.value')}
             </p>
             
-            {/* Services Grid - Compact */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 max-w-3xl mx-auto px-4">
-              <div className="flex items-start space-x-2">
-                <CheckCircle className="h-3 w-3 md:h-4 md:w-4 flex-shrink-0 mt-1 text-accent" aria-hidden="true" />
-                <span className="text-xs md:text-sm text-foreground">{t('contact.service1')}</span>
+            {/* Services - Inline Compact */}
+            <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 mb-5 md:mb-6 text-xs md:text-sm text-muted-foreground">
+              <div className="flex items-center gap-1.5">
+                <CheckCircle className="h-3.5 w-3.5 text-accent flex-shrink-0" aria-hidden="true" />
+                <span>{t('contact.service1')}</span>
               </div>
-              <div className="flex items-start space-x-2">
-                <CheckCircle className="h-3 w-3 md:h-4 md:w-4 flex-shrink-0 mt-1 text-accent" aria-hidden="true" />
-                <span className="text-xs md:text-sm text-foreground">{t('contact.service2')}</span>
+              <div className="flex items-center gap-1.5">
+                <CheckCircle className="h-3.5 w-3.5 text-accent flex-shrink-0" aria-hidden="true" />
+                <span>{t('contact.service2')}</span>
               </div>
-              <div className="flex items-start space-x-2">
-                <CheckCircle className="h-3 w-3 md:h-4 md:w-4 flex-shrink-0 mt-1 text-accent" aria-hidden="true" />
-                <span className="text-xs md:text-sm text-foreground">{t('contact.service3')}</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Combined: Process + Investment - Simplified */}
-          <div className="mb-10 md:mb-12 bg-card border border-border/50 rounded-lg p-4 md:p-6">
-            <h3 className="text-lg md:text-xl font-serif font-bold text-primary mb-4 md:mb-6 text-center">
-              {t('contact.processTitle')}
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 max-w-2xl mx-auto mb-6 md:mb-8">
-              <div className="flex items-start space-x-2">
-                <div className="flex-shrink-0 w-5 h-5 md:w-6 md:h-6 rounded-full bg-accent/10 flex items-center justify-center">
-                  <span className="text-accent font-bold text-xs">1</span>
-                </div>
-                <p className="text-xs text-foreground pt-0.5">{t('contact.processStep1')}</p>
-              </div>
-              <div className="flex items-start space-x-2">
-                <div className="flex-shrink-0 w-5 h-5 md:w-6 md:h-6 rounded-full bg-accent/10 flex items-center justify-center">
-                  <span className="text-accent font-bold text-xs">2</span>
-                </div>
-                <p className="text-xs text-foreground pt-0.5">{t('contact.processStep2')}</p>
-              </div>
-              <div className="flex items-start space-x-2">
-                <div className="flex-shrink-0 w-5 h-5 md:w-6 md:h-6 rounded-full bg-accent/10 flex items-center justify-center">
-                  <span className="text-accent font-bold text-xs">3</span>
-                </div>
-                <p className="text-xs text-foreground pt-0.5">{t('contact.processStep3')}</p>
-              </div>
-              <div className="flex items-start space-x-2">
-                <div className="flex-shrink-0 w-5 h-5 md:w-6 md:h-6 rounded-full bg-accent/10 flex items-center justify-center">
-                  <span className="text-accent font-bold text-xs">4</span>
-                </div>
-                <p className="text-xs text-foreground pt-0.5">{t('contact.processStep4')}</p>
+              <div className="flex items-center gap-1.5">
+                <CheckCircle className="h-3.5 w-3.5 text-accent flex-shrink-0" aria-hidden="true" />
+                <span>{t('contact.service3')}</span>
               </div>
             </div>
             
-            {/* Investment - Integrated */}
-            <div className="border-t border-border/50 pt-4 md:pt-6">
-              <h4 className="text-base md:text-lg font-serif font-bold text-primary mb-3 md:mb-4 text-center">
-                {t('contact.investmentTitle')}
-              </h4>
-              <p className="text-xs md:text-sm text-muted-foreground text-center mb-4 md:mb-5 leading-relaxed">
-                {t('contact.investmentDescription')}
-              </p>
-              <div className="space-y-2 md:space-y-3 max-w-xl mx-auto">
+            {/* Process - Compact 2x2 Grid */}
+            <div className="border-t border-border/50 pt-4 md:pt-5">
+              <h3 className="text-sm md:text-base font-serif font-bold text-primary mb-3 md:mb-4 text-center">
+                {t('contact.processTitle')}
+              </h3>
+              <div className="grid grid-cols-2 gap-2.5 md:gap-3 max-w-xl mx-auto">
                 <div className="flex items-start space-x-2">
-                  <div className="flex-shrink-0 w-4 h-4 md:w-5 md:h-5 rounded-full bg-accent/10 flex items-center justify-center mt-0.5">
+                  <div className="flex-shrink-0 w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center mt-0.5">
                     <span className="text-accent font-bold text-xs">1</span>
                   </div>
-                  <p className="text-xs text-foreground pt-0.5">{t('contact.investmentStep1')}</p>
+                  <p className="text-sm text-foreground leading-relaxed">{t('contact.processStep1')}</p>
                 </div>
                 <div className="flex items-start space-x-2">
-                  <div className="flex-shrink-0 w-4 h-4 md:w-5 md:h-5 rounded-full bg-accent/10 flex items-center justify-center mt-0.5">
+                  <div className="flex-shrink-0 w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center mt-0.5">
                     <span className="text-accent font-bold text-xs">2</span>
                   </div>
-                  <p className="text-xs text-foreground pt-0.5">{t('contact.investmentStep2')}</p>
+                  <p className="text-sm text-foreground leading-relaxed">{t('contact.processStep2')}</p>
                 </div>
                 <div className="flex items-start space-x-2">
-                  <div className="flex-shrink-0 w-4 h-4 md:w-5 md:h-5 rounded-full bg-accent/10 flex items-center justify-center mt-0.5">
+                  <div className="flex-shrink-0 w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center mt-0.5">
                     <span className="text-accent font-bold text-xs">3</span>
                   </div>
-                  <p className="text-xs text-foreground pt-0.5">{t('contact.investmentStep3')}</p>
+                  <p className="text-sm text-foreground leading-relaxed">{t('contact.processStep3')}</p>
+                </div>
+                <div className="flex items-start space-x-2">
+                  <div className="flex-shrink-0 w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center mt-0.5">
+                    <span className="text-accent font-bold text-xs">4</span>
+                  </div>
+                  <p className="text-sm text-foreground leading-relaxed">{t('contact.processStep4')}</p>
                 </div>
               </div>
             </div>
