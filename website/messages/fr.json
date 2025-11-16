@@ -24,7 +24,8 @@
     "credential": "Consultant Data • Paris et Montréal",
     "metrics": {
       "errorReduction": "30% moins d'erreurs",
-      "annualValue": "Valeur annuelle significative",
+      "timeToInsight": "10x insights plus rapides",
+      "zeroDowntime": "Zéro interruption (14M+ utilisateurs)",
       "international": "4 pays, 3 continents"
     },
     "imageAlt": "Fallou Tall - Consultant Data",
@@ -36,7 +37,7 @@
       "company": "Banque Nationale du Canada"
     },
     "floatingCta": {
-      "title": "Prêt à réduire les erreurs de données ?",
+      "title": "Livrez plus de valeur avec vos données",
       "subtitle": "Réservez un appel stratégique gratuit - sans engagement",
       "button": "Réserver"
     },
@@ -145,7 +146,39 @@
   "certifications": {
     "title": "Certifications et Titres",
     "subtitle": "Certifications professionnelles qui valident mon expertise technique et mon engagement envers l'apprentissage continu.",
-    "viewDetails": "Voir les détails"
+    "viewDetails": "Voir les détails",
+    "items": [
+      {
+        "name": "Azure Data Engineer Associate",
+        "issuer": "Microsoft",
+        "description": "Expertise en conception et implémentation de solutions de données sur Azure",
+        "year": "2023"
+      },
+      {
+        "name": "Professional Data Engineer",
+        "issuer": "Google Cloud",
+        "description": "Compétences avancées en construction et maintenance de systèmes de traitement de données sur GCP",
+        "year": "2023"
+      },
+      {
+        "name": "Databricks Certified Associate Developer for Apache Spark",
+        "issuer": "Databricks",
+        "description": "Maîtrise de la programmation Spark et de l'ingénierie de données",
+        "year": "2023"
+      },
+      {
+        "name": "Databricks Certified Professional Data Engineer",
+        "issuer": "Databricks",
+        "description": "Expertise avancée en construction de pipelines de données prêts pour la production",
+        "year": "2024"
+      },
+      {
+        "name": "Databricks Certified Professional Data Scientist",
+        "issuer": "Databricks",
+        "description": "Compétences de niveau expert en machine learning et workflows de science des données",
+        "year": "2024"
+      }
+    ]
   },
   "contact": {
     "title": "Prêt à Livrer un ROI Mesurable ?",
@@ -229,6 +262,10 @@
       "question": "Vous voulez réduire les erreurs et améliorer l'efficacité de vos systèmes de données ?",
       "button": "Réserver un Appel Stratégique Gratuit"
     },
+    "testimonial": {
+      "readMore": "Lire le témoignage complet",
+      "showLess": "Réduire"
+    },
     "sections": {
       "keyAchievements": "Réalisations Clés",
       "keyResponsibilities": "Responsabilités Clés",
@@ -279,9 +316,9 @@
         "duration": "09/2024 - 10/2025",
         "location": "Canada et France",
         "focusArea": "Implémentation de plateformes de données modernes et évolutives",
-        "valueSummary": "Livré une satisfaction client élevée auprès de clients entreprises en améliorant les performances de plateforme de 40%, identifiant des opportunités d'économies via des audits techniques, et établissant des frameworks de gouvernance garantissant une fiabilité à long terme.",
-        "description": "J'ai aidé des clients entreprises au Canada et en France à résoudre leurs problèmes de plateforme de données. J'ai livré des audits techniques identifiant des opportunités d'économies, conçu des architectures modernes améliorant les performances de 40%, et établi des frameworks de gouvernance. J'ai atteint une satisfaction client élevée avec des résultats mesurables.",
-        "shortDescription": "J'ai aidé des clients entreprises à résoudre leurs problèmes de plateforme de données via audits techniques, conception d'architectures modernes, et frameworks de gouvernance. Amélioration de 40% des performances et satisfaction client élevée avec résultats mesurables.",
+        "valueSummary": "Livré une satisfaction client élevée auprès de clients entreprises en améliorant les performances de plateforme de 40%, réduisant le temps d'obtention d'insights de semaines à jours, identifiant des opportunités d'économies via des audits techniques, et établissant des frameworks de gouvernance garantissant une fiabilité à long terme.",
+        "description": "J'ai aidé des clients entreprises au Canada et en France à résoudre leurs problèmes de plateforme de données. J'ai livré des audits techniques identifiant des opportunités d'économies, conçu des architectures modernes améliorant les performances de 40% et réduisant le temps d'obtention d'insights de semaines à jours, et établi des frameworks de gouvernance. J'ai atteint une satisfaction client élevée avec des résultats mesurables.",
+        "shortDescription": "J'ai aidé des clients entreprises à résoudre leurs problèmes de plateforme de données via audits techniques, conception d'architectures modernes, et frameworks de gouvernance. Amélioration de 40% des performances, réduction du temps d'insights de semaines à jours, et satisfaction client élevée avec résultats mesurables.",
         "challenges": [
           "Résoudre des problèmes de plateforme de données diversifiés pour des clients entreprises avec des stacks techniques variés",
           "Améliorer les performances de plateforme de 40% tout en maintenant la fiabilité du système et l'intégrité des données",
@@ -301,6 +338,11 @@
             "metricName": "Performance Plateforme",
             "percentage": 40,
             "description": "40% d'amélioration des performances de traitement de données sur les plateformes clients grâce à l'optimisation de l'architecture"
+          },
+          {
+            "metricName": "Time To Insight",
+            "percentage": null,
+            "description": "Réduction du temps d'obtention d'insights de semaines à jours, permettant une prise de décision business plus rapide"
           }
         ],
         "technicalInnovation": [
@@ -491,6 +533,16 @@
     "yearsExperience": "Années d'Expérience",
     "technologiesMastered": "Technologies Maîtrisées",
     "enterpriseProjects": "Projets d'Entreprise"
+  },
+  "technologies": {
+    "title": "Technologies & Outils",
+    "subtitle": "Expertise en Data Warehouses, Data Lakes, Data Lakehouses et Data Modeling utilisant des plateformes cloud et technologies de données modernes",
+    "categories": {
+      "cloud": ["Azure", "AWS", "GCP"],
+      "dataPlatforms": ["Databricks", "Snowflake", "Apache Spark", "Delta Lake"],
+      "languages": ["Python", "SQL", "Scala", "Java"],
+      "tools": ["Terraform", "Docker", "Kubernetes", "GitHub Actions", "Apache Airflow"]
+    }
   },
   "common": {
     "loading": "Chargement...",

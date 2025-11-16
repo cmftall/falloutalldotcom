@@ -1,0 +1,28 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0F172A"/>
+  <rect x="100" y="100" width="1000" height="430" rx="20" fill="#1E293B" stroke="#334155" stroke-width="2"/>
+  
+  <!-- Profile Circle -->
+  <circle cx="200" cy="200" r="60" fill="#3B82F6"/>
+  <text x="200" y="210" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="32" font-weight="bold">FT</text>
+  
+  <!-- Name -->
+  <text x="320" y="180" fill="white" font-family="Inter, sans-serif" font-size="48" font-weight="bold">Fallou TALL</text>
+  
+  <!-- Title -->
+  <text x="320" y="230" fill="#94A3B8" font-family="Inter, sans-serif" font-size="24">Senior Data Architect & Lead Data Engineer</text>
+  
+  <!-- Description -->
+  <text x="320" y="280" fill="#E2E8F0" font-family="Inter, sans-serif" font-size="18" font-weight="300">
+    <tspan x="320" dy="0">Senior Data Architect with 8+ years of experience leading</tspan>
+    <tspan x="320" dy="30">Fortune 500 transformations. I design cloud-native solutions</tspan>
+    <tspan x="320" dy="30">that process petabytes of data while reducing costs by 40%</tspan>
+    <tspan x="320" dy="30">and improving insights delivery by 60%.</tspan>
+  </text>
+  
+  <!-- Location -->
+  <text x="320" y="420" fill="#64748B" font-family="Inter, sans-serif" font-size="16">Paris, France • Montreal, Canada</text>
+  
+  <!-- Tech Stack -->
+  <text x="320" y="450" fill="#64748B" font-family="Inter, sans-serif" font-size="14">Azure • AWS • Databricks • Python • Spark • SQL</text>
+</svg>

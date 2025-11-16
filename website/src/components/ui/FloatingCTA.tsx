@@ -4,29 +4,69 @@ import { useState, useEffect } from 'react'
 import { Calendar, X } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { useI18n } from '@/components/providers/I18nProvider'
-import { SITE_CONFIG } from '@/lib/constants'
-import { trackEvent } from '@/lib/analytics'
+import { openCalendly } from '@/lib/calendly'
 
 export function FloatingCTA() {
   const [isVisible, setIsVisible] = useState(false)
   const [isDismissed, setIsDismissed] = useState(false)
   const { t } = useI18n()
 
+  // Helper function to safely get translations with fallback
+  const getTranslation = (key: string, fallback: string): string => {
+    try {
+      const value = t(key)
+      if (typeof value === 'string' && value && !value.includes(key.split('.').pop() || '')) {
+        return value
+      }
+    } catch {
+      // Fallback
+    }
+    return fallback
+  }
+
   useEffect(() => {
+    if (typeof window === 'undefined') return
+    
     // Show after user scrolls down 300px
+    let ticking = false
     const handleScroll = () => {
-      if (window.scrollY > 300 && !isDismissed) {
-        setIsVisible(true)
-      } else if (window.scrollY <= 300) {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (window.scrollY > 300 && !isDismissed) {
+            setIsVisible(true)
+          } else if (window.scrollY <= 300) {
+            setIsVisible(false)
+          }
+          ticking = false
+        })
+        ticking = true
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [isDismissed])
+
+  // Handle Escape key to dismiss
+  useEffect(() => {
+    if (typeof window === 'undefined' || !isVisible) return
+    
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsDismissed(true)
         setIsVisible(false)
       }
     }
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [isDismissed])
+    window.addEventListener('keydown', handleEscape)
+    return () => window.removeEventListener('keydown', handleEscape)
+  }, [isVisible])
 
   if (!isVisible || isDismissed) return null
+
+  const title = getTranslation('hero.floatingCta.title', 'Ready to reduce data errors?')
+  const subtitle = getTranslation('hero.floatingCta.subtitle', 'Book a free strategy call - no commitment')
+  const buttonText = getTranslation('hero.floatingCta.button', 'Book Call')
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 animate-in slide-in-from-bottom duration-300">
@@ -34,70 +74,22 @@ export function FloatingCTA() {
         <div className="bg-card border-2 border-accent/50 rounded-lg shadow-2xl p-4 md:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex-1 text-center sm:text-left">
             <p className="text-sm md:text-base font-semibold text-foreground mb-1">
-              {(() => {
-                try {
-                  const title = t('hero.floatingCta.title')
-                  if (typeof title === 'string' && title && !title.includes('floatingCta')) {
-                    return title
-                  }
-                } catch {
-                  // Fallback
-                }
-                return 'Ready to reduce data errors?'
-              })()}
+              {title}
             </p>
             <p className="text-xs md:text-sm text-muted-foreground">
-              {(() => {
-                try {
-                  const subtitle = t('hero.floatingCta.subtitle')
-                  if (typeof subtitle === 'string' && subtitle && !subtitle.includes('floatingCta')) {
-                    return subtitle
-                  }
-                } catch {
-                  // Fallback
-                }
-                return 'Book a free strategy call - no commitment'
-              })()}
+              {subtitle}
             </p>
           </div>
           <div className="flex items-center gap-3">
             <Button
               onClick={() => {
-                trackEvent('cta_click', {
-                  location: 'floating_cta',
-                  cta_type: 'calendly',
-                  button_text: (() => {
-                    try {
-                      const button = t('hero.floatingCta.button')
-                      if (typeof button === 'string' && button && !button.includes('floatingCta')) {
-                        return button
-                      }
-                } catch {
-                  // Fallback
-                }
-                return 'Book Call'
-              })()
-            })
-            const link = document.createElement('a')
-            link.href = SITE_CONFIG.links.calendly
-            link.target = '_blank'
-            link.rel = 'noopener noreferrer'
-            link.click()
-          }}
-          className="bg-accent text-accent-foreground hover:bg-accent/90 px-4 md:px-6 py-2 md:py-3 text-sm md:text-base font-semibold shadow-lg"
-        >
-          <Calendar className="mr-2 h-4 w-4" />
-          {(() => {
-            try {
-              const button = t('hero.floatingCta.button')
-              if (typeof button === 'string' && button && !button.includes('floatingCta')) {
-                return button
-              }
-            } catch {
-              // Fallback
-            }
-                return 'Book Call'
-              })()}
+                openCalendly('floating_cta', buttonText)
+              }}
+              className="bg-accent text-accent-foreground hover:bg-accent/90 px-4 md:px-6 py-2 md:py-3 text-sm md:text-base font-semibold shadow-lg"
+              aria-label={buttonText}
+            >
+              <Calendar className="mr-2 h-4 w-4" aria-hidden="true" />
+              {buttonText}
             </Button>
             <button
               onClick={() => {
@@ -105,9 +97,9 @@ export function FloatingCTA() {
                 setIsVisible(false)
               }}
               className="p-2 text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="Dismiss"
+              aria-label="Dismiss floating call-to-action"
             >
-              <X className="h-4 w-4" />
+              <X className="h-4 w-4" aria-hidden="true" />
             </button>
           </div>
         </div>

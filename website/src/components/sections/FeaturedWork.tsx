@@ -1,17 +1,26 @@
 'use client'
 
 // Removed motion imports - using static layout for better performance
+import { useState } from 'react'
 import { Card } from '@/components/ui/Card'
 import { logger } from '@/lib/logger'
 import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
-import { Calendar, TrendingUp, Users, ArrowRight } from 'lucide-react'
+import { Calendar, TrendingUp, Users, ArrowRight, ChevronDown, ChevronUp } from 'lucide-react'
 import { useI18n } from '@/components/providers/I18nProvider'
-import { trackEvent } from '@/lib/analytics'
+import { openCalendly } from '@/lib/calendly'
 import type { ProjectData, BusinessImpact } from '@/lib/types'
 
 export function FeaturedWork() {
-  const { t, locale } = useI18n() as any
+  const { t, locale } = useI18n()
+  const [expandedTestimonials, setExpandedTestimonials] = useState<Record<string, boolean>>({})
+  
+  const toggleTestimonial = (projectId: string) => {
+    setExpandedTestimonials(prev => ({
+      ...prev,
+      [projectId]: !prev[projectId]
+    }))
+  }
   
   // Safely get projects with multiple validation layers
   let projects: Record<string, ProjectData> = {}
@@ -150,10 +159,17 @@ export function FeaturedWork() {
                         <div className="mb-4 flex flex-wrap items-center gap-3 md:gap-4 text-xs md:text-sm">
                           {Array.isArray(project.businessImpact) && project.businessImpact.slice(0, 2).map((impact: BusinessImpact, idx: number) => {
                             if (!impact || typeof impact !== 'object') return null
+                            
+                            // Handle Time To Insight specially
+                            const isTimeToInsight = impact.metricName === 'Time To Insight'
+                            const displayValue = isTimeToInsight 
+                              ? 'Weeks → Days'
+                              : (typeof impact.percentage === 'number' ? `${impact.percentage}%` : (impact.percentage || '—'))
+                            
                             return (
                               <div key={idx} className="flex items-center space-x-1 md:space-x-2">
                                 <span className="font-mono text-base md:text-lg font-bold text-accent">
-                                  {typeof impact.percentage === 'number' ? `${impact.percentage}%` : (impact.percentage || '—')}
+                                  {displayValue}
                                 </span>
                                 <span className="text-muted-foreground">{impact.metricName || '—'}</span>
                               </div>
@@ -162,20 +178,56 @@ export function FeaturedWork() {
                         </div>
                       )}
 
-                      {/* Testimonial - Subtle for BNC only */}
+                      {/* Testimonial - Expand/Collapse for BNC only */}
                       {projectId === 'bnc-analytical-foundation' && project.testimonial && (
                         <div className="mb-4 pt-4 border-t border-border/30">
                           <div className="flex items-start space-x-2 md:space-x-3">
                             <div className="flex-shrink-0 text-xl md:text-2xl text-accent/60 leading-none">"</div>
                             <div className="flex-1">
-                              <p className="text-xs md:text-sm italic text-muted-foreground leading-relaxed mb-2">
-                                {project.testimonial.text && project.testimonial.text.length > 150 
-                                  ? project.testimonial.text.substring(0, 150).trim() + '...'
-                                  : (project.testimonial.text || (locale === 'fr' 
+                              {/* Testimonial text - short or full based on state */}
+                              {project.testimonial.text && project.testimonial.text.length > 150 ? (
+                                <>
+                                  {/* Short version */}
+                                  <p className="text-xs md:text-sm italic text-muted-foreground leading-relaxed mb-2">
+                                    {!expandedTestimonials[projectId]
+                                      ? project.testimonial.text.substring(0, 150).trim() + '...'
+                                      : project.testimonial.text
+                                    }
+                                  </p>
+                                  
+                                  {/* Toggle button */}
+                                  <button
+                                    onClick={() => toggleTestimonial(projectId)}
+                                    className="flex items-center gap-1 text-xs md:text-sm text-accent hover:text-accent/80 transition-colors mt-2 mb-2"
+                                    aria-expanded={expandedTestimonials[projectId]}
+                                    aria-label={expandedTestimonials[projectId]
+                                      ? (locale === 'fr' ? 'Réduire le témoignage' : 'Show less')
+                                      : (locale === 'fr' ? 'Lire le témoignage complet' : 'Read full testimonial')
+                                    }
+                                  >
+                                    <span>
+                                      {expandedTestimonials[projectId]
+                                        ? (t('work.testimonial.showLess') || (locale === 'fr' ? 'Réduire' : 'Show less'))
+                                        : (t('work.testimonial.readMore') || (locale === 'fr' ? 'Lire le témoignage complet' : 'Read full testimonial'))
+                                      }
+                                    </span>
+                                    {expandedTestimonials[projectId] ? (
+                                      <ChevronUp className="h-3 w-3 md:h-4 md:w-4 transition-transform duration-300" aria-hidden="true" />
+                                    ) : (
+                                      <ChevronDown className="h-3 w-3 md:h-4 md:w-4 transition-transform duration-300" aria-hidden="true" />
+                                    )}
+                                  </button>
+                                </>
+                              ) : (
+                                /* Full text if short enough */
+                                <p className="text-xs md:text-sm italic text-muted-foreground leading-relaxed mb-2">
+                                  {project.testimonial.text || (locale === 'fr' 
                                     ? "Fallou allie compétence technique, vision stratégique et leadership collaboratif - un atout majeur pour tout projet d'envergure."
-                                    : "Fallou combines technical competence, strategic vision, and collaborative leadership - a major asset for any large-scale project."))
-                                }
-                              </p>
+                                    : "Fallou combines technical competence, strategic vision, and collaborative leadership - a major asset for any large-scale project.")}
+                                </p>
+                              )}
+                              
+                              {/* Author info */}
                               <p className="text-xs text-muted-foreground">
                                 <span className="font-semibold text-foreground">{project.testimonial.author}</span>
                                 {`, ${project.testimonial.role}, ${project.testimonial.company}`}
@@ -191,24 +243,20 @@ export function FeaturedWork() {
                         <Button
                           className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-medium text-sm md:text-base py-5 md:py-6"
                           onClick={() => {
-                            trackEvent('cta_click', {
-                              location: 'work',
-                              cta_type: 'calendly',
-                              project_id: projectId,
-                              button_text: typeof t('work.cta.button') === 'string' ? t('work.cta.button') : 'Schedule Free Strategy Call'
-                            })
-                            const link = document.createElement('a')
-                            link.href = 'https://calendly.com/falloutall'
-                            link.target = '_blank'
-                            link.rel = 'noopener noreferrer'
-                            link.click()
+                            const buttonText = typeof t('work.cta.button') === 'string' ? t('work.cta.button') : 'Schedule Free Strategy Call'
+                            openCalendly('work', buttonText, { project_id: projectId })
                           }}
+                          aria-label={(() => {
+                            const ctaButton = t('work.cta.button')
+                            const buttonText = typeof ctaButton === 'string' ? ctaButton : 'Schedule Free Strategy Call'
+                            return `${buttonText} for ${project.company} project`
+                          })()}
                         >
                           {(() => {
                             const ctaButton = t('work.cta.button')
                             return typeof ctaButton === 'string' ? ctaButton : 'Schedule Free Strategy Call'
                           })()}
-                          <ArrowRight className="ml-2 h-3 w-3 md:h-4 md:w-4" />
+                          <ArrowRight className="ml-2 h-3 w-3 md:h-4 md:w-4" aria-hidden="true" />
                         </Button>
                       </div>
                     </div>

@@ -9,17 +9,26 @@ export function BackToTop() {
   const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
+    if (typeof window === 'undefined') return
+    
     setIsMounted(true)
     
+    let ticking = false
     const toggleVisibility = () => {
-      if (window.pageYOffset > 300) {
-        setIsVisible(true)
-      } else {
-        setIsVisible(false)
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (window.pageYOffset > 300) {
+            setIsVisible(true)
+          } else {
+            setIsVisible(false)
+          }
+          ticking = false
+        })
+        ticking = true
       }
     }
 
-    window.addEventListener('scroll', toggleVisibility)
+    window.addEventListener('scroll', toggleVisibility, { passive: true })
     return () => window.removeEventListener('scroll', toggleVisibility)
   }, [])
 
@@ -27,8 +36,12 @@ export function BackToTop() {
   if (!isMounted) return null
 
   const scrollToTop = () => {
+    if (typeof window === 'undefined') return
+    
+    // Account for sticky header
+    const headerOffset = 80
     window.scrollTo({
-      top: 0,
+      top: headerOffset,
       behavior: 'smooth'
     })
   }
@@ -37,19 +50,15 @@ export function BackToTop() {
     <>
       {isVisible && (
         <div
-          className={`fixed bottom-8 right-8 z-50 transition-all duration-300 ${
-            isVisible 
-              ? 'opacity-100 scale-100 translate-y-0' 
-              : 'opacity-0 scale-90 translate-y-5'
-          }`}
+          className="fixed bottom-36 right-4 md:bottom-8 md:right-8 z-40 transition-all duration-300 opacity-100 scale-100 translate-y-0"
         >
           <Button
             onClick={scrollToTop}
             size="icon"
             className="rounded-full w-12 h-12 bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg hover:shadow-xl transition-all duration-300"
-            aria-label="Back to top"
+            aria-label="Scroll back to top of page"
           >
-            <ArrowUp className="h-5 w-5" />
+            <ArrowUp className="h-5 w-5" aria-hidden="true" />
           </Button>
         </div>
       )}

@@ -2,13 +2,13 @@
 
 import { Button } from '@/components/ui/Button'
 import { useI18n } from '@/components/providers/I18nProvider'
-import { ArrowRight, Target, Zap, TrendingUp } from 'lucide-react'
+import { ArrowRight, Zap, TrendingUp, Clock, Shield } from 'lucide-react'
 import { useImagePath } from '@/lib/image-utils'
-import { trackEvent } from '@/lib/analytics'
+import { openCalendly } from '@/lib/calendly'
 import { logger } from '@/lib/logger'
 
 export function Hero() {
-  const { t } = useI18n() as any
+  const { t } = useI18n()
   // Use absolute path from root - static files are served from /public/ which maps to root
   // In production with static export, ensure path works with locale routes
   const imagePath = useImagePath('/fallou-tall-photo.jpg')
@@ -55,20 +55,44 @@ export function Hero() {
               </p>
 
               {/* Impact Metrics - Enhanced visibility */}
-              <div className="flex flex-wrap items-center gap-3 md:gap-4 pt-3 pb-2">
-                <div className="flex items-center gap-2 px-3 py-1.5 bg-accent/10 border border-accent/20 rounded-full">
-                  <TrendingUp className="h-3 w-3 md:h-4 md:w-4 text-accent flex-shrink-0" />
-                  <span className="text-xs md:text-sm font-semibold text-foreground">{t('hero.metrics.errorReduction')}</span>
+              <div className="flex flex-wrap items-center gap-2 md:gap-3 lg:gap-4 pt-3 pb-2" role="list" aria-label="Key achievements">
+                <div className="flex items-center gap-1.5 md:gap-2 px-2.5 md:px-3 py-1 md:py-1.5 bg-accent/10 border border-accent/20 rounded-full" role="listitem">
+                  <TrendingUp className="h-3 w-3 md:h-4 md:w-4 text-accent flex-shrink-0" aria-hidden="true" />
+                  <span className="text-[10px] md:text-xs lg:text-sm font-semibold text-foreground leading-tight">{t('hero.metrics.errorReduction')}</span>
                 </div>
-                <div className="flex items-center gap-2 px-3 py-1.5 bg-accent/10 border border-accent/20 rounded-full">
-                  <Target className="h-3 w-3 md:h-4 md:w-4 text-accent flex-shrink-0" />
-                  <span className="text-xs md:text-sm font-semibold text-foreground">{t('hero.metrics.annualValue')}</span>
+                <div className="flex items-center gap-1.5 md:gap-2 px-2.5 md:px-3 py-1 md:py-1.5 bg-accent/10 border border-accent/20 rounded-full" role="listitem">
+                  <Clock className="h-3 w-3 md:h-4 md:w-4 text-accent flex-shrink-0" aria-hidden="true" />
+                  <span className="text-[10px] md:text-xs lg:text-sm font-semibold text-foreground leading-tight">{t('hero.metrics.timeToInsight')}</span>
                 </div>
-                <div className="flex items-center gap-2 px-3 py-1.5 bg-accent/10 border border-accent/20 rounded-full">
-                  <Zap className="h-3 w-3 md:h-4 md:w-4 text-accent flex-shrink-0" />
-                  <span className="text-xs md:text-sm font-semibold text-foreground">{t('hero.metrics.international')}</span>
+                <div className="flex items-center gap-1.5 md:gap-2 px-2.5 md:px-3 py-1 md:py-1.5 bg-accent/10 border border-accent/20 rounded-full" role="listitem">
+                  <Shield className="h-3 w-3 md:h-4 md:w-4 text-accent flex-shrink-0" aria-hidden="true" />
+                  <span className="text-[10px] md:text-xs lg:text-sm font-semibold text-foreground leading-tight whitespace-nowrap">{t('hero.metrics.zeroDowntime')}</span>
+                </div>
+                <div className="flex items-center gap-1.5 md:gap-2 px-2.5 md:px-3 py-1 md:py-1.5 bg-accent/10 border border-accent/20 rounded-full" role="listitem">
+                  <Zap className="h-3 w-3 md:h-4 md:w-4 text-accent flex-shrink-0" aria-hidden="true" />
+                  <span className="text-[10px] md:text-xs lg:text-sm font-semibold text-foreground leading-tight">{t('hero.metrics.international')}</span>
                 </div>
               </div>
+
+              {/* Testimonial - Above CTA for better visibility */}
+              {t('hero.testimonial') && typeof t('hero.testimonial') === 'object' && (
+                <div className="pt-4 pb-2">
+                  <div className="bg-card/50 border border-accent/20 rounded-lg p-4 md:p-5">
+                    <div className="flex items-start space-x-2 md:space-x-3">
+                      <div className="flex-shrink-0 text-2xl md:text-3xl text-accent/60 leading-none">"</div>
+                      <div className="flex-1">
+                        <p className="text-xs md:text-sm italic text-muted-foreground leading-relaxed mb-2 md:mb-3">
+                          {t('hero.testimonial.text')}
+                        </p>
+                        <p className="text-[10px] md:text-xs text-muted-foreground">
+                          <span className="font-semibold text-foreground">{t('hero.testimonial.author')}</span>
+                          {`, ${t('hero.testimonial.role')}, ${t('hero.testimonial.company')}`}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
 
               {/* Single Primary CTA - Direct to Calendly */}
               <div className="pt-4">
@@ -76,40 +100,15 @@ export function Hero() {
                   size="lg"
                   className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg font-semibold transition-colors group"
                   onClick={() => {
-                    trackEvent('cta_click', {
-                      location: 'hero',
-                      cta_type: 'calendly',
-                      button_text: t('hero.primaryCta')
-                    })
-                    const link = document.createElement('a')
-                    link.href = 'https://calendly.com/falloutall'
-                    link.target = '_blank'
-                    link.rel = 'noopener noreferrer'
-                    link.click()
+                    const buttonText = typeof t('hero.primaryCta') === 'string' ? t('hero.primaryCta') : 'Get Your Free Strategy Call'
+                    openCalendly('hero', buttonText)
                   }}
+                  aria-label={typeof t('hero.primaryCta') === 'string' ? t('hero.primaryCta') : 'Schedule a free strategy call'}
                 >
                   {t('hero.primaryCta')}
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Button>
               </div>
-
-              {/* Testimonial - Visible in Hero */}
-              {t('hero.testimonial') && typeof t('hero.testimonial') === 'object' && (
-                <div className="pt-8 border-t border-border/30 mt-8">
-                  <div className="flex items-start space-x-3">
-                    <div className="flex-shrink-0 text-3xl text-accent/60 leading-none">"</div>
-                    <div className="flex-1">
-                      <p className="text-sm md:text-base italic text-muted-foreground leading-relaxed mb-3">
-                        {t('hero.testimonial.text')}
-                      </p>
-                      <p className="text-xs md:text-sm text-muted-foreground">
-                        <span className="font-semibold text-foreground">{t('hero.testimonial.author')}</span>
-                        {`, ${t('hero.testimonial.role')}, ${t('hero.testimonial.company')}`}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              )}
             </div>
 
             {/* RIGHT: Photo - Premium Design */}
@@ -141,6 +140,7 @@ export function Hero() {
                       height={625}
                       className="w-full h-auto object-cover transition-all duration-500 ease-out group-hover:scale-[1.03] group-hover:brightness-[1.02]"
                       loading="eager"
+                      fetchPriority="high"
                       decoding="async"
                       onError={(e) => {
                         const target = e.currentTarget

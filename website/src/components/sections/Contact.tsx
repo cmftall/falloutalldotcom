@@ -4,8 +4,8 @@
 import { Button } from '@/components/ui/Button'
 import { Mail, MapPin, Linkedin, CheckCircle, Calendar } from 'lucide-react'
 import { useI18n } from '@/components/providers/I18nProvider'
-import { SITE_CONFIG, CONTACT_INFO } from '@/lib/constants'
-import { trackEvent } from '@/lib/analytics'
+import { CONTACT_INFO } from '@/lib/constants'
+import { openCalendly } from '@/lib/calendly'
 
 export function Contact() {
   const { t } = useI18n()
@@ -34,26 +34,19 @@ export function Contact() {
                 size="lg"
                 className="w-full md:w-auto text-base md:text-xl px-8 md:px-12 py-5 md:py-7 font-semibold rounded-lg bg-accent text-accent-foreground hover:bg-accent/90 transition-colors shadow-lg"
                 onClick={() => {
-                  trackEvent('cta_click', {
-                    location: 'contact',
-                    cta_type: 'calendly',
-                    button_text: t('contact.primaryCta')
-                  })
-                  const link = document.createElement('a')
-                  link.href = SITE_CONFIG.links.calendly
-                  link.target = '_blank'
-                  link.rel = 'noopener noreferrer'
-                  link.click()
+                  const buttonText = typeof t('contact.primaryCta') === 'string' ? t('contact.primaryCta') : 'Schedule Free Strategy Call'
+                  openCalendly('contact', buttonText)
                 }}
+                aria-label={typeof t('contact.primaryCta') === 'string' ? t('contact.primaryCta') : 'Schedule a free strategy call'}
               >
-                <Calendar className="mr-2 md:mr-3 h-5 w-5 md:h-6 md:w-6" />
+                <Calendar className="mr-2 md:mr-3 h-5 w-5 md:h-6 md:w-6" aria-hidden="true" />
                 {t('contact.primaryCta')}
               </Button>
               
               {/* Guarantee - Visible below CTA */}
               <div className="mt-4 text-center">
                 <p className="text-xs md:text-sm text-muted-foreground flex items-center justify-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-600 dark:text-green-400 flex-shrink-0" />
+                  <CheckCircle className="h-4 w-4 text-green-600 dark:text-green-400 flex-shrink-0" aria-hidden="true" />
                   <span className="font-medium text-foreground">{t('contact.guarantee')}</span>
                 </p>
               </div>
@@ -62,14 +55,17 @@ export function Contact() {
             {/* Availability Badge - More Visible */}
             {(() => {
               const availability = t('contact.availability')
-              return availability && typeof availability === 'string' && availability.trim() !== '' ? (
-                <div className="text-center mb-8 md:mb-12">
-                  <div className="inline-flex items-center space-x-2 bg-red-500/10 border-2 border-red-500/30 rounded-full px-4 md:px-6 py-2 md:py-3 animate-pulse">
-                    <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
-                    <span className="text-xs md:text-sm font-bold text-red-600 dark:text-red-400">{t('contact.availability')}</span>
+              if (availability && typeof availability === 'string' && availability.trim() !== '') {
+                return (
+                  <div className="text-center mb-8 md:mb-12">
+                    <div className="inline-flex items-center space-x-2 bg-red-500/10 border-2 border-red-500/30 rounded-full px-4 md:px-6 py-2 md:py-3">
+                      <div className="w-2 h-2 bg-red-500 rounded-full" />
+                      <span className="text-xs md:text-sm font-bold text-red-600 dark:text-red-400">{availability}</span>
+                    </div>
                   </div>
-                </div>
-              ) : null
+                )
+              }
+              return null
             })()}
           </div>
 
@@ -82,16 +78,16 @@ export function Contact() {
             {/* Services Grid - Compact */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 max-w-3xl mx-auto px-4">
               <div className="flex items-start space-x-2">
-                <CheckCircle className="h-3 w-3 md:h-4 md:w-4 flex-shrink-0 mt-1 text-accent" />
-                <span className="text-xs text-foreground">{t('contact.service1')}</span>
+                <CheckCircle className="h-3 w-3 md:h-4 md:w-4 flex-shrink-0 mt-1 text-accent" aria-hidden="true" />
+                <span className="text-xs md:text-sm text-foreground">{t('contact.service1')}</span>
               </div>
               <div className="flex items-start space-x-2">
-                <CheckCircle className="h-3 w-3 md:h-4 md:w-4 flex-shrink-0 mt-1 text-accent" />
-                <span className="text-xs text-foreground">{t('contact.service2')}</span>
+                <CheckCircle className="h-3 w-3 md:h-4 md:w-4 flex-shrink-0 mt-1 text-accent" aria-hidden="true" />
+                <span className="text-xs md:text-sm text-foreground">{t('contact.service2')}</span>
               </div>
               <div className="flex items-start space-x-2">
-                <CheckCircle className="h-3 w-3 md:h-4 md:w-4 flex-shrink-0 mt-1 text-accent" />
-                <span className="text-xs text-foreground">{t('contact.service3')}</span>
+                <CheckCircle className="h-3 w-3 md:h-4 md:w-4 flex-shrink-0 mt-1 text-accent" aria-hidden="true" />
+                <span className="text-xs md:text-sm text-foreground">{t('contact.service3')}</span>
               </div>
             </div>
           </div>
@@ -159,60 +155,31 @@ export function Contact() {
             </div>
           </div>
 
-          {/* Secondary CTA - Lower on page */}
-          <div className="text-center mb-10 md:mb-12 px-4">
-            <Button
-              size="lg"
-              className="w-full md:w-auto text-base md:text-xl px-8 md:px-12 py-5 md:py-7 font-semibold rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors shadow-lg"
-              onClick={() => {
-                trackEvent('cta_click', {
-                  location: 'contact_secondary',
-                  cta_type: 'calendly',
-                  button_text: t('contact.primaryCta')
-                })
-                const link = document.createElement('a')
-                link.href = SITE_CONFIG.links.calendly
-                link.target = '_blank'
-                link.rel = 'noopener noreferrer'
-                link.click()
-              }}
-            >
-              <Calendar className="mr-2 md:mr-3 h-5 w-5 md:h-6 md:w-6" />
-              {t('contact.primaryCta')}
-            </Button>
-            
-            {/* Guarantee - Also below secondary CTA */}
-            <div className="mt-4">
-              <p className="text-xs md:text-sm text-muted-foreground flex items-center justify-center gap-2">
-                <CheckCircle className="h-4 w-4 text-green-600 dark:text-green-400 flex-shrink-0" />
-                <span className="font-medium text-foreground">{t('contact.guarantee')}</span>
-              </p>
-            </div>
-          </div>
-
           {/* Contact Details */}
           <div className="border-t border-border pt-8 md:pt-12 text-center px-4">
             <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 md:gap-6 text-xs md:text-sm text-muted-foreground font-inter">
               <div className="flex items-center space-x-2">
-                <MapPin className="h-3 w-3 md:h-4 md:w-4 text-accent" />
+                <MapPin className="h-3 w-3 md:h-4 md:w-4 text-accent" aria-hidden="true" />
                 <span>{t('contact.locationText')}</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Mail className="h-3 w-3 md:h-4 md:w-4 text-accent" />
+                <Mail className="h-3 w-3 md:h-4 md:w-4 text-accent" aria-hidden="true" />
                 <a 
                   href={`mailto:${CONTACT_INFO.email}?subject=${encodeURIComponent(t('contact.emailSubject'))}`} 
                   className="text-primary hover:underline transition-colors break-all"
+                  aria-label={`Send email to ${CONTACT_INFO.email}`}
                 >
                   {CONTACT_INFO.email}
                 </a>
               </div>
               <div className="flex items-center space-x-2">
-                <Linkedin className="h-3 w-3 md:h-4 md:w-4 text-accent" />
+                <Linkedin className="h-3 w-3 md:h-4 md:w-4 text-accent" aria-hidden="true" />
                 <a
                   href="https://www.linkedin.com/in/cmftall"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-primary hover:underline transition-colors"
+                  aria-label={`Visit ${t('contact.linkedin')} profile`}
                 >
                   {t('contact.linkedin')}
                 </a>

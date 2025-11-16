@@ -6,13 +6,16 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import type { Metadata } from 'next'
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://falloutall.com'
+
 export const metadata: Metadata = {
   alternates: {
     languages: {
-      'en': 'https://falloutall.com/en',
-      'fr': 'https://falloutall.com/fr',
-      'x-default': 'https://falloutall.com/en',
+      'en': `${siteUrl}/en`,
+      'fr': `${siteUrl}/fr`,
+      'x-default': `${siteUrl}/en`,
     },
+    canonical: `${siteUrl}/en`,
   },
 }
 
