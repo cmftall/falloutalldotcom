@@ -3,6 +3,7 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 import { Locale, detectLocale, setLocale, getTranslation } from '@/lib/i18n'
+import { logger } from '@/lib/logger'
 
 import type { TranslationMessages } from '@/lib/types'
 
@@ -38,14 +39,12 @@ export function I18nProvider({ children, initialLocale, initialMessages }: I18nP
 
   // Debug: Log messages in development
   useEffect(() => {
-    if (process.env.NODE_ENV === 'development') {
-      console.log('I18nProvider initialized:', {
-        locale,
-        hasMessages: !!messages,
-        hasNavigation: !!messages?.navigation,
-        sampleKey: messages?.navigation?.home
-      })
-    }
+    logger.debug('I18nProvider initialized', {
+      locale,
+      hasMessages: !!messages,
+      hasNavigation: !!messages?.navigation,
+      sampleKey: messages?.navigation?.home
+    })
   }, [locale, messages])
 
   const handleSetLocale = (newLocale: Locale) => {
@@ -53,21 +52,27 @@ export function I18nProvider({ children, initialLocale, initialMessages }: I18nP
     setLocale(newLocale)
     
     // Update URL to reflect new locale
-    const newPath = pathname.replace(/^\/[a-z]{2}/, `/${newLocale}`)
+    // Handle both /en/... and /fr/... paths, as well as root paths
+    let newPath: string
+    if (pathname.match(/^\/[a-z]{2}(\/|$)/)) {
+      // Path already has locale prefix
+      newPath = pathname.replace(/^\/[a-z]{2}/, `/${newLocale}`)
+    } else {
+      // Path doesn't have locale prefix, add it
+      newPath = `/${newLocale}${pathname === '/' ? '' : pathname}`
+    }
     router.push(newPath)
   }
 
   const t = (key: string): any => {
     try {
       if (!messages || typeof messages !== 'object') {
-        if (process.env.NODE_ENV === 'development') {
-          console.warn(`No messages available for key "${key}"`)
-        }
+        logger.warn(`No messages available for key "${key}"`)
         return key
       }
       const result = getTranslation(messages, key)
-      if (result === key && process.env.NODE_ENV === 'development') {
-        console.warn(`Translation not found for key "${key}"`, {
+      if (result === key) {
+        logger.warn(`Translation not found for key "${key}"`, {
           messagesKeys: Object.keys(messages || {}),
           keyPath: key.split('.'),
           navigationExists: !!messages?.navigation
@@ -75,9 +80,7 @@ export function I18nProvider({ children, initialLocale, initialMessages }: I18nP
       }
       return result
     } catch (error) {
-      if (process.env.NODE_ENV === 'development') {
-        console.error(`Translation error for key "${key}":`, error)
-      }
+      logger.error(`Translation error for key "${key}"`, error instanceof Error ? error : new Error(String(error)))
       return key
     }
   }

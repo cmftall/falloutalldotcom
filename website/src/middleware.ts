@@ -1,4 +1,17 @@
-// Custom middleware for locale routing (replacing next-intl for consistency)
+/**
+ * Custom middleware for locale routing (replacing next-intl for consistency)
+ * 
+ * NOTE: Next.js 16 deprecates the 'middleware' file convention in favor of 'proxy'.
+ * However, for static exports (output: 'export'), middleware does not execute at runtime.
+ * This file is kept for:
+ * 1. Development server routing (when running `npm run dev`)
+ * 2. Future migration to server-side rendering if needed
+ * 
+ * The deprecation warning can be safely ignored for static exports.
+ * If migrating to SSR, consider updating to the new 'proxy' convention.
+ * 
+ * See: https://nextjs.org/docs/messages/middleware-to-proxy
+ */
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 

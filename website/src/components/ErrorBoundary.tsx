@@ -29,11 +29,7 @@ export class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoun
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     // Log error to monitoring service
     logError(error, errorInfo)
-    // Always log to console in development
-    if (process.env.NODE_ENV === 'development') {
-      console.error('ErrorBoundary caught error:', error)
-      console.error('Error info:', errorInfo)
-    }
+    // ErrorBoundary logs are handled by logError which uses logger
   }
 
   resetError = () => {

@@ -1,278 +1,177 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
 import { useI18n } from '@/components/providers/I18nProvider'
 import { ArrowRight, TrendingUp, Target, Zap } from 'lucide-react'
-import { useEffect, useState } from 'react'
 import { useImagePath } from '@/lib/image-utils'
+import { trackEvent } from '@/lib/analytics'
+import { logger } from '@/lib/logger'
 
 export function Hero() {
-  const { t } = useI18n()
-  const [hasMounted, setHasMounted] = useState(false)
-  const [savingsCount, setSavingsCount] = useState(0)
-  const [errorCount, setErrorCount] = useState(0)
-  const [pipelinesCount, setPipelinesCount] = useState(0)
-  // Build locale-prefixed asset path to avoid static host redirects
-  const localePrefixed = `/${t ? ((): 'en' | 'fr' => {
-    try {
-      // infer locale from i18n provider via a known key
-      const sample = t('hero.credential')
-      // if we are on French page, credential contains 'Paris et Montréal'
-      return typeof sample === 'string' && sample.includes('Paris et Montréal') ? 'fr' : 'en'
-    } catch {
-      return 'en'
-    }
-  })() : 'en'}/fallou-tall-photo.jpg`
-  const imagePath = useImagePath(localePrefixed)
-
-  useEffect(() => {
-    setHasMounted(true)
-    
-    // Animate counters with requestAnimationFrame
-    const animateCounter = (
-      setter: (value: number) => void,
-      end: number,
-      duration: number = 2000
-    ) => {
-      let startTime: number | null = null
-      let animationFrame: number | null = null
-
-      const animate = (currentTime: number) => {
-        if (startTime === null) startTime = currentTime
-        const elapsed = currentTime - startTime
-        const progress = Math.min(elapsed / duration, 1)
-        
-        setter(Math.floor(progress * end))
-
-        if (progress < 1) {
-          animationFrame = requestAnimationFrame(animate)
-        }
-      }
-
-      // Start animation after a small delay to ensure rendering
-      animationFrame = requestAnimationFrame(animate)
-      
-      return () => {
-        if (animationFrame !== null) {
-          cancelAnimationFrame(animationFrame)
-        }
-      }
-    }
-
-    const cleanupSavings = animateCounter(setSavingsCount, 200, 2000)
-    const cleanupError = animateCounter(setErrorCount, 30, 2000)
-    const cleanupPipelines = animateCounter(setPipelinesCount, 100, 2000)
-
-    return () => {
-      cleanupSavings()
-      cleanupError()
-      cleanupPipelines()
-    }
-  }, [])
+  const { t } = useI18n() as any
+  // Use absolute path from root - static files are served from /public/ which maps to root
+  const imagePath = useImagePath('/fallou-tall-photo.jpg')
 
   return (
     <section id="home" className="relative min-h-screen flex items-center bg-background overflow-hidden">
-      {/* Subtle Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.03]">
+      {/* Minimal Background Pattern - Much more subtle */}
+      <div className="absolute inset-0 opacity-[0.015]">
         <div className="absolute inset-0" style={{
           backgroundImage: `radial-gradient(circle at 2px 2px, hsl(var(--accent)) 1px, transparent 0)`,
-          backgroundSize: '40px 40px'
+          backgroundSize: '60px 60px'
         }} />
       </div>
 
-
-      <div className="relative z-10 container mx-auto px-4 py-20">
+      <div className="relative z-10 container mx-auto px-4 py-16 md:py-24 lg:py-32">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+          {/* Asymmetric Layout - Photo on right, content on left */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             
-            {/* LEFT: Photo - 40% */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="lg:col-span-2 flex justify-center lg:justify-start"
-            >
-              <div className="relative group pb-8 sm:pb-0">
-                {/* Enhanced Shadow Behind Photo */}
-                <div className="absolute -inset-4 bg-gradient-to-br from-primary/10 via-accent/5 to-primary/10 rounded-full opacity-60 group-hover:opacity-80 transition-opacity duration-500 blur-2xl" />
-                
-                {/* Photo Container */}
-                <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
-                  {/* Subtle Border with Depth */}
-                  <div className="absolute inset-0 rounded-full border-2 border-accent/30 shadow-lg" />
-                  
-                  {/* Photo - Standard img tag for maximum compatibility with static export */}
-                  {/* Using absolute path from root ensures it works with locale routing */}
-                  <img
-                    src={imagePath}
-                    alt="Fallou Tall - Data Architect Consultant"
-                    width={384}
-                    height={384}
-                    className="relative rounded-full object-cover shadow-2xl transition-all duration-300 group-hover:scale-[1.02] z-10"
-                    loading="eager"
-                    style={{
-                      boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)',
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      display: 'block'
-                    }}
-                    onError={(e) => {
-                      const target = e.currentTarget
-                      // Always log in production to diagnose failures in Vercel
-                      console.error('Failed to load profile image:', {
-                        attemptedPath: imagePath,
-                        windowOrigin: typeof window !== 'undefined' ? window.location.origin : 'N/A',
-                        currentPath: typeof window !== 'undefined' ? window.location.pathname : 'N/A'
-                      })
-                      // Try fallback with explicit origin if not already absolute
-                      if (typeof window !== 'undefined' && !imagePath.startsWith('http')) {
-                        const fallback = `${window.location.origin}${imagePath}`
-                        if (target.src !== fallback) {
-                          target.src = fallback
-                        }
-                      }
-                    }}
-                    onLoad={() => {
-                      if (process.env.NODE_ENV === 'development') {
-                        console.log('Profile image loaded successfully:', imagePath)
-                      }
-                    }}
-                  />
-                  
-                  {/* Inner Glow on Hover */}
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent/0 via-accent/0 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                  {/* Availability Badge (anchored to photo container) */}
-                  {(() => {
-                    const availability = t('hero.availability')
-                    return availability && typeof availability === 'string' && availability.trim() !== ''
-                  })() && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 8 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.8, type: 'spring', stiffness: 200, damping: 20 }}
-                      className="mt-3 sm:mt-0 sm:absolute sm:-bottom-3 sm:left-0 bg-card border-2 border-accent rounded-full px-3 py-1.5 sm:px-4 sm:py-2 shadow-xl z-20 whitespace-nowrap flex justify-center"
-                      style={{
-                        boxShadow: '0 10px 15px -3px rgba(212, 175, 55, 0.3), 0 4px 6px -2px rgba(212, 175, 55, 0.2)'
-                      }}
-                    >
-                      <div className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-                        <span className="text-xs sm:text-sm font-semibold text-primary">{t('hero.availability')}</span>
-                      </div>
-                    </motion.div>
-                  )}
-                </div>
-              </div>
-            </motion.div>
-
-            {/* RIGHT: Content - 60% */}
-            <div className="lg:col-span-3 space-y-8">
-              
+            {/* LEFT: Content - Takes more space */}
+            <div className="lg:col-span-7 space-y-6 lg:space-y-8">
               {/* Credential Badge */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="inline-flex items-center space-x-2 text-sm font-medium text-muted-foreground"
-              >
+              <div className="inline-flex items-center space-x-2 text-sm font-medium text-muted-foreground">
                 <span className="text-accent">●</span>
                 <span>{t('hero.credential')}</span>
-              </motion.div>
+              </div>
 
-              {/* Headline - Crimson Pro Serif */}
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] text-primary"
-              >
+              {/* Headline */}
+              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.15] text-primary">
                 {t('hero.headline')}
-              </motion.h1>
+              </h1>
 
               {/* Subheadline */}
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl"
-              >
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
                 {t('hero.subheadline')}
-              </motion.p>
+              </p>
 
-              {/* Animated Impact Metrics - Gold */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-                className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl"
-              >
-                {/* Savings */}
-                <div className="group">
-                  <div className="flex items-baseline space-x-2">
-                    <span className="font-mono text-4xl md:text-5xl font-bold text-accent">
-                      €{savingsCount}K+
-                    </span>
-                    <TrendingUp className="h-6 w-6 text-accent opacity-70 group-hover:opacity-100 transition-opacity" />
-                  </div>
-                  <p className="text-sm font-medium text-muted-foreground mt-2">€200K+ Annual Value Delivered</p>
+              {/* Impact Metrics - Enhanced visibility */}
+              <div className="flex flex-wrap items-center gap-3 md:gap-4 pt-3 pb-2">
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-accent/10 border border-accent/20 rounded-full">
+                  <TrendingUp className="h-3 w-3 md:h-4 md:w-4 text-accent flex-shrink-0" />
+                  <span className="text-xs md:text-sm font-semibold text-foreground">{t('hero.metrics.errorReduction')}</span>
                 </div>
-
-                {/* Error Reduction */}
-                <div className="group">
-                  <div className="flex items-baseline space-x-2">
-                    <span className="font-mono text-4xl md:text-5xl font-bold text-accent">
-                      {errorCount}%
-                    </span>
-                    <Target className="h-6 w-6 text-accent opacity-70 group-hover:opacity-100 transition-opacity" />
-                  </div>
-                  <p className="text-sm font-medium text-muted-foreground mt-2">30% Error Reduction Achieved</p>
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-accent/10 border border-accent/20 rounded-full">
+                  <Target className="h-3 w-3 md:h-4 md:w-4 text-accent flex-shrink-0" />
+                  <span className="text-xs md:text-sm font-semibold text-foreground">{t('hero.metrics.annualValue')}</span>
                 </div>
-
-                {/* Pipelines */}
-                <div className="group">
-                  <div className="flex items-baseline space-x-2">
-                    <span className="font-mono text-4xl md:text-5xl font-bold text-accent">
-                      {pipelinesCount}+
-                    </span>
-                    <Zap className="h-6 w-6 text-accent opacity-70 group-hover:opacity-100 transition-opacity" />
-                  </div>
-                  <p className="text-sm font-medium text-muted-foreground mt-2">100+ Pipelines in Production</p>
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-accent/10 border border-accent/20 rounded-full">
+                  <Zap className="h-3 w-3 md:h-4 md:w-4 text-accent flex-shrink-0" />
+                  <span className="text-xs md:text-sm font-semibold text-foreground">{t('hero.metrics.international')}</span>
                 </div>
-              </motion.div>
+              </div>
 
-              {/* CTAs */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1 }}
-                className="flex flex-col sm:flex-row gap-4"
-              >
+              {/* Single Primary CTA - Direct to Calendly */}
+              <div className="pt-4">
                 <Button
                   size="lg"
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group"
-                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg font-semibold transition-colors group"
+                  onClick={() => {
+                    trackEvent('cta_click', {
+                      location: 'hero',
+                      cta_type: 'calendly',
+                      button_text: t('hero.primaryCta')
+                    })
+                    const link = document.createElement('a')
+                    link.href = 'https://calendly.com/falloutall'
+                    link.target = '_blank'
+                    link.rel = 'noopener noreferrer'
+                    link.click()
+                  }}
                 >
                   {t('hero.primaryCta')}
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
+              </div>
+
+              {/* Testimonial - Visible in Hero */}
+              {t('hero.testimonial') && typeof t('hero.testimonial') === 'object' && (
+                <div className="pt-8 border-t border-border/30 mt-8">
+                  <div className="flex items-start space-x-3">
+                    <div className="flex-shrink-0 text-3xl text-accent/60 leading-none">"</div>
+                    <div className="flex-1">
+                      <p className="text-sm md:text-base italic text-muted-foreground leading-relaxed mb-3">
+                        {t('hero.testimonial.text')}
+                      </p>
+                      <p className="text-xs md:text-sm text-muted-foreground">
+                        <span className="font-semibold text-foreground">{t('hero.testimonial.author')}</span>
+                        {`, ${t('hero.testimonial.role')}, ${t('hero.testimonial.company')}`}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* RIGHT: Photo - Premium Design */}
+            <div className="lg:col-span-5 flex justify-center lg:justify-end order-first lg:order-last">
+              <div className="relative w-full max-w-md lg:max-w-lg group">
+                {/* Layered shadow system for depth */}
+                <div className="absolute -inset-2 bg-gradient-to-br from-accent/10 via-transparent to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
+                <div className="absolute -inset-1 bg-gradient-to-br from-accent/5 via-transparent to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-md" />
                 
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground px-8 py-6 text-lg font-semibold transition-all duration-300 group"
-                  onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })}
+                {/* Photo container - Premium styling */}
+                <div className="relative bg-card border border-border/60 rounded-2xl overflow-hidden transition-all duration-500 ease-out group-hover:border-accent/30"
+                  style={{
+                    boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.05)'
+                  }}
                 >
-                  {t('hero.secondaryCta')}
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </motion.div>
+                  {/* Subtle gradient overlay for depth */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
+                  
+                  {/* Vignette effect - more sophisticated */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent pointer-events-none z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/5 pointer-events-none z-10" />
+                  
+                  {/* Image with optimized loading */}
+                  <div className="relative overflow-hidden rounded-2xl">
+                    <img
+                      src={imagePath}
+                      alt={t('hero.imageAlt') || 'Fallou Tall - Data Consultant'}
+                      width={500}
+                      height={625}
+                      className="w-full h-auto object-cover transition-all duration-500 ease-out group-hover:scale-[1.03] group-hover:brightness-[1.02]"
+                      loading="eager"
+                      decoding="async"
+                      onError={(e) => {
+                        const target = e.currentTarget
+                        logger.error('Failed to load profile image', new Error('Image load failed'), {
+                          attemptedPath: imagePath,
+                          windowOrigin: typeof window !== 'undefined' ? window.location.origin : 'N/A',
+                          currentPath: typeof window !== 'undefined' ? window.location.pathname : 'N/A'
+                        })
+                        if (typeof window !== 'undefined' && !imagePath.startsWith('http')) {
+                          const fallback = `${window.location.origin}${imagePath}`
+                          if (target.src !== fallback) {
+                            target.src = fallback
+                          }
+                        }
+                      }}
+                    />
+                  </div>
+                  
+                  {/* Subtle shine effect on hover */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-20 overflow-hidden rounded-2xl">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent shine-sweep" />
+                  </div>
+                  
+                  {/* Credibility indicator - subtle badge */}
+                  <div className="absolute bottom-4 right-4 bg-background/95 backdrop-blur-sm border border-accent/20 rounded-full px-3 py-1.5 shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 z-20">
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                      <span className="text-xs font-semibold text-accent">{t('hero.credential')}</span>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Floating accent dot - decorative element */}
+                <div className="absolute -top-2 -right-2 w-3 h-3 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200 shadow-lg shadow-accent/50" />
+              </div>
             </div>
           </div>
         </div>
       </div>
-
     </section>
   )
 }
+

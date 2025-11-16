@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic'
 import { Hero } from '@/components/sections/Hero'
 import { WorkedWith } from '@/components/sections/WorkedWith'
+import { FloatingCTA } from '@/components/ui/FloatingCTA'
 import { BackToTop } from '@/components/ui/BackToTop'
 
 // Lazy load non-critical sections for better performance
@@ -24,6 +25,7 @@ export default function FrenchPage() {
       <FeaturedWork />
       <FAQ />
       <Contact />
+      <FloatingCTA />
       <BackToTop />
     </>
   )

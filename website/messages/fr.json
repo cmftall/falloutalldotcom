@@ -1,160 +1,526 @@
 {
   "navigation": {
     "home": "Accueil",
-    "selectedProjects": "Projets Sélectionnés",
-    "expertise": "Expertise",
-    "education": "Formation",
-    "certifications": "Certifications",
-    "contact": "Contact"
+    "work": "Réalisations",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "hireMeCta": "M'engager",
+    "caseStudies": "Réalisations"
+  },
+  "common": {
+    "toggleTheme": "Basculer le thème"
+  },
+  "error": {
+    "title": "Une erreur est survenue",
+    "message": "Nous sommes désolés, mais quelque chose d'inattendu s'est produit. Veuillez essayer d'actualiser la page.",
+    "details": "Détails de l'erreur",
+    "tryAgain": "Réessayer",
+    "refreshPage": "Actualiser la page"
   },
   "hero": {
-    "headline": "J'architecte des écosystèmes de données qui transforment les entreprises.",
-    "subheadline": "Architecte de Données Senior chez Sopra Steria • 8+ années à diriger des transformations d'entreprise",
-    "primaryCta": "Voir Mon Travail",
-    "secondaryCta": "Me Contacter",
-    "credential": "Architecte de Données • Paris, France et Montréal, Canada",
-    "scrollToExplore": "Faire défiler pour explorer"
-  },
-  "about": {
-    "title": "À Propos",
-    "description": "Je transforme les paysages de données d'entreprise grâce à des solutions innovantes et évolutives.",
-    "highlights": [
-      "Dirige le Centre d'Excellence des Données chez Sopra Steria",
-      "8+ années dans les secteurs Bancaire, Télécom et Technologie",
-      "Réduction de 30% des erreurs de données grâce à des frameworks innovants",
-      "Dirigé des équipes de jusqu'à 7 ingénieurs avec un impact mesurable"
+    "headline": "J'aide les entreprises à réduire les erreurs de données et améliorer l'efficacité grâce à des plateformes de données pragmatiques",
+    "subheadline": "Consultant Data qui réduit les erreurs de manière significative, améliore l'efficacité de façon mesurable, et construit des plateformes qui permettent des décisions d'affaires critiques. J'accepte de nouveaux projets - réservez un appel stratégique gratuit pour discuter du vôtre.",
+    "primaryCta": "Obtenez Votre Appel Stratégique Gratuit",
+    "credential": "Consultant Data • Paris et Montréal",
+    "metrics": {
+      "errorReduction": "30% moins d'erreurs",
+      "annualValue": "Valeur annuelle significative",
+      "international": "4 pays, 3 continents"
+    },
+    "imageAlt": "Fallou Tall - Consultant Data",
+    "availability": "Disponible immédiatement pour nouveaux projets",
+    "testimonial": {
+      "text": "Fallou allie compétence technique, vision stratégique et leadership collaboratif - un atout majeur pour tout projet d'envergure.",
+      "author": "Sara Jorio",
+      "role": "Directeur principal - Transformation de l'écosystème conversationnel",
+      "company": "Banque Nationale du Canada"
+    },
+    "floatingCta": {
+      "title": "Prêt à réduire les erreurs de données ?",
+      "subtitle": "Réservez un appel stratégique gratuit - sans engagement",
+      "button": "Réserver"
+    },
+    "projectOutcomes": "30% de réduction d'erreurs • Valeur annuelle significative • Plus de 100 pipelines en production",
+    "technicalInnovation": "Des solutions durables que les équipes maintiennent et étendent avec succès, livrant des résultats business mesurables",
+    "credibilityIndicators": [
+      "Direction d'équipes de 7+ ingénieurs",
+        "Valeur annuelle significative grâce à l'innovation en qualité des données et architecture",
+      "Plus de 100 pipelines de production construits et maintenus",
+      "Expertise multi-industrie (Banque, Télécom, Technologie)",
+      "Plus de 8 ans de leadership en transformation d'entreprise"
     ],
-    "quote": "La meilleure architecture de données est invisible — elle permet les décisions sans complexité."
+    "professionalPositioning": "Je me concentre sur la valeur business - livrer du ROI grâce à une architecture éprouvée qui priorise ce qui compte : réduire les coûts, améliorer la qualité et construire des équipes performantes",
+    "savingsCalculation": "Valeur significative calculée : 30% de réduction d'erreurs + 25% de gain d'efficacité + 40% de vitesse des tests + valeur de la plateforme business = valeur annuelle substantielle"
   },
   "expertise": {
     "title": "Expertise",
-    "subtitle": "Compétences clés dans la stack moderne de données",
-    "categories": {
-      "cloudPlatforms": "Plateformes Cloud",
-      "dataEngineering": "Ingénierie des Données",
-      "machineLearning": "Machine Learning",
-      "databases": "Bases de Données",
-      "visualization": "Visualisation",
-      "devops": "DevOps"
+    "subtitle": "Compétences clés organisées par niveau de maîtrise et profondeur d'expérience",
+    "tierDescription": {
+      "core": "Domaines d'expertise approfondie acquise à travers 6-8+ ans de pratique professionnelle",
+      "advanced": "Maîtrise solide avec 4-5 ans d'expérience pratique",
+      "working": "Connaissance pratique et développement continu"
     },
-    "summary": {
-      "yearsExperience": "Années d'Expérience",
-      "technologiesMastered": "Technologies Maîtrisées",
-      "enterpriseProjects": "Projets d'Entreprise"
-    }
-  },
-  "work": {
-    "title": "Travail Sélectionné",
-    "subtitle": "Transformations d'entreprise qui apportent un impact mesurable",
-    "projects": {
-      "sopraSteria": {
-        "company": "Sopra Steria",
-        "role": "Architecte de Données",
-        "description": "Dirige une équipe au sein du Centre d'Excellence des Données dans 8+ secteurs clients incluant la Banque, l'Assurance et les Télécoms.",
-        "impact": "Architecture multi-cloud • Traitement de TB+ de données • Conformité multi-secteurs",
-        "duration": "2025 - Présent"
+    "technicalDepth": "Compétences techniques avancées et méthodologies en architecture de données",
+    "architecturalThinking": "Planification stratégique d'architecture de données et solutions à échelle d'entreprise",
+    "methodologies": [
+      "Frameworks d'automatisation DataOps",
+      "Architecture de données micro-services",
+      "Stratégies de migration sans interruption",
+      "Déploiement avancé de modèles ML",
+      "Gouvernance de données multi-cloud"
+    ],
+    "tiers": {
+      "core": {
+        "title": "Expertise Principale",
+        "description": "Expertise approfondie prouvée par une pratique professionnelle extensive",
+        "categories": {
+          "dataEngineering": {
+            "name": "Ingénierie des Données",
+            "skills": "Python, Scala, SQL, Apache Airflow, Terraform",
+            "proficiency": "Expert",
+            "yearsExperience": 8,
+            "methodologies": ["Conception de pipelines ETL/ELT", "Cadres de qualité de données", "Infrastructure as Code"]
+          },
+          "databases": {
+            "name": "Bases de Données",
+            "skills": "PostgreSQL, Oracle, Cassandra, MongoDB, Delta Lake",
+            "proficiency": "Expert",
+            "yearsExperience": 7,
+            "methodologies": ["Optimisation de bases de données", "Modélisation de données", "Optimisation de performance"]
+          },
+          "cloudPlatforms": {
+            "name": "Architecture de Données Cloud",
+            "skills": "Azure, AWS, Databricks, Snowflake, Apache Spark",
+            "proficiency": "Expert",
+            "yearsExperience": 6,
+            "methodologies": ["Architecture multi-cloud", "Traitement de données cloud-native", "Pipelines de données serverless"]
+          }
+        }
       },
-      "bnc": {
-        "company": "Banque Nationale du Canada",
-        "role": "Lead Data Engineer",
-        "description": "Dirigé une équipe de 7 ingénieurs construisant des pipelines analytiques robustes avec des frameworks QA PySpark innovants.",
-        "impact": "30% de réduction d'erreurs • 25% d'amélioration d'efficacité • 40% de tests plus rapides",
-        "duration": "2021 - 2025"
-      },
-      "onepoint": {
-        "company": "Onepoint",
-        "role": "Consultant Expert Data",
-        "description": "Réalisé des audits techniques, organisationnels et de gouvernance pour des plateformes de données d'entreprise au Canada et en France. Conçu des architectures modernes et évolutives pour des entreprises Fortune 500.",
-        "impact": "Clients Fortune 500 • Automatisation DataOps • Conformité sécurité • Optimisation des performances",
-        "duration": "2024 - 2025"
-      },
-      "orangeMigration": {
-        "company": "Orange Côte d'Ivoire",
-        "role": "Lead Data Engineer",
-        "description": "Dirigé la migration sans interruption des workflows de données vers un nouveau cluster Hadoop. Développé des outils de productivité et orchestré des pipelines de données complexes.",
-        "impact": "Migration sans interruption • 20% d'amélioration de la productivité • Mise à niveau Spark2 • Orchestration Oozie",
-        "duration": "2020 - 2021"
-      },
-      "orange": {
-        "company": "Orange Sénégal",
-        "role": "Senior Data Engineer & Data Scientist",
-        "description": "Développé des modèles ML pour la gestion de l'expérience client et la prédiction de la QoE.",
-        "impact": "15% d'amélioration de la satisfaction client • 30% de réduction du temps de traitement",
-        "duration": "2019 - 2020"
+      "advanced": {
+        "title": "Compétences Avancées",
+        "description": "Maîtrise solide avec expérience de livraison prouvée",
+        "categories": {
+          "machineLearning": {
+            "name": "Apprentissage Automatique",
+            "skills": "Scikit-Learn, TensorFlow, Pandas, NumPy, MLflow",
+            "proficiency": "Avancé",
+            "yearsExperience": 5,
+            "methodologies": ["Déploiement de modèles ML", "Feature engineering", "Monitoring de modèles"]
+          },
+          "devops": {
+            "name": "DevOps & DataOps",
+            "skills": "GitHub Actions, Azure DevOps, Docker, Kubernetes, DataOps",
+            "proficiency": "Avancé",
+            "yearsExperience": 5,
+            "methodologies": ["Pipelines CI/CD", "Orchestration de conteneurs", "Automatisation DataOps"]
+          },
+          "visualization": {
+            "name": "Visualisation de Données",
+            "skills": "Tableau, Power BI, Jupyter, Streamlit, Plotly",
+            "proficiency": "Avancé",
+            "yearsExperience": 4,
+            "methodologies": ["Tableaux de bord interactifs", "Data storytelling", "Analytique en temps réel"]
+          }
+        }
       }
     }
   },
   "education": {
-    "title": "Formation Académique",
-    "subtitle": "Fondation académique en sciences mathématiques et technologies big data",
-    "continuousLearning": {
-      "title": "Apprentissage Continu",
-      "description": "Mon parcours éducatif en sciences mathématiques fournit une base solide pour l'architecture de données. Je reste continuellement à jour avec les dernières technologies et méthodologies grâce aux certifications professionnelles, conférences industrielles et expérience pratique sur projets."
-    },
+    "title": "Formation",
+    "subtitle": "Fondation en sciences mathématiques avec spécialisation Big Data",
     "degrees": {
-      "aims": {
-        "degree": "Master Coopératif en Sciences Mathématiques - spécialisation Big Data",
-        "institution": "Institut Africain des Sciences Mathématiques (AIMS)",
-        "location": "Sénégal",
-        "duration": "2016-2018",
-        "description": "Programme de Master coopératif spécialisé dans les technologies Big Data, l'analyse statistique et le machine learning. Projets industriels complétés axés sur l'architecture de données, l'analytique et les applications réelles des sciences mathématiques en ingénierie des données."
+      "aims-masters-bigdata": {
+        "degree": "Master en Sciences Mathématiques - Big Data",
+        "institution": "AIMS",
+        "year": "2018"
       },
-      "ucadMasters": {
+      "ucad-masters-applied": {
         "degree": "Master en Mathématiques Appliquées",
         "institution": "Université Cheikh Anta Diop",
-        "location": "Dakar, Sénégal",
-        "duration": "2014-2016",
-        "description": "Études avancées en mathématiques appliquées avec focus sur la modélisation mathématique, l'analyse statistique et les méthodes computationnelles. Spécialisé en théorie d'optimisation, analyse numérique et applications mathématiques en science des données."
-      },
-      "ucadBachelors": {
-        "degree": "Licence en Mathématiques",
-        "institution": "Université Cheikh Anta Diop",
-        "location": "Dakar, Sénégal",
-        "duration": "2009-2013",
-        "description": "Fondation en sciences mathématiques, statistiques et pensée analytique. Axé sur la modélisation mathématique, le calcul, l'algèbre linéaire et la théorie des probabilités qui fournit une base analytique solide pour la science des données et l'ingénierie."
+        "year": "2016"
       }
     }
   },
   "certifications": {
-    "title": "Certifications & Titres",
-    "subtitle": "Certifications professionnelles qui valident mon expertise technique et mon engagement dans l'apprentissage continu."
+    "title": "Certifications et Titres",
+    "subtitle": "Certifications professionnelles qui valident mon expertise technique et mon engagement envers l'apprentissage continu.",
+    "viewDetails": "Voir les détails"
   },
   "contact": {
-    "title": "Restons en Contact",
-    "subtitle": "Prêt à transformer votre architecture de données ?",
-    "description": "Je suis toujours intéressé par de nouvelles opportunités, des projets innovants et comment les données peuvent faire avancer votre entreprise.",
-    "cta": "Commencer une Conversation",
-    "email": "cmftall@gmail.com",
-    "phone": "+33 7 67 07 01 79",
-    "location": "Paris, France et Montréal, Canada",
-    "form": {
-      "nameLabel": "Nom",
-      "namePlaceholder": "Votre nom",
-      "emailLabel": "Email",
-      "emailPlaceholder": "votre.email@exemple.com",
-      "messageLabel": "Message",
-      "messagePlaceholder": "Parlez-moi de votre projet...",
-      "submitButton": "Envoyer le Message"
-    },
-    "quickLinks": {
-      "title": "Liens Rapides",
-      "linkedinProfile": "Profil LinkedIn",
-      "githubPortfolio": "Portfolio GitHub"
-    }
+    "title": "Prêt à Livrer un ROI Mesurable ?",
+    "subtitle": "Prêt à résoudre vos problèmes de données ? Réservez un appel stratégique gratuit de 30 minutes pour discuter de vos défis et comment je peux aider.",
+    "value": "Je travaille avec des entreprises sur des projets de 2-6 mois pour réparer les systèmes de données cassés, réduire les coûts et améliorer la qualité. Basé à Paris & Montréal, disponible pour travail à distance et sur site.",
+    "availability": "Disponible immédiatement pour nouveaux projets",
+    "investmentTitle": "Investissement & Prochaines Étapes",
+    "investmentDescription": "Tous les projets commencent par un appel stratégique gratuit où nous discuterons de vos besoins spécifiques, de l'impact business attendu, et de comment je peux aider à réduire les erreurs et améliorer l'efficacité.",
+    "investmentStep1": "Vos défis et objectifs spécifiques en données",
+    "investmentStep2": "Impact business attendu et ROI",
+    "investmentStep3": "Portée du projet, calendrier et investissement",
+    "guarantee": "Satisfaction garantie à 100% - Sans engagement",
+    "processTitle": "Comment Je Travaille",
+    "processStep1": "1. Appel Découverte (30 min gratuit) - J'analyse vos principaux facteurs de coût et problèmes de qualité",
+    "processStep2": "2. Proposition Personnalisée - Solution axée ROI avec timeline et tarification (pas de modèles génériques)",
+    "processStep3": "3. Lancement Rapide - Démarrer le travail dans 1-2 semaines (je bouge vite)",
+    "processStep4": "4. Mises à Jour Hebdomadaires - Métriques transparentes montrant progrès et valeur livrée",
+    "service1": "Réparer les systèmes de données cassés",
+    "service2": "Migrations sans interruption",
+    "service3": "Frameworks qualité des données",
+          "primaryCta": "Réserver Appel Stratégique Gratuit",
+          "emailCta": "M'Envoyer un Email",
+          "emailSubject": "Demande de Conseil",
+          "rates": "Tarification personnalisée selon la portée du projet et le ROI attendu",
+          "email": "Email",
+          "location": "Localisation",
+          "locationText": "Paris et Montréal",
+          "linkedin": "LinkedIn"
+  },
+  "faq": {
+    "title": "Questions Fréquemment Posées",
+    "subtitle": "Questions courantes sur le travail avec moi",
+    "ctaText": "Encore des questions ? Parlons-en.",
+    "ctaButton": "Me Contacter",
+    "items": [
+      {
+        "question": "Et si je ne suis pas prêt pour un engagement de 2-6 mois ?",
+        "answer": "Je suis flexible. J'offre des évaluations plus courtes de 2-4 semaines et des quick wins de 1-2 mois pour les problèmes urgents. On peut commencer petit (évaluer votre architecture de données et identifier les 3 principaux facteurs de coût) et augmenter selon les résultats. Beaucoup de clients commencent par une évaluation de 4 semaines puis étendent vers un engagement complet une fois qu'ils voient le ROI."
+      },
+      {
+        "question": "Pouvez-vous travailler avec notre équipe existante ?",
+        "answer": "Absolument. Je m'intègre parfaitement avec les équipes existantes. En fait, je préfère travailler aux côtés de vos ingénieurs car ils connaissent mieux vos systèmes. Je me concentre sur le transfert de connaissances, pour que votre équipe puisse maintenir et étendre les solutions après mon départ. À la Banque Nationale, j'ai dirigé une équipe de 7 ingénieurs, et les solutions fonctionnent encore avec succès aujourd'hui."
+      },
+      {
+        "question": "Et si nous n'avons besoin d'aide que pour 1-2 semaines ?",
+        "answer": "J'offre des sprints de conseil ciblés de 1-2 semaines pour des problèmes spécifiques comme 'réparer notre pipeline de qualité des données' ou 'optimiser nos coûts Snowflake.' Parfaits pour les problèmes urgents. Cependant, les améliorations d'architecture de données livrent généralement le meilleur ROI sur 2-6 mois car nous pouvons implémenter des solutions complètes, pas juste des correctifs rapides."
+      },
+      {
+        "question": "Comment garantissez-vous le ROI sur les projets de données ?",
+        "answer": "Je commence chaque projet en identifiant des métriques mesurables : des objectifs de réduction d'erreurs, des objectifs d'économies de coûts, des améliorations d'efficacité. À la Banque Nationale, j'ai livré une valeur annuelle significative en suivant des KPIs spécifiques (30% de réduction d'erreurs, 25% de gain d'efficacité, 40% de tests plus rapides). Vous recevrez des mises à jour hebdomadaires avec ces métriques pour voir les progrès en temps réel, pas juste à la fin."
+      },
+      {
+        "question": "Travaillez-vous à distance ou sur site ?",
+        "answer": "Les deux. Je suis basé à Paris et Montréal, mais je travaille à distance avec des clients mondiaux (Europe, Amérique du Nord). Pour les phases critiques ou les workshops d'équipe, je peux voyager sur site. La plupart de mon travail est à distance, ce qui réduit les coûts et permet une planification flexible à travers les fuseaux horaires."
+      },
+      {
+        "question": "Qu'est-ce qui vous différencie des autres consultants en données ?",
+        "answer": "Trois choses : (1) Je me concentre sur le ROI, pas juste sur l'implémentation technique. Chaque solution que je construis lie directement à des économies de coûts ou des améliorations de qualité mesurables. (2) Je bouge vite - je commence dans 1-2 semaines et livre des résultats rapidement. (3) Je construis des solutions que votre équipe peut maintenir. Pas de verrouillage fournisseur ou de boîtes noires mystérieuses. Vous possédez le code et les connaissances."
+      },
+      {
+        "question": "Et si le projet ne livre pas le ROI attendu ?",
+        "answer": "Je suis transparent sur les risques en amont. Pendant l'appel découverte gratuit, je vous dirai si je peux de manière réaliste atteindre vos objectifs. Je ne prends pas de projets où je ne peux pas livrer de la valeur. Si on découvre pendant l'engagement que la portée doit changer, on ajuste le plan de manière transparente. Je fixe des attentes réalistes et livre des résultats mesurables, c'est pourquoi les clients continuent de travailler avec moi."
+      }
+    ]
   },
   "footer": {
-    "description": "Architecte de Données Senior passionné par la transformation des entreprises grâce à des solutions de données innovantes.",
-    "rights": "Tous droits réservés.",
-    "builtWith": "Construit avec Next.js, TypeScript et Tailwind CSS",
-    "quickLinks": "Liens Rapides",
-    "contact": "Contact"
+    "description": "J'aide les entreprises à réduire les erreurs de données et améliorer l'efficacité grâce à des plateformes de données pragmatiques. Valeur annuelle significative livrée à la Banque Nationale. J'accepte de nouveaux projets - réservez un appel stratégique gratuit.",
+    "navigationTitle": "Navigation",
+    "connectTitle": "Contact",
+    "copyright": "© 2025 Fallou TALL. Tous droits réservés.",
+    "availability": "Disponible immédiatement pour nouveaux projets",
+    "linkedin": "Se connecter sur LinkedIn"
+  },
+  "work": {
+    "title": "Résultats Réels, Impact Réel",
+    "subtitle": "Preuve concrète que je peux réduire les erreurs et améliorer l'efficacité pour votre entreprise",
+    "businessImpactStatement": "Preuve claire de valeur business à travers réduction d'erreurs et améliorations d'efficacité mesurables",
+    "businessImpact": "Preuve claire de valeur business à travers réduction d'erreurs et améliorations d'efficacité mesurables",
+    "technicalInnovation": "Innovation technique combinée à un impact business mesurable",
+    "cta": {
+      "question": "Vous voulez réduire les erreurs et améliorer l'efficacité de vos systèmes de données ?",
+      "button": "Réserver un Appel Stratégique Gratuit"
+    },
+    "sections": {
+      "keyAchievements": "Réalisations Clés",
+      "keyResponsibilities": "Responsabilités Clés",
+      "businessImpact": "Impact Business",
+      "technicalInnovation": "Innovation Technique",
+      "technologies": "Technologies & Outils"
+    },
+    "projects": {
+      "sopra-steria-data-architect": {
+        "company": "Sopra Steria",
+        "role": "Architecte DATA Transverse - DCoE",
+        "duration": "À partir de 11/2025 (À venir)",
+        "location": "Courbevoie, France",
+        "durationNote": "Poste à venir à partir de novembre 2025",
+        "focusArea": "Architecture de transformation Data et IA multi-industries",
+        "valueSummary": "Concevra des architectures de données d'entreprise pour plus de 8 industries (Banque, Assurance, Télécom, Média, Jeux, etc.), appuyant les équipes de la prospection à la livraison avec focus sur la gouvernance, la qualité des données et l'industrialisation de l'IA.",
+        "description": "À partir de novembre 2025, je rejoindrai le Centre d'Excellence Data de Sopra Steria en tant qu'Architecte de Données Transverse. Je concevrai des architectures de données pour des clients dans les secteurs Banque, Assurance, Secteur Public, Télécom, Média, Jeux, Industrie et Services. J'appuierai les équipes de livraison de la prospection à l'avant-vente jusqu'à la mise en production de solutions, en me concentrant sur l'architecture de données, la gouvernance, le catalogue de données, la gestion de référentiels, la qualité des données et l'industrialisation de l'IA.",
+        "shortDescription": "Je concevrai des architectures de données d'entreprise pour plus de 8 industries, appuyant les équipes de la prospection à la livraison. Focus sur gouvernance, qualité des données et industrialisation de l'IA.",
+        "challenges": [
+          "Concevoir des architectures de données pour plus de 8 industries diverses avec des exigences et réglementations différentes",
+          "Appuyer les équipes de la prospection à l'avant-vente jusqu'à la livraison de solutions",
+          "Équilibrer gouvernance, qualité des données et industrialisation de l'IA à travers plusieurs contextes clients",
+          "Collaborer avec des éditeurs leaders du marché et des hyperscalers pour livrer des solutions optimales"
+        ],
+        "ctaQuestion": "Besoin d'architecture de données d'entreprise ?",
+        "keyResponsibilities": [
+          "Concevoir des architectures optimisées (plateformes analytiques, temps réel, IoT)",
+          "Concevoir et mettre en place des stratégies d'ingestion de données (temps réel, asynchrone, outils d'intermédiation)",
+          "Participer à des ateliers clients de conception et de conseil",
+          "Cadrage et avant-vente : analyser des appels d'offres, construire des réponses techniques (architecture fonctionnelle, technique et logicielle), présenter aux clients",
+          "Encadrer des équipes de développement et participer à la livraison de solutions",
+          "Collaborer avec les éditeurs leaders du marché et les hyperscalers"
+        ],
+        "technologies": ["Azure", "AWS", "Databricks", "Python", "Snowflake", "Spark", "SQL", "Java", "Scala", "MDM", "ETL", "ESB", "API Management", "Terraform"],
+        "technicalInnovation": [
+          "Patterns d'architecture de données multi-secteurs",
+          "Frameworks de gouvernance et qualité des données",
+          "Solutions de catalogue de données et gestion de référentiels",
+          "Méthodologies d'industrialisation d'IA",
+          "Architectures hybrides Cloud et on-premise",
+          "Stratégies d'ingestion de données temps réel et batch"
+        ],
+        "industry": "Technologie & Conseil"
+      },
+      "onepoint-expert-data": {
+        "company": "Onepoint",
+        "role": "Consultant Expert Data",
+        "duration": "09/2024 - 10/2025",
+        "location": "Canada et France",
+        "focusArea": "Implémentation de plateformes de données modernes et évolutives",
+        "valueSummary": "Livré une satisfaction client élevée auprès de clients entreprises en améliorant les performances de plateforme de 40%, identifiant des opportunités d'économies via des audits techniques, et établissant des frameworks de gouvernance garantissant une fiabilité à long terme.",
+        "description": "J'ai aidé des clients entreprises au Canada et en France à résoudre leurs problèmes de plateforme de données. J'ai livré des audits techniques identifiant des opportunités d'économies, conçu des architectures modernes améliorant les performances de 40%, et établi des frameworks de gouvernance. J'ai atteint une satisfaction client élevée avec des résultats mesurables.",
+        "shortDescription": "J'ai aidé des clients entreprises à résoudre leurs problèmes de plateforme de données via audits techniques, conception d'architectures modernes, et frameworks de gouvernance. Amélioration de 40% des performances et satisfaction client élevée avec résultats mesurables.",
+        "challenges": [
+          "Résoudre des problèmes de plateforme de données diversifiés pour des clients entreprises avec des stacks techniques variés",
+          "Améliorer les performances de plateforme de 40% tout en maintenant la fiabilité du système et l'intégrité des données",
+          "Établir des frameworks de gouvernance qui fonctionnent à travers différentes cultures organisationnelles (Canada et France)"
+        ],
+        "ctaQuestion": "Vous souhaitez une satisfaction client élevée pour votre plateforme de données ?",
+        "keyAchievements": [
+          "Audits techniques, conception d'architecture de données",
+          "Développement de pipelines ETL/ELT",
+          "Implémentation DataOps",
+          "Solutions de monitoring et sécurité des données",
+          "Formation et accompagnement"
+        ],
+        "technologies": ["Azure", "AWS", "Databricks", "Python", "Snowflake", "Spark", "SQL", "Github Actions"],
+        "businessImpact": [
+          {
+            "metricName": "Performance Plateforme",
+            "percentage": 40,
+            "description": "40% d'amélioration des performances de traitement de données sur les plateformes clients grâce à l'optimisation de l'architecture"
+          }
+        ],
+        "technicalInnovation": [
+          "Patterns d'architecture de plateforme de données moderne",
+          "Frameworks d'automatisation DataOps",
+          "Solutions de gouvernance de données multi-cloud",
+          "Conception d'architecture de données security-first"
+        ],
+        "industry": "Conseil & Technologie"
+      },
+      "bnc-analytical-foundation": {
+        "company": "Banque Nationale du Canada",
+        "role": "Lead Data Engineer",
+        "duration": "11/2021 - 04/2025",
+        "location": "Montréal, Canada",
+        "focusArea": "Entrepôt de données moderne permettant des reporting critiques et des analytiques à l'échelle de la banque",
+        "valueSummary": "Livré une valeur annuelle significative grâce aux améliorations de qualité des données, 30% de réduction d'erreurs, et une plateforme analytique évolutive alimentant des décisions d'affaires critiques et des modèles d'IA en production pour la 6ème plus grande banque du Canada. Le framework de data quality que j'ai développé a été adopté à l'échelle de la banque par plusieurs équipes.",
+        "description": "J'ai construit un entrepôt de données moderne qui a permis des décisions d'affaires critiques pour la 6ème plus grande banque du Canada. La plateforme alimente la stratégie d'acquisition client du Marketing (suivi CAC, segmentation, Next Best Action), la détection de fraude en temps réel alimentée par des modèles d'IA, les analytiques Cartes & Paiements, le reporting exécutif utilisé par la direction, et sert de fondation de données pour des modèles d'IA en production. Initialement construit sur Azure avec Snowflake et Databricks, puis migré avec succès vers AWS sans interruption. Le framework de data quality que j'ai développé a réduit les erreurs de 30% et a été adopté à l'échelle de la banque par plusieurs équipes (Marketing, Gestion de Patrimoine, Cartes, Fraude). Collaboration avec le CDO pour établir des standards de gouvernance de la qualité des données à l'échelle de la banque.",
+        "shortDescription": "J'ai construit un entrepôt de données moderne permettant des décisions critiques pour la 6ème plus grande banque du Canada. La plateforme alimente entre autre la stratégie Marketing, la détection de fraude en temps réel alimentée par l'IA, le reporting exécutif, et sert de fondation pour des modèles d'IA en production. Migration réussie d'Azure vers AWS sans interruption, avec réduction de 30% des erreurs via un framework de data quality adopté à l'échelle de la banque.",
+        "challenges": [
+          "Migration de l'entrepôt de données critique d'Azure vers AWS sans interruption pour plus de 14M de clients",
+          "Établissement de standards de qualité des données à l'échelle de la banque pour plusieurs équipes avec des priorités différentes",
+          "Construction d'une architecture évolutive supportant des millions d'enregistrements clients pour des analytiques en temps réel",
+          "Équilibrage entre innovation technique et besoins business à travers Marketing, Fraude, Cartes, et équipes Exécutives"
+        ],
+        "testimonial": {
+          "author": "Sara Jorio",
+          "role": "Directeur principal - Transformation de l'écosystème conversationnel",
+          "company": "Banque Nationale du Canada",
+          "text": "J'ai eu l'occasion de collaborer avec Fallou lors de son passage à la Banque, et je tiens à souligner son expertise technique et sa compréhension des enjeux business. Fallou a joué un rôle clé dans la modélisation et la scalabilité de la vue 360, une fondation analytique essentielle pour la donnée client. En tant que tech lead, il a su mobiliser l'équipe et maintenir le cap pour atteindre les objectifs ambitieux du projet. Fallou s'est également distingué par la mise en place d'un outil de qualité des données, contribuant à renforcer la fiabilité et la gouvernance des informations. Ce travail exigeait une collaboration étroite avec plusieurs équipes externes et des expertises variées, notamment les architectes de données et les spécialistes en gouvernance. Sa capacité à naviguer dans cet environnement complexe et à fédérer les parties prenantes a été déterminante pour le succès des initiatives. En résumé, Fallou allie compétence technique, vision stratégique et leadership collaboratif, des qualités qui font de lui un atout majeur pour tout projet d'envergure."
+        },
+        "ctaQuestion": "Vous souhaitez une valeur annuelle significative de vos systèmes de données ?",
+        "keyAchievements": [
+          "Direction d'une équipe de 7 ingénieurs construisant un entrepôt de données moderne (Snowflake + Databricks) sur AWS et Azure, initialement sur Azure puis migré vers AWS",
+          "Construction d'une fondation analytique bancaire alimentant des reporting critiques et des modèles d'IA en production : Marketing (CAC, segmentation, Next Best Action), Cartes & Paiements, Détection de Fraude alimentée par IA, Reporting Exécutif",
+          "Conception d'architecture et de modèles de données pour une plateforme analytique multi-domaines supportant des millions d'enregistrements clients",
+          "Développement d'un framework de data quality atteignant 30% de réduction d'erreurs dans les pipelines de l'équipe ; framework adopté à l'échelle de la banque par plusieurs équipes à travers Marketing, Gestion de Patrimoine, Cartes, Fraude",
+          "Augmentation de l'efficacité de l'équipe de 25% (3 heures/jour libérées par ingénieur) et réduction du temps de test de 40%",
+          "Travail avec le CDO pour définir, standardiser et opérationnaliser les dimensions de qualité des données, permettant une cohérence inter-départementale dans les standards de qualité"
+        ],
+        "technologies": ["Azure", "AWS", "Snowflake", "Databricks", "Python", "PySpark", "Spark", "SQL", "Terraform"],
+        "businessImpact": [
+          {
+            "metricName": "Réduction d'Erreurs",
+            "percentage": 30,
+            "description": "30% de réduction des erreurs de traitement dans les pipelines de production de l'équipe grâce au framework de data quality, résultant en économies annuelles substantielles"
+          },
+          {
+            "metricName": "Amélioration Efficacité",
+            "percentage": 25,
+            "description": "25% d'augmentation de l'efficacité de l'équipe, libérant 3 heures/jour par ingénieur pour un travail à haute valeur ajoutée, livrant une valeur annuelle significative"
+          },
+          {
+            "metricName": "Vitesse Tests",
+            "percentage": 40,
+            "description": "40% de tests QA plus rapides grâce à l'automatisation, réduisant les cycles de mise en production de jours à heures, livrant une valeur annuelle mesurable"
+          },
+          {
+            "metricName": "Adoption Banque",
+            "percentage": 100,
+            "description": "Framework de qualité des données adopté comme standard bancaire par Marketing, Gestion de Patrimoine, Cartes, Fraude, et plusieurs équipes dans l'organisation"
+          }
+        ],
+        "technicalInnovation": [
+          "Architecture d'entrepôt de données moderne avec Snowflake et Databricks",
+          "Stratégie de migration multi-cloud (Azure vers AWS) sans interruption",
+          "Framework de data quality adopté à l'échelle de la banque",
+          "Framework de gouvernance de qualité des données inter-départementale",
+          "Architecture analytique évolutive supportant des millions d'enregistrements clients",
+          "Fondation de données pour modèles d'IA en production et analytiques multi-domaines (Marketing, Cartes, Fraude, Exécutif)"
+        ],
+        "industry": "Banque & Services Financiers"
+      },
+      "orange-hadoop-migration": {
+        "company": "Orange Côte d'Ivoire",
+        "role": "Lead Data Engineer",
+        "duration": "09/2020 - 08/2021",
+        "location": "Côte d'Ivoire",
+        "focusArea": "Migration et mise à jour de cluster Hadoop",
+        "valueSummary": "Atteint 100% de taux de succès sur la migration sans interruption des flux de données critiques desservant des millions de clients, tout en améliorant la productivité de l'équipe de 20% grâce au développement d'une bibliothèque Spark personnalisée.",
+        "description": "J'ai dirigé la migration sans interruption des flux de données vers un nouveau cluster Hadoop. J'ai développé des outils de productivité et orchestré des pipelines de données complexes.",
+        "shortDescription": "J'ai dirigé la migration sans interruption des flux de données critiques desservant des millions de clients. Modernisation de la stack legacy et développement d'outils améliorant l'efficacité de l'équipe de 20%.",
+        "challenges": [
+          "Migrer les flux de données critiques vers un nouveau cluster Hadoop sans interruption pour des millions de clients",
+          "Moderniser la stack de traitement de données legacy (Flume/Pig/Spark1/Sqoop) vers Spark2",
+          "Maintenir la fiabilité des pipelines de données pendant le processus de migration complexe"
+        ],
+        "ctaQuestion": "Besoin de migration sans interruption pour vos systèmes de données ?",
+        "keyAchievements": [
+          "J'ai supervisé la migration des flux de données",
+          "J'ai migré Flume/Pig/Spark1/Sqoop vers Spark2",
+          "J'ai développé une bibliothèque Spark atteignant 20% d'augmentation de productivité"
+        ],
+        "technologies": ["Hadoop", "Scala", "Spark", "Oracle"],
+        "businessImpact": [
+          {
+            "metricName": "Amélioration Productivité",
+            "percentage": 20,
+            "description": "20% d'augmentation de la productivité de l'équipe d'ingénierie de données grâce à l'adoption de la bibliothèque Spark personnalisée"
+          },
+          {
+            "metricName": "Succès Migration",
+            "percentage": 100,
+            "description": "Migration complète sans interruption des flux de données critiques"
+          }
+        ],
+        "technicalInnovation": [
+          "Stratégie de migration sans interruption",
+          "Bibliothèque Spark de productivité personnalisée",
+          "Orchestration de workflow avancée",
+          "Modernisation de systèmes legacy"
+        ],
+        "industry": "Télécommunications"
+      },
+      "orange-qoe-management": {
+        "company": "Orange Sénégal",
+        "role": "Senior Data Engineer & Data Scientist",
+        "duration": "06/2019 - 08/2020",
+        "location": "Sénégal",
+        "focusArea": "Gestion de l'Expérience Client",
+        "valueSummary": "Amélioré la satisfaction client de 15% grâce à la prédiction QoE alimentée par ML et des processus automatisés réduisant le temps de traitement analytique de 30%, permettant une gestion proactive de l'expérience client.",
+        "description": "J'ai développé des modèles ML pour la gestion de l'expérience client et la prédiction de QoE.",
+        "shortDescription": "J'ai développé des modèles ML pour la gestion de l'expérience client et la prédiction de QoE. Amélioration de 15% de la satisfaction client et réduction de 30% du temps de traitement analytique grâce à l'automatisation.",
+        "keyAchievements": [
+          "J'ai développé des modèles ML prédisant la QoE client avec 15% d'amélioration de satisfaction",
+          "J'ai automatisé les processus réduisant le temps de traitement de 30%",
+          "Analyse de corrélation NPS-QoE avec tableaux de bord Tableau"
+        ],
+        "technologies": ["Hadoop", "Scala", "Spark", "SQL Server", "Tableau", "Python", "Scikit-Learn", "Flask"],
+        "businessImpact": [
+          {
+            "metricName": "Satisfaction Client",
+            "percentage": 15,
+            "description": "15% d'amélioration des scores de satisfaction client grâce à la prédiction proactive de QoE et l'intervention"
+          },
+          {
+            "metricName": "Efficacité Traitement",
+            "percentage": 30,
+            "description": "30% de réduction du temps de traitement d'analytics grâce à l'automatisation des flux de travail"
+          }
+        ],
+        "technicalInnovation": [
+          "Modèles ML avancés pour prédiction QoE",
+          "Pipelines de traitement de données automatisés",
+          "Analytics client en temps réel",
+          "Analyse de corrélation avancée"
+        ],
+        "industry": "Télécommunications"
+      },
+      "orange-data-monetization": {
+        "company": "Orange Sénégal",
+        "role": "Data Engineer & Data Scientist",
+        "duration": "10/2018 - 04/2019",
+        "location": "Sénégal",
+        "focusArea": "Plateforme de monétisation de données numériques",
+        "valueSummary": "Atteint 3x la scalabilité de plateforme avec une architecture micro-services supportant le traitement de données à haut volume, permettant de nouveaux flux de revenus grâce aux insights basés sur la localisation et la prédiction de mouvement de population.",
+        "description": "Architecture micro-services avec Kubernetes/Kafka/Cassandra/Spark/Node.js, modélisation de localisation à partir de données CDR, prédiction de mouvement de population avec SparkML.",
+        "shortDescription": "J'ai construit une plateforme de monétisation de données micro-services atteignant 3x la scalabilité. Permis de nouveaux flux de revenus grâce aux insights basés sur la localisation et la prédiction de mouvement de population.",
+        "keyAchievements": [
+          "J'ai développé une architecture micro-services avec Kubernetes/Kafka/Cassandra/Spark/Node.js",
+          "Modélisation de localisation à partir de données CDR",
+          "Prédiction de mouvement de population avec SparkML"
+        ],
+        "technologies": ["Cassandra", "Kafka", "Kubernetes", "Scala", "Spark"],
+        "businessImpact": [
+          {
+            "metricName": "Évolutivité Plateforme",
+            "percentage": 300,
+            "description": "Atteint 3x d'évolutivité avec architecture micro-services supportant le traitement de données haute volumétrie"
+          },
+          {
+            "metricName": "Monétisation Données",
+            "percentage": 25,
+            "description": "Permis de nouveaux flux de revenus grâce aux insights basés sur les données"
+          }
+        ],
+        "technicalInnovation": [
+          "Architecture de données micro-services",
+          "Analytics de localisation en temps réel",
+          "Modèles de prédiction de mouvement de population",
+          "Traitement avancé de données CDR"
+        ],
+        "industry": "Télécommunications"
+      }
+    }
+  },
+  "stats": {
+    "yearsExperience": "Années d'Expérience",
+    "technologiesMastered": "Technologies Maîtrisées",
+    "enterpriseProjects": "Projets d'Entreprise"
   },
   "common": {
-    "technologies": "Technologies",
-    "duration": "Durée",
-    "impact": "Impact",
-    "learnMore": "En Savoir Plus",
-    "viewProject": "Voir le Projet",
-    "viewDetails": "Voir les Détails"
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "retry": "Réessayer",
+    "close": "Fermer",
+    "open": "Ouvrir",
+    "readMore": "Lire la suite",
+    "viewProject": "Voir le projet",
+    "learnMore": "En savoir plus",
+    "pageNotFound": "Page non trouvée",
+    "pageNotFoundDescription": "Désolé, la page que vous recherchez n'existe pas ou a été déplacée.",
+    "goHome": "Retour à l'accueil",
+    "goBack": "Retour",
+    "tryThesePages": "Ou essayez une de ces pages :"
+  },
+  "workedWith": {
+    "title": "Ils Me Font Confiance",
+    "subtitle": "Résultats prouvés auprès d'organisations d'entreprise",
+    "industries": {
+      "banking": "Banque",
+      "telecommunications": "Télécommunications",
+      "consulting": "Conseil",
+      "technology": "Technologie"
+    },
+    "industryPills": {
+      "bankingFinance": "Banque & Finance",
+      "telecommunications": "Télécommunications",
+      "consulting": "Conseil",
+      "technology": "Technologie"
+    }
   }
 }

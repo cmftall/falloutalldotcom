@@ -118,6 +118,13 @@ export interface BusinessImpact {
   description: string
 }
 
+export interface Testimonial {
+  author: string
+  role: string
+  company: string
+  text: string
+}
+
 export interface ProjectData {
   company: string
   role: string
@@ -126,6 +133,9 @@ export interface ProjectData {
   location: string
   focusArea: string
   description: string
+  shortDescription?: string
+  valueSummary?: string
+  challenges?: string[]
   keyAchievements?: string[]
   keyResponsibilities?: string[]
   technologies: string[]
@@ -133,6 +143,7 @@ export interface ProjectData {
   technicalInnovation?: string[]
   industry: string
   ctaQuestion?: string
+  testimonial?: Testimonial
 }
 
 export interface ContactInfo {

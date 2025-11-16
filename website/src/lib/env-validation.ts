@@ -1,6 +1,8 @@
 // Runtime environment variable validation
 'use client'
 
+import { logger } from './logger'
+
 /**
  * Validates critical environment variables and logs warnings in development
  * Does not throw errors to avoid breaking the site, but logs clear warnings
@@ -25,15 +27,9 @@ export function validateEnvironmentVariables() {
     warnings.push('NEXT_PUBLIC_SENTRY_DSN is missing - Error monitoring will not work (errors only logged to console)')
   }
 
-  // Log warnings in development and production console
+  // Log warnings using logger
   if (warnings.length > 0) {
-    if (process.env.NODE_ENV === 'development') {
-      console.warn('⚠️  Environment Variable Warnings:')
-      warnings.forEach(warning => console.warn(`  - ${warning}`))
-    } else {
-      // In production, only log if Sentry is available to track these
-      console.warn('Production environment validation:', { warnings, missing })
-    }
+    warnings.forEach(warning => logger.warn(warning))
   }
 
   return {

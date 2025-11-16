@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/Button'
 import { LanguageSelector } from '@/components/ui/LanguageSelector'
 import { useI18n } from '@/components/providers/I18nProvider'
 import { SITE_CONFIG } from '@/lib/constants'
+import { trackEvent } from '@/lib/analytics'
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -47,9 +48,9 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
-      <div className="container mx-auto px-4">
-        <div className="flex h-16 items-center justify-between">
+    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b border-border/50">
+      <div className="container mx-auto px-6">
+        <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <button 
             onClick={handleLogoClick}
@@ -63,7 +64,7 @@ export function Header() {
           </button>
 
           {/* Desktop Navigation - Hidden on mobile */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-10">
             {[
               { href: '#home', key: 'home' },
               { href: '#work', key: 'work' },
@@ -73,7 +74,7 @@ export function Header() {
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
                 {t(`navigation.${item.key}`)}
               </button>
@@ -81,11 +82,22 @@ export function Header() {
           </nav>
 
           {/* Desktop Actions - Hidden on mobile */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-6">
             <LanguageSelector />
             <Button
-              onClick={() => scrollToSection('#contact')}
-              className="bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-2 rounded-lg font-medium transition-colors duration-200"
+              onClick={() => {
+                trackEvent('cta_click', {
+                  location: 'header',
+                  cta_type: 'calendly',
+                  button_text: t('navigation.hireMeCta')
+                })
+                const link = document.createElement('a')
+                link.href = 'https://calendly.com/falloutall'
+                link.target = '_blank'
+                link.rel = 'noopener noreferrer'
+                link.click()
+              }}
+              className="bg-accent text-accent-foreground hover:bg-accent/90 px-6 py-2.5 rounded-lg font-medium transition-colors shadow-md"
             >
               {t('navigation.hireMeCta')}
             </Button>
@@ -129,10 +141,21 @@ export function Header() {
               ))}
               <div className="px-4 pt-4 border-t border-border">
                 <Button
-                  onClick={() => scrollToSection('#contact')}
-                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
+                  onClick={() => {
+                    trackEvent('cta_click', {
+                      location: 'header_mobile',
+                      cta_type: 'calendly',
+                      button_text: t('navigation.hireMeCta')
+                    })
+                    const link = document.createElement('a')
+                    link.href = 'https://calendly.com/falloutall'
+                    link.target = '_blank'
+                    link.rel = 'noopener noreferrer'
+                    link.click()
+                  }}
+                  className="w-full bg-accent text-accent-foreground hover:bg-accent/90"
                 >
-                  {t('navigation.contact')}
+                  {t('navigation.hireMeCta')}
                 </Button>
               </div>
             </nav>
