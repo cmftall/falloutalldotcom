@@ -1,6 +1,8 @@
 // Performance monitoring utilities
 'use client'
 
+import { logger } from './logger'
+
 import { useEffect } from 'react'
 
 // Extend Window interface for gtag
@@ -22,9 +24,7 @@ export function useWebVitals() {
         const entries = entryList.getEntries()
         const lastEntry = entries[entries.length - 1]
         
-        if (process.env.NODE_ENV === 'development') {
-          console.log('LCP:', lastEntry.startTime)
-        }
+        logger.performance('LCP', lastEntry.startTime)
         
         // Send to analytics service
         if (typeof window !== 'undefined' && window.gtag) {
@@ -45,9 +45,7 @@ export function useWebVitals() {
         const entries = entryList.getEntries()
         entries.forEach((entry) => {
           const fidEntry = entry as any // Type assertion for FID-specific properties
-          if (process.env.NODE_ENV === 'development') {
-            console.log('FID:', fidEntry.processingStart - fidEntry.startTime)
-          }
+          logger.performance('FID', fidEntry.processingStart - fidEntry.startTime)
           
           // Send to analytics service
           if (typeof window !== 'undefined' && window.gtag) {
@@ -81,9 +79,7 @@ export function useWebVitals() {
 
       // Report CLS when page is hidden
       const reportCLS = () => {
-        if (process.env.NODE_ENV === 'development') {
-          console.log('CLS:', clsValue)
-        }
+        logger.performance('CLS', clsValue)
         
         // Send to analytics service
         if (typeof window !== 'undefined' && window.gtag) {
@@ -110,9 +106,7 @@ export function useWebVitals() {
       new PerformanceObserver((entryList) => {
         const entries = entryList.getEntries()
         entries.forEach((entry) => {
-          if (process.env.NODE_ENV === 'development') {
-            console.log('FCP:', entry.startTime)
-          }
+          logger.performance('FCP', entry.startTime)
           
           // Send to analytics service
           if (typeof window !== 'undefined' && window.gtag) {
@@ -151,9 +145,7 @@ export function checkPerformanceBudget() {
       totalLoadTime: navigation.loadEventEnd - navigation.fetchStart,
     }
 
-    if (process.env.NODE_ENV === 'development') {
-    console.log('Performance Metrics:', metrics)
-  }
+    logger.info('Performance Metrics', metrics)
 
     // Check against performance budgets
     const budgets = {
@@ -166,7 +158,7 @@ export function checkPerformanceBudget() {
       const budget = budgets[metric as keyof typeof budgets]
       if (value > budget) {
         if (process.env.NODE_ENV === 'development') {
-          console.warn(`Performance budget exceeded for ${metric}: ${value}ms > ${budget}ms`)
+          logger.warn(`Performance budget exceeded for ${metric}: ${value}ms > ${budget}ms`)
         }
       }
     })
@@ -205,15 +197,15 @@ export function analyzeResourceTiming() {
   })
 
   if (process.env.NODE_ENV === 'development') {
-    console.log('Resource Analysis:', analysis)
+    logger.info('Resource Analysis', analysis)
     
     // Log warnings for performance issues
     if (analysis.slowResources.length > 0) {
-      console.warn(`Found ${analysis.slowResources.length} slow resources:`, analysis.slowResources)
+      logger.warn(`Found ${analysis.slowResources.length} slow resources`, { slowResources: analysis.slowResources })
     }
     
     if (analysis.largeResources.length > 0) {
-      console.warn(`Found ${analysis.largeResources.length} large resources:`, analysis.largeResources)
+      logger.warn(`Found ${analysis.largeResources.length} large resources`, { largeResources: analysis.largeResources })
     }
   }
 

@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowUp } from 'lucide-react'
 import { Button } from './Button'
 
@@ -35,14 +34,14 @@ export function BackToTop() {
   }
 
   return (
-    <AnimatePresence>
+    <>
       {isVisible && (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.8, y: 20 }}
-          transition={{ duration: 0.2 }}
-          className="fixed bottom-8 right-8 z-50"
+        <div
+          className={`fixed bottom-8 right-8 z-50 transition-all duration-300 ${
+            isVisible 
+              ? 'opacity-100 scale-100 translate-y-0' 
+              : 'opacity-0 scale-90 translate-y-5'
+          }`}
         >
           <Button
             onClick={scrollToTop}
@@ -52,9 +51,9 @@ export function BackToTop() {
           >
             <ArrowUp className="h-5 w-5" />
           </Button>
-        </motion.div>
+        </div>
       )}
-    </AnimatePresence>
+    </>
   )
 }
 

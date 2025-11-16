@@ -1,5 +1,7 @@
 // Custom i18n implementation for static export compatibility
 import type { TranslationMessages } from './types'
+import enMessages from '../../messages/en.json'
+import frMessages from '../../messages/fr.json'
 
 export type Locale = 'en' | 'fr'
 
@@ -25,39 +27,22 @@ export function setLocale(locale: Locale) {
 }
 
 // Translation loading
+const MESSAGES_BY_LOCALE: Record<Locale, TranslationMessages> = {
+  en: enMessages as unknown as TranslationMessages,
+  fr: frMessages as unknown as TranslationMessages,
+}
+
 export async function loadMessages(locale: Locale): Promise<TranslationMessages> {
-  try {
-    const messages = await import(`../messages/${locale}.json`)
-    const loaded = messages.default || messages
-    // Ensure we have a valid messages object
-    if (!loaded || typeof loaded !== 'object') {
-      throw new Error(`Invalid messages structure for locale ${locale}`)
-    }
-    if (process.env.NODE_ENV === 'development') {
-      console.log(`Loaded messages for ${locale}:`, {
-        hasNavigation: !!loaded.navigation,
-        keys: Object.keys(loaded).slice(0, 5)
-      })
-    }
-    return loaded as TranslationMessages
-  } catch (error) {
-    if (process.env.NODE_ENV === 'development') {
-      console.warn(`Failed to load messages for locale ${locale}:`, error)
-    }
-    try {
-      const fallback = await import(`../messages/${defaultLocale}.json`)
-      const fallbackMessages = fallback.default || fallback
-      if (process.env.NODE_ENV === 'development') {
-        console.log(`Using fallback messages for ${locale}`)
-      }
-      return fallbackMessages as TranslationMessages
-    } catch (fallbackError) {
-      if (process.env.NODE_ENV === 'development') {
-        console.error('Failed to load fallback messages:', fallbackError)
-      }
-      return {} as TranslationMessages
-    }
+  const selected = MESSAGES_BY_LOCALE[locale] || MESSAGES_BY_LOCALE[defaultLocale]
+  // Use dynamic import to avoid SSR issues
+  if (typeof window !== 'undefined') {
+    const { logger } = await import('./logger')
+    logger.debug(`Loaded messages for ${locale}`, {
+      hasNavigation: !!selected?.navigation,
+      keys: selected ? Object.keys(selected).slice(0, 5) : [],
+    })
   }
+  return selected
 }
 
 // Translation hook for client components

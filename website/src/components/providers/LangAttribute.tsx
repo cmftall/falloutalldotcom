@@ -8,18 +8,13 @@ import { useI18n } from './I18nProvider'
  * based on the current locale from I18nProvider.
  */
 export function LangAttribute() {
-  let locale: 'en' | 'fr' = 'en'
-  
-  try {
-    // Only try to use I18n if we're inside the provider
-    const i18n = useI18n()
-    locale = i18n.locale
-  } catch {
-    // Fallback if I18nProvider is not available yet (shouldn't happen but safe)
-    if (typeof window !== 'undefined') {
-      const pathname = window.location.pathname
-      locale = pathname.startsWith('/fr') ? 'fr' : 'en'
-    }
+  // Hooks must be called unconditionally
+  const i18n = useI18n()
+  let locale: 'en' | 'fr' = i18n?.locale ?? 'en'
+  // Extra safety: fallback from pathname if somehow missing
+  if (!locale && typeof window !== 'undefined') {
+    const pathname = window.location.pathname
+    locale = pathname.startsWith('/fr') ? 'fr' : 'en'
   }
 
   useEffect(() => {

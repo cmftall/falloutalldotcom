@@ -32,11 +32,13 @@ export function NotFoundContent({ locale }: NotFoundContentProps) {
               {t('common.goHome')}
             </Link>
           </Button>
-          <Button variant="outline" asChild>
-            <Link href="javascript:history.back()">
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              {t('common.goBack')}
-            </Link>
+          <Button 
+            variant="outline" 
+            onClick={() => window.history.back()}
+            type="button"
+          >
+            <ArrowLeft className="h-4 w-4 mr-2" />
+            {t('common.goBack')}
           </Button>
         </div>
 
@@ -44,16 +46,16 @@ export function NotFoundContent({ locale }: NotFoundContentProps) {
         <div className="pt-8 border-t border-border">
           <p className="text-sm text-muted-foreground mb-4">{t('common.tryThesePages')}</p>
           <div className="flex flex-wrap gap-2 justify-center">
-            <Link href={`/${locale}#about`} className="text-sm text-primary hover:underline">
-              {t('navigation.about')}
+            <Link href={`/${locale}#home`} className="text-sm text-primary hover:underline">
+              {t('navigation.home')}
             </Link>
             <span className="text-muted-foreground">•</span>
             <Link href={`/${locale}#work`} className="text-sm text-primary hover:underline">
               {t('navigation.work')}
             </Link>
             <span className="text-muted-foreground">•</span>
-            <Link href={`/${locale}#expertise`} className="text-sm text-primary hover:underline">
-              {t('navigation.expertise')}
+            <Link href={`/${locale}#faq`} className="text-sm text-primary hover:underline">
+              {t('navigation.faq')}
             </Link>
             <span className="text-muted-foreground">•</span>
             <Link href={`/${locale}#contact`} className="text-sm text-primary hover:underline">

@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+// Removed motion imports - using static layout
 import { Building2 } from 'lucide-react'
 import { useI18n } from '@/components/providers/I18nProvider'
 
@@ -44,45 +44,29 @@ export function WorkedWith() {
   ]
 
   return (
-    <section id="workedWith" className="py-20 bg-card border-y border-border">
+    <section id="workedWith" className="py-20 md:py-28 bg-card border-y border-border/50">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          {/* Gold "Trusted By" Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <div className="inline-flex items-center space-x-3 mb-6">
-              <div className="h-px w-12 bg-accent" />
-              <h2 className="font-serif text-2xl md:text-3xl font-bold text-accent">
+          {/* Header */}
+          <div className="text-center mb-12 md:mb-16 px-4">
+            <div className="inline-flex items-center space-x-2 md:space-x-3 mb-4 md:mb-6">
+              <div className="h-px w-8 md:w-12 bg-accent" />
+              <h2 className="font-serif text-xl md:text-2xl lg:text-3xl font-bold text-accent">
                 {t('workedWith.title')}
               </h2>
-              <div className="h-px w-12 bg-accent" />
+              <div className="h-px w-8 md:w-12 bg-accent" />
             </div>
             <p className="text-base text-muted-foreground max-w-2xl mx-auto">
               {t('workedWith.subtitle')}
             </p>
-          </motion.div>
+          </div>
 
-                 {/* Companies Grid - Premium Text-Based Design */}
-                 <motion.div
-                   initial={{ opacity: 0, y: 30 }}
-                   whileInView={{ opacity: 1, y: 0 }}
-                   transition={{ duration: 0.8, delay: 0.2 }}
-                   viewport={{ once: true }}
-                   className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-                 >
-                   {companies.map((company, index) => (
-                     <motion.div
-                       key={company.name}
-                       initial={{ opacity: 0, y: 20 }}
-                       whileInView={{ opacity: 1, y: 0 }}
-                       transition={{ duration: 0.5, delay: index * 0.1 }}
-                       viewport={{ once: true }}
-                       className="group"
+          {/* Companies Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            {companies.map((company) => (
+              <div
+                key={company.name}
+                className="group"
                      >
                        <div 
                          className="relative bg-card border border-border rounded-lg p-6 hover:border-accent transition-all duration-300 hover:shadow-lg overflow-hidden h-full"
@@ -118,18 +102,12 @@ export function WorkedWith() {
                            </p>
                          </div>
                        </div>
-                     </motion.div>
+                     </div>
                    ))}
-                 </motion.div>
+                 </div>
 
-          {/* Premium Industry Pills */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="text-center mt-12"
-          >
+          {/* Industry Pills */}
+          <div className="text-center mt-12">
             <div className="inline-flex flex-wrap justify-center gap-3 text-sm">
               {industryPills.map((pill) => (
                 <span
@@ -141,7 +119,7 @@ export function WorkedWith() {
                 </span>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

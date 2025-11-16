@@ -172,12 +172,12 @@ export function LanguageSelector({
           setFocusedIndex(currentIndex)
         }}
         className="flex items-center gap-2"
-        aria-label="Select language"
+        aria-label={`Select language. Current: ${currentLanguage.name}`}
         aria-expanded={isOpen}
         aria-haspopup="listbox"
       >
         <Globe className="h-4 w-4" />
-        <span>{currentLanguage.name}</span>
+        <span aria-label={`Current language: ${currentLanguage.name}`}>{currentLanguage.name}</span>
         <ChevronDown className={cn("h-4 w-4 transition-transform", isOpen && "rotate-180")} />
       </Button>
 

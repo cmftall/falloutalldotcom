@@ -4,29 +4,29 @@
 
 @layer base {
 :root {
-    /* Modern Premium Color Palette - Navy, Gold, Beige - Enhanced */
-    --background: 40 20% 98%; /* Warm Beige #FAF8F5 */
-    --foreground: 220 26% 14%; /* Charcoal #1F2937 */
+    /* Modern 2025 Color Palette - Deep Navy, Teal/Cyan, Clean Neutrals */
+    --background: 0 0% 99%; /* Near White - Cleaner than beige */
+    --foreground: 222 47% 11%; /* Deep Navy - Darker for better contrast */
     --card: 0 0% 100%; /* Pure White */
-    --card-foreground: 220 26% 14%;
+    --card-foreground: 222 47% 11%;
     --popover: 0 0% 100%;
-    --popover-foreground: 220 26% 14%;
-    --primary: 222 47% 26%; /* Navy Blue (slightly darker for better contrast) */
+    --popover-foreground: 222 47% 11%;
+    --primary: 222 47% 18%; /* Deep Navy - More modern and professional */
     --primary-foreground: 0 0% 100%;
-    --secondary: 40 20% 96%; /* Light Beige */
-    --secondary-foreground: 222 47% 30%; /* True Navy */
-    --muted: 40 20% 96%;
+    --secondary: 220 13% 96%; /* Cool Light Gray - More modern than beige */
+    --secondary-foreground: 222 47% 18%;
+    --muted: 220 13% 96%;
     --muted-foreground: 220 9% 46%; /* Medium Gray */
-    --accent: 43 76% 48%; /* Warm Gold #D4AF37 (slightly richer) */
-    --accent-foreground: 222 47% 30%; /* True Navy */
+    --accent: 180 70% 45%; /* Modern Teal/Cyan - Replaces gold, more tech-forward */
+    --accent-foreground: 0 0% 100%; /* White text on teal for better contrast */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
-    --border: 40 15% 90%; /* Soft Border */
-    --input: 40 15% 90%;
-    --ring: 43 74% 53%; /* Gold Ring */
-    --chart-1: 43 74% 53%; /* Gold */
-    --chart-2: 222 47% 30%; /* True Navy */
-    --chart-3: 160 60% 45%; /* Teal accent */
+    --border: 220 13% 88%; /* Subtle border - Cooler tone */
+    --input: 220 13% 96%;
+    --ring: 180 70% 45%; /* Teal ring to match accent */
+    --chart-1: 180 70% 45%; /* Teal */
+    --chart-2: 222 47% 18%; /* Deep Navy */
+    --chart-3: 200 80% 50%; /* Bright Cyan */
     --chart-4: 20 90% 55%; /* Coral accent */
     --chart-5: 280 65% 60%; /* Purple accent */
   }
@@ -42,20 +42,20 @@
   }
 }
 
-/* Modern Premium Design System */
+/* Modern Typography System - 2025 */
 .premium-headline {
   font-family: 'Crimson Pro', Georgia, serif;
-  @apply text-5xl md:text-6xl font-bold tracking-tight text-primary leading-[1.1];
+  @apply text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-primary leading-[1.05];
 }
 
 .premium-subheadline {
   font-family: 'Inter', -apple-system, sans-serif;
-  @apply text-xl md:text-2xl font-normal text-muted-foreground leading-relaxed;
+  @apply text-xl md:text-2xl font-normal text-muted-foreground leading-[1.6];
 }
 
 .premium-body {
   font-family: 'Inter', -apple-system, sans-serif;
-  @apply text-base leading-relaxed text-foreground;
+  @apply text-base leading-[1.7] text-foreground;
 }
 
 .premium-number {
@@ -63,25 +63,26 @@
   @apply font-semibold tracking-tight;
 }
 
-.gold-accent {
-  @apply text-accent;
+/* Modern visual elements - subtle gradients */
+.modern-gradient-bg {
+  background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--background)) 50%, hsl(var(--accent)/0.03) 100%);
 }
 
-.navy-text {
-  @apply text-primary;
+.modern-accent-gradient {
+  background: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--accent)/0.8) 100%);
 }
 
-.gold-underline {
+/* Modern separator lines */
+.modern-separator {
   @apply relative;
 }
 
-.gold-underline::after {
+.modern-separator::after {
   content: '';
-  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-500;
-  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.4);
+  @apply absolute bottom-0 left-0 w-0 h-px bg-gradient-to-r from-transparent via-accent to-transparent transition-all duration-500;
 }
 
-.gold-underline:hover::after {
+.modern-separator:hover::after {
   @apply w-full;
 }
 
@@ -216,6 +217,27 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Shine animation for photo hover effect */
+@keyframes shine-sweep {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(200%) translateY(200%) rotate(45deg);
+  }
+}
+
+.shine-sweep {
+  width: 200%;
+  height: 200%;
+  animation: shine-sweep 0.8s ease-out;
+  animation-play-state: paused;
+}
+
+.group:hover .shine-sweep {
+  animation-play-state: running;
 }
 
 @keyframes grid-move {

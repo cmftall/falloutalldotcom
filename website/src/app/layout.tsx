@@ -20,9 +20,9 @@ const crimsonPro = Crimson_Pro({
 })
 
 export const metadata: Metadata = {
-  title: 'Fallou TALL - Data Architect Consultant | €1,200-1,800/day',
-  description: 'Data Architect Consultant | €200K+ annual value delivered | Fix broken data systems | €1,200-1,800/day | Available immediately for 2-6 month projects',
-  keywords: ['Data Architect Consultant', 'Data Architecture Consultant', 'Data Engineering Consultant', 'ROI Data Architecture', 'Enterprise Data Transformation', 'DataOps', 'PySpark Framework', 'Cloud Data Architecture', 'Paris', 'France', 'Montreal', 'Canada', 'National Bank of Canada', 'Orange', 'Sopra Steria', 'Azure', 'AWS', 'Databricks', 'Data Quality', 'Cost Reduction', 'Business Value', 'Freelance Data Architect', 'Independent Data Consultant'],
+  title: 'Fallou TALL - Data Consultant | Reduce Errors & Improve Efficiency',
+  description: 'Data Consultant helping companies reduce data errors and improve efficiency through pragmatic data platforms. Measurable ROI delivered. Available immediately for new projects.',
+  keywords: ['Data Consultant', 'Data Engineering Consultant', 'Data Architecture Consultant', 'ROI Data Consulting', 'Enterprise Data Transformation', 'DataOps', 'Data Quality Framework', 'Cloud Data Architecture', 'Paris', 'France', 'Montreal', 'Canada', 'National Bank of Canada', 'Orange', 'Sopra Steria', 'Azure', 'AWS', 'Databricks', 'Data Quality', 'Cost Reduction', 'Business Value', 'Freelance Data Consultant', 'Independent Data Consultant', 'Reduce Data Errors', 'Improve Efficiency'],
   authors: [{ name: 'Fallou TALL' }],
   creator: 'Fallou TALL',
   publisher: 'Fallou TALL',
@@ -36,16 +36,16 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Fallou TALL - Data Architect Consultant | Measurable ROI',
-    description: 'Data Architect Consultant | €200K+ annual value delivered | Fix broken data systems | €1,200-1,800/day | Available immediately',
+    title: 'Fallou TALL - Data Consultant | Reduce Errors & Improve Efficiency',
+    description: 'Data Consultant helping companies reduce data errors and improve efficiency through pragmatic data platforms. Measurable ROI delivered.',
     url: 'https://falloutall.com',
-    siteName: 'Fallou TALL - Data Architect Consultant',
+    siteName: 'Fallou TALL - Data Consultant',
     images: [
       {
-        url: '/fallou-tall-photo.jpg',
-        width: 1024,
-        height: 768,
-        alt: 'Fallou TALL - Data Architect Consultant',
+        url: '/og-image.svg',
+        width: 1200,
+        height: 630,
+        alt: 'Fallou TALL - Data Consultant',
       },
     ],
     locale: 'en_US',
@@ -53,9 +53,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fallou TALL - Data Architect Consultant',
-    description: 'Data Architect Consultant | €200K+ annual value | Fix broken data systems | €1,200-1,800/day | Available immediately',
-    images: ['/fallou-tall-photo.jpg'],
+    title: 'Fallou TALL - Data Consultant | Reduce Errors & Improve Efficiency',
+    description: 'Data Consultant helping companies reduce data errors and improve efficiency through pragmatic data platforms. Measurable ROI delivered.',
+    images: ['/og-image.svg'],
   },
   robots: {
     index: true,
@@ -82,8 +82,8 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Fallou TALL',
-    jobTitle: 'Data Architect Consultant',
-    description: 'Data Architect Consultant delivering measurable ROI through pragmatic data architecture. Specialized in enterprise data transformations, DataOps, and cloud-native solutions. Available for 2-6 month consulting projects.',
+    jobTitle: 'Data Consultant',
+    description: 'Data Consultant delivering measurable ROI through pragmatic data platforms. Specialized in reducing data errors, improving efficiency, and building reliable data systems. Available for 2-6 month consulting projects.',
     url: 'https://falloutall.com',
     image: 'https://falloutall.com/fallou-tall-photo.jpg',
     sameAs: [
@@ -128,14 +128,14 @@ export default function RootLayout({
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
-    name: 'Data Architect Consulting Services',
+    name: 'Data Consulting Services',
     provider: {
       '@type': 'Person',
       name: 'Fallou TALL',
-      jobTitle: 'Data Architect Consultant'
+      jobTitle: 'Data Consultant'
     },
-    description: 'Enterprise data architecture consulting services delivering measurable ROI. Specialized in fixing broken data systems, reducing costs, and improving data quality. Available for 2-6 month consulting projects.',
-    serviceType: 'Data Architecture Consulting',
+    description: 'Data consulting services delivering measurable ROI through pragmatic data platforms. Specialized in reducing data errors, improving efficiency, and building reliable data systems. Available for 2-6 month consulting projects.',
+    serviceType: 'Data Consulting',
     areaServed: ['France', 'Canada', 'Europe', 'North America'],
     availableChannel: {
       '@type': 'ServiceChannel',
@@ -147,14 +147,10 @@ export default function RootLayout({
     offers: {
       '@type': 'Offer',
       priceCurrency: 'EUR',
-      price: '1200-1800',
-      priceSpecification: {
-        '@type': 'UnitPriceSpecification',
-        price: '1200-1800',
-        priceCurrency: 'EUR',
-        unitCode: 'DAY',
-        unitText: 'per day'
-      }
+      price: 'Contact for pricing',
+      availability: 'https://schema.org/InStock',
+      availabilityStarts: null,
+      availabilityEnds: null
     },
     url: 'https://falloutall.com',
     aggregateRating: null // Add when testimonials available

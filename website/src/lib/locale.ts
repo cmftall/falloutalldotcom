@@ -1,4 +1,5 @@
 import { locales, type Locale } from './i18n'
+import { logger } from './logger'
 
 export type LanguageSource = 'detected' | 'manual'
 
@@ -33,9 +34,7 @@ export const detectLanguage = (): Locale => {
       }
     }
   } catch (error) {
-    if (process.env.NODE_ENV === 'development') {
-      console.warn('Language detection failed:', error)
-    }
+    logger.warn('Language detection failed', { error })
   }
   
   // Default fallback to English
@@ -58,9 +57,7 @@ export const saveLanguagePreference = (locale: Locale, source: LanguageSource = 
     
     localStorage.setItem('language-preference', JSON.stringify(preference))
   } catch (error) {
-    if (process.env.NODE_ENV === 'development') {
-      console.warn('Failed to save language preference:', error)
-    }
+    logger.warn('Failed to save language preference', { error })
   }
 }
 
@@ -81,9 +78,7 @@ export const loadLanguagePreference = (): Locale | null => {
       return preference.locale
     }
   } catch (error) {
-    if (process.env.NODE_ENV === 'development') {
-      console.warn('Failed to load language preference:', error)
-    }
+    logger.warn('Failed to load language preference', { error })
   }
   
   return null

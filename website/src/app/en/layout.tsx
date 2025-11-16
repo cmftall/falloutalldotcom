@@ -25,7 +25,10 @@ export default async function EnLayout({
   
   // Validate messages were loaded
   if (!messages || typeof messages !== 'object' || Object.keys(messages).length === 0) {
-    console.error('Failed to load English messages')
+    // Server-side logging - errors will be visible in build logs
+    if (process.env.NODE_ENV === 'development') {
+      console.error('Failed to load English messages')
+    }
   }
 
   return (
