@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "rm -rf out && next build",
-    "postbuild": "mkdir -p out out/en out/fr && cp -R public/* out/ || true && cp -R public/* out/en/ || true && cp -R public/* out/fr/ || true",
+    "postbuild": "mkdir -p out out/en out/fr && cp -R public/* out/ 2>/dev/null || true && cp -R public/* out/en/ 2>/dev/null || true && cp -R public/* out/fr/ 2>/dev/null || true",
     "start": "next start",
     "lint": "eslint . --max-warnings=0",
     "type-check": "tsc --noEmit",
