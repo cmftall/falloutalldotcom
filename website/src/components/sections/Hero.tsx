@@ -133,9 +133,9 @@ export function Hero() {
                     {/* Placeholder/Skeleton while image loads */}
                     <div className="absolute inset-0 bg-gradient-to-br from-muted via-muted/80 to-muted animate-pulse" aria-hidden="true" />
                     
-                    {/* Modern image formats with fallback */}
+                    {/* Modern image formats with fallback - Optimized for LCP */}
                     <picture>
-                      {/* AVIF - Best compression, modern browsers */}
+                      {/* AVIF - Best compression, modern browsers (preloaded) */}
                       <source
                         srcSet={`${getImageSrc().replace('.jpg', '.avif')}`}
                         type="image/avif"
