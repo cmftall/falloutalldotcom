@@ -185,8 +185,9 @@ describe('Production Readiness Smoke Tests', () => {
         <Contact />
       </TestWrapper>
     )
-    // Verify Contact section is rendered (check for heading)
-    expect(screen.getByRole('heading', { name: /contact/i })).toBeInTheDocument()
+    // Verify Contact section is rendered (check for section with id="contact")
+    const contactSection = document.getElementById('contact')
+    expect(contactSection).toBeInTheDocument()
   })
 
   test('All components have proper accessibility attributes', () => {
