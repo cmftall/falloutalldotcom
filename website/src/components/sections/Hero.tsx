@@ -5,7 +5,6 @@ import { useI18n } from '@/components/providers/I18nProvider'
 import { ArrowRight, Zap, TrendingUp, Clock, Shield } from 'lucide-react'
 import { useImagePath } from '@/lib/image-utils'
 import { openCalendly } from '@/lib/calendly'
-import { logger } from '@/lib/logger'
 
 export function Hero() {
   const { t } = useI18n()
