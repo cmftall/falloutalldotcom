@@ -5,7 +5,7 @@ import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
 import { Testimonial } from '@/components/ui/Testimonial'
 import { Calendar, Users, Target, TrendingUp, Award, ArrowRight, Euro, Zap, ArrowLeft, Building2 } from 'lucide-react'
-import { useI18n } from '@/components/providers/I18nProvider'
+// import { useI18n } from '@/components/providers/I18nProvider'
 import type { ProjectData, BusinessImpact } from '@/lib/types'
 import Link from 'next/link'
 
@@ -16,7 +16,7 @@ interface CaseStudyDetailProps {
 
 export function CaseStudyDetail({ project, locale }: CaseStudyDetailProps) {
   // Note: Component currently unused (case studies pages removed)
-  // const { t } = useI18n()
+  // Translation function commented out as component is not in use
   
   return (
     <article className="py-32 bg-background">
