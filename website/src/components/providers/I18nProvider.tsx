@@ -33,11 +33,14 @@ export function I18nProvider({ children, initialLocale, initialMessages }: I18nP
     if (typeof window === 'undefined') return
     
     const detectedLocale = detectLocale()
-    if (detectedLocale !== locale) {
+    // Only update if locale changed and we're not already on the correct path
+    if (detectedLocale !== locale && !pathname.startsWith(`/${detectedLocale}`)) {
       setCurrentLocale(detectedLocale)
       setLocale(detectedLocale)
+      // Redirect to detected locale if not already there
+      router.replace(`/${detectedLocale}${pathname.replace(/^\/[a-z]{2}/, '') || ''}`)
     }
-  }, [locale])
+  }, [locale, pathname, router])
 
   // Debug: Log messages in development
   useEffect(() => {

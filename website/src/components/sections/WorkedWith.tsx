@@ -19,7 +19,7 @@ export function WorkedWith() {
       name: 'Orange',
       short: 'ORANGE',
       industryKey: 'Telecommunications',
-      location: 'Paris'
+      location: 'Abidjan, Dakar'
     },
     {
       name: 'Onepoint',
@@ -37,7 +37,7 @@ export function WorkedWith() {
       name: 'Atos',
       short: 'ATOS',
       industryKey: 'Technology',
-      location: 'Paris'
+      location: 'Dakar, Grenoble'
     }
   ]
 
@@ -94,9 +94,27 @@ export function WorkedWith() {
                              </span>
                            </div>
 
-                           {/* Location */}
-                           <p className="text-xs text-center text-muted-foreground">
-                             {company.location}
+                           {/* Location - Mobile-friendly with line break for multiple cities */}
+                           <p className="text-xs text-center text-muted-foreground leading-relaxed">
+                             {company.location.includes(',') ? (
+                               <span className="block">
+                                 {company.location.split(', ').map((city, idx, arr) => (
+                                   <span key={city}>
+                                     {city}
+                                     {idx < arr.length - 1 && (
+                                       <span className="hidden sm:inline">, </span>
+                                     )}
+                                     {idx < arr.length - 1 && (
+                                       <span className="sm:hidden">
+                                         <br />
+                                       </span>
+                                     )}
+                                   </span>
+                                 ))}
+                               </span>
+                             ) : (
+                               company.location
+                             )}
                            </p>
                          </div>
                        </div>
