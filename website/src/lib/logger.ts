@@ -5,8 +5,6 @@
  * - In production: only errors are logged, others are sent to monitoring service if available
  */
 
-type LogLevel = 'log' | 'warn' | 'error' | 'info' | 'debug'
-
 interface LogContext {
   [key: string]: any
 }
@@ -20,6 +18,7 @@ class Logger {
    */
   log(message: string, ...args: any[]): void {
     if (this.isDevelopment) {
+      // eslint-disable-next-line no-console
       console.log(`[LOG] ${message}`, ...args)
     }
   }
@@ -29,6 +28,7 @@ class Logger {
    */
   debug(message: string, ...args: any[]): void {
     if (this.isDevelopment) {
+      // eslint-disable-next-line no-console
       console.debug(`[DEBUG] ${message}`, ...args)
     }
   }
@@ -38,6 +38,7 @@ class Logger {
    */
   info(message: string, context?: LogContext): void {
     if (this.isDevelopment) {
+      // eslint-disable-next-line no-console
       console.info(`[INFO] ${message}`, context || '')
     }
   }
@@ -92,6 +93,7 @@ class Logger {
    */
   performance(metric: string, value: number, unit: string = 'ms'): void {
     if (this.isDevelopment) {
+      // eslint-disable-next-line no-console
       console.log(`[PERF] ${metric}: ${value}${unit}`)
     }
   }

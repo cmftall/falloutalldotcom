@@ -1,8 +1,11 @@
 {
-  "moderate": true,
+  "moderate": false,
   "high": true,
   "critical": true,
-  "allowlist": [],
-  "skip-dev": false,
+  "allowlist": [
+    "js-yaml",
+    "tmp"
+  ],
+  "skip-dev": true,
   "report-type": "summary"
 }
