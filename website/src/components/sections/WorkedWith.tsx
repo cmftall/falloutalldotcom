@@ -25,7 +25,7 @@ export function WorkedWith() {
       name: 'Onepoint',
       short: 'ONEPOINT',
       industryKey: 'Consulting',
-      location: 'Paris'
+      location: 'Montreal, Lyon'
     },
     {
       name: 'Sopra Steria',
