@@ -21,7 +21,7 @@ export function Hero() {
   }
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center bg-background overflow-hidden">
+    <section id="home" className="relative min-h-[600px] md:min-h-screen flex items-center bg-background overflow-hidden">
       {/* Minimal Background Pattern - Much more subtle */}
       <div className="absolute inset-0 opacity-[0.015]">
         <div className="absolute inset-0" style={{
