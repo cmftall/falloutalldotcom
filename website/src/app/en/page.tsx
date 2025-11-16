@@ -1,7 +1,17 @@
 import dynamic from 'next/dynamic'
 import { Hero } from '@/components/sections/Hero'
-import { WorkedWith } from '@/components/sections/WorkedWith'
 import { FloatingCTA } from '@/components/ui/FloatingCTA'
+
+// Skip links for keyboard navigation accessibility
+function SkipLinks() {
+  return (
+    <div className="skip-links">
+      <a href="#home" className="skip-link">Skip to main content</a>
+      <a href="#work" className="skip-link">Skip to work section</a>
+      <a href="#contact" className="skip-link">Skip to contact</a>
+    </div>
+  )
+}
 const FeaturedWork = dynamic(() => import('@/components/sections/FeaturedWork').then(mod => ({ default: mod.FeaturedWork })), {
   loading: () => <div className="py-20 bg-background"><div className="container mx-auto px-4"><div className="animate-pulse bg-muted h-32 rounded-lg"></div></div></div>
 })
@@ -17,11 +27,15 @@ const FAQ = dynamic(() => import('@/components/sections/FAQ').then(mod => ({ def
 const Contact = dynamic(() => import('@/components/sections/Contact').then(mod => ({ default: mod.Contact })), {
   loading: () => <div className="py-20 bg-background"><div className="container mx-auto px-4"><div className="animate-pulse bg-muted h-32 rounded-lg"></div></div></div>
 })
+const WorkedWith = dynamic(() => import('@/components/sections/WorkedWith').then(mod => ({ default: mod.WorkedWith })), {
+  loading: () => <div className="py-20 bg-background"><div className="container mx-auto px-4"><div className="animate-pulse bg-muted h-32 rounded-lg"></div></div></div>
+})
 import { BackToTop } from '@/components/ui/BackToTop'
 
 export default function EnglishPage() {
   return (
     <>
+      <SkipLinks />
       <Hero />
       <WorkedWith />
       <FeaturedWork />

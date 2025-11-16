@@ -1,10 +1,23 @@
 import dynamic from 'next/dynamic'
 import { Hero } from '@/components/sections/Hero'
-import { WorkedWith } from '@/components/sections/WorkedWith'
 import { FloatingCTA } from '@/components/ui/FloatingCTA'
+
+// Skip links for keyboard navigation accessibility
+function SkipLinks() {
+  return (
+    <div className="skip-links">
+      <a href="#home" className="skip-link">Aller au contenu principal</a>
+      <a href="#work" className="skip-link">Aller à la section travail</a>
+      <a href="#contact" className="skip-link">Aller au contact</a>
+    </div>
+  )
+}
 import { BackToTop } from '@/components/ui/BackToTop'
 
 // Lazy load non-critical sections for better performance
+const WorkedWith = dynamic(() => import('@/components/sections/WorkedWith').then(mod => ({ default: mod.WorkedWith })), {
+  loading: () => <div className="py-20 bg-background"><div className="container mx-auto px-4"><div className="animate-pulse bg-muted h-32 rounded-lg"></div></div></div>
+})
 const FeaturedWork = dynamic(() => import('@/components/sections/FeaturedWork').then(mod => ({ default: mod.FeaturedWork })), {
   loading: () => <div className="py-20 bg-background"><div className="container mx-auto px-4"><div className="animate-pulse bg-muted h-32 rounded-lg"></div></div></div>
 })
@@ -24,6 +37,7 @@ const Contact = dynamic(() => import('@/components/sections/Contact').then(mod =
 export default function FrenchPage() {
   return (
     <>
+      <SkipLinks />
       <Hero />
       <WorkedWith />
       <FeaturedWork />
