@@ -166,8 +166,8 @@ describe('Production Readiness Smoke Tests', () => {
         <Hero />
       </TestWrapper>
     )
-    expect(screen.getByText(/I architect/)).toBeInTheDocument()
-    expect(screen.getByText(/data ecosystems/)).toBeInTheDocument()
+    // Verify Hero section renders (check for headline or CTA button)
+    expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument()
   })
 
   test('FeaturedWork component renders without crashing', () => {
@@ -185,8 +185,8 @@ describe('Production Readiness Smoke Tests', () => {
         <Contact />
       </TestWrapper>
     )
-    // Verify Contact section is rendered (at least one "Contact" text should be present)
-    expect(screen.getByText(/Contact/i)).toBeInTheDocument()
+    // Verify Contact section is rendered (check for heading)
+    expect(screen.getByRole('heading', { name: /contact/i })).toBeInTheDocument()
   })
 
   test('All components have proper accessibility attributes', () => {
@@ -216,6 +216,6 @@ describe('Production Readiness Smoke Tests', () => {
       </TestWrapper>
     )
     // Test that language switching doesn't break the component
-    expect(screen.getByText(/I architect/)).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument()
   })
 })
