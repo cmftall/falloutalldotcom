@@ -32,15 +32,33 @@ export function Analytics() {
       initPlausible(plausibleDomain)
     }
 
-    // Track Core Web Vitals
-    if (typeof window !== 'undefined' && 'web-vitals' in window) {
-      import('web-vitals').then(({ onCLS, onINP, onFCP, onLCP, onTTFB }) => {
-        onCLS(trackWebVitals)
-        onINP(trackWebVitals)
-        onFCP(trackWebVitals)
-        onLCP(trackWebVitals)
-        onTTFB(trackWebVitals)
-      })
+    // Track Core Web Vitals - Defer to avoid blocking render
+    if (typeof window !== 'undefined') {
+      // Use requestIdleCallback or setTimeout to defer non-critical analytics
+      const deferAnalytics = () => {
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(() => {
+            import('web-vitals').then(({ onCLS, onINP, onFCP, onLCP, onTTFB }) => {
+              onCLS(trackWebVitals)
+              onINP(trackWebVitals)
+              onFCP(trackWebVitals)
+              onLCP(trackWebVitals)
+              onTTFB(trackWebVitals)
+            })
+          })
+        } else {
+          setTimeout(() => {
+            import('web-vitals').then(({ onCLS, onINP, onFCP, onLCP, onTTFB }) => {
+              onCLS(trackWebVitals)
+              onINP(trackWebVitals)
+              onFCP(trackWebVitals)
+              onLCP(trackWebVitals)
+              onTTFB(trackWebVitals)
+            })
+          }, 0)
+        }
+      }
+      deferAnalytics()
     }
   }, [])
 

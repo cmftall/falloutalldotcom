@@ -160,27 +160,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Preload critical Hero image for LCP optimization - Modern formats first */}
+        {/* Preload critical Hero image for LCP optimization - AVIF only (smallest format) */}
         <link
           rel="preload"
           href={`${siteUrl}/fallou-tall-photo.avif`}
           as="image"
           type="image/avif"
-          fetchPriority="high"
-        />
-        <link
-          rel="preload"
-          href={`${siteUrl}/fallou-tall-photo.webp`}
-          as="image"
-          type="image/webp"
-          fetchPriority="high"
-        />
-        {/* JPEG fallback preload */}
-        <link
-          rel="preload"
-          href={`${siteUrl}/fallou-tall-photo.jpg`}
-          as="image"
-          type="image/jpeg"
           fetchPriority="high"
         />
         <script
