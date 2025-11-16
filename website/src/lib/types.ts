@@ -104,6 +104,18 @@ export interface TranslationMessages {
     connectTitle: string
     copyright: string
     availability: string
+    linkedin?: string
+  }
+  certifications: {
+    title: string
+    subtitle: string
+    viewDetails?: string
+    items: Certification[]
+  }
+  technologies: {
+    title: string
+    subtitle?: string
+    categories: TechnologyCategory
   }
 }
 
@@ -151,4 +163,18 @@ export interface ContactInfo {
   location: string
   languages: string[]
   linkedin: string
+}
+
+export interface Certification {
+  name: string
+  issuer: string
+  description?: string
+  year?: string
+}
+
+export interface TechnologyCategory {
+  cloud: string[]
+  dataPlatforms: string[]
+  languages: string[]
+  tools: string[]
 }

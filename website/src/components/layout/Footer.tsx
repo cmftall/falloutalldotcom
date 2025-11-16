@@ -7,6 +7,19 @@ import { useI18n } from '@/components/providers/I18nProvider'
 export function Footer() {
   const { t } = useI18n()
 
+  // Scroll helper function with SSR check
+  const scrollToSection = (sectionId: string) => {
+    if (typeof window === 'undefined' || typeof document === 'undefined') return
+    
+    const element = document.querySelector(sectionId)
+    if (element) {
+      const headerOffset = 80
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
+    }
+  }
+
   return (
     <footer className="border-t border-border bg-background py-12">
       <div className="container mx-auto px-4">
@@ -29,13 +42,7 @@ export function Footer() {
                   href="#home" 
                   onClick={(e) => {
                     e.preventDefault()
-                    const element = document.querySelector('#home')
-                    if (element) {
-                      const headerOffset = 80
-                      const elementPosition = element.getBoundingClientRect().top
-                      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
-                      window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
-                    }
+                    scrollToSection('#home')
                   }}
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
@@ -47,13 +54,7 @@ export function Footer() {
                   href="#work" 
                   onClick={(e) => {
                     e.preventDefault()
-                    const element = document.querySelector('#work')
-                    if (element) {
-                      const headerOffset = 80
-                      const elementPosition = element.getBoundingClientRect().top
-                      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
-                      window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
-                    }
+                    scrollToSection('#work')
                   }}
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
@@ -65,13 +66,7 @@ export function Footer() {
                   href="#faq" 
                   onClick={(e) => {
                     e.preventDefault()
-                    const element = document.querySelector('#faq')
-                    if (element) {
-                      const headerOffset = 80
-                      const elementPosition = element.getBoundingClientRect().top
-                      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
-                      window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
-                    }
+                    scrollToSection('#faq')
                   }}
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
@@ -83,13 +78,7 @@ export function Footer() {
                   href="#contact" 
                   onClick={(e) => {
                     e.preventDefault()
-                    const element = document.querySelector('#contact')
-                    if (element) {
-                      const headerOffset = 80
-                      const elementPosition = element.getBoundingClientRect().top
-                      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
-                      window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
-                    }
+                    scrollToSection('#contact')
                   }}
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >

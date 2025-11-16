@@ -30,6 +30,8 @@ export function I18nProvider({ children, initialLocale, initialMessages }: I18nP
 
   useEffect(() => {
     // Detect locale on client side
+    if (typeof window === 'undefined') return
+    
     const detectedLocale = detectLocale()
     if (detectedLocale !== locale) {
       setCurrentLocale(detectedLocale)
@@ -68,7 +70,8 @@ export function I18nProvider({ children, initialLocale, initialMessages }: I18nP
     try {
       if (!messages || typeof messages !== 'object') {
         logger.warn(`No messages available for key "${key}"`)
-        return key
+        // Return a more user-friendly fallback
+        return key.split('.').pop() || key
       }
       const result = getTranslation(messages, key)
       if (result === key) {
@@ -77,11 +80,14 @@ export function I18nProvider({ children, initialLocale, initialMessages }: I18nP
           keyPath: key.split('.'),
           navigationExists: !!messages?.navigation
         })
+        // Return last part of key as fallback (e.g., "primaryCta" from "hero.primaryCta")
+        return key.split('.').pop() || key
       }
       return result
     } catch (error) {
       logger.error(`Translation error for key "${key}"`, error instanceof Error ? error : new Error(String(error)))
-      return key
+      // Return last part of key as fallback
+      return key.split('.').pop() || key
     }
   }
 

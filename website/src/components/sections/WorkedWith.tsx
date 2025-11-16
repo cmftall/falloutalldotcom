@@ -32,15 +32,13 @@ export function WorkedWith() {
       short: 'SOPRA STERIA',
       industryKey: 'Technology',
       location: 'Paris'
+    },
+    {
+      name: 'Atos',
+      short: 'ATOS',
+      industryKey: 'Technology',
+      location: 'Paris'
     }
-  ]
-
-  // Industry pills for filter section
-  const industryPills = [
-    { key: 'Banking & Finance', labelKey: 'bankingFinance' },
-    { key: 'Telecommunications', labelKey: 'telecommunications' },
-    { key: 'Consulting', labelKey: 'consulting' },
-    { key: 'Technology', labelKey: 'technology' }
   ]
 
   return (
@@ -62,7 +60,7 @@ export function WorkedWith() {
           </div>
 
           {/* Companies Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 mb-12">
             {companies.map((company) => (
               <div
                 key={company.name}
@@ -77,12 +75,12 @@ export function WorkedWith() {
                          <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                          <div className="relative z-10">
-                           {/* Company Icon */}
-                           <div className="flex items-center justify-center mb-4">
-                             <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-accent/10 transition-colors">
-                               <Building2 className="h-8 w-8 text-primary group-hover:text-accent transition-colors" />
-                             </div>
-                           </div>
+                          {/* Company Icon */}
+                          <div className="flex items-center justify-center mb-4">
+                            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-accent/10 transition-colors">
+                              <Building2 className="h-8 w-8 text-primary group-hover:text-accent transition-colors" aria-hidden="true" />
+                            </div>
+                          </div>
 
                            {/* Company Short Name */}
                            <h3 className="font-mono text-xl font-bold text-center text-primary mb-2 tracking-tight">
@@ -106,20 +104,6 @@ export function WorkedWith() {
                    ))}
                  </div>
 
-          {/* Industry Pills */}
-          <div className="text-center mt-12">
-            <div className="inline-flex flex-wrap justify-center gap-3 text-sm">
-              {industryPills.map((pill) => (
-                <span
-                  key={pill.key}
-                  className="px-4 py-2 bg-background border border-accent/20 text-primary rounded-full hover:border-accent hover:shadow-sm transition-all duration-300"
-                  aria-label={`${t(`workedWith.industryPills.${pill.labelKey}`) || pill.key} industry`}
-                >
-                  {t(`workedWith.industryPills.${pill.labelKey}`) || pill.key}
-                </span>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>

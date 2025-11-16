@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/Button'
 import { LanguageSelector } from '@/components/ui/LanguageSelector'
 import { useI18n } from '@/components/providers/I18nProvider'
 import { SITE_CONFIG } from '@/lib/constants'
-import { trackEvent } from '@/lib/analytics'
+import { openCalendly } from '@/lib/calendly'
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -18,6 +18,8 @@ export function Header() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
 
   const scrollToSection = (sectionId: string) => {
+    if (typeof window === 'undefined' || typeof document === 'undefined') return
+    
     const element = document.getElementById(sectionId.replace('#', ''))
     if (element) {
       const headerOffset = 80 // Height of sticky header + padding
@@ -28,15 +30,23 @@ export function Header() {
         top: offsetPosition,
         behavior: 'smooth'
       })
+      
+      // Focus management: focus the target element after scroll
+      setTimeout(() => {
+        element.focus({ preventScroll: true })
+      }, 500)
     }
     setIsMenuOpen(false)
   }
 
   const handleLogoClick = () => {
+    if (typeof window === 'undefined') return
+    
     const locale = pathname.startsWith('/fr') ? 'fr' : 'en'
     router.push(`/${locale}#home`)
     // Small delay to ensure route change before scrolling
     setTimeout(() => {
+      if (typeof document === 'undefined') return
       const element = document.getElementById('home')
       if (element) {
         const headerOffset = 80
@@ -86,18 +96,11 @@ export function Header() {
             <LanguageSelector />
             <Button
               onClick={() => {
-                trackEvent('cta_click', {
-                  location: 'header',
-                  cta_type: 'calendly',
-                  button_text: t('navigation.hireMeCta')
-                })
-                const link = document.createElement('a')
-                link.href = 'https://calendly.com/falloutall'
-                link.target = '_blank'
-                link.rel = 'noopener noreferrer'
-                link.click()
+                const buttonText = typeof t('navigation.hireMeCta') === 'string' ? t('navigation.hireMeCta') : 'Hire Me'
+                openCalendly('header', buttonText)
               }}
               className="bg-accent text-accent-foreground hover:bg-accent/90 px-6 py-2.5 rounded-lg font-medium transition-colors shadow-md"
+              aria-label={typeof t('navigation.hireMeCta') === 'string' ? t('navigation.hireMeCta') : 'Hire Me'}
             >
               {t('navigation.hireMeCta')}
             </Button>
@@ -110,12 +113,13 @@ export function Header() {
               variant="ghost"
               size="icon"
               onClick={toggleMenu}
-              aria-label="Toggle menu"
+              aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-expanded={isMenuOpen}
             >
               {isMenuOpen ? (
-                <X className="h-5 w-5" />
+                <X className="h-5 w-5" aria-hidden="true" />
               ) : (
-                <Menu className="h-5 w-5" />
+                <Menu className="h-5 w-5" aria-hidden="true" />
               )}
             </Button>
           </div>
@@ -124,7 +128,7 @@ export function Header() {
         {/* Mobile Navigation - Only visible on mobile when menu is open */}
         {isMenuOpen && (
           <div className="md:hidden border-t border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-            <nav className="flex flex-col space-y-2 py-4">
+            <nav className="flex flex-col space-y-2 py-4" role="navigation" aria-label="Main navigation">
               {[
                 { href: '#home', key: 'home' },
                 { href: '#work', key: 'work' },
@@ -134,7 +138,8 @@ export function Header() {
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors text-left"
+                  className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors text-left focus:outline-none focus:ring-2 focus:ring-accent/50 rounded"
+                  aria-label={`Navigate to ${t(`navigation.${item.key}`)} section`}
                 >
                   {t(`navigation.${item.key}`)}
                 </button>
@@ -142,18 +147,11 @@ export function Header() {
               <div className="px-4 pt-4 border-t border-border">
                 <Button
                   onClick={() => {
-                    trackEvent('cta_click', {
-                      location: 'header_mobile',
-                      cta_type: 'calendly',
-                      button_text: t('navigation.hireMeCta')
-                    })
-                    const link = document.createElement('a')
-                    link.href = 'https://calendly.com/falloutall'
-                    link.target = '_blank'
-                    link.rel = 'noopener noreferrer'
-                    link.click()
+                    const buttonText = typeof t('navigation.hireMeCta') === 'string' ? t('navigation.hireMeCta') : 'Hire Me'
+                    openCalendly('header_mobile', buttonText)
                   }}
                   className="w-full bg-accent text-accent-foreground hover:bg-accent/90"
+                  aria-label={typeof t('navigation.hireMeCta') === 'string' ? t('navigation.hireMeCta') : 'Hire Me'}
                 >
                   {t('navigation.hireMeCta')}
                 </Button>

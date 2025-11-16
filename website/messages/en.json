@@ -24,7 +24,8 @@
            "credential": "Data Consultant • Paris & Montreal",
            "metrics": {
              "errorReduction": "30% fewer errors",
-             "annualValue": "Significant annual value",
+             "timeToInsight": "10x faster insights",
+             "zeroDowntime": "Zero downtime (14M+ users)",
              "international": "4 countries, 3 continents"
            },
            "imageAlt": "Fallou Tall - Data Consultant",
@@ -36,7 +37,7 @@
              "company": "National Bank of Canada"
            },
            "floatingCta": {
-             "title": "Ready to reduce data errors?",
+             "title": "Deliver more value from your data",
              "subtitle": "Book a free strategy call - no commitment",
              "button": "Book Call"
            },
@@ -128,7 +129,39 @@
   "certifications": {
     "title": "Certifications & Credentials",
     "subtitle": "Professional certifications validating technical expertise and commitment to continuous learning.",
-    "viewDetails": "View details"
+    "viewDetails": "View details",
+    "items": [
+      {
+        "name": "Azure Data Engineer Associate",
+        "issuer": "Microsoft",
+        "description": "Expertise in designing and implementing data solutions on Azure",
+        "year": "2023"
+      },
+      {
+        "name": "Professional Data Engineer",
+        "issuer": "Google Cloud",
+        "description": "Advanced skills in building and maintaining data processing systems on GCP",
+        "year": "2023"
+      },
+      {
+        "name": "Databricks Certified Associate Developer for Apache Spark",
+        "issuer": "Databricks",
+        "description": "Proficiency in Spark programming and data engineering",
+        "year": "2023"
+      },
+      {
+        "name": "Databricks Certified Professional Data Engineer",
+        "issuer": "Databricks",
+        "description": "Advanced expertise in building production-ready data pipelines",
+        "year": "2024"
+      },
+      {
+        "name": "Databricks Certified Professional Data Scientist",
+        "issuer": "Databricks",
+        "description": "Expert-level skills in machine learning and data science workflows",
+        "year": "2024"
+      }
+    ]
   },
   "education": {
     "title": "Education",
@@ -228,6 +261,10 @@
       "question": "Want to reduce errors and improve efficiency for your data systems?",
       "button": "Schedule Free Strategy Call"
     },
+    "testimonial": {
+      "readMore": "Read full testimonial",
+      "showLess": "Show less"
+    },
     "sections": {
       "keyAchievements": "Key Achievements",
       "keyResponsibilities": "Key Responsibilities",
@@ -278,9 +315,9 @@
               "duration": "09/2024 - 10/2025",
               "location": "Canada and France",
               "focusArea": "Modern and scalable data platform implementation",
-              "valueSummary": "Delivered high client satisfaction across enterprise clients by improving platform performance by 40%, identifying cost-saving opportunities through technical audits, and establishing data governance frameworks that ensure long-term reliability.",
-              "description": "Helped enterprise clients in Canada and France fix their data platform problems. Delivered technical audits identifying cost-saving opportunities, designed modern architectures that improved platform performance by 40%, and established data governance frameworks. Achieved high client satisfaction with measurable results.",
-              "shortDescription": "Helped enterprise clients fix data platform problems through technical audits, modern architecture design, and data governance frameworks. Improved platform performance by 40% and achieved high client satisfaction with measurable results.",
+              "valueSummary": "Delivered high client satisfaction across enterprise clients by improving platform performance by 40%, reducing time to insight from weeks to days, identifying cost-saving opportunities through technical audits, and establishing data governance frameworks that ensure long-term reliability.",
+              "description": "Helped enterprise clients in Canada and France fix their data platform problems. Delivered technical audits identifying cost-saving opportunities, designed modern architectures that improved platform performance by 40% and reduced time to insight from weeks to days, and established data governance frameworks. Achieved high client satisfaction with measurable results.",
+              "shortDescription": "Helped enterprise clients fix data platform problems through technical audits, modern architecture design, and data governance frameworks. Improved platform performance by 40%, reduced time to insight from weeks to days, and achieved high client satisfaction with measurable results.",
               "challenges": [
                 "Addressing diverse data platform issues across enterprise clients with varying technical stacks",
                 "Improving platform performance by 40% while maintaining system reliability and data integrity",
@@ -300,6 +337,11 @@
                   "metricName": "Platform Performance",
                   "percentage": 40,
                   "description": "40% improvement in data processing performance across client platforms through architecture optimization"
+                },
+                {
+                  "metricName": "Time To Insight",
+                  "percentage": null,
+                  "description": "Reduced time to insight from weeks to days, enabling faster business decision-making"
                 }
               ],
               "technicalInnovation": [
@@ -485,12 +527,22 @@
               "industry": "Telecommunications"
             }
           }
-        },
-  "stats": {
-    "yearsExperience": "Years Experience",
-    "technologiesMastered": "Technologies Mastered",
-    "enterpriseProjects": "Enterprise Projects"
-  },
+    },
+    "stats": {
+      "yearsExperience": "Years Experience",
+      "technologiesMastered": "Technologies Mastered",
+      "enterpriseProjects": "Enterprise Projects"
+    },
+    "technologies": {
+      "title": "Technologies & Tools",
+      "subtitle": "Expertise in Data Warehouses, Data Lakes, Data Lakehouses, and Data Modeling using modern cloud platforms and data technologies",
+      "categories": {
+        "cloud": ["Azure", "AWS", "GCP"],
+        "dataPlatforms": ["Databricks", "Snowflake", "Apache Spark", "Delta Lake"],
+        "languages": ["Python", "SQL", "Scala", "Java"],
+        "tools": ["Terraform", "Docker", "Kubernetes", "GitHub Actions", "Apache Airflow"]
+      }
+    },
   "common": {
     "loading": "Loading...",
     "error": "An error occurred",

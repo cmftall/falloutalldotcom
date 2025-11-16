@@ -87,8 +87,7 @@ export default function RootLayout({
     url: 'https://falloutall.com',
     image: 'https://falloutall.com/fallou-tall-photo.jpg',
     sameAs: [
-      'https://www.linkedin.com/in/cmftall',
-      'https://github.com/cmftall'
+      'https://www.linkedin.com/in/cmftall'
     ],
     worksFor: [
       {
@@ -156,9 +155,18 @@ export default function RootLayout({
     aggregateRating: null // Add when testimonials available
   }
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://falloutall.com'
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Preload critical Hero image for LCP optimization */}
+        <link
+          rel="preload"
+          href={`${siteUrl}/fallou-tall-photo.jpg`}
+          as="image"
+          fetchPriority="high"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}

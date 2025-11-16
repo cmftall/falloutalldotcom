@@ -4,7 +4,7 @@ import { Card } from '@/components/ui/Card'
 import { ChevronDown, ChevronUp, ArrowDown } from 'lucide-react'
 import { useI18n } from '@/components/providers/I18nProvider'
 import { useState } from 'react'
-import { trackEvent } from '@/lib/analytics'
+import { openCalendly } from '@/lib/calendly'
 
 import type { FAQItem } from '@/lib/types'
 
@@ -18,7 +18,18 @@ export function FAQ() {
   }
 
   const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index)
+    const newIndex = openIndex === index ? null : index
+    setOpenIndex(newIndex)
+    
+    // Focus management: focus the answer after opening
+    if (newIndex !== null && typeof document !== 'undefined') {
+      setTimeout(() => {
+        const answerElement = document.getElementById(`faq-answer-${newIndex}`)
+        if (answerElement) {
+          answerElement.focus({ preventScroll: true })
+        }
+      }, 300) // Wait for animation to complete
+    }
   }
 
   // Generate FAQ schema for SEO
@@ -47,7 +58,7 @@ export function FAQ() {
           <div className="text-center mb-12 md:mb-16 px-4">
             <div className="inline-flex items-center space-x-2 md:space-x-3 mb-4 md:mb-6">
               <div className="h-px w-8 md:w-12 bg-accent" />
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-primary">
+              <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl font-bold text-primary">
                 {t('faq.title')}
               </h2>
               <div className="h-px w-8 md:w-12 bg-accent" />
@@ -81,9 +92,9 @@ export function FAQ() {
                       </h3>
                       <div className="flex-shrink-0">
                         {isOpen ? (
-                          <ChevronUp className="h-4 w-4 md:h-5 md:w-5 text-accent transition-transform" />
+                          <ChevronUp className="h-4 w-4 md:h-5 md:w-5 text-accent transition-transform" aria-hidden="true" />
                         ) : (
-                          <ChevronDown className="h-4 w-4 md:h-5 md:w-5 text-muted-foreground group-hover:text-accent transition-colors" />
+                          <ChevronDown className="h-4 w-4 md:h-5 md:w-5 text-muted-foreground group-hover:text-accent transition-colors" aria-hidden="true" />
                         )}
                       </div>
                     </button>
@@ -95,6 +106,7 @@ export function FAQ() {
                       }`}
                       role="region"
                       aria-labelledby={`faq-question-${index}`}
+                      tabIndex={isOpen ? 0 : -1}
                     >
                       <div className="px-4 md:px-6 pb-4 md:pb-6">
                         <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
@@ -115,22 +127,14 @@ export function FAQ() {
             </p>
             <button
               onClick={() => {
-                trackEvent('cta_click', {
-                  location: 'faq',
-                  cta_type: 'calendly',
-                  button_text: t('faq.ctaButton')
-                })
-                const link = document.createElement('a')
-                link.href = 'https://calendly.com/falloutall'
-                link.target = '_blank'
-                link.rel = 'noopener noreferrer'
-                link.click()
+                const buttonText = typeof t('faq.ctaButton') === 'string' ? t('faq.ctaButton') : 'Schedule Free Strategy Call'
+                openCalendly('faq', buttonText)
               }}
               className="inline-flex items-center space-x-2 px-5 md:px-6 py-2.5 md:py-3 bg-accent text-accent-foreground rounded-lg font-semibold hover:bg-accent/90 transition-colors shadow-lg hover:shadow-xl text-sm md:text-base"
-              aria-label={t('faq.ctaButton') as string}
+              aria-label={typeof t('faq.ctaButton') === 'string' ? t('faq.ctaButton') : 'Schedule Free Strategy Call'}
             >
               <span>{t('faq.ctaButton')}</span>
-              <ArrowDown className="h-3 w-3 md:h-4 md:w-4" />
+              <ArrowDown className="h-3 w-3 md:h-4 md:w-4" aria-hidden="true" />
             </button>
           </div>
         </div>
