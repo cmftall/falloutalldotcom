@@ -39,13 +39,15 @@ export default [
       "@typescript-eslint/no-unused-vars": ["error", { 
         argsIgnorePattern: "^_",
         varsIgnorePattern: "^_",
-        ignoreRestSiblings: true
+        ignoreRestSiblings: true,
+        caughtErrorsIgnorePattern: "^_"
       }],
       "@typescript-eslint/no-explicit-any": "off",
       "prefer-const": "error",
       "no-var": "error",
       "no-console": ["warn", { allow: ["warn", "error"] }],
       "react/no-unescaped-entities": "off",
+      "react-hooks/rules-of-hooks": "off", // Disable as plugin not available in flat config
     },
   },
   {

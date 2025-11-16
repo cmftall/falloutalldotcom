@@ -2,7 +2,7 @@
 
 // Removed motion imports - using static layout for better performance
 import { Button } from '@/components/ui/Button'
-import { Mail, MapPin, Linkedin, CheckCircle, TrendingUp, Calendar } from 'lucide-react'
+import { Mail, MapPin, Linkedin, CheckCircle, Calendar } from 'lucide-react'
 import { useI18n } from '@/components/providers/I18nProvider'
 import { SITE_CONFIG, CONTACT_INFO } from '@/lib/constants'
 import { trackEvent } from '@/lib/analytics'

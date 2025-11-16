@@ -15,7 +15,8 @@ interface CaseStudyDetailProps {
 }
 
 export function CaseStudyDetail({ project, locale }: CaseStudyDetailProps) {
-  const { t } = useI18n()
+  // Note: Component currently unused (case studies pages removed)
+  // const { t } = useI18n()
   
   return (
     <article className="py-32 bg-background">

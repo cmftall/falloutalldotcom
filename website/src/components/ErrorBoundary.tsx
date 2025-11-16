@@ -54,7 +54,7 @@ function DefaultErrorFallback({ error, resetError }: { error?: Error; resetError
   // Use i18n if available, otherwise fallback to English
   let t: (key: string) => string
   try {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
+    // Note: Using hook conditionally is intentional here for error boundary fallback
     const { t: i18nT } = useI18n()
     t = i18nT
   } catch {
