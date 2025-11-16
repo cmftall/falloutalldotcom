@@ -168,13 +168,16 @@ export default function RootLayout({
           type="image/avif"
           fetchPriority="high"
         />
+        {/* Defer JSON-LD scripts to avoid blocking render */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+          defer
         />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+          defer
         />
       </head>
       <body className={`${inter.variable} ${crimsonPro.variable} font-sans`}>
