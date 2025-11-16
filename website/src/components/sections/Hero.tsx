@@ -10,7 +10,23 @@ import { logger } from '@/lib/logger'
 export function Hero() {
   const { t } = useI18n() as any
   // Use absolute path from root - static files are served from /public/ which maps to root
+  // In production with static export, ensure path works with locale routes
   const imagePath = useImagePath('/fallou-tall-photo.jpg')
+  
+  // Get locale-aware path if needed
+  const getImageSrc = () => {
+    if (typeof window !== 'undefined') {
+      const pathname = window.location.pathname
+      // If on locale route, try relative path first, then absolute
+      if (pathname.startsWith('/en/') || pathname.startsWith('/fr/')) {
+        const locale = pathname.split('/')[1]
+        // Try relative path first (works if image is copied to locale folder)
+        return `/${locale}/fallou-tall-photo.jpg`
+      }
+    }
+    // Default to absolute path from root
+    return imagePath
+  }
 
   return (
     <section id="home" className="relative min-h-screen flex items-center bg-background overflow-hidden">
@@ -126,7 +142,7 @@ export function Hero() {
                   {/* Image with optimized loading */}
                   <div className="relative overflow-hidden rounded-2xl">
                     <img
-                      src={imagePath}
+                      src={getImageSrc()}
                       alt={t('hero.imageAlt') || 'Fallou Tall - Data Consultant'}
                       width={500}
                       height={625}
@@ -135,16 +151,56 @@ export function Hero() {
                       decoding="async"
                       onError={(e) => {
                         const target = e.currentTarget
-                        logger.error('Failed to load profile image', new Error('Image load failed'), {
-                          attemptedPath: imagePath,
-                          windowOrigin: typeof window !== 'undefined' ? window.location.origin : 'N/A',
-                          currentPath: typeof window !== 'undefined' ? window.location.pathname : 'N/A'
-                        })
-                        if (typeof window !== 'undefined' && !imagePath.startsWith('http')) {
-                          const fallback = `${window.location.origin}${imagePath}`
-                          if (target.src !== fallback) {
-                            target.src = fallback
+                        // Try multiple fallback paths for static export compatibility
+                        if (typeof window !== 'undefined') {
+                          const currentPath = window.location.pathname
+                          const absolutePath = '/fallou-tall-photo.jpg'
+                          
+                          // Try absolute path from root (should work on most servers)
+                          const fallback1 = `${window.location.origin}${absolutePath}`
+                          
+                          // If on locale route, also try relative path
+                          if (currentPath.startsWith('/en/') || currentPath.startsWith('/fr/')) {
+                            const locale = currentPath.split('/')[1]
+                            const relativePath = `/${locale}${absolutePath}`
+                            const fallback2 = `${window.location.origin}${relativePath}`
+                            
+                            logger.error('Failed to load profile image', new Error('Image load failed'), {
+                              attemptedPath: target.src,
+                              windowOrigin: window.location.origin,
+                              currentPath: currentPath,
+                              fallback1: fallback1,
+                              fallback2: fallback2
+                            })
+                            
+                            // Try absolute path first (most common case)
+                            if (target.src !== fallback1 && !target.dataset.triedFallback1) {
+                              target.dataset.triedFallback1 = 'true'
+                              target.src = fallback1
+                              return
+                            }
+                            // Then try relative path (if image copied to locale folder)
+                            if (target.src !== fallback2 && !target.dataset.triedFallback2) {
+                              target.dataset.triedFallback2 = 'true'
+                              target.src = fallback2
+                              return
+                            }
+                          } else {
+                            logger.error('Failed to load profile image', new Error('Image load failed'), {
+                              attemptedPath: target.src,
+                              windowOrigin: window.location.origin,
+                              currentPath: currentPath,
+                              fallback: fallback1
+                            })
+                            if (target.src !== fallback1 && !target.dataset.triedFallback) {
+                              target.dataset.triedFallback = 'true'
+                              target.src = fallback1
+                            }
                           }
+                        } else {
+                          logger.error('Failed to load profile image', new Error('Image load failed'), {
+                            attemptedPath: imagePath
+                          })
                         }
                       }}
                     />

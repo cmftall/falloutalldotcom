@@ -26,11 +26,20 @@ export function getImagePath(path: string): string {
 /**
  * Client-side hook to get image path with maximum compatibility
  * Returns absolute path from root that works with static export
+ * Uses base path to ensure correct resolution in all environments
  */
 export function useImagePath(path: string): string {
-  // Always return absolute path from root
-  // This works regardless of current route (even with /en/ or /fr/)
-  // Static files are served from root in Next.js static export
+  // In browser, ensure absolute path from root
+  if (typeof window !== 'undefined') {
+    // If already absolute, return as-is
+    if (path.startsWith('/')) {
+      return path
+    }
+    // Make absolute
+    return `/${path}`
+  }
+  
+  // Server-side: return absolute path
   return getImagePath(path)
 }
 
