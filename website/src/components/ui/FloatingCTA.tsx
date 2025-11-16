@@ -27,14 +27,14 @@ export function FloatingCTA() {
   useEffect(() => {
     if (typeof window === 'undefined') return
     
-    // Show after user scrolls down 600px (less intrusive)
+    // Show after user scrolls down 300px
     let ticking = false
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          if (window.scrollY > 600 && !isDismissed) {
+          if (window.scrollY > 300 && !isDismissed) {
             setIsVisible(true)
-          } else if (window.scrollY <= 600) {
+          } else if (window.scrollY <= 300) {
             setIsVisible(false)
           }
           ticking = false
@@ -71,7 +71,7 @@ export function FloatingCTA() {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 animate-in slide-in-from-bottom duration-300">
       <div className="container mx-auto max-w-4xl">
-        <div className="bg-card/95 backdrop-blur-sm border border-accent/30 rounded-lg shadow-lg p-4 md:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="bg-card border-2 border-accent/50 rounded-lg shadow-2xl p-4 md:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex-1 text-center sm:text-left">
             <p className="text-sm md:text-base font-semibold text-foreground mb-1">
               {title}

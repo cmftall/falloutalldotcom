@@ -1,7 +1,6 @@
 'use client'
 
 import { Card } from '@/components/ui/Card'
-import { Button } from '@/components/ui/Button'
 import { ChevronDown, ChevronUp, ArrowDown } from 'lucide-react'
 import { useI18n } from '@/components/providers/I18nProvider'
 import { useState } from 'react'
@@ -126,7 +125,7 @@ export function FAQ() {
             <p className="text-base md:text-lg text-muted-foreground mb-4 md:mb-6">
               {t('faq.ctaText')}
             </p>
-            <Button
+            <button
               onClick={() => {
                 const buttonText = typeof t('faq.ctaButton') === 'string' ? t('faq.ctaButton') : 'Schedule Free Strategy Call'
                 openCalendly('faq', buttonText)
@@ -136,7 +135,7 @@ export function FAQ() {
             >
               <span>{t('faq.ctaButton')}</span>
               <ArrowDown className="h-3 w-3 md:h-4 md:w-4" aria-hidden="true" />
-            </Button>
+            </button>
           </div>
         </div>
       </div>
